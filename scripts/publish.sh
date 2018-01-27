@@ -23,6 +23,7 @@ source "${0%/*}/helpers.sh"
 require_env_var "OKTA_HOME"
 require_env_var "BRANCH"
 require_env_var "REPO"
+require_env_var "RUNSCOPE_TRIGGER_ID"
 
 export TEST_SUITE_TYPE="build"
 
@@ -122,5 +123,8 @@ if ! send_promotion_message "${DEPLOY_ENVIRONMENT}" "${ARTIFACT}" "${DEPLOY_VERS
   echo "Error sending promotion event to aperture"
   exit ${BUILD_FAILURE};
 fi
+
+# Trigger Runscope tests
+curl -I -X GET "https://api.runscope.com/radar/bucket/$RUNSCOPE_TRIGGER_ID/trigger?base_url=$STAGING_BASE_URL_RUNSCOPE"
 
 exit $SUCCESS
