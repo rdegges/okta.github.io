@@ -173,7 +173,7 @@ You can use this function anywhere to get a list of groups of which the current 
 | :------------- | :-------------- | :---------- | :--------------------- |
 | app | Application type or App ID | FALSE | `"OKTA"`, `"0oa13c5hnZFqZsoS00g4"`, `"active_directory"` |
 | pattern | Search term | FALSE | `"Eastern-Region"`, `"Eastern"`, `"-Region"` |
-| limit | Maximum number of groups returned. Must be a valid EL expression and evaluate to a value from 1 to 100. | `1`, `50`, `100` |
+| limit | Maximum number of groups returned. Must be a valid EL expression and evaluate to a value from 1 to 100. | FALSE | `1`, `50`, `100` |
 
 To use these functions to create a token using a dynamic group whitelist, create a Groups claim on an app:
 
