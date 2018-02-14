@@ -11,3 +11,18 @@ used for automation)
 documentation in this project as well currently. Eventually we'll extract it
 out into a separate project, but for now we should port it over as is.
 This will involve migrating all the /documentation content.
+
+
+## Detailed TODO:
+### Transform static files progress:
+- [x] assets
+- [] css
+- [x] js
+- [x] img
+
+### Transform layouts progress:
+- [x] baseof.html
+- [] head.html IN PROGRESS
+- [x] header.html
+- [x] footer.html
+- [x] post-footer.html

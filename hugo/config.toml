@@ -1,4 +1,11 @@
-baseURL = "http://example.org/"
+baseURL = "https://developer.okta.com"
 languageCode = "en-us"
 title = "My New Hugo Site"
 theme = "okta"
+googleAnalytics = "UA-15777010-3"
+disqusShortname = "oktadevblog"
+
+[params]
+  twitter_username = "OktaDev"
+  github_username = "oktadeveloper"
+  dev_forum = "https://devforum.okta.com/"
