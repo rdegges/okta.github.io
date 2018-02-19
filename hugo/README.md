@@ -12,6 +12,11 @@ documentation in this project as well currently. Eventually we'll extract it
 out into a separate project, but for now we should port it over as is.
 This will involve migrating all the /documentation content.
 
+## How to build prod version
+```bash
+brew install hugo
+hugo
+```
 
 ## Detailed TODO:
 ### Transform static files progress:

@@ -2,9 +2,9 @@
 layout: blog_post
 title: Android Unit Testing Part II&#58; Escaping Dalvik’s Hold
 author: victor_ronin
+date: 2015-04-07T00:00:00Z
+slug: android-unit-testing-part-2
 tags: [android, testing]
-redirect_from:
-  - "/blog/2015-04-14-android-unit-testing-part-2"
 ---
 *This is the second of a four part series on Android Unit Testing. In
 these posts, we’ll walk through the key steps engineers should take

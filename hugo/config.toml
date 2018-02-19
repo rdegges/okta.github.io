@@ -1,6 +1,6 @@
 baseURL = "https://developer.okta.com"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Okta Developer"
 theme = "okta"
 googleAnalytics = "UA-15777010-3"
 disqusShortname = "oktadevblog"
