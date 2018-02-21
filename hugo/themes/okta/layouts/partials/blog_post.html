@@ -12,9 +12,8 @@
 {{ if isset .Params "blog_index" }}
 	<a href="{{ .URL }}">{{ .Title }}</a>
 {{ else }}
-{{ .Title }}
+	{{ .Title }}
 {{ end }}
-
 </h1>
 
         <div class="BlogPost-attribution">

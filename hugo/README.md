@@ -21,13 +21,13 @@ hugo
 ## Detailed TODO:
 ### Transform static files progress:
 - [x] assets
-- [] css
+- [x] css
 - [x] js
 - [x] img
 
 ### Transform layouts progress:
 - [x] baseof.html
-- [] head.html IN PROGRESS
+- [x] head.html
 - [x] header.html
 - [x] footer.html
 - [x] post-footer.html

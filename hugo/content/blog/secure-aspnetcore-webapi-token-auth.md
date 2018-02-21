@@ -1,12 +1,18 @@
 ---
-layout: blog_post
-title: "How to Secure Your .NET Web API with Token Authentication"
 author: leebrandt
-tags: [asp.net, dotnet, webapi, security, oauth]
+date: 2018-02-01T00:00:00Z
+tags:
+- asp.net
+- dotnet
+- webapi
+- security
+- oauth
+title: How to Secure Your .NET Web API with Token Authentication
 tweets:
-  - "Learn how to secure your #aspnetcore API with token authentication"
-  - "Got an #aspnetcore #webapi you need to secure?Learn how to use token authentication @oktadev"
-  - "Don't forget to secure your #aspnetcore #api using token authentication"
+- 'Learn how to secure your #aspnetcore API with token authentication'
+- 'Got an #aspnetcore #webapi you need to secure?Learn how to use token authentication
+  @oktadev'
+- 'Don''t forget to secure your #aspnetcore #api using token authentication'
 ---
 
 API security can be complex. In many cases, just because you've built an API that you want to make public, it doesn’t mean that you want just anybody accessing it. In most cases, you want fine-grained control over who can access the API, but setting up that kind of user management can be a daunting task: you'd have to create your own authorization service that can create API credentials for your users and have the ability to exchange those API credentials for an access token using OAuth 2.0. I’ve got good news! With just a few lines of code, Okta can handle all the complicated and time-consuming security elements and let you concentrate on creating a stellar API. =)
@@ -71,19 +77,19 @@ Now, you should be able to fire them both up (with `dotnet run` from the command
 
 If you don't already have an account with Okta, set up your free-forever developer account at <https://developer.okta.com/signup/>. Once you've logged into the dashboard, click on the **Applications** menu item, then click **Add Application**.
 
-{% img blog/webapi-token-auth/AddApplication.png alt:"Add Application Screen" width:"800" %}{: .center-image }
+{% image blog/webapi-token-auth/AddApplication.png alt:"Add Application Screen" width:"800" %}{: .center-image }
 
 From the Create New Application screen choose **Service**, and click **Next**.
 
-{% img blog/webapi-token-auth/CreateServiceScreen.png alt:"Create Service Screen" width:"800" %}{: .center-image }
+{% image blog/webapi-token-auth/CreateServiceScreen.png alt:"Create Service Screen" width:"800" %}{: .center-image }
 
 Name the application "API Sample App", and click **Done**.
 
-{% img blog/webapi-token-auth/NameServiceScreen.png alt:"Name Service Screen" width:"800" %}{: .center-image }
+{% image blog/webapi-token-auth/NameServiceScreen.png alt:"Name Service Screen" width:"800" %}{: .center-image }
 
 On the API Sample App's general settings, you will see the Client Credentials box with the client ID and client secret in it. You will use these to authenticate a client wishing to call your API.
 
-{% img blog/webapi-token-auth/ApplicationGeneralSettings.png alt:"General Settings Screen" width:"800" %}{: .center-image }
+{% image blog/webapi-token-auth/ApplicationGeneralSettings.png alt:"General Settings Screen" width:"800" %}{: .center-image }
 
 >For each client that you’ll want to have access to the API, you’ll need to create an Okta application for it, and give it the Client ID and Client Secret.
 
@@ -503,12 +509,12 @@ public class ValuesController : Controller
 
 You can now run the API and try to hit it with a browser. You'll see a screen that says the page isn't working with an HTTP error of 401.
 
-{% img blog/webapi-token-auth/RunningApiWithValidation.png alt:"API failing in Browser" width:"800" %}{: .center-image }
+{% image blog/webapi-token-auth/RunningApiWithValidation.png alt:"API failing in Browser" width:"800" %}{: .center-image }
 
 
 That's it! If you run your app you will see the application displaying the values as before. You now have an API that is protected with access tokens provided by Okta, and only the worthy shall pass.
 
-{% img blog/webapi-token-auth/ProtectedService.png alt:"App calling protected API" width:"800" %}{: .center-image }
+{% image blog/webapi-token-auth/ProtectedService.png alt:"App calling protected API" width:"800" %}{: .center-image }
 
 ## Learn More
 

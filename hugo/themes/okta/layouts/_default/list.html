@@ -1,42 +1,31 @@
 {{ define "main" }}
-  <section class="Blog is-index">
-    {{ range .Pages }}
-		<p>{{ .Summary }}</p>
-        <p><a class="BlogPost-more" href="{{.URL}}">Read more</a></p>
-	    {{ partial "blog_post.html" . }}
-    {{ end }}
-	<div class="Blog-pagination">
+<section class="Blog is-index">
+	{{ $paginator := $.Paginator }}
+	{{ range $paginator.Pages }}
+		<p>{{ .Content | plainify | truncate 75 }}</p>
+		<p><a class="BlogPost-more" href="{{ .URL }}">Read more</a></p>
+	{{ end }}
 
-    {{/*{% if paginator.previous_page %}*/}}
-			<a href="">&laquo; Prev</a>
-	{{/*{% endif %}*/}}
+	{{ if gt $paginator.TotalPages 1 }}
+		<div class="Blog-pagination">
+		{{ if $paginator.HasPrev }}
+			<a href="{{ $paginator.Prev.URL }}">&laquo; Prev</a>
+		{{ end }}
+		{{ range $paginator.Pagers }}
+			{{ if eq . $paginator }}
+			<em>{{ .PageNumber }}</em>
+			{{ else if eq . $paginator.First }}
+			<a href="{{ $paginator.Prev.URL }}">{{ .PageNumber }}</a>
+			{{ else }}
+			<a href="{{ .URL }}">{{ .PageNumber }}</a>
+			{{ end }}
+		{{ end }}
+		{{ if $paginator.HasNext }}
+			<a href="{{ $paginator.Next.URL }}">Next &raquo;</a>
+		{{ end }}
+		</div>
+	{{ end }}
 
-	{{/*{% for page in (1..paginator.total_pages) %}*/}}
-      {{/*{% if page == paginator.page %}*/}}
-      <em>{{ .Page }}</em>
-      {{/*{% elsif page == 1 %}*/}}
-          {{/*<a href="{{ paginator.previous_page_path | prepend: site.baseurl | append: '/' | replace: '//', '/' }}">{{ page }}</a>*/}}
-      {{/*{% else %}*/}}
-          {{/*<a href="{{ site.paginate_path | prepend: site.baseurl | append: '/' | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>*/}}
-      {{/*{% endif %}*/}}
-	{{/*{% endfor %}*/}}
+</section>
 
-	{{/*{% if paginator.next_page %}*/}}
-		<a href="">Next &raquo;</a>
-	{{/*{% endif %}*/}}
-
-</div>
-  </section>
 {{ end }}
-
-
-{{/*<div style="border: 1px solid black; margin:10px; padding:10px; ">*/}}
-	{{/*<div style="font-size:20px;">*/}}
-		{{/*<a href="{{.URL}}">{{.Title}}</a>*/}}
-	{{/*</div>*/}}
-	{{/*<div style="color:grey; font-size:16px;">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</div>*/}}
-	{{/*<div style="color:grey; font-size:16px;">{{ if .Params.tags }}<strong>Tags:</strong> {{range .Params.tags}}<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{end}}{{end}}</div>*/}}
-	{{/*<div style="color:grey; font-size:16px;">{{ if .Params.categories }}<strong>Categories:</strong> {{range .Params.categories}}<a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{end}}{{end}}</div>*/}}
-	{{/*<div style="color:grey; font-size:16px;">{{ if .Params.moods }}<strong>Moods:</strong> {{range .Params.moods}}<a href="{{ "/moods/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{end}}{{end}}</div>*/}}
-	{{/*<p style="font-size:18px;">{{.Summary}}</p>*/}}
-{{/*</div>*/}}

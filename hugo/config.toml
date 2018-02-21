@@ -4,6 +4,11 @@ title = "Okta Developer"
 theme = "okta"
 googleAnalytics = "UA-15777010-3"
 disqusShortname = "oktadevblog"
+paginate = 10
+paginatePath = "page"
+
+[permalinks]
+  post = "/:year/:month/:day/:slug/"
 
 [params]
   twitter_username = "OktaDev"
