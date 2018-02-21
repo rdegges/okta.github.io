@@ -1,53 +1,53 @@
 {{/*{% assign author = site.data.authors[post.author] %}*/}}
+{{ printf "%#v" .Site.Data.authors }}
+<article class="BlogPost{{ if isset .Params "blog_index" }} is-excerpt{{ end }}">
 
-<article class="BlogPost{% if page.layout == 'blog_index' %} is-excerpt{% endif %}">
+	<header class="BlogPost-header">
 
-<header class="BlogPost-header">
+		<time class="BlogPost-date" datetime="{{ .Date.Format "2006-01-12" }}">
+			{{ .Date.Format "January 2, 2006" }}
+		</time>
 
-		<time class="BlogPost-date" datetime="">
-			{{/*{{ post.date | date: "%B %-d, %Y" }}*/}}
-        </time>
+		<h1 class="BlogPost-title">
+			{{ if isset .Params "blog_index" }}
+				<a href="{{ .URL }}">{{ .Title }}</a>
+			{{ else }}
+				{{ .Title }}
+			{{ end }}
+		</h1>
 
-<h1 class="BlogPost-title">
-{{ if isset .Params "blog_index" }}
-	<a href="{{ .URL }}">{{ .Title }}</a>
-{{ else }}
-	{{ .Title }}
-{{ end }}
-</h1>
-
-        <div class="BlogPost-attribution">
+		<div class="BlogPost-attribution">
 			{{/*{% if author.avatar %}*/}}
 			{{/*{% img '{{ author.avatar }}' alt:'{{ author.avatar }}' class:BlogPost-avatar %}*/}}
 			{{/*{% endif %}*/}}
 			{{/*<span class="BlogPost-author">{{ author.full_name }}</span>*/}}
 		</div>
 
-</header>
+	</header>
 
-<div class="BlogPost-content">
-{{/*{{ include.post_content }}*/}}
-</div>
+	<div class="BlogPost-content">
+		<p>{{ .Content | plainify | truncate 75 }}</p>
+		<p><a class="BlogPost-more" href="{{ .URL }}">Read more</a></p>
+	</div>
+	{{ if and (eq .Params.layout "blog_index") (ne .Params.comments false) }}
+	<div id="disqus">
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+		var disqus_title = '{{ .Title }}';
+		var disqus_url = '{{ .URL }}';
 
-{{/*{% if page.layout != 'blog_index' and post.comments != false %}*/}}
-<div id="disqus">
-	<div id="disqus_thread"></div>
-<script type="text/javascript">
-{{/*var disqus_title = '{{ .Page.Title }}';*/}}
-{{/*var disqus_url = '{{ .Page.url }}';*/}}
-
-(function () {
-	var dsq = document.createElement('script');
-	dsq.async = true;
-	dsq.type = 'text/javascript';
-		dsq.src = '//{{ .Site.DisqusShortname }}.disqus.com/embed.js';
-	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();
-</script>
-	<noscript>
-		Please enable JavaScript to view the
-		<a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus</a>.
-	</noscript>
-</div>
-	{% endif %}
+		(function () {
+			var dsq = document.createElement('script');
+			dsq.async = true;
+			dsq.type = 'text/javascript';
+				dsq.src = '//{{ .Site.disqusShortname }}.disqus.com/embed.js';
+			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+		</script>
+		<noscript>
+			Please enable JavaScript to view the
+			<a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus</a>.
+		</noscript>
+	</div>
+	{{ end }}
 </article>

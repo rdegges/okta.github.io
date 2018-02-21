@@ -2,8 +2,7 @@
 <section class="Blog is-index">
 	{{ $paginator := $.Paginator }}
 	{{ range $paginator.Pages }}
-		<p>{{ .Content | plainify | truncate 75 }}</p>
-		<p><a class="BlogPost-more" href="{{ .URL }}">Read more</a></p>
+		{{ partial "blog_post.html" . }}
 	{{ end }}
 
 	{{ if gt $paginator.TotalPages 1 }}
