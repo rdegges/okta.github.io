@@ -1,6 +1,5 @@
-{{/*{% assign author = site.data.authors[post.author] %}*/}}
-{{ printf "%#v" .Site.Data.authors }}
-<article class="BlogPost{{ if isset .Params "blog_index" }} is-excerpt{{ end }}">
+{{ $author := index .Site.Data.authors .Params.author }}
+<article class="BlogPost{{ if eq .Parent.Params.layout "blog_index" }} is-excerpt{{ end }}">
 
 	<header class="BlogPost-header">
 
@@ -9,7 +8,7 @@
 		</time>
 
 		<h1 class="BlogPost-title">
-			{{ if isset .Params "blog_index" }}
+			{{ if eq .Parent.Params.layout "blog_index" }}
 				<a href="{{ .URL }}">{{ .Title }}</a>
 			{{ else }}
 				{{ .Title }}
@@ -17,16 +16,16 @@
 		</h1>
 
 		<div class="BlogPost-attribution">
-			{{/*{% if author.avatar %}*/}}
-			{{/*{% img '{{ author.avatar }}' alt:'{{ author.avatar }}' class:BlogPost-avatar %}*/}}
-			{{/*{% endif %}*/}}
-			{{/*<span class="BlogPost-author">{{ author.full_name }}</span>*/}}
+			{{ if $author.avatar }}
+				<img src="/img/{{ $author.avatar }}" alt="{{ $author.avatar }}" class="BlogPost-avatar">
+			{{ end }}
+			<span class="BlogPost-author">{{ $author.full_name }}</span>
 		</div>
 
 	</header>
 
 	<div class="BlogPost-content">
-		<p>{{ .Content | plainify | truncate 75 }}</p>
+		<p>{{ .Content | plainify | truncate 400 }}</p>
 		<p><a class="BlogPost-more" href="{{ .URL }}">Read more</a></p>
 	</div>
 	{{ if and (eq .Params.layout "blog_index") (ne .Params.comments false) }}
