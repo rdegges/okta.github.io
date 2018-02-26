@@ -32,39 +32,39 @@ In just a few seconds you’ll have a simple ASP.NET Core app ready to go. You m
 ## Add an Identity Provider
 Now you need an Identity Provider. For this tutorial you’ll  use [Okta](https://developer.okta.com). Once you’ve created an account and logged in, click *Admin* on the top menu.
 
-{% image blog/aspnet-oidc/admin_button.png alt:"Admin Button" width:"300" %}
+<img src="/img/blog/aspnet-oidc/admin_button.png" alt="Admin Button" width="300">
 
 Then choose the *Applications* menu item from the admin dashboard.
 
-{% image blog/aspnet-oidc/applications_button.png alt:"Applications Button" width:"400" %}
+<img src="/img/blog/aspnet-oidc/applications_button.png" alt="Applications Button" width="400">
 
 From the Applications page, click the *Add Application* button.
 
-{% image blog/aspnet-oidc/add_application_button.png alt:"Add Application Button" width:"400" %}
+<img src="/img/blog/aspnet-oidc/add_application_button.png" alt="Add Application Button" width="400">
 
 On the Add Application page, click on the *Create New Application* button.
 
-{% image blog/aspnet-oidc/create_app_button.png alt:"Create Application Button" width:"400" %}
+<img src="/img/blog/aspnet-oidc/create_app_button.png" alt="Create Application Button" width="400">
 
 When the New Application Integration window pops up, set up the new application. We’ll choose *Web* from the Platform dropdown, and OpenID Connect from the Sign On Method.
 
-{% image blog/aspnet-oidc/create_application_page.png alt:"Create Application Page" width:"800" %}
+<img src="/img/blog/aspnet-oidc/create_application_page.png" alt="Create Application Page" width="800">
 
 Once you’ve created the application, choose it from the list of applications. In the General Settings tab, click the *Edit* button and make sure to add `http://localhost:5000/signin-oidc` to the Redirect URIs.
 
-{% image blog/aspnet-oidc/redirect_uri.png alt:"Redirect URI Setting" width:"800" %}
+<img src="/img/blog/aspnet-oidc/redirect_uri.png" alt="Redirect URI Setting" width="800">
 
 While you are on the General Settings tab, scroll down and copy your Client ID and Client Secret somewhere. You’ll use this later when configuring the middleware in your application.
 
-{% image blog/aspnet-oidc/client_id_secret.png alt:"Client ID and Secret" width:"800" %}
+<img src="/img/blog/aspnet-oidc/client_id_secret.png" alt="Client ID and Secret" width="800">
 
 Finally, you’ll need to make sure that you can use the API by adding the localhost URI to your CORS settings. First, choose the *Security* menu item from the dashboard and the choose *API* from the drop down menu.
 
-{% image blog/aspnet-oidc/security_drop_down.png alt:"Security Drop Down Menu" width:"200" %}
+<img src="/img/blog/aspnet-oidc/security_drop_down.png" alt="Security Drop Down Menu" width="200">
 
 Then select the *Trusted Origins* tab.
 
-{% image blog/aspnet-oidc/trusted_origins_tab.png alt:"Trusted Origins Tab" width:"800" %}
+<img src="/img/blog/aspnet-oidc/trusted_origins_tab.png" alt="Trusted Origins Tab" width="800">
 
 Click on *Add Origin* and add `http://localhost:5000` as a trusted origin. Make sure that CORS and Redirect are selected. Enter “ASP.NET web app (debug)” as the redirect name (or any other name that makes sense to you).
 

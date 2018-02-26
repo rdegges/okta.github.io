@@ -52,7 +52,7 @@ Google engineer Addy Osmani describes [the PRPL pattern](https://developers.goog
 
 The [Progressive Web App Checklist](https://developers.google.com/web/progressive-web-apps/checklist) lists all the things you'll need to make a progressive webapp. However, I like the simple list that Alex Russell lists on [What, Exactly, Makes Something A Progressive Web App?](https://infrequently.org/2016/09/what-exactly-makes-something-a-progressive-web-app/)
 
-{% image blog/angular-spring-boot-pwa/alex-russell-pwas.png alt:"Alex Russell&#039;s PWA Checklist" width:"800" %}{: .center-image }
+<img src="/img/blog/angular-spring-boot-pwa/alex-russell-pwas.png" alt="Alex Russell&#039;s PWA Checklist" width="800" class="center-image">
 
 This article will show you how to build a PWA with a Spring Boot backend and an Angular frontend. It'll work offline and I'll show how to deploy it to the cloud.
 
@@ -70,7 +70,7 @@ Open the "server" project in your favorite IDE and run `DemoApplication` or star
 
 Re-build your application and navigate to `http://localhost:8080/good-beers`. You should see the list of good beers in your browser.
 
-{% image blog/angular-spring-boot-pwa/good-beers-json.png alt:"Good Beers JSON" width:"800" %}{: .center-image }
+<img src="/img/blog/angular-spring-boot-pwa/good-beers-json.png" alt="Good Beers JSON" width="800" class="center-image">
 
 You can also see the result in your terminal window using HTTPie.
 
@@ -163,11 +163,11 @@ In `beer-list.component.html`, change it to use `<mat-list>` and its related com
 
 After making these changes, the app should look a little better. Run `ng serve` and you should see how your UI has changed. Below is a screenshot using Chrome's device toolbar.
 
-{% image blog/angular-spring-boot-pwa/angular-material.png alt:"Angular Material" width:"800" %}{: .center-image }
+<img src="/img/blog/angular-spring-boot-pwa/angular-material.png" alt="Angular Material" width="800" class="center-image">
 
 To prove that there's still work to do, you'll notice that if you toggle offline mode in the Network tab of Chrome's developer tools, the app does not work.
 
-{% image blog/angular-spring-boot-pwa/offline-fails.png alt:"Offline fails" width:"800" %}{: .center-image }
+<img src="/img/blog/angular-spring-boot-pwa/offline-fails.png" alt="Offline fails" width="800" class="center-image">
 
 ### Create and Register a Service Worker
 
@@ -249,13 +249,13 @@ serve -p 4200 -s dist
 
 Open `http://localhost:4200` in Chrome and go to **DevTools** > **Application** > **Service Workers** to see that it's been registered.
 
-{% image blog/angular-spring-boot-pwa/application-service-workers.png alt:"Application Service Workers" width:"800" %}{: .center-image }
+<img src="/img/blog/angular-spring-boot-pwa/application-service-workers.png" alt="Application Service Workers" width="800" class="center-image">
 
 **TIP:** To ensure the service worker gets updated with each page refresh, check the "Update on reload" checkbox.
 
 After making this change and refreshing, you'll notice that caches are created for local assets.
 
-{% image blog/angular-spring-boot-pwa/cache-storage.png alt:"Cache Storage" width:"800" %}{: .center-image }
+<img src="/img/blog/angular-spring-boot-pwa/cache-storage.png" alt="Cache Storage" width="800" class="center-image">
 
 **TIP:** If you want to change how the service worker caches files and data resources, [see Angular's documentation](https://angular.io/guide/service-worker-config).
 
@@ -313,11 +313,11 @@ If Chrome doesn't prompt you to install the app, you probably need to turn on a 
 
 After making these changes, you should see a prompt at the top of the screen to install the app.
 
-{% image blog/angular-spring-boot-pwa/install-pwa-prompt-chrome.png alt:"Install PWA Prompt Chrome" width:"800" %}{: .center-image }
+<img src="/img/blog/angular-spring-boot-pwa/install-pwa-prompt-chrome.png" alt="Install PWA Prompt Chrome" width="800" class="center-image">
 
 You can verify your manifest loaded correctly by going to **DevTools** > **Application** > **Manifest**.
 
-{% image blog/angular-spring-boot-pwa/app-manifest.png alt:"Application Manifest" width:"800" %}{: .center-image }
+<img src="/img/blog/angular-spring-boot-pwa/app-manifest.png" alt="Application Manifest" width="800" class="center-image">
 
 Click on the **Network** tab and enable offline. You'll notice the app still loads when the user is offline. However, it does not load the data from its API calls. To make this work, you need to modify `src/ngsw-config.json` and add a list of `dataGroups` after `assetGroups`.
 
@@ -350,13 +350,13 @@ Click on the **Network** tab and enable offline. You'll notice the app still loa
 
 Rebuild your app and serve it up again. Now you'll notice it loads images when you're offline. _Yippee!_
 
-{% image blog/angular-spring-boot-pwa/offline-works.png alt:"Offline works" width:"800" %}{: .center-image }
+<img src="/img/blog/angular-spring-boot-pwa/offline-works.png" alt="Offline works" width="800" class="center-image">
 
 ### Test with Lighthouse
 
 Install the [Lighthouse extension for Chrome](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk) and click its icon to audit your app. You can also use Chrome Developer tools > **Audits** > **Perform an audit...**.
 
-{% image blog/angular-spring-boot-pwa/lighthouse-local-report.png alt:"Lighthouse PWA Report" width:"800" %}{: .center-image }
+<img src="/img/blog/angular-spring-boot-pwa/lighthouse-local-report.png" alt="Lighthouse PWA Report" width="800" class="center-image">
 
 You can see that four audits fails, one of which you can fix.
 
@@ -368,7 +368,7 @@ Add a `<noscript>` tag to `src/index.html` that indicates JavaScript is required
 
 Rebuild and run Lighthouse again and your score should be much better this time.
 
-{% image blog/angular-spring-boot-pwa/lighthouse-local-report2.png alt:"Lighthouse PWA Report, 2nd Attempt" width:"800" %}{: .center-image }
+<img src="/img/blog/angular-spring-boot-pwa/lighthouse-local-report2.png" alt="Lighthouse PWA Report, 2nd Attempt" width="800" class="center-image">
 
 82 is an OK score, but you might notice that the app is not served over HTTPS. Deploying the app to a cloud provider can make this possible.
 
@@ -444,7 +444,7 @@ cf push -p target/*jar pwa-server
 
 After deploying to Pivotal's Cloud Foundry, I ran a Lighthouse audit again and found my score to be 100. *Wahoo!*
 
-{% image blog/angular-spring-boot-pwa/lighthouse-prod-report.png alt:"Lighthouse Production Report" width:"800" %}{: .center-image }
+<img src="/img/blog/angular-spring-boot-pwa/lighthouse-prod-report.png" alt="Lighthouse Production Report" width="800" class="center-image">
 
 ## Automation
 

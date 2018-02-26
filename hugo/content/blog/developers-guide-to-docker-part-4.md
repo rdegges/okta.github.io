@@ -70,7 +70,7 @@ docker-machine ssh m1
 
 This should drop you into a command line on the virtual machine.
 
-{% image blog/docker-swarm/docker-machine-ssh.png alt:"docker machine command line" %}{: .center-image }
+<img src="/img/blog/docker-swarm/docker-machine-ssh.png" alt="docker machine command line" class="center-image">
 
 You can now initialize the swarm:
 
@@ -152,7 +152,7 @@ This will create a container (that will not be managed by the swarm) so you can 
 
 This will take a few moments as it will pull down the image to run the visualizer. Once it's up and running, go to a browser and put the IP address of the m1 node with a port of 8080 into the browser's address bar.
 
-{% image blog/docker-swarm/swarm-visualizer-screen.png alt:"Swarm Visualizer Screen" %}{: .center-image }
+<img src="/img/blog/docker-swarm/swarm-visualizer-screen.png" alt="Swarm Visualizer Screen" class="center-image">
 
 Finally, create a service to run the simple `nginx` container.
 
@@ -162,7 +162,7 @@ docker service create --name=web --publish=80:80/tcp nginx
 
 You will almost immediately see the m1 node in the visualizer add a box called web. The "light" on the box will be red until the service has been completely created and started. Once it's done, the "light" will turn green.
 
-{% image blog/docker-swarm/web-service-green-light.png alt:"Web Service Green Light" %}{: .center-image }
+<img src="/img/blog/docker-swarm/web-service-green-light.png" alt="Web Service Green Light" class="center-image">
 
 To scale this service horizontally, simply tell Docker to scale it.
 
@@ -172,7 +172,7 @@ docker service scale web=4
 
 You can see the services starting up in the visualizer. Docker will spread the services evenly across the nodes.
 
-{% image blog/docker-swarm/web-service-scaled.png alt:"Web Service Scaled" %}{: .center-image }
+<img src="/img/blog/docker-swarm/web-service-scaled.png" alt="Web Service Scaled" class="center-image">
 
 You can scale the service anyway you like: up or down by simply specifying the number of instances of the service you want running. You can check the service by running 
 
@@ -189,7 +189,7 @@ evo4eseldujq        web                 replicated          4/4                 
 
 This tells you that the service named "web" is replicated, that 4 out of 4 instances are running, and that the service is based on the `nginx:latest` image. You can even go to the browser for the IP address of the manager node on port 80 and see the NGINX service running!
 
-{% image blog/docker-swarm/nginx-service-running.png alt:"NGINX Service Running" %}{: .center-image }
+<img src="/img/blog/docker-swarm/nginx-service-running.png" alt="NGINX Service Running" class="center-image">
 
 You are now ready to go conquer some of your own Docker Swarms now!
 

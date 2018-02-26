@@ -158,11 +158,11 @@ Navigate to **API** > **Authorization Servers**, click the **Authorization Serve
 
 Restart your app, and you should be redirected to Okta when you try to log in.
 
-{% image blog/jhipster-ionic/okta-login.png alt:"Okta Login" width:"800" %}{: .center-image }
+<img src="/img/blog/jhipster-ionic/okta-login.png" alt="Okta Login" width="800" class="center-image">
 
 Enter the credentials you used to signup for your account, and you should be redirected back to your JHipster app.
 
-{% image blog/jhipster-ionic/jhipster-authenticated.png alt:"JHipster Authenticated" width:"800" %}{: .center-image }
+<img src="/img/blog/jhipster-ionic/jhipster-authenticated.png" alt="JHipster Authenticated" width="800" class="center-image">
 
 ### Generate Entities
 
@@ -220,8 +220,8 @@ ionic serve
 
 You'll see a screen with a sign-in button. Click on it, and you'll be redirected to Okta to authenticate.
 
-{% image blog/jhipster-ionic/ionic-welcome.png alt:"Ionic Welcome" width:"400" %}
-{% image blog/jhipster-ionic/ionic-okta-login.png alt:"Ionic Authenticated" width:"400" %}
+<img src="/img/blog/jhipster-ionic/ionic-welcome.png" alt="Ionic Welcome" width="400">
+<img src="/img/blog/jhipster-ionic/ionic-okta-login.png" alt="Ionic Authenticated" width="400">
 
 Now that you know authentication works, you can use the entity generator to generate Ionic pages for your data model. Run the following commands (in your `~/ionic4j` directory) to generate screens for your entities.
 
@@ -242,15 +242,15 @@ The iOS emulator runs on port 8080, so you will need to change your backend to r
 
 Restart the blog app, then run the Ionic app with `ionic cordova emulate ios`. You should be able to log in to your Ionic app, tap **Entities** and view the list of blogs.
 
-| {% image blog/jhipster-ionic/emulator-welcome.png alt:"Emulator Welcome" width:"300" %} | {{< figure src="blog/jhipster-ionic/emulator-entities.png" title="alt:"Emulator Entities" width:"300"" >}} | {{< figure src="blog/jhipster-ionic/emulator-no-blogs.png" title="alt:"Emulator No Blogs" width:"300"" >}} |
+| <img src="/img/blog/jhipster-ionic/emulator-welcome.png" alt="Emulator Welcome" width="300"> | <img src="blog/jhipster-ionic/emulator-entities.png" title="" alt="Emulator Entities" width="300" >}} | <img src="blog/jhipster-ionic/emulator-no-blogs.png" title="" alt="Emulator No Blogs" width="300"> |
 
 Add a blog in the JHipster app at http://localhost:8888.
 
-{% image blog/jhipster-ionic/first-blog.png alt:"First Blog" width:"800" %}{: .center-image }
+<img src="/img/blog/jhipster-ionic/first-blog.png" alt="First Blog" width="800" class="center-image">
 
 To see this new entry in your Ionic app, pull down with your mouse to simulate the pull-to-refresh gesture on a phone. Looky there - it works!
 
-{% image blog/jhipster-ionic/emulator-first-blog.png alt:"Emulator First Blog" width:"500" %}{: .center-image }
+<img src="/img/blog/jhipster-ionic/emulator-first-blog.png" alt="Emulator First Blog" width="500" class="center-image">
 
 You can try adding a second entry by clicking the + sign in the top right corner. If the keyboard doesn't show when you click on a field, navigate to **Hardware** > **Keyboard** > **Toggle Software Keyboard**.
 

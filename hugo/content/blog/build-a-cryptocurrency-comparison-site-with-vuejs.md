@@ -29,7 +29,7 @@ we'll build a very simple single page application that compares the prices of
 the top 10 cryptocurrencies. To keep things simple, we'll just be using plain
 old HTML, CSS, and JavaScript for this – nothing fancy required.
 
-{% image blog/cryptocurrency/vue-homepage.png alt:"Vue.js Homepage" %}
+<img src="/img/blog/cryptocurrency/vue-homepage.png" alt="Vue.js Homepage">
 
 
 ## Who is Vue Built For?
@@ -101,7 +101,7 @@ Vue to dynamically manage for you upfront in a special `data` object, like so:
 ```
 {% endraw %}
 
-{% image blog/cryptocurrency/hi-screenshot.png alt:"Hi Screenshot" %}
+<img src="/img/blog/cryptocurrency/hi-screenshot.png" alt="Hi Screenshot">
 
 
 As you can see in the example above, I'm defining a new `data` object inside the
@@ -122,7 +122,7 @@ app.message = "yo";
 
 You'll notice that the contents of the page will change!
 
-{% image blog/cryptocurrency/yo-screenshot.png alt:"Yo Screenshot" %}
+<img src="/img/blog/cryptocurrency/yo-screenshot.png" alt="Yo Screenshot">
 
 This happens because Vue is managing that data for you. When the data changes,
 Vue re-renders the variable on the page.
@@ -170,7 +170,7 @@ Let's take a look at a simple Vue application that uses an if-else conditional.
 As you can see above, we now have two paragraph tags, each with a different
 message. If you run this in your browser, you'll see the following:
 
-{% image blog/cryptocurrency/new-hi-screenshot.png alt:"New Hi Screenshot" %}
+<img src="/img/blog/cryptocurrency/new-hi-screenshot.png" alt="New Hi Screenshot">
 
 Because the `secretMessage` variable is false, the conditional statement in HTML
 will fail to execute, and the else statement code will be ran, outputting the
@@ -180,7 +180,7 @@ Since we know Vue is dynamic, we can now open the JavaScript console, modify the
 value of `secretMessage`, and BAM, the page will re-render with the secret message
 being shown.
 
-{% image blog/cryptocurrency/secret-message.png alt:"Secret Message" %}
+<img src="/img/blog/cryptocurrency/secret-message.png" alt="Secret Message">
 
 One important thing to note: when using Vue conditionals, the DOM will be
 modified. In the example above, when we enable the `secretMessage` flag and show
@@ -226,7 +226,7 @@ to loop through an array of shopping items, displaying them in an ordered list:
 When this runs in the browser, you'll see that the `v-for` directive Vue provides
 will repeat itself, looping over the contents of the `shoppingList` array:
 
-{% image blog/cryptocurrency/list-screenshot.png alt:"List Screenshot" %}
+<img src="/img/blog/cryptocurrency/list-screenshot.png" alt="List Screenshot">
 
 If you go modify the `shoppingList` array in the JavaScript console, you'll notice
 the same behavior as before: Vue will re-render the shopping list for you
@@ -273,7 +273,7 @@ As you can see if you try this out yourself, when you enter data into the input
 box, the `color` variable is changed, and then re-rendered on the page. This is
 two-way data binding.
 
-{% image blog/cryptocurrency/color-screenshot.png alt:"Color Screenshot" %}
+<img src="/img/blog/cryptocurrency/color-screenshot.png" alt="Color Screenshot">
 
 If you go into the JavaScript console and modify this directly yourself, you'll
 see it change again.
@@ -320,7 +320,7 @@ capitalize the color from the example above when clicked:
 ```
 {% endraw %}
 
-{% image blog/cryptocurrency/capitalize-screenshot.png alt:"Capitalize Screenshot" %}
+<img src="/img/blog/cryptocurrency/capitalize-screenshot.png" alt="Capitalize Screenshot">
 
 In this example, we define a function in the `methods` object of Vue, which simply
 capitalizes the `color` variable from before. We then use the `v-on:click` attribute
@@ -465,7 +465,7 @@ td img {
 }
 ```
 
-{% image blog/cryptocurrency/cryptocompare-naked.png alt:"Cryptocompare Screenshot" %}
+<img src="/img/blog/cryptocurrency/cryptocompare-naked.png" alt="Cryptocompare Screenshot">
 
 We're off to a good start! We've now got our basic website layout done, and we
 have a good idea of what data we'll need to make this work, etc.
@@ -860,7 +860,7 @@ getColor: (num) => {
 
 With these final changes, load the code up in your browser, and give it a go!
 
-{% image blog/cryptocurrency/cryptocompare-final.png alt:"Cryptocompare Final Screenshot" %}
+<img src="/img/blog/cryptocurrency/cryptocompare-final.png" alt="Cryptocompare Final Screenshot">
 
 If you play around with the app a bit, you'll notice that every 60 seconds
 the data is updated as designed.

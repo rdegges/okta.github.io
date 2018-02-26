@@ -36,7 +36,7 @@ This post also assumes you have the latest version of [XCode](https://itunes.app
 5. Click **Done**
 6. Copy the **Login redirect URI** and **Client ID**, as you will need to insert these into your native app configuration
 
-{% image blog/ios-app-secure-auth/dev-console-app-builder.png alt:"Developer Console App Builder" width:"600" %}{: .center-image }
+<img src="/img/blog/ios-app-secure-auth/dev-console-app-builder.png" alt="Developer Console App Builder" width="600" class="center-image">
 
 ## Install the Okta AppAuth SDK
 
@@ -54,7 +54,7 @@ end
 ```
 
 Next, install the SDK by running `pod install`. You should see the following message appear once the installation is completed:
-{% image blog/ios-app-secure-auth/pod-install-oktaauth.png alt:"Cocoapods Installation" width:"600" %}{: .center-image }
+<img src="/img/blog/ios-app-secure-auth/pod-install-oktaauth.png" alt="Cocoapods Installation" width="600" class="center-image">
 
 
 Open up the newly generated `.xcworkspace` file by running the following in your terminal:
@@ -103,7 +103,7 @@ To allow apps to communicate with one another on an iOS device, we need to regis
 
 The easiest way to set this up is to navigate to the **Info** tab under your Application's target. Specify a **URL Scheme** to be your *redirectUri*, excluding the path.
 
-{% image blog/ios-app-secure-auth/url-scheme.png alt:"Update Private-Use URI Scheme" width:"750" %}{: .center-image }
+<img src="/img/blog/ios-app-secure-auth/url-scheme.png" alt="Update Private-Use URI Scheme" width="750" class="center-image">
 
 ## Add User Authentication
 First, we need to handle the inter-app communication between the device's native browser and your application. Open `AppDelegate.swift` and add the following:
@@ -157,7 +157,7 @@ To build and run your iOS application, use the Xcode [Simulator](https://develop
 
 In a few moments, you should see the Okta Login Page.
 
-{% image blog/ios-app-secure-auth/mobile-signin-view.png alt:"Okta Login Page" height:"600" %}{: .center-image }
+<img src="/img/blog/ios-app-secure-auth/mobile-signin-view.png" alt="Okta Login Page" height="600" class="center-image">
 
 
 
@@ -206,7 +206,7 @@ Now that you have additional user information, you can store the user's email ad
 
 Edit the user's profile directly by selecting the *pencil* icon, which will display a modal similar to:
 
-{% image blog/ios-app-secure-auth/user-profile-mapping.png alt:"Okta User Assignment" width:"600" %}{: .center-image }
+<img src="/img/blog/ios-app-secure-auth/user-profile-mapping.png" alt="Okta User Assignment" width="600" class="center-image">
 
 ▶️  the application one last time to see your updated user!
 

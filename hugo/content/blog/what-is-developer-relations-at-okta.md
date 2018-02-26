@@ -14,7 +14,7 @@ tags:
 title: What is Developer Relations at Okta?
 ---
 
-{% image blog/devrel-at-okta/developer-relations.png alt:"Developer Relations" width:"640" %}
+<img src="/img/blog/devrel-at-okta/developer-relations.png" alt="Developer Relations" width="640">
 
 Okta is investing heavily into making developers successful by creating great developer experiences through updated SDKs and integrations as well as new pricing and packaging. These updates are intended to give developers everything they need to build modern, secure applications. But equally important is how Okta **speaks** to developers. How we engage with the community and build our reputation with a wide range of developers. At the heart of that effort, is our Developer Relations (DevRel) team. In this post, we'd like to introduce you to that team and give you a behind the scenes glimpse into how a large, successful company builds an authentic, high-value developer relations program from scratch.
 
@@ -32,25 +32,25 @@ The DevRel team at Okta is made up of four individual contributors, each with ou
 
 #### Randall Degges
 
-{% image avatar-rdegges.jpg alt:"Randall Degges" class:"BlogPost-avatar pull-left img-100px" %}
+<img src="/img/avatar-rdegges.jpg" alt="Randall Degges" class="BlogPost-avatar pull-left img-100px">
 
 **[Randall](https://twitter.com/rdegges)** is our Lead Developer Advocate. He wrote the [first book on Heroku](https://www.rdegges.com/2012/my-heroku-book-is-finished/), loves to hack Python and JavaScript, and is our go-to guy when it comes to deployment pipelines and AWS. If you're having issues with Okta's Python or Node.js SDKs, Randall's the guy to talk to.
 
 #### Nate Barbettini
 
-{% image avatar-nbarbettini.jpg alt:"Nate Barbettini" class:"BlogPost-avatar pull-left img-100px" %}
+<img src="/img/avatar-nbarbettini.jpg" alt="Nate Barbettini" class="BlogPost-avatar pull-left img-100px">
 
 **[Nate](https://twitter.com/nbarbettini)** specializes in full-stack .NET and JavaScript. He was recently [granted the .NET MVP Award from Microsoft](https://twitter.com/okta/status/862081320054276096) for his contributions to the .NET community. If you're having issues with our .NET SDK, talk to Nate.
 
 #### Lee Brandt
 
-{% image avatar-leebrandt.jpg alt:"Lee Brandt" class:"BlogPost-avatar pull-left img-100px" %}
+<img src="/img/avatar-leebrandt.jpg" alt="Lee Brandt" class="BlogPost-avatar pull-left img-100px">
 
 **[Lee](https://twitter.com/leebrandt)** also specializes in .NET and JavaScript. He's a long-time Microsoft MVP and the founder of KCDC (Kansas City Developers Conference). [KCDC](http://www.kcdc.info/) is one of the region's largest developer conferences and h numerous languages and communities represented. Lee is a rockstar in .NET, Angular, and React, so hit him up if you have issues with these frameworks and Okta.
 
 #### Matt Raible
 
-{% image avatar-matt_raible.jpg alt:"Matt Raible" class:"BlogPost-avatar pull-left img-100px" %}
+<img src="/img/avatar-matt_raible.jpg" alt="Matt Raible" class="BlogPost-avatar pull-left img-100px">
 
 That's me!  I'm **[Matt Raible](https://twitter.com/mraible)** and I started as a web developer, then a Java developer for about a decade,  and then got back into UI development. I'm a Java Champion and like to code in both Java and JavaScript, though TypeScript has been a lot of fun lately. If you're having issues with our Java SDK, Spring Boot, our Sign-In Widget, or anything Angular, let me know!
 
@@ -58,7 +58,7 @@ That's me!  I'm **[Matt Raible](https://twitter.com/mraible)** and I started as 
 
 We have a Developer Relations team at Okta because we recognize that the decision maker for software has changed. In the past, companies that sell software could sell it via marketing, using a top-down approach that targeted CEOs or CTOs. Some companies still sell software this way, but the market has changed and developers have become the dominate decision makers. Especially when it comes to choosing software that their applications interact with. Need proof? See [Stephen O'Grady's](http://redmonk.com/sogrady/) [The New Kingmakers](https://thenewkingmakers.com/). 
 
-> {% image blog/devrel-at-okta/newkingmakers.jpg alt:"The New Kingmakers" width:"150" class:"pull-right m-x-sm" %}
+> <img src="/img/blog/devrel-at-okta/newkingmakers.jpg alt:"The New Kingmakers"" width="150" class="pull-right m-x-sm">
 > While the actual number might be up for debate, the importance of technical talent is not. The most successful companies today 
 > are those that understand the strategic role that developers will play in their success or failure. Not just successful 
 > technology companies – virtually every company today needs a developer strategy. There's a reason that ESPN and Sears have 
@@ -87,7 +87,7 @@ Okta's [Developer Blog](https://developer.okta.com/blog/) is our primary way of 
 
 We recognize that content is king and we use our blog posts to extend our reach into the communities we know devs are already participating in.
 
-{% image blog/devrel-at-okta/content-is-king.png alt:"Content is King" %}
+<img src="/img/blog/devrel-at-okta/content-is-king.png" alt="Content is King">
 
 <div style="text-align: right; font-style: italic; margin-top: -20px">
   Image created by <a href="https://github.com/amateurhuman">Chris Kelly</a> / <a href="https://twitter.com/amateurhuman">@amateurhuman</a>
@@ -127,7 +127,7 @@ We know that Developer DNA cannot just be a part of the DevRel team. All of Okta
 
 ## DevEx, DevRel, and ROI
 
-{% image avatar-alex_salazar.jpg alt:"Alex Salazar" class:"BlogPost-avatar pull-right img-150px" %}
+<img src="/img/avatar-alex_salazar.jpg" alt="Alex Salazar" class="BlogPost-avatar pull-right img-150px">
 
 The DevRel Team focuses on making developers' lives easier, but it's not all fun and games. Our fearless leader, [Alex Salazar](https://twitter.com/salatzar), is in charge of making sure our efforts are right on the business side of things. Alex is the former CEO of Stormpath, so he's hyper aware of revenue growth, cost reduction, and trying to balance predictability and risk. He knows that our go-to-market strategy needs to be around developer experience (DevEx) and developer relations (DevRel). It's going to be tough to market to developers if our product is crap.
 
@@ -135,12 +135,12 @@ We're focused as a team on cost efficiency and repeatability, to increase our RO
 
 And more than anything, we're **tracking the metrics that matter**. This way, we know how many developers are using our API, with which SDKs, and how long it takes them to activate their account after signing up.
 
-{% image blog/devrel-at-okta/track-metrics.png alt:"Track Metrics" %}
+<img src="/img/blog/devrel-at-okta/track-metrics.png" alt="Track Metrics">
 
 ## Here's to the Future!
 
 Being a part of the DevRel Team at Okta has been a great experience for me. It's fun to be a part of something that's just beginning, with a team of outstanding individuals. If you're a developer using Okta, and you have feedback to share, please contact us at developers@okta.com. DevRel at Okta is a fun ride, and we're just getting started. 
 
-[{% image blog/devrel-at-okta/okta-api.png alt:"Okta API" %}](https://developer.okta.com)
+[<img src="/img/blog/devrel-at-okta/okta-api.png" alt="Okta API">](https://developer.okta.com)
 
 If you'd like to talk to me about DevRel at Okta, or in your organization, please hit me up on Twitter [@mraible](https://twitter.com/mraible) or directly via email to matt.raible@okta.com.

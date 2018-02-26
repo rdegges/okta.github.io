@@ -274,13 +274,13 @@ The OIDC spec accommodate custom scopes and claims. The ability to include custo
 
 The screenshot below shows my Authorization Server’s Claims tab:
 
-{% image blog/oidc_primer/custom_claims_before.png alt:"custom claims" width:"800" %}
+<img src="/img/blog/oidc_primer/custom_claims_before.png" alt="custom claims" width="800">
 
 
 
 Clicking the “Add Claim” button brings up a dialog:
 
-{% image blog/oidc_primer/full_name_custom_claim.png alt:"full name" width:"800" %}
+<img src="/img/blog/oidc_primer/full_name_custom_claim.png" alt="full name" width="800">
 
 
 In the above screenshot, the custom claim is defined using Okta’s [Expression Language](https://developer.okta.com/reference/okta_expression_language/). Unique to Okta, the expression language is a flexible way to describe rules for building a property to include (or not) in custom claims.

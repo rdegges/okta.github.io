@@ -56,7 +56,7 @@ and budget.
 A smart team will optimize around this and choose the lesser of two evils; forcing the logic into whichever application 
 they have access to. This is an example of [Conway's Law](http://www.melconway.com/Home/Committees_Paper.html) in action.
 
-{% image blog/microservices-spring-boot/conways-law.png alt:"Conway's Law" width:"560" %}{: .center-image }
+<img src="/img/blog/microservices-spring-boot/conways-law.png" alt="Conway's Law" width="560" class="center-image">
 
 > Any organization that designs a system (defined broadly) will produce a design whose structure is a copy of the 
 > organization's communication structure.
@@ -128,7 +128,7 @@ To learn more about service discovery and resolution with Eureka, watch Josh Lon
 To begin, create a `spring-boot-microservices-example` directory on your hard drive. Navigate to [start.spring.io](https://start.spring.io). 
 Enter `eureka-service` as an artifact name and select `Eureka Server` as a dependency. 
 
-{% image blog/microservices-spring-boot/eureka-service.png alt:"Eureka Server" width:"800" %}{: .center-image }
+<img src="/img/blog/microservices-spring-boot/eureka-service.png" alt="Eureka Server" width="800" class="center-image">
 
 Click the **Generate Project** button and expand `eureka-service.zip` into the `spring-boot-microservices-example` directory.
 
@@ -164,7 +164,7 @@ mvnw.bat spring-boot:run
 
 After it starts, you should be able to open `http://localhost:8761` and see there are no services available.
 
-{% image blog/microservices-spring-boot/eureka-service-ui.png alt:"Eureka Server" width:"800" %}
+<img src="/img/blog/microservices-spring-boot/eureka-service-ui.png" alt="Eureka Server" width="800">
 
 ### Create a Beer Catalog Service
 
@@ -180,7 +180,7 @@ artifact name and add the following dependencies:
 * DevTools: to auto-reload the application when files change
 * Lombok: to reduce boilerplate code
 
-{% image blog/microservices-spring-boot/beer-catalog-service.png alt:"Beer Catalog Service" width:"800" %}
+<img src="/img/blog/microservices-spring-boot/beer-catalog-service.png" alt="Beer Catalog Service" width="800">
 
 Click the **Generate Project** button and expand `beer-catalog-service.zip` into `spring-boot-microservices-example` and 
 open the project in your favorite IDE. I recommend [IntelliJ IDEA](https://www.jetbrains.com/idea/) because it's great for 
@@ -269,7 +269,7 @@ At this point, you should be able to use [HTTPie](https://httpie.org/) to see th
 http localhost:8080/beers
 ```
 
-{% image blog/microservices-spring-boot/httpie-beers.png alt:"HTTPie Beers" width:"800" %}{: .center-image }
+<img src="/img/blog/microservices-spring-boot/httpie-beers.png" alt="HTTPie Beers" width="800" class="center-image">
 
 However, if you open the Eureka Service at `http://localhost:8761`, you will not see the service registered. To register 
 the beer-catalog-service, you need to add `@EnableDiscoveryClient` to `BeerCatalogServiceApplication.java`.
@@ -290,7 +290,7 @@ public class BeerCatalogServiceApplication {
 Re-compile this class, watch devtools restart your application, and return to `http://localhost:8761`. If you’re not 
 using an IDE, it might be easiest to cancel and restart `mvn spring-boot:run`. Now the service should show up.
 
-{% image blog/microservices-spring-boot/eureka-instances-registered.png alt:"Eureka instances registered" width:"800" %}{: .center-image }
+<img src="/img/blog/microservices-spring-boot/eureka-instances-registered.png" alt="Eureka instances registered" width="800" class="center-image">
 
 <a name="intellij-auto-compile"></a>
 <div style="padding: 12px 12px 12px 25px; border: 1px solid silver; border-left: 5px solid #ddd">
@@ -330,7 +330,7 @@ Navigate to [start.spring.io](https://start.spring.io) and create an `edge-servi
 * Hystrix: a circuit breaker to stop cascading failure and enable resilience
 * Lombok: to reduce boilerplate code
 
-{% image blog/microservices-spring-boot/edge-service.png alt:"Edge Service" width:"800" %}{: .center-image }
+<img src="/img/blog/microservices-spring-boot/edge-service.png" alt="Edge Service" width="800" class="center-image">
 
 Click the **Generate Project** button and expand `edge-service.zip` into `spring-boot-microservices-example` and open 
 the project in your favorite IDE. 
@@ -447,7 +447,7 @@ class GoodBeerApiAdapterRestController {
 
 Start the `edge-service` application with Maven or your IDE and verify it registers successfully with the Eureka server.
 
-{% image blog/microservices-spring-boot/edge-service-registered.png alt:"Edge Service Registered" width:"800" %}
+<img src="/img/blog/microservices-spring-boot/edge-service-registered.png" alt="Edge Service Registered" width="800">
 
 You should be able to invoke the `/good-beers` endpoint as well.
 
@@ -558,7 +558,7 @@ Restart the `edge-service` and start the Angular client by running `npm start` i
 
 Open `http://localhost:4200` in your browser and verify that network calls to `/good-beers` go over port `8081`.
 
-{% image blog/microservices-spring-boot/angular-pwa.png alt:"Angular PWA Client" width:"800" %}{: .center-image }
+<img src="/img/blog/microservices-spring-boot/angular-pwa.png" alt="Angular PWA Client" width="800" class="center-image">
 
 ### Deploy to Cloud Foundry
 

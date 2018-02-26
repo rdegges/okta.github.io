@@ -29,7 +29,7 @@ If you don't have Visual Studio installed, download the [free Community Edition]
 
 When you install Visual Studio, be sure to pick the **Mobile development with .NET** workload, which installs the Xamarin tools you need:
 
-{% image blog/build-app-for-ios-android-with-xamarin/vs-xamarin-workload.gif alt:"Install the Mobile development with .NET workload" width:"500" %}{: .center-image }
+<img src="/img/blog/build-app-for-ios-android-with-xamarin/vs-xamarin-workload.gif" alt="Install the Mobile development with .NET workload" width="500" class="center-image">
 
 If Visual Studio is already installed, open the Visual Studio Installer to make sure you have the above workload selected.
 
@@ -52,15 +52,15 @@ However, if you're building a straightforward app that doesn't need much platfor
 ## Create a New Xamarin.Forms Project
 In Visual Studio, choose **File - New Project**, pick the **Cross-Platform** category, and choose the **Cross-Platform App (Xamarin.Forms)** template. Name the project HelloWorldApp.
 
-{% image blog/build-app-for-ios-android-with-xamarin/vs-xamarin-new-project.gif alt:"Create new Cross-Platform App (Xamarin.Forms) project" width:"500" %}{: .center-image }
+<img src="/img/blog/build-app-for-ios-android-with-xamarin/vs-xamarin-new-project.gif" alt="Create new Cross-Platform App (Xamarin.Forms) project" width="500" class="center-image">
 
 Then, pick the **Blank App** template and the platforms you want to build the app for. Choose **Xamarin.Forms** as the UI Technology, and **.NET Standard** as the Code Sharing Strategy:
 
-{% image blog/build-app-for-ios-android-with-xamarin/vs-xamarin-new-project-subtype.png alt:"Choose project creation options" width:"500" %}{: .center-image }
+<img src="/img/blog/build-app-for-ios-android-with-xamarin/vs-xamarin-new-project-subtype.png" alt="Choose project creation options" width="500"class="center-image">
 
 In Visual Studio for Mac, choose **File - New Solution**, pick the **Multiplatform - App** category, and choose the **Blank Forms App** template:
 
-{% image blog/build-app-for-ios-android-with-xamarin/vs-mac-xamarin-new-project.gif alt:"Choose project creation options" width:"500" %}{: .center-image }
+<img src="/img/blog/build-app-for-ios-android-with-xamarin/vs-mac-xamarin-new-project.gif" alt="Choose project creation options" width="500" class="center-image">
 
 Creating the new project may take a few minutes. The Blank App template creates a solution with a few sub-projects:
 
@@ -103,7 +103,7 @@ The `Clicked` attribute on the Button element wires up the button click event to
 ## Add Code to the Page
 Each XAML file is paired with a C# code file, sometimes called a "code-behind". Open up the code for the `MainPage.xaml` (or `HelloWorldAppPage.xaml`) file by expanding it in the Solution Explorer and selecting the `MainPage.xaml.cs` file.
 
-{% image blog/build-app-for-ios-android-with-xamarin/vs-xamarin-open-xamlcs.gif alt:"Expand MainPage and open C# code file" width:"500" %}{: .center-image }
+<img src="/img/blog/build-app-for-ios-android-with-xamarin/vs-xamarin-open-xamlcs.gif" alt="Expand MainPage and open C# code file" width="500" class="center-image">
 
 Below the `public MainPage()` method, add the new `SayHelloButtonClicked` method:
 
@@ -128,7 +128,7 @@ That’s it! Your new Xamarin app is ready to go. To test it, you can use a simu
 ## Test Your Xamarin App on Your Own Device
 The quickest (and coolest) way to test a Xamarin project is with [Xamarin Live Player](https://www.xamarin.com/live), a small app you can download onto your own phone or device. After downloading the app, [pair it with Visual Studio](https://developer.xamarin.com/guides/cross-platform/live/install/). Then, pick Live Player as the device target.
 
-{% image blog/build-app-for-ios-android-with-xamarin/vs-xamarin-start-live-player.gif alt:"Pick Live Player and start debugging" width:"500" %}{: .center-image }
+<img src="/img/blog/build-app-for-ios-android-with-xamarin/vs-xamarin-start-live-player.gif" alt="Pick Live Player and start debugging" width="500" class="center-image">
 
 Start debugging by pressing the play icon, or choose **Run - Start Debugging** on the Mac. You'll be asked to scan a QR code to pair Visual Studio with your device, and Live Player will connect to your computer. (If it hangs, make sure your computer and your device are on the same wi-fi network).
 
@@ -139,7 +139,7 @@ If you have the Visual Studio Android Emulator installed, testing the Android ve
 
 The Android emulator can be slow to load, so give it some time. If everything builds properly, you'll see your app running on Android:
 
-{% image blog/build-app-for-ios-android-with-xamarin/android-emulator.gif alt:"Testing on the Android emulator" width:"500" %}{: .center-image }
+<img src="/img/blog/build-app-for-ios-android-with-xamarin/android-emulator.gif" alt="Testing on the Android emulator" width="500" class="center-image">
 
 ## Test Your Xamarin App on iOS
 Testing your Xamarin app on iOS is a little trickier, because it requires a Mac to provide the simulator. (Unless you're already on a Mac and using Visual Studio for Mac, in which case, you're good to go!)
@@ -148,7 +148,7 @@ If you're on Windows and have a Mac handy, follow the [official instructions](ht
 
 After the project builds, the simulator will launch on the Mac:
 
-{% image blog/build-app-for-ios-android-with-xamarin/ios-emulator.gif alt:"Testing on the iOS simulator" width:"500" %}{: .center-image }
+<img src="/img/blog/build-app-for-ios-android-with-xamarin/ios-emulator.gif" alt="Testing on the iOS simulator" width="500" class="center-image">
 
 ## Next Steps
 This tutorial only scratches the surface. There's a ton more you can do with Xamarin!

@@ -64,7 +64,7 @@ I used Indeed Jobs, GitHub Stars, Stack Overflow tags, and Docker pulls to devel
 
 I searched on [Indeed Jobs](https://www.indeed.com/jobs) without a location and found very few surprises, save for Amazon's DynamoDB showing up as a top contender.
 
-{% image blog/nosql-for-java/indeed-jobs.png alt:"Indeed Jobs, September 2017" width:"700" %}{: .center-image }
+<img src="/img/blog/nosql-for-java/indeed-jobs.png" alt="Indeed Jobs, September 2017" width="700" class="center-image">
 
 **NOTE:** It's difficult to search for "PostgreSQL JSON" because most listings specify "PostgreSQL" as a requirement, not its NoSQL support. I searched for "postgres + json". Xodus is the name of a company, so I had to tack on "JetBrains" to ensure accurate results.
 
@@ -72,25 +72,25 @@ I searched on [Indeed Jobs](https://www.indeed.com/jobs) without a location and 
 
 I searched and found the top five NoSQL options by GitHub stars are Redis, MongoDB, ArangoDB, Neo4j, and Cassandra. 
 
-{% image blog/nosql-for-java/github-stars.png alt:"GitHub Stars, September 2017" width:"700" %}{: .center-image }
+<img src="/img/blog/nosql-for-java/github-stars.png" alt="GitHub Stars, September 2017" width="700" class="center-image">
 
 **NOTE:** Cassandra, HBase, PostgreSQL are mirrored repositories. DynamoDB, Couchbase, and FaunaDB don't have their servers on GitHub, so I counted stars for their Java-based drivers. Using number of stars for each option's Java driver is a good idea, but [there's 11 just for Redis](https://redis.io/clients#java).
 
 You can use Tim Qian's [star-history project](https://github.com/timqian/star-history) to see the star growth of these five.
 
-{% image blog/nosql-for-java/github-stars-growth.png alt:"GitHub Star History" width:"700" %}{: .center-image }
+<img src="/img/blog/nosql-for-java/github-stars-growth.png" alt="GitHub Star History" width="700" class="center-image">
 
 ### Stack Overflow Tags
 
 I searched on Stack Overflow for tags for each and found that MongoDB and PostgreSQL are the most popular, followed by Neo4j, Cassandra, and Redis.
 
-{% image blog/nosql-for-java/stackoverflow-tags.png alt:"Stack Overflow Tags, September 2017" width:"700" %}{: .center-image }
+<img src="/img/blog/nosql-for-java/stackoverflow-tags.png" alt="Stack Overflow Tags, September 2017" width="700" class="center-image">
 
 ### Docker Pulls
 
 I searched on [Docker Hub](https://hub.docker.com/) for images and found the stats to be 10M+ for a few, 5M+ for Neo4j, and 1M+ for many others. FaunaDB and JetBrains Xodus don't seem to have images available.
 
-{% image blog/nosql-for-java/docker-pulls.png alt:"Docker Pulls, September 2017" width:"700" %}{: .center-image }
+<img src="/img/blog/nosql-for-java/docker-pulls.png" alt="Docker Pulls, September 2017" width="700" class="center-image">
 
 After gathering this information, it didn't seem very relevant to include these stats in my ranking. My reason is two-fold: because the numbers aren't exact and because there weren't "official" images for each option.
 
@@ -117,7 +117,7 @@ I created a matrix to combine jobs, stars, and tags. I awarded 1-5 points based 
 
 If you look at [DB-Engines Ranking](https://db-engines.com/en/ranking) for their top five options, you'll find PostgreSQL, MongoDB, Cassandra, Redis, and HBase. 
 
-{% image blog/nosql-for-java/db-engines-ranking.png alt:"DB-Engines Ranking, September 2017" width:"800" %}{: .center-image }
+<img src="/img/blog/nosql-for-java/db-engines-ranking.png" alt="DB-Engines Ranking, September 2017" width="800" class="center-image">
 
 Will you look at that - our top five results are pretty close! 
 
@@ -127,7 +127,7 @@ Since my top five results are pretty close to what DB-Engines has, I'll use mine
 
 You might ask "Why Spring Boot?" My answer is simple: because Spring Boot adoption is high. According to [Redmonk's recent look at Java frameworks](http://redmonk.com/fryan/2017/06/22/language-framework-popularity-a-look-at-java-june-2017/), Spring Boot adoption grew 76% between September 2016 and June 2017.
 
-{% image blog/nosql-for-java/java-frameworks-growth.png alt:"The Spring Boot Explosion" width:"800" %}{: .center-image }
+<img src="/img/blog/nosql-for-java/java-frameworks-growth.png" alt="The Spring Boot Explosion" width="800" class="center-image">
 
 And things haven't slowed down since June: [Maven downloads in August 2017 were 22.2 million](https://twitter.com/PieterHumphrey/status/905131222094929920).
 
@@ -204,15 +204,15 @@ ITBusinessEdge has a [slideshow about the top five NoSQL databases](http://www.i
 
 Hackernoon has an [Infographic of the most popular NoSQL databases](https://hackernoon.com/top-4-nosql-databases-infographic-b6acc389befc) that are "worth your notice." This article is from June 2017, and the comments say the rankings are based on stats from <https://db-engines.com/en/ranking_trend>. 
 
-{% image blog/nosql-for-java/hackernoon-infographic.png alt:"Hackernoon Infographic" %}{: .center-image }
+<img src="/img/blog/nosql-for-java/hackernoon-infographic.png" alt="Hackernoon Infographic" class="center-image">
 
 **NOTE:** If you look at this ranking today (September 6, 2017), you'll see that Redis has replaced Couchbase. Or maybe Hackernoon skipped over Redis? It also begs the question: is Elasticsearch a NoSQL database, or a search engine? Should Solr be considered a NoSQL database as well? Both show up in [DB-Engines Ranking Trends](https://db-engines.com/en/ranking_trend).
 
-{% image blog/nosql-for-java/db-engines-ranking-graph.png alt:"DB-Engines Ranking Graph" width:"800" %}{: .center-image }
+<img src="/img/blog/nosql-for-java/db-engines-ranking-graph.png" alt="DB-Engines Ranking Graph" width="800" class="center-image">
 
 JAXenter published the results of their annual survey of [top database trends](https://jaxenter.com/top-databases-2017-132912.html) on March 30, 2017. They list Elasticsearch and Solr as databases. They also include Apache Spark and Hadoop. MongoDB, Cassandra, Redis, and Neo4j are the most interesting "NoSQL" databases. Hazelcast is listed as the top in-memory data grid, over CouchDB and Oracle.
 
-{% image blog/nosql-for-java/jaxenter-top-databases.png alt:"JAXenter Top Database Trends" width:"645" %}{: .center-image }
+<img src="/img/blog/nosql-for-java/jaxenter-top-databases.png" alt="JAXenter Top Database Trends" width="645" class="center-image">
 
 **Changelog:**
 

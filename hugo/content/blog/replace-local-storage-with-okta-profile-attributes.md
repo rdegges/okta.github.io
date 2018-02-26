@@ -59,7 +59,7 @@ The first thing you'll need to do is add a `holdings` attribute to your organiza
 * Variable name: `holdings`
 * Description: `Cryptocurrency Holdings`
 
-{% image blog/cryptocurrency-pwa-java-sdk/holdings-attribute.png alt:"Holdings Attribute" width:"800" %}{: .center-image }
+<img src="/img/blog/cryptocurrency-pwa-java-sdk/holdings-attribute.png" alt="Holdings Attribute" width="800" class="center-image">
 
 Use the default values for everything else and click **Save**. 
 
@@ -70,7 +70,7 @@ Head on over to [start.spring.io](https://start.spring.io) and create a new Spri
 * Group: `com.okta.developer`
 * Artifact: `holdings-api`
 
-{% image blog/cryptocurrency-pwa-java-sdk/start-holdings-api.png alt:"Holdings API App" width:"800" %}{: .center-image }
+<img src="/img/blog/cryptocurrency-pwa-java-sdk/start-holdings-api.png" alt="Holdings API App" width="800" class="center-image">
 
 Click **Generate Project** and expand `holdings-api.zip` after it finishes downloading.
 
@@ -399,15 +399,15 @@ After making these changes, use a terminal to run `npm install && ionic serve` i
 
 Log in to the application at http://localhost:8100 and add a couple of holdings. For example, here's what the Crypto PWA looks like after I added data:
 
-{% image blog/cryptocurrency-pwa-java-sdk/holdings-in-okta.png alt:"Holdings in Okta" width:"800" %}{: .center-image }
+<img src="/img/blog/cryptocurrency-pwa-java-sdk/holdings-in-okta.png" alt="Holdings in Okta" width="800" class="center-image">
 
 Local storage can be handy because the data is cached locally and it'll work offline. However, service workers cache network requests, so this application will work offline too. To prove it, toggle offline mode in Chrome's Developer Tools > Network > Offline. Your holdings should still render when you refresh your browser.
 
-{% image blog/cryptocurrency-pwa-java-sdk/holdings-in-okta-offline.png alt:"Holdings in Okta - Offline" width:"800" %}{: .center-image }
+<img src="/img/blog/cryptocurrency-pwa-java-sdk/holdings-in-okta-offline.png" alt="Holdings in Okta - Offline" width="800" class="center-image">
 
 Even better, you can open another browser, e.g., Firefox, and retrieve your holdings by logging in. You can't do that when using local storage!
 
-{% image blog/cryptocurrency-pwa-java-sdk/crypto-pwa-in-firefox.png alt:"Works in Firefox!" width:"800" %}{: .center-image }
+<img src="/img/blog/cryptocurrency-pwa-java-sdk/crypto-pwa-in-firefox.png" alt="Works in Firefox!" width="800" class="center-image">
 
 ## Okta + Java = ❤️
 

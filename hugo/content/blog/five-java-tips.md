@@ -123,7 +123,7 @@ $ chmod u=r,go-rwx ~/.okta/okta.yaml
 If you are creating API keys for users of your applications, plan to warn them. SSH ignores files in your `~/.ssh` directory if the permissions are not set correctly. Github does a great job of warning users by marking items in the UI with 'Danger Zone' marking.
 
 <a href="https://www.youtube.com/watch?v=yK0P1Bk8Cx4" target="_blank">
-{% image blog/five-java-tips/danger-zone.png alt:"Danger Zone" width:"640" %}
+<img src="/img/blog/five-java-tips/danger-zone.png" alt="Danger Zone" width="640">
 </a>
 
 ## Bonus: Write less code, give Okta a try!

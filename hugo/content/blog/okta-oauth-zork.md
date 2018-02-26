@@ -17,7 +17,7 @@ tags:
 title: Play Zork, Learn OAuth
 ---
 
-{% image blog/okta-oauth-zork/zork.jpg alt:"Default AS" width:"150" align:"right" %}
+<img src="/img/blog/okta-oauth-zork/zork.jpg alt:"Default AS"" width="150" align="right">
 
 In the early ‘80s, some of the best “video” games were text-based adventures. These games would print out descriptive text of your surroundings and you would interact with the game using simple, but natural language commands like: “go north” or “take sword”. Fast forward some 30 years and a specification for an authorization framework called [OAuth 2.0](https://oauth.net/2/) was published. This framework allows an application to receive a token from an external party (like [Okta](https://okta.com)) that indicates a user is authorized to use the application. What do these two things have in common? Absolutely nothing. But, I thought it would be fun to mash them together to demonstrate how OAuth works by playing a text-based game.
 
@@ -31,9 +31,9 @@ Navigate to: [https://okta-oidc-fun.herokuapp.com](https://okta-oidc-fun.herokua
 
 You should see an `Access Token` and a button that says: `Game With Your Access Token`. Click that. Now, you’ll be at the page where you can play Zork!
 
-{% image blog/okta-oauth-zork/token.png alt:"Default AS" width:"700" %}{: .center-image }
+<img src="/img/blog/okta-oauth-zork/token.png" alt="Default AS" width="700" class="center-image">
 
-{% image blog/okta-oauth-zork/zork1.png alt:"Default AS" width:"700" %}{: .center-image }
+<img src="/img/blog/okta-oauth-zork/zork1.png" alt="Default AS" width="700" class="center-image">
 
 
 Enter a command in the text field and hit enter to send it. You should see a response from the game in JSON form above it. Try clicking `Use Access Token` and sending a command. You’ll get back a `Unauthorized` message.
@@ -69,7 +69,7 @@ This flow is what’s happening in the previous section. You might be saying to 
 
 Here’s what’s happening behind the scenes as you navigate through the [OIDC Playground](https://okta-oidc-fun.herokuapp.com) above:
 
-{% image blog/okta-oauth-zork/okta-oidc-fun-zork.png alt:"Default AS" width:"700" %}{: .center-image }
+<img src="/img/blog/okta-oauth-zork/okta-oidc-fun-zork.png" alt="Default AS" width="700" class="center-image">
 
 You may be wondering why the first column in this sequence diagram is labeled with OIDC. That stands for [OpenID Connect](http://openid.net/connect/). The truth is, the application running on Okta is an OIDC application. A full treatment of OIDC is outside the scope of this post. All you need to know for now is that OIDC is a superset of OAuth 2.0. That is, if it’s an OIDC app, OAuth is supported.
 
@@ -93,13 +93,13 @@ Navigate to [https://developer.okta.com](https://developer.okta.com) to set up y
 
 Click **Applications** along the top menu and click **Add Application**.
 
-{% image blog/okta-oauth-zork/applications-1.png alt:"Default AS" width:"700" %}{: .center-image }
+<img src="/img/blog/okta-oauth-zork/applications-1.png" alt="Default AS" width="700" class="center-image">
 
 Choose **Web** and then click **Next*.
 
 Later, you'll be deploying the Zork application to Heroku. Fill in the values for **Base-URIs** and **Login redirect URIs** that match your Heroku app name. That is, if you name your Heroku app: `okta-zork-test`, the URL will be: https://okta-zork-test.herokuapp.com
 
-{% image blog/okta-oauth-zork/applications-3.png alt:"Default AS" width:"700" %}{: .center-image }
+<img src="/img/blog/okta-oauth-zork/applications-3.png" alt="Default AS" width="700" class="center-image">
 
 If you scroll to the bottom, you’ll see a **Client ID**. Save this value somewhere as we’ll be using it later to configure Heroku.
 
@@ -107,7 +107,7 @@ As you make your way through Zork, the application saves your game state. This m
 
 Select **Users** -> **Profile Editor** from the main menu of your Admin Console. Click **Profile** next to **User**.
 
-{% image blog/okta-oauth-zork/profile-2.png alt:"Default AS" width:"700" %}{: .center-image }
+<img src="/img/blog/okta-oauth-zork/profile-2.png" alt="Default AS" width="700" class="center-image">
 
 Click **Add Attribute**. Enter `zMachineData` for the **Display name** and **Variable name** fields. Click **Save**. That’s all there is to it! Now, every user in your tenant has a `zMachineData` attribute on their profile.
 
@@ -115,7 +115,7 @@ The last thing we need to do is create an API token. This enables the applicatio
 
 Choose **API** -> **Tokens** from the main menu of your Admin Console. Click **Create Token**. Give it a name and click **Create Token**.
 
-{% image blog/okta-oauth-zork/token-4.png alt:"Default AS" width:"700" %}{: .center-image }
+<img src="/img/blog/okta-oauth-zork/token-4.png" alt="Default AS" width="700" class="center-image">
 
 Save the token value somewhere. You’ll need it later when you deploy the app to Heroku. The token value is only ever showed once on this screen, so make sure you save it.
 
@@ -142,7 +142,7 @@ You'll need some information to properly configure the app (you can leave the `O
 
 Click **Deploy App**. Once it’s finished deploying, you should be able to browse to: http://<App Name>.herokuapp.com and see the app in action using your own users from your Okta tenant.
 
-{% image blog/okta-oauth-zork/zork2.png alt:"Default AS" width:"700" %}{: .center-image }
+<img src="/img/blog/okta-oauth-zork/zork2.png" alt="Default AS" width="700" class="center-image">
 
 ## Spring Boot + Spring Security + Okta = Easy OAuth
 
@@ -365,7 +365,7 @@ I did a major refactor of the code when the Okta Spring Security integration was
 
 I was able to eliminate three dependencies. More importantly, I was able to dramatically reduce the codebase:
 
-{% image blog/okta-oauth-zork/before-and-after-1.png alt:"Default AS" width:"700" %}{: .center-image }
+<img src="/img/blog/okta-oauth-zork/before-and-after-1.png" alt="Default AS" width="700" class="center-image">
 
 I was able to completely delete seven classes representing 570 lines of code. In the tree view on the right, the application is now focused only on the task at hand: the management of playing the game. The view on the left is littered with auth concerns not particularly germane to the application.
 

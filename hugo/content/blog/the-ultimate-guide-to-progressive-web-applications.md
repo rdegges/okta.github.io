@@ -42,17 +42,17 @@ chrome://flags/#bypass-app-banner-engagement-checks
 
 Click the blue "Relaunch Now" button at the bottom of your browser after enabling these flags. Now if you visit a site like <https://hnpwa.com>, you’ll see an installation prompt at the top of the page. 
 
-{% image blog/ultimate-pwa-guide/hnpwa.png alt:"Hacker News PWA" width:"800" %}
+<img src="/img/blog/ultimate-pwa-guide/hnpwa.png" alt="Hacker News PWA" width="800">
 
 Click the "Add" button and you’ll see a dialog to name the app, populated with information from the app’s manifest.
 
-{% image blog/ultimate-pwa-guide/hnpwa-add-application.png alt:"Add to Applications" width:"500" %}
+<img src="/img/blog/ultimate-pwa-guide/hnpwa-add-application.png" alt="Add to Applications" width="500">
 
 This adds the application to a "~/Applications/Chrome Apps" directory on a Mac. If you launch the apps, they will run in Chrome rather than having their own icon. On an Android phone, their icon and launch behavior will resemble that of a native application.
 
 You can use Chrome’s Developer Tools > Network tab to toggle "Offline" and reload the application. You’ll notice it still loads the data rather than saying it can’t reach the server.
 
-{% image blog/ultimate-pwa-guide/hnpwa-offline.png alt:"Hacker News PWA Offline" width:"800" %}
+<img src="/img/blog/ultimate-pwa-guide/hnpwa-offline.png" alt="Hacker News PWA Offline" width="800">
 
 ## Why Should You Build a PWA?  
 
@@ -71,13 +71,13 @@ There are a number of other performance recommendations you can implement in you
 
 [Mariko Kosaka](https://twitter.com/kosamari) created [some drawings](https://twitter.com/kosamari/status/859958929484337152) to show the difference between HTTP/1 and HTTP/2. I think it illustrates the performance gains provided by HTTP/2 nicely. Note that HTTP/2 requires HTTPS, just like PWAs do.
 
-{% image blog/ultimate-pwa-guide/http2-kosamari.png alt:"Mariko Kosaka’s Awesome HTTP/2 Drawing" width:"800" %}
+<img src="/img/blog/ultimate-pwa-guide/http2-kosamari.png" alt="Mariko Kosaka’s Awesome HTTP/2 Drawing" width="800">
 
 ### Dynamic Caching and Your PWA
 
 If you’re going to build a PWA and leverage service workers, you should become familiar with Chrome Developer Tools’ Application tab. This tab provides the ability to manipulate service workers so they update on reload. 
 
-{% image blog/ultimate-pwa-guide/chrome-devtools-application-tab.png alt:"Chrome DevTools Application Tab" width:"800" %}
+<img src="/img/blog/ultimate-pwa-guide/chrome-devtools-application-tab.png" alt="Chrome DevTools Application Tab" width="800">
 
 If you don’t check this box, developing a PWA will be a frustrating experience. The reason is because everything will be cached in your browser and when you update files in your editor, they won’t be reloaded in your browser. 
 
@@ -140,7 +140,7 @@ The requirements for a PWA can be quickly added to almost any web application. A
 
 To see how to add these features to an Angular application, see my [Build Your First Progressive Web Application with Angular and Spring Boot](/blog/2017/05/09/progressive-web-applications-with-angular-and-spring-boot) blog post on Okta’s developer blog. This article shows you how to add a service worker, a manifest with icons, and deploy it to CloudFoundry with HTTPS. Not only that, but it scores a 98/100 using the Lighthouse Chrome Extension.
 
-{% image blog/angular-spring-boot-pwa/lighthouse-prod-report.png alt:"Lighthouse Report" width:"800" %}
+<img src="/img/blog/angular-spring-boot-pwa/lighthouse-prod-report.png" alt="Lighthouse Report" width="800">
 
 [Scott Domes](https://medium.com/@scottdomes) has a [similar tutorial that will walk you through the basics of building a PWA in React](https://engineering.musefind.com/build-your-first-progressive-web-app-with-react-8e1449c575cd).
 
@@ -193,7 +193,7 @@ Ionic is a framework that leverages Angular to create native apps with web techn
 
 See my [tutorial about developing mobile applications with Ionic and Spring Boot](/blog/2017/05/17/develop-a-mobile-app-with-ionic-and-spring-boot) to learn more. Below is a screenshot of the completed application in the tutorial.
 
-{% image blog/ionic-spring-boot/beer-modal.png alt:"Mmmmm, Guinness" width:"800" %}
+<img src="/img/blog/ionic-spring-boot/beer-modal.png" alt="Mmmmm, Guinness" width="800">
 
 
 [NativeScript](https://www.nativescript.org/) is another option for developing mobile apps with Angular. The big difference between it and Ionic is that it uses the native platform’s rendering engine instead of WebViews. NativeScript does not support building PWAs.

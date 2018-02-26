@@ -38,7 +38,7 @@ OAuth was created as response to the direct authentication pattern. This pattern
 
 To create a better system for the web, federated identity was created for single sign-on (SSO). In this scenario, an end user talks to their identity provider, and the identity provider generates a  cryptographically signed token which it hands off to the application to authenticate the user. The application trusts the identity provider. As long as that trust relationship works with the signed assertion, you're good to go. The diagram below (from [Okta's OAuth docs](https://developer.okta.com/standards/OAuth/)) show how this works.
 
-{% image browser_spa_implicit_flow alt:"Browser Implicit Flow" width:"600" %}{: .center-image }
+<img src="/img/browser_spa_implicit_flow" alt="Browser Implicit Flow" width="600" class="center-image">
 
 Federated identity was made famous by SAML 2.0, an OASIS Standard released on March 15, 2005. It's a large spec but the main two components are its authentication request protocol (aka Web SSO) and the way it packages identity attributes and signs them, called SAML assertions. Okta does this with its SSO chiclets. We send a message, we sign the assertion, inside the assertion it says who the user is, and that it came from Okta. Slap a digital signature on it and you're good to go.
 
@@ -58,7 +58,7 @@ Developers build a lot of APIs. The API Economy is a common buzzword you might h
 
 If you've ever seen one of the dialogs below, that's what we're talking about. This is an application asking if it can access data on your behalf.
 
-{% image blog/oauth/biketoworkday-fb-login alt:"Facebook OAuth" width:"800" %}{: .center-image }
+<img src="/img/blog/oauth/biketoworkday-fb-login" alt="Facebook OAuth" width="800" class="center-image">
 
 This is OAuth.
 
@@ -88,7 +88,7 @@ OAuth is built on the following central components:
 
 Scopes are what you see on the authorization screens when an app requests permissions. They're bundles of permissions asked for by the client when requesting a token. These are coded by the application developer when writing the application.
 
-{% image blog/oauth/oauth-scopes.png alt:"OAuth Scopes" width:"600" %}{: .center-image }
+<img src="/img/blog/oauth/oauth-scopes.png" alt="OAuth Scopes" width="600" class="center-image">
 
 Scopes decouple authorization policy decisions from enforcement. This is the first key aspect of OAuth. The permissions are front and center. They're not hidden behind the app layer that you have to reverse engineer. They're often listed in the API docs: here are the scopes that this app requires.
 
@@ -107,7 +107,7 @@ The actors in OAuth flows are as follows:
 * **Client**: the application that wants to access your data
 * **Authorization Server**: The main engine of OAuth
 
-{% image blog/oauth/oauth-actors.png alt:"OAuth Actors" width:"800" %}{: .center-image }
+<img src="/img/blog/oauth/oauth-actors.png" alt="OAuth Actors" width="800" class="center-image">
 
 The resource owner is a role that can change with different credentials. It can be an end user, but it can also be a company.
 
@@ -115,7 +115,7 @@ Clients can be public and confidential. There is a significant distinction betwe
 
 Public clients are browsers, mobile apps, and IoT devices.
 
-{% image blog/oauth/oauth-clients.png alt:"OAuth Clients" width:"800" %}{: .center-image }
+<img src="/img/blog/oauth/oauth-clients.png" alt="OAuth Clients" width="800" class="center-image">
 
 Client registration also a key component of OAuth. It's like the DMV of OAuth. You need to get a license plate for your application. This is how your app's logo shows up in an authorization dialog.
 
@@ -131,7 +131,7 @@ The OAuth spec doesn't define what a token is. It can be in whatever format you 
 
 Tokens are retrieved from endpoints on the authorization server. The two main endpoints are the authorize endpoint and the token endpoint. They're separated for different use cases. The authorize endpoint is where you go to get consent and authorization from the user. This returns an authorization grant that says the user has consented to it. Then the authorization is passed to the token endpoint. The token endpoint processes the grant and says "great, here's your refresh token and your access token".
 
-{% image blog/oauth/authorization-server.png alt:"Authorization Server" width:"600" %}{: .center-image }
+<img src="/img/blog/oauth/authorization-server.png" alt="Authorization Server" width="600" class="center-image">
 
 You can use the access token to get access to APIs. Once it expires, you'll have to go back to the token endpoint with the refresh token to get a new access token.
 
@@ -143,7 +143,7 @@ We've talked a bit about the client types, the token types, and the endpoints of
 
 The tokens are meant to be consumed by the client application so it can access resources on your behalf. We call that the back channel. The back channel is a direct HTTP call directly from the client application to the resource server to exchange the authorization grant for tokens. These channels are used for different flows depending on what device capabilities you have.
 
-{% image blog/oauth/flow-channels.png alt:"Flow Channels" width:"800" %}{: .center-image }
+<img src="/img/blog/oauth/flow-channels.png" alt="Flow Channels" width="800" class="center-image">
 
 For example, a Front Channel Flow where you authorize via user agent might look as follows:
 
@@ -152,7 +152,7 @@ For example, a Front Channel Flow where you authorize via user agent might look 
 3. Authorization Server returns a consent dialog saying "do you allow this application to have access to these scopes?" Of course, you'll need to authenticate to the application, so if you're not authenticated to your Resource Server, it'll ask you to login. If you already have a cached session cookie, you'll just see the consent dialog box. View the the consent dialog, and agree.
 4. The authorization grant is passed back to the application via browser redirect. This all happens on the front channel.
 
-{% image blog/oauth/front-channel-flow.png alt:"Front Channel Flow" width:"400" %}{: .center-image }
+<img src="/img/blog/oauth/front-channel-flow.png" alt="Front Channel Flow" width="400" class="center-image">
 
 There's also a variance in this flow called the implicit flow. We'll get to that in a minute.
 
@@ -193,7 +193,7 @@ After the Front Channel is done, a Back Channel Flow happens, exchanging the aut
 The Client application sends an access token request to the token endpoint on the Authorization Server with confidential client credentials and client id. This process exchanges an Authorization Code Grant for an Access Token and (optionally) a Refresh Token.
 Client accesses a protected resource with Access Token.
 
-{% image blog/oauth/back-channel-flow.png alt:"Back Channel Flow" width:"400" %}{: .center-image }
+<img src="/img/blog/oauth/back-channel-flow.png" alt="Back Channel Flow" width="400" class="center-image">
 
 Below is how this looks in raw HTTP.
 
@@ -287,7 +287,7 @@ Because OAuth is an authorization framework and not a protocol, you may have int
 
 OAuth 2.0 is not an authentication protocol. It even says so in [its documentation](https://oauth.net/articles/authentication/).
 
-{% image blog/oauth/oauth-not-authentication-highlighted.png alt:"OAuth 2.0 is not an authentication protocol" width:"800" %}{: .center-image }
+<img src="/img/blog/oauth/oauth-not-authentication-highlighted.png" alt="OAuth 2.0 is not an authentication protocol" width="800" class="center-image">
 
 We've been talking about delegated authorization this whole time. It's not about authenticating the user, and this is key. OAuth 2.0 alone says absolutely nothing about the user. You just have a token to get access to a resource.
 
@@ -305,7 +305,7 @@ To solve the pseudo authentication problem, the best parts of OAuth 2.0, Faceboo
 
 OIDC was created to be internet scalable by making things completely dynamic. There's no longer downloading metadata and federation like SAML requires. There's built-in registration, discovery, and metadata for dynamic federations. You can type in your email address, then it dynamically discovers your OIDC provider, dynamically downloads the metadata, dynamically know what certs it's going to use, and allows BYOI (Bring Your Own Identity). It supports high assurance levels and key SAML use cases for enterprises.
 
-{% image blog/oauth/openid-connect-protocol-suite alt:"OpenID Connect Protocol Suite" width:"500" %}{: .center-image }
+<img src="/img/blog/oauth/openid-connect-protocol-suite" alt="OpenID Connect Protocol Suite" width="500" class="center-image">
 
 OIDC was made famous by Google and Microsoft, both big early adopters. Okta has made a big investment in OIDC as well.
 
@@ -384,7 +384,7 @@ An Open ID Connect flow involves the following steps:
 4. Validate JWT ID token locally based on built-in dates and signature
 5. Get additional user attributes as needed with access token
 
-{% image blog/oauth/oidc-flow.png alt:"OIDC Flow" width:"800" %}{: .center-image }{: .center-image }
+<img src="/img/blog/oauth/oidc-flow.png" alt="OIDC Flow" width="800" class="center-image">{: .center-image }
 
 ## OAuth + Okta
 [Okta](https://www.okta.com) is best known for its single-sign on services that allow you to seamlessly authenticate to the applications you use on a daily basis. But did you know Okta also has an awesome developer platform? Secure single sign-on often uses SAML as the protocol of choice, but Okta also provides several other options, including a Sign-in Widget, Auth SDK (a JavaScript-based library), Social Login, and an Authentication API for any client. If you're interested in learning about Okta straight from the source, you should attend [Oktane17](https://www.okta.com/oktane17/) in late August. There's a [track dedicated to app development](https://www.okta.com/oktane17/agenda/#AppDev).

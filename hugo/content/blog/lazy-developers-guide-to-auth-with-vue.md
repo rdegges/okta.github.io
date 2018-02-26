@@ -31,7 +31,7 @@ cd okta-vue-auth-example
 npm i
 ```
 
-{% image blog/vue-auth-sdk/vue-init.png alt:"Vue Init" %}{: .center-image }
+<img src="/img/blog/vue-auth-sdk/vue-init.png" alt="Vue Init" class="center-image">
 
 I opened the project in [IntelliJ IDEA](https://www.jetbrains.com/idea/) (disclaimer: my fave IDE) and was surprised to find the ESLint rules prefer ending your lines *without* a semicolon. The semicolon debate in JavaScript rages on! 
 
@@ -287,15 +287,15 @@ After making these changes, you should be able to run `npm start` and authentica
 
 If you open your browser to `http://localhost:8080`, you should see a screen that resembles the one below.
 
-{% image blog/vue-auth-sdk/auth-flow-home.png alt:"Auth Flow Home" %}{: .center-image }
+<img src="/img/blog/vue-auth-sdk/auth-flow-home.png" alt="Auth Flow Home" class="center-image">
 
 Click on the **Dashboard** link, and you’ll be prompted to log in.
 
-{% image blog/vue-auth-sdk/auth-flow-login.png alt:"Auth Flow Dashboard" %}{: .center-image }
+<img src="/img/blog/vue-auth-sdk/auth-flow-login.png" alt="Auth Flow Dashboard" class="center-image">
 
 Entering `joe@example/password1` will get you to the next step.
 
-{% image blog/vue-auth-sdk/auth-flow-dashboard.png alt:"Auth Flow Dashboard" %}{: .center-image }
+<img src="/img/blog/vue-auth-sdk/auth-flow-dashboard.png" alt="Auth Flow Dashboard" class="center-image">
 
 If you open Chrome Developer Tools, you’ll see a message that recommends installing [Vue Devtools extension](https://github.com/vuejs/vue-devtools) for a better development experience. 
 
@@ -360,7 +360,7 @@ export default {
 
 To make it possible to talk to Okta from http://localhost:8080, you’ll need to add it as a trusted origin. You can do this by signing in to your Okta dashboard and navigating to **API** > **Trusted Origins**. Add `http://localhost:8080` and select the CORS and Redirect checkboxes.
 
-{% image blog/vue-auth-sdk/add-origin.png alt:"Add Origin" width:"600" %}{: .center-image }
+<img src="/img/blog/vue-auth-sdk/add-origin.png" alt="Add Origin" width="600" class="center-image">
 
 After making this change, everything should work the same as before, but you’ll have to use Okta credentials to login.
 
@@ -458,7 +458,7 @@ return authClient.signIn({
 
 You’ll need to create an OIDC App in Okta to get a `{clientId}`. To do this, log in to your Okta Developer account and navigate to **Applications** > **Add Application**. Click **SPA** and click the **Next** button. Give the app a name you’ll remember, and specify `http://localhost:8080` as a Base URI and Login Redirect URI.
 
-{% image blog/vue-auth-sdk/oidc-settings.png alt:"OIDC Settings" width:"700" %}{: .center-image }
+<img src="/img/blog/vue-auth-sdk/oidc-settings.png" alt="OIDC Settings" width="700" class="center-image">
 
 Click **Done** and you’ll be shown a screen with this information as well as a Client ID at the bottom. Copy the Client ID into `src/auth.js`.
 
@@ -509,7 +509,7 @@ Now the ID token will provide you with the user’s name, and you can show it on
 
 If your project is not running, start it with `npm start` and navigate to `http://localhost:8080`. Rejoice if it works!
 
-{% image blog/vue-auth-sdk/welcome-okta.png alt:"Welcome Okta" %}{: .center-image }
+<img src="/img/blog/vue-auth-sdk/welcome-okta.png" alt="Welcome Okta" class="center-image">
 
 ## Auditing Your Progressive Web App
 
@@ -523,7 +523,7 @@ python -m SimpleHTTPServer 8080
 
 If you run Lighthouse on your app at `http://localhost:8080`, you should see similar results to the screenshot below. 
 
-{% image blog/vue-auth-sdk/lighthouse-localhost.png alt:"Lighthouse Audits on localhost" %}{: .center-image }
+<img src="/img/blog/vue-auth-sdk/lighthouse-localhost.png" alt="Lighthouse Audits on localhost" class="center-image">
 
 Because I like to see what the max possible score is, I deployed this app to Pivotal’s Cloud Foundry. I created a `deploy.sh` script that replaces the `redirectUri` (you could also remove it for the same effect) and deploys using `cf push`. 
 
@@ -542,7 +542,7 @@ cf start vue-auth-pwa
 
 Running Lighthouse on https://vue-auth-pwa.cfapps.io yields some pretty good numbers across the board!
 
-{% image blog/vue-auth-sdk/lighthouse-cloudfoundry.png alt:"Lighthouse Audits on Cloud Foundry" %}{: .center-image }
+<img src="/img/blog/vue-auth-sdk/lighthouse-cloudfoundry.png" alt="Lighthouse Audits on Cloud Foundry" class="center-image">
 
 ## In Closing
 

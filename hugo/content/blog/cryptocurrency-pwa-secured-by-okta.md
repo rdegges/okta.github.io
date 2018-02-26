@@ -22,7 +22,7 @@ tweets:
 
 Cryptocurrencies are all the rage. Over the last year, the value of Bitcoin alone has risen 1,603%, driving more and more people to wonder if they're missing out on the "next big thing." Because of the massive influx of money into cryptocurrencies like Bitcoin, Ethereum, Monero, and Ripple &mdash; blockchain technology (which is the foundation of all cryptocurrency) has become an area of intense technical study. At its core, blockchain technology does nothing more than maintain a decentralized log of transactions that can be easily shared across many nodes (miners).
 
-{% image blog/cryptocurrency-pwa/cryptocurrency-so-hot.jpg alt:"So Hot Right Now" width:"620" %}{: .center-image }
+<img src="/img/blog/cryptocurrency-pwa/cryptocurrency-so-hot.jpg" alt="So Hot Right Now" width="620" class="center-image">
 
 In this post, I’ll show you how to add authentication to an Ionic progressive web app (PWA). PWAs are more developer-friendly to distribute than mobile apps. Not only that, but I’ll show you how to use cloud services like Okta and Firebase to make things even simpler.
 
@@ -51,7 +51,7 @@ npm install -g ionic
 
 Run the app so you can see its basic functionality before adding authentication.
 
-| [{% image blog/cryptocurrency-pwa/crypto-pwa-home.png alt:"Crypto PWA - Home" width:"280" %}](/assets/blog/cryptocurrency-pwa/crypto-pwa-home-d0a91ea78cd6721c87a451cb3adca75bd114751aa71562d017e809b539047a87.png) | [{{< figure src="blog/cryptocurrency-pwa/crypto-pwa-add.png" title="alt:"Crypto PWA - Add" width:"280"" >}}](/assets/blog/cryptocurrency-pwa/crypto-pwa-add-80d7da9233d958a26ef1b67970f09174944c3d19d20eb712fcbbcf0450e9c94d.png) | [{{< figure src="blog/cryptocurrency-pwa/crypto-pwa-home-btc.png" title="alt:"Crypto PWA - Home with BTC" width:"280"" >}}](/assets/blog/cryptocurrency-pwa/crypto-pwa-home-btc-ca4b31a2243804ea89de4f68650a8ec4b5d684bef382561529917be2220a5a34.png) |  
+| [<img src="/img/blog/cryptocurrency-pwa/crypto-pwa-home.png" alt="Crypto PWA - Home" width="280">](/assets/blog/cryptocurrency-pwa/crypto-pwa-home-d0a91ea78cd6721c87a451cb3adca75bd114751aa71562d017e809b539047a87.png) | [<img src="blog/cryptocurrency-pwa/crypto-pwa-add.png" title="" alt="Crypto PWA - Add" width="280">](/assets/blog/cryptocurrency-pwa/crypto-pwa-add-80d7da9233d958a26ef1b67970f09174944c3d19d20eb712fcbbcf0450e9c94d.png) | [<img src="blog/cryptocurrency-pwa/crypto-pwa-home-btc.png" title="" alt="Crypto PWA - Home with BTC" width="280">](/assets/blog/cryptocurrency-pwa/crypto-pwa-home-btc-ca4b31a2243804ea89de4f68650a8ec4b5d684bef382561529917be2220a5a34.png) |  
 
 You can verify it works offline &mdash; like a PWA should &mdash; by toggling offline mode in your browser (in Chrome: Developer Tools > Network > Offline).
 
@@ -69,7 +69,7 @@ Happily, the hardest part of using Okta is [creating a developer account](https:
   * `https://<name-of-your-choosing>.firebaseapp.com` (for production)
 * Click **Done** to continue. You should see settings like the following:
 
-{% image blog/cryptocurrency-pwa/oidc-settings.png alt:"Okta OIDC Settings" width:"700" %}{: .center-image }
+<img src="/img/blog/cryptocurrency-pwa/oidc-settings.png" alt="Okta OIDC Settings" width="700" class="center-image">
 
 For global logout to work, you’ll need to edit your application and add `http://localhost:8080` (and optionally, your production URI) as a **Logout redirect URI**.
 
@@ -242,17 +242,17 @@ export class HomePage {
 
 Restart `ionic serve`, and you should see the login page at `http://localhost:8100`.
 
-{% image blog/cryptocurrency-pwa/login-page.png alt:"Login Page" width:"800" %}{: .center-image }
+<img src="/img/blog/cryptocurrency-pwa/login-page.png" alt="Login Page" width="800" class="center-image">
 
 Click **Login with Okta** and you'll be redirected to a login form.
 
-{% image blog/cryptocurrency-pwa/okta-login.png alt:"Okta Login" width:"800" %}{: .center-image }
+<img src="/img/blog/cryptocurrency-pwa/okta-login.png" alt="Okta Login" width="800" class="center-image">
 
 **TIP:** Did you know you don't need to include `@<your-email>.com` for the username with Okta? Entering the first part of your email address is enough for Okta to know who you are.
 
 After entering valid credentials, you should be redirected back to your app and see a welcome message.
 
-{% image blog/cryptocurrency-pwa/home-page.png alt:"Home Page" width:"800" %}{: .center-image }
+<img src="/img/blog/cryptocurrency-pwa/home-page.png" alt="Home Page" width="800" class="center-image">
 
 You should be able to add cryptocurrency holdings as you did before. The last thing you'll want to do is add a logout button.
 
@@ -274,7 +274,7 @@ Then add a logout button just above `</ion-content>` in `src/pages/home/home.htm
 
 Your home page should now look as follows.
 
-{% image blog/cryptocurrency-pwa/home-with-logout.png alt:"Home page with logout button" width:"800" %}{: .center-image }
+<img src="/img/blog/cryptocurrency-pwa/home-with-logout.png" alt="Home page with logout button" width="800" class="center-image">
 
 ### Deploy to Firebase and Test with Lighthouse
 
@@ -287,11 +287,11 @@ firebase deploy
 
 I deployed mine to <https://cryptopwa-oidc.firebaseapp.com> and received a [Lighthouse](https://developers.google.com/web/tools/lighthouse/) score of 91. Lighthouse is an automated tool for auditing the quality of web pages. You can run it against any web page to see audits for performance, accessibility, progressive web apps, and more.
 
-{% image blog/cryptocurrency-pwa/lighthouse-score-okta1.png alt:"Lighthouse Score: 91" width:"800" %}{: .center-image }
+<img src="/img/blog/cryptocurrency-pwa/lighthouse-score-okta1.png" alt="Lighthouse Score: 91" width="800" class="center-image">
 
 I compared this with the original tutorial's production instance at <https://cryptopwa.com> and found it received the same score.
 
-{% image blog/cryptocurrency-pwa/lighthouse-score-original.png alt:"Original Lighthouse Score: 91" width:"800" %}{: .center-image }
+<img src="/img/blog/cryptocurrency-pwa/lighthouse-score-original.png" alt="Original Lighthouse Score: 91" width="800" class="center-image">
 
 I scrolled down my report to see why I didn't receive a perfect 💯. I had two failed audits:
 
@@ -321,7 +321,7 @@ firebase deploy
 
 Rerunning Lighthouse should give you a perfect PWA score of 100. *Huzzah!*
 
-{% image blog/cryptocurrency-pwa/huzzah.png alt:"Lighthouse Score: 100" width:"800" %}{: .center-image }
+<img src="/img/blog/cryptocurrency-pwa/huzzah.png" alt="Lighthouse Score: 100" width="800" class="center-image">
 
 ## Learn More About Ionic and PWAs
 

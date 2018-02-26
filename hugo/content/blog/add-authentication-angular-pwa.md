@@ -147,7 +147,7 @@ cd server
 
 Navigate to `http://localhost:8080` and you'll be prompted to log in.
 
-{% image blog/angular-pwa-auth/spring-boot-login.png alt:"Spring Boot Login" width:"800" %}
+<img src="/img/blog/angular-pwa-auth/spring-boot-login.png" alt="Spring Boot Login" width="800">
 
 If you call the API with a different `Accept` header (e.g. `application/json`), you'll get a JSON response. The command below uses [HTTPie](https://httpie.org/).
 
@@ -404,11 +404,11 @@ export class AppModule { }
 
 After making these changes, you should be able to run `ng serve` and see a login button.
 
-{% image blog/angular-pwa-auth/angular-login-button.png alt:"Angular Login Button" width:"800" %}
+<img src="/img/blog/angular-pwa-auth/angular-login-button.png" alt="Angular Login Button" width="800">
 
 Click the **Login** button and sign-in with one of the user's that are configured in your Okta application.
 
-{% image blog/angular-pwa-auth/angular-okta-login.png alt:"Angular Okta Login" width:"800" %}
+<img src="/img/blog/angular-pwa-auth/angular-okta-login.png" alt="Angular Okta Login" width="800">
  
 This will likely fail with an error similar to the following:
  
@@ -421,11 +421,11 @@ To fix this problem, you need to add the client’s URL as a Trusted Origin for 
 
 Now you should be able to login and see a welcome message.
 
-{% image blog/angular-pwa-auth/angular-welcome.png alt:"Angular Welcome" width:"800" %}
+<img src="/img/blog/angular-pwa-auth/angular-welcome.png" alt="Angular Welcome" width="800">
 
 Click on **Beer List** to see data from your Spring Boot app.
 
-{% image blog/angular-pwa-auth/angular-beer-list.png alt:"Angular Beer List" width:"800" %}
+<img src="/img/blog/angular-pwa-auth/angular-beer-list.png" alt="Angular Beer List" width="800">
 
 To add the "Home" link at the top (as shown in the screenshot above), modify `client/src/app/beer-list/beer-list.component.html` to include the following HTML.
 
@@ -451,7 +451,7 @@ To add the "Home" link at the top (as shown in the screenshot above), modify `cl
 
 Now, if you toggle "offline" in Chrome Developer Tools' Network tab, you'll see it all works offline too!
 
-{% image blog/angular-pwa-auth/angular-beer-list-offline.png alt:"Angular PWA Works Offline" width:"800" %}
+<img src="/img/blog/angular-pwa-auth/angular-beer-list-offline.png" alt="Angular PWA Works Offline" width="800">
 
 If it works - great, now we can add auth with Okta!
 
@@ -523,7 +523,7 @@ declare const OktaAuth: any;
 
 After making these changes,  run `ng serve` and the `HomeComponent` should render as follows (after you’ve logged out and unchecked "Offline" in the Network tab):
 
-{% image blog/angular-pwa-auth/angular-login-form.png alt:"Angular Login Form" width:"800" %}
+<img src="/img/blog/angular-pwa-auth/angular-login-form.png" alt="Angular Login Form" width="800">
 
 Import Angular’s `Router`, add it as a dependency in the constructor, and add local variables for the `username` and `password` fields. Then implement a `loginWithPassword()` method in `HomeComponent`. This method uses the `OktaAuth` library to get a session token and exchange it for ID and access tokens.
 
@@ -723,7 +723,7 @@ Make sure your app is started (with `mvn spring-boot:run` in the `server` direct
 
 **NOTE:** If you still see the OIDC login screen, it's because PWAs often get "stuck" in your browser. In Chrome Developer Tools, navigate to the **Application** tab > **Clear storage** and click **Clear selected** at the bottom. Or just open an incognito window.
 
-{% image blog/angular-pwa-auth/angular-sp-login.png alt:"Stormpath Angular SDK Login" width:"800" %}
+<img src="/img/blog/angular-pwa-auth/angular-sp-login.png" alt="Stormpath Angular SDK Login" width="800">
 
 There are a couple of issues I found when writing this tutorial. Please subscribe to the following GitHub issues to be notified when they're fixed.
 
@@ -775,23 +775,23 @@ No 'Access-Control-Allow-Origin' header is present on the requested resource. Or
 
 To fix this, modify the Trusted Origins on Okta (under **API** > **Trusted Origins**) to have your client's URL (e.g. `https://pwa-client-phototopographical-subcurrent.cfapps.io`). 
 
-{% image blog/angular-pwa-auth/add-cf-origin.png alt:"Add Trusted Origin" width:"600" %}
+<img src="/img/blog/angular-pwa-auth/add-cf-origin.png" alt="Add Trusted Origin" width="600">
 
 This makes the cross-origin error go away, but it will cause an invalid request issue when you try to log in with the first login button. 
 
-{% image blog/angular-pwa-auth/invalid-redirect.png alt:"Invalid Redirect URI" width:"800" %}
+<img src="/img/blog/angular-pwa-auth/invalid-redirect.png" alt="Invalid Redirect URI" width="800">
 
 To fix this, modify the `Redirect URIs` for your "Angular PWA" OIDC application in Okta. 
 
-{% image blog/angular-pwa-auth/oidc-settings-cf-redirect.png alt:"OIDC Redirect URIs" width:"800" %}
+<img src="/img/blog/angular-pwa-auth/oidc-settings-cf-redirect.png" alt="OIDC Redirect URIs" width="800">
 
 Now both login techniques should work as expected and you should be able to load the beer list from your Spring Boot app.
 
-{% image blog/angular-pwa-auth/production-beer-list.png alt:"Production Beer List" width:"800" %}
+<img src="/img/blog/angular-pwa-auth/production-beer-list.png" alt="Production Beer List" width="800">
 
 The first time I ran [Lighthouse](https://developers.google.com/web/tools/lighthouse/) on this application, I was surprised to see it received a PWA score of 91. When I deployed this application previously, it [received a 98](/blog/2017/05/09/progressive-web-applications-with-angular-and-spring-boot#cloud-foundry).
  
-{% image blog/angular-pwa-auth/lighthouse-without-512.png alt:"Lighthouse Score, first attempt" width:"800" %}
+<img src="/img/blog/angular-pwa-auth/lighthouse-without-512.png" alt="Lighthouse Score, first attempt" width="800">
 
 I followed the advice in the report and added the following in the list of `icons` in  `client/src/assets/icons/manifest.json`.
 
@@ -807,7 +807,7 @@ When I re-deployed (by running `./deploy.sh` again) with this change, I received
 
 *NOTE: I did have to update the Trusted Origins and Redirect URIs in Okta after I redeployed since `deploy.sh` picks a random name to deploy to each time.*
 
-{% image blog/angular-pwa-auth/lighthouse-with-512.png alt:"Lighthouse Perfect Score" width:"800" %}
+<img src="/img/blog/angular-pwa-auth/lighthouse-with-512.png" alt="Lighthouse Perfect Score" width="800">
 
 ## Happy Authenticating!
 

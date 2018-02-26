@@ -54,17 +54,17 @@ Spring Security makes authentication with OAuth 2.0 pretty darn easy. It also pr
 > 4. Validate JWT ID token locally based on built-in dates and signature
 > 5. Get additional user attributes as needed with access token
 >
-> {% image blog/oauth/oidc-flow.png alt:"OIDC Flow" width:"800" %}{: .center-image }
+> <img src="/img/blog/oauth/oidc-flow.png" alt="OIDC Flow" width="800" class="center-image">
 
 ## Create a Spring Boot App
 
 Open [start.spring.io](https://start.spring.io) in your browser. Spring Initialzr is a site that allows you to create new Spring Boot applications quickly and easily. Set the Spring Boot version (in the top right corner) to `2.0.0.M7`. Type in a group and artifact name. As you can see from the screenshot below, I chose `com.okta.developer` and `oidc`. For dependencies, select **Web**, **Reactive Web**, **Security**, and **Thymeleaf**.
 
-{% image blog/spring-security-5/start.spring.io.png alt:"start.spring.io" width:"800" %}{: .center-image }
+<img src="/img/blog/spring-security-5/start.spring.io.png" alt="start.spring.io" width="800" class="center-image">
 
 Click **Generate Project**, download the zip, expand it on your hard drive, and open the project in your favorite IDE. Run the app with `./mvnw spring-boot:run`, and you'll be prompted to log in.
 
-{% image blog/spring-security-5/default-login.png alt:"Default Login" width:"700" %}{: .center-image }
+<img src="/img/blog/spring-security-5/default-login.png" alt="Default Login" width="700" class="center-image">
 
 Spring Security 4.x prompts you with basic authentication rather than with a login form, so this is one thing that's different with Spring Security 5.
 
@@ -76,7 +76,7 @@ Using default security password: 103c55b4-2760-4830-9bca-a06a87d384f9
 
 In the form, enter "user" for the User and the generated password for Password. The next screen will be a 404 since your app doesn't have a default route configured for the `/` path.
 
-{% image blog/spring-security-5/post-login.png alt:"Post Login" width:"700" %}{: .center-image }
+<img src="/img/blog/spring-security-5/post-login.png" alt="Post Login" width="700" class="center-image">
 
 In Spring Boot 1.x, you could change the user’s password, so it’s the same every time by adding the following to `src/main/resources/application.properties`.
 
@@ -208,17 +208,17 @@ You'll need to add some dependencies to your `pom.xml` for Spring Security 5's O
 
 Restart your app and navigate to `http://localhost:8080` again. You'll see a link to click on to log in with Okta.
 
-{% image blog/spring-security-5/login-with-oauth2.png alt:"Login with OAuth 2.0" width:"700" %}{: .center-image }
+<img src="/img/blog/spring-security-5/login-with-oauth2.png" alt="Login with OAuth 2.0" width="700" class="center-image">
 
 **NOTE:** If you'd like to learn how to customize the login screen that Spring Security displays, see its [OAuth 2.0 Login Page documentation](https://docs.spring.io/spring-security/site/docs/5.0.0.RELEASE/reference/htmlsingle/#oauth2login-advanced-login-page).
 
 After clicking on the link, you should see a login screen.
 
-{% image blog/spring-security-5/okta-login.png alt:"Okta Login" width:"800" %}{: .center-image }
+<img src="/img/blog/spring-security-5/okta-login.png" alt="Okta Login" width="800" class="center-image">
 
 Enter the credentials you used to create your account, and you should see a screen like the following after logging in.
 
-{% image blog/spring-security-5/post-login-oauth2.png alt:"Okta Login" width:"700" %}{: .center-image }
+<img src="/img/blog/spring-security-5/post-login-oauth2.png" alt="Okta Login" width="700" class="center-image">
 
 **NOTE:** It's possible to change things so `Principal#getName()` returns a different value. However, there is a [bug in Spring Boot 2.0.0.M7](https://github.com/spring-projects/spring-boot/pull/10672) that prevents the configuration property from working.
 
@@ -377,11 +377,11 @@ Create another template at `src/main/resources/userinfo.html` to display the use
 
 Now, when you're logged in, you'll see a link to display user info.
 
-{% image blog/spring-security-5/index-page.png alt:"Index Page" width:"800" %}{: .center-image }
+<img src="/img/blog/spring-security-5/index-page.png" alt="Index Page" width="800" class="center-image">
 
 Click on the link, and you'll see the contents of the ID Token that's retrieved from the user info endpoint.
 
-{% image blog/spring-security-5/userinfo-page.png alt:"UserInfo Page" width:"800" %}{: .center-image }
+<img src="/img/blog/spring-security-5/userinfo-page.png" alt="UserInfo Page" width="800" class="center-image">
 
 ## Learn More about Spring Security and OIDC
 

@@ -18,7 +18,7 @@ tweets:
 I'm genuinely excited to announce that today, we're officially re-launching
 the *new and improved* [Okta Identity Platform](https://developer.okta.com/).
 
-{% image blog/authentication-still-sucks/okta-developer-screenshot.png alt:"Okta Developer Screenshot" %}
+<img src="/img/blog/authentication-still-sucks/okta-developer-screenshot.png" alt="Okta Developer Screenshot">
 
 Everything has been molded to our vision, and we're aiming to do something we
 could not before: build the world's largest authentication-as-a-service platform

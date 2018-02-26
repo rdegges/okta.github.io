@@ -1,17 +1,21 @@
+name = "The Identity Platform for Developers"
+email = "developers@okta.com"
 baseURL = "https://developer.okta.com"
 languageCode = "en-us"
 title = "Okta Developer"
 theme = "okta"
-googleAnalytics = "UA-15777010-3"
-disqusShortname = "oktadevblog"
+
+disqusshortname = "oktadevblog"
 paginate = 10
 paginatePath = "page"
-description = "test"
 
 [permalinks]
-  post = "/:year/:month/:day/:slug/"
+  post = "/blog/:year/:month/:day/:title/"
 
 [params]
   twitter_username = "OktaDev"
   github_username = "oktadeveloper"
   dev_forum = "https://devforum.okta.com/"
+  description = "Secure, scalable, and highly available authentication and user management for any app."
+
+googleAnalytics = "UA-15777010-3"

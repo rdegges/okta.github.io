@@ -21,7 +21,7 @@ In this tutorial, I'll show you how to write a note-taking application in Kotlin
 
 As with any good example app, you’ll want to deploy it securely, so I'll show you how to do that using Okta's Identity APIs and our new Spring Boot starter. The Okta Spring Boot starter allows you to make your API into a resource server that can read and validate access tokens sent to it. The diagram below shows how a resource server fits into an OAuth architecture. 
 
-{% image blog/kotlin-secure-notes/oauth-actors.png alt:"OAuth 2.0 Actors" width:"800" %}{: .center-image }
+<img src="/img/blog/kotlin-secure-notes/oauth-actors.png" alt="OAuth 2.0 Actors" width="800" class="center-image">
 
 Phew! That's a lot of buzzwords for one article. Don't worry, I've confirmed it's possible to develop this app in even less time than it takes to deploy and secure it. And developing is fun, so let's get started!
 
@@ -29,7 +29,7 @@ Phew! That's a lot of buzzwords for one article. Don't worry, I've confirmed it'
 
 Start building the API for your application by navigating your favorite browser to [start.spring.io](https://start.spring.io). Select Kotlin as your language, and choose Web, H2, JPA, Rest Repositories, and DevTools. You’ll notice in the screenshot below that I changed the group and artifact names too. Please use these same names, so your package and class names match this tutorial.
 
-{% image blog/kotlin-secure-notes/start.spring.io.png alt:"start.spring.io" %}{: .center-image }
+<img src="/img/blog/kotlin-secure-notes/start.spring.io.png" alt="start.spring.io" class="center-image">
  
 Click **Generate Project** and expand the zip file after downloading. If you don’t have IntelliJ IDEA installed, now’s a good time to [try it out](https://www.jetbrains.com/idea/). It’s a great IDE for Java, Kotlin, Groovy, TypeScript, JavaScript, HTML, and Sass/CSS. One of its killer features is the ability to copy/paste Java code into a Kotlin class and have it auto-converted to Kotlin on-the-fly!
 
@@ -104,7 +104,7 @@ http localhost:8080/notes
 
 The result will look like the following screenshot.
 
-{% image blog/kotlin-secure-notes/http-notes.png alt:"http request screenshot" %}{: .center-image }
+<img src="/img/blog/kotlin-secure-notes/http-notes.png" alt="http request screenshot" class="center-image">
 
 Create a `HomeController` (in the same `NotesApplication.kt` file) and use it to filter notes by the currently logged-in user.
 
@@ -293,7 +293,7 @@ After modifying your `pom.xml`, configure it with your Okta settings.
 
 Log in to your Okta account and navigate to **API** > **Authorization Servers** in the top menu. There should be a "default" server listed with an audience and issuer URI specified.
 
-{% image blog/kotlin-secure-notes/default-as-server.png alt:"Default AS" width:"700" %}{: .center-image }
+<img src="/img/blog/kotlin-secure-notes/default-as-server.png" alt="Default AS" width="700" class="center-image">
 
 Copy and paste the Issuer URL and audience values into `application.properties`:
 
@@ -312,7 +312,7 @@ The Okta Spring Security starter expects you to have a custom claim called `grou
 
 Navigate to **Applications** and click on **Add Application**. Select Single Page App (SPA) and click **Next**. Give the application a name (e.g. “My OIDC App”) and specify `http://localhost:4200` as a Login redirect URI. Your upcoming Angular client will use this value. Click **Done** and admire your handiwork!
 
-{% image blog/kotlin-secure-notes/my-oidc-app.png alt:"My OIDC App" width:"700" %}{: .center-image }
+<img src="/img/blog/kotlin-secure-notes/my-oidc-app.png" alt="My OIDC App" width="700" class="center-image">
 
 Copy the Client ID value into `application.properties`.
 
@@ -743,11 +743,11 @@ To make the Okta Sign-In Widget look good, add its default CSS files to `client/
 
 After making all these changes, you should be able to fire up http://localhost:4200 (using `ng serve`) and see a sign in form.
 
-{% image blog/kotlin-secure-notes/signin-widget.png alt:"Sign-In Widget" %}{: .center-image }
+<img src="/img/blog/kotlin-secure-notes/signin-widget.png" alt="Sign-In Widget" class="center-image">
 
 After signing in, you should see the notes list, but no records in it. 
 
-{% image blog/kotlin-secure-notes/notes-list-plain.png alt:"Empty Notes List" %}{: .center-image }
+<img src="/img/blog/kotlin-secure-notes/notes-list-plain.png" alt="Empty Notes List" class="center-image">
 
 To make sure I could add, edit, and delete notes, I wrote a bunch of TypeScript and HTML. I also added [Angular Material](https://material.angular.io) using `yarn add @angular/material @angular/cdk`. 
 
@@ -761,11 +761,11 @@ The final [client/src/app/app.module.ts](https://github.com/oktadeveloper/okta-k
 
 The screenshots below show the fruits of my labor.
 
-{% image blog/kotlin-secure-notes/notes-list.png alt:"Material Notes List" width:"600" %}{: .center-image }
+<img src="/img/blog/kotlin-secure-notes/notes-list.png" alt="Material Notes List" width="600" class="center-image">
 
-{% image blog/kotlin-secure-notes/add-note.png alt:"Add Note" width:"600" %}{: .center-image }
+<img src="/img/blog/kotlin-secure-notes/add-note.png" alt="Add Note" width="600" class="center-image">
 
-{% image blog/kotlin-secure-notes/edit-note.png alt:"Edit Note" width:"600" %}{: .center-image }
+<img src="/img/blog/kotlin-secure-notes/edit-note.png" alt="Edit Note" width="600" class="center-image">
 
 **NOTE:** There’s one issue with Okta’s Sign-In Widget I still haven’t fully figured out. Not every time, but everyone once it in a while, it requires me to move my mouse or click on the screen to make the notes list load after logging in. I opened [an issue](https://github.com/okta/okta-signin-widget/issues/268) for this and tried the suggested solution, but it doesn’t work 100% of the time.
 
@@ -851,13 +851,13 @@ notes-server   started           1/1         1G       1G     notes-by-kotlin.cfa
 
 When you try to log in, you’ll get a CORS error.
 
-{% image blog/kotlin-secure-notes/cf-client-login-error.png alt:"Cloud Foundry Login" %}{: .center-image }
+<img src="/img/blog/kotlin-secure-notes/cf-client-login-error.png" alt="Cloud Foundry Login" class="center-image">
 
 To fix this, log in to your Okta dashboard once more and navigate to **API** > **Trusted Origins**. Add `https://notes-with-typescript.cfapps.io` as an Origin URL with CORs support. You’ll also need to add `https://notes-with-typescript.cfapps.io` as a Login Redirect URI to your “My OIDC App”. 
 
 You can now log in and add a note.
 
-{% image blog/kotlin-secure-notes/cf-success.png alt:"Success in Production" %}{: .center-image }
+<img src="/img/blog/kotlin-secure-notes/cf-success.png" alt="Success in Production" class="center-image">
 
 ## Learn More
 

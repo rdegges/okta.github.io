@@ -22,13 +22,13 @@ In the case of the OIDC plugin, only Kong speaks directly to Okta using the [Aut
 
 This is easier to understand with some diagrams. Here’s what an architecture might look like without an API Gateway:
 
-{% image blog/use-kong-gateway-to-centralize-authentication/NoKong.png alt:"No Kong" width:"700" %}{: .center-image }
+<img src="/img/blog/use-kong-gateway-to-centralize-authentication/NoKong.png" alt="No Kong" width="700" class="center-image">
 
 While you may have a load balancer sitting in front of everything acting as a “traffic cop”, each of your services has to know how to “speak” OIDC.
 
 Here’s another diagram with an API Gateway in the mix:
 
-{% image blog/use-kong-gateway-to-centralize-authentication/WithKong.png alt:"With Kong" width:"700" %}{: .center-image }
+<img src="/img/blog/use-kong-gateway-to-centralize-authentication/WithKong.png" alt="With Kong" width="700" class="center-image">
 
 In this case, *only* the Kong API gateway is interacting with Okta. Kong then passes the `x-userinfo` header along after the user authenticates. This enables your services to be a lot leaner – no OIDC stack needed.
 

@@ -45,7 +45,7 @@ If that seems like a lot – don't worry! It's just a bunch of clicking in a fri
 
 Navigate in your Okta Admin Dashboard to `Users` -> `Groups`. Click `Add Group` and fill in `admins` for the Name. Click `Add Group`to save it.
 
-{% image blog/okta-groups-spring-security/groups-3.png alt:"Default AS" width:"700" %}{: .center-image }
+<img src="/img/blog/okta-groups-spring-security/groups-3.png" alt="Default AS" width="700" class="center-image">
 
 Repeat for the `users` group.
 
@@ -53,18 +53,18 @@ Repeat for the `users` group.
 
 Navigate in your Okta Admin Dashboard to `Users` -> `People`. Click `Add User` and fill in the form. Add this user to the `users` group you set up previously. Make sure the checkbox is selected to send an activation email.
 
-{% image blog/okta-groups-spring-security/users-2.png alt:"Default AS" width:"700" %}{: .center-image }
+<img src="/img/blog/okta-groups-spring-security/users-2.png" alt="Default AS" width="700" class="center-image">
 
 Click `Save and Add Another`. Repeat the above steps, only for the second user add to both the `users` and `admins` groups.
 
-{% image blog/okta-groups-spring-security/users-3.png alt:"Default AS" width:"700" %}{: .center-image }
+<img src="/img/blog/okta-groups-spring-security/users-3.png" alt="Default AS" width="700" class="center-image">
 
 **Note**: Either the primary or secondary email needs to be a real email address so you can activate the user. Check your email and click the links for both users to activate them.
 ### OIDC Application
 
 Click the `Applications` menu item in your Okta Admin Dashboard. Click `Add Application`.
 
-{% image blog/okta-groups-spring-security/applications-2.png alt:"Default AS" width:"700" %}{: .center-image }
+<img src="/img/blog/okta-groups-spring-security/applications-2.png" alt="Default AS" width="700" class="center-image">
 
 Choose the `Web` option and click `Next`.
 
@@ -80,7 +80,7 @@ Fill out the form like so:
 
 Click`Done`!
 
-{% image blog/okta-groups-spring-security/applications-3.png alt:"Default AS" width:"700" %}{: .center-image }
+<img src="/img/blog/okta-groups-spring-security/applications-3.png" alt="Default AS" width="700" class="center-image">
 
 **Note**: The URIs specified above are the Spring Boot defaults. These can easily be changed later on.
 
@@ -89,7 +89,7 @@ Scroll down on the resulting page and note the `Client ID`. You'll need it later
 
 Navigate in your Okta Admin Dashboard to `API` -> `Authorization Servers`.
 
-{% image blog/okta-groups-spring-security/as-1.png alt:"Default AS" width:"700" %}{: .center-image }
+<img src="/img/blog/okta-groups-spring-security/as-1.png" alt="Default AS" width="700" class="center-image">
 
 Note the `Issuer URI`. You'll need it later to configure the Spring Boot app.
 
@@ -107,7 +107,7 @@ Fill out the form like so:
 
 Click`Create`.
 
-{% image blog/okta-groups-spring-security/as-3.png alt:"Default AS" width:"700" %}{: .center-image }
+<img src="/img/blog/okta-groups-spring-security/as-3.png" alt="Default AS" width="700" class="center-image">
 
 This ensures that group membership information is included in the Access Token when a user authenticates. This is key to hooking into Spring Security's roles and authorities mechanism.
 
@@ -146,7 +146,7 @@ mvn spring-boot:run
 
 Navigate to the home page and click `Login`.
 
-{% image blog/okta-groups-spring-security/app-1.png alt:"Default AS" width:"700" %}{: .center-image }
+<img src="/img/blog/okta-groups-spring-security/app-1.png" alt="Default AS" width="700" class="center-image">
 
 Sign in as the user that belongs to the `users` group that you created before.
 
@@ -154,7 +154,7 @@ You'll see that the app knows who you are and there are a row of buttons on the 
 
 These buttons are connected to the app such that only members of the `users` group will be able to see the page when `Users Only` is clicked and only members of the `admins` group will be able to see the page when `Admins Only` is clicked.
 
-{% image blog/okta-groups-spring-security/app-3.png alt:"Default AS" width:"700" %}{: .center-image }
+<img src="/img/blog/okta-groups-spring-security/app-3.png" alt="Default AS" width="700" class="center-image">
 
 Click `Users Only`. You’ll see a page that shows that you’re a member of the `users` group.
 
@@ -164,7 +164,7 @@ Click the `Logout` button. Log in again as the user that belongs to the `admins`
 
 Click `Admins Only`.
 
-{% image blog/okta-groups-spring-security/app-6.png alt:"Default AS" width:"700" %}{: .center-image }
+<img src="/img/blog/okta-groups-spring-security/app-6.png" alt="Default AS" width="700" class="center-image">
 
 This time, you can see that you are in both the `admins` group and the `users` group.
 ## Spring Security Code Review

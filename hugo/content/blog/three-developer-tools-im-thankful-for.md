@@ -48,7 +48,7 @@ minute to share just why I’m so thankful for them.
 
 ## Vim
 
-{% image blog/thankful/vim.png alt:"Vim" width:"600" %}{: .center-image }
+<img src="/img/blog/thankful/vim.png" alt="Vim" width="600" class="center-image">
 
 If you’ve ever met me in person (or seen me online), you probably know that I’m
 pretty old school. I learned how to use [Vim](https://vim.sourceforge.io/)
@@ -106,7 +106,7 @@ you can join me!).
 
 ## tmux
 
-{% image blog/thankful/tmux.png alt:"tmux" width:"600" %}{: .center-image }
+<img src="/img/blog/thankful/tmux.png" alt="tmux" width="600" class="center-image">
 
 I can’t have a conversation about awesome developer tools without mentioning
 [tmux](https://github.com/tmux/tmux). Every single time I open a terminal it’s
@@ -151,7 +151,7 @@ useful and handy tool.
 
 ## zsh
 
-{% image blog/thankful/zsh.png alt:"zsh" width:"600" %}{: .center-image }
+<img src="/img/blog/thankful/zsh.png" alt="zsh" width="600" class="center-image">
 
 Literally everything I do on the command line is powered by the Z shell
 ([zsh](http://www.zsh.org/)) and the aptly named [oh-my-zsh](http://ohmyz.sh/)
@@ -188,7 +188,7 @@ for creating oh-my-zsh. You guys are amazing.
 
 ## Happy Thanksgiving
 
-{% image blog/thankful/turkey.png alt:"turkey" width:"600" %}{: .center-image }
+<img src="/img/blog/thankful/turkey.png" alt="turkey" width="600" class="center-image">
 
 It was fun taking a few minutes to write about my favorite three developer
 tools.

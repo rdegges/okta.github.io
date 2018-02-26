@@ -111,7 +111,7 @@ ng serve
 
 You should see a screen like the one below at `http://localhost:4200`.
 
-{% image blog/angular-oidc/default-homepage.png alt:"Default Homepage" width:"800" %}
+<img src="/img/blog/angular-oidc/default-homepage.png" alt="Default Homepage" width="800">
 
 You can make sure your new project's tests pass, run `ng test`:
 
@@ -185,7 +185,7 @@ Now that you have routing setup, you can continue writing the search feature.
 
 If you still have `ng serve` running, your browser should refresh automatically. If not, navigate to `http://localhost:4200`. You will likely see a blank screen. Open your JavaScript console and you'll see the problem.
 
-{% image blog/angular-oidc/ngmodel-error.png alt:"ngModel error" width:"800" %}
+<img src="/img/blog/angular-oidc/ngmodel-error.png" alt="ngModel error" width="800">
 
 To solve this, open `src/app/app.module.ts` and add `FormsModule` as an import in `@NgModule`:
 
@@ -205,7 +205,7 @@ export class AppModule { }
 
 Now you should see the search form.
 
-{% image blog/angular-oidc/search-without-css.png alt:"Search component" width:"800" %}
+<img src="/img/blog/angular-oidc/search-without-css.png" alt="Search component" width="800">
 
 If you want to add CSS for this components, open `src/app/search/search.component.css` and add some CSS. For example:
 
@@ -425,7 +425,7 @@ td {
 
 Now the search results look better.
 
-{% image blog/angular-oidc/search-results.png alt:"Search Results" width:"800" %}
+<img src="/img/blog/angular-oidc/search-results.png" alt="Search Results" width="800">
 
 But wait, you still don't have search functionality! To add a search feature, add a `search()` method to `SearchService`.
 
@@ -643,7 +643,7 @@ button {
 
 At this point, you should be able to search for a person and update their information.
 
-{% image blog/angular-oidc/edit-form.png alt:"Edit form" width:"800" %}
+<img src="/img/blog/angular-oidc/edit-form.png" alt="Edit form" width="800">
 
 The `<form>` in `src/app/edit/edit.component.html` calls a `save()` function to update a person's data. You already implemented this above.
 The function calls a `gotoList()` function that appends the person's name to the URL when sending the user back to the search screen.
@@ -717,7 +717,7 @@ You'll also need to wrap everything in a `<form>` element. Add `<form>` after th
 
 After making these changes, any field with a `required` attribute will be required.
 
-{% image blog/angular-oidc/edit-form-validation.png alt:"Edit form with validation" width:"800" %}
+<img src="/img/blog/angular-oidc/edit-form-validation.png" alt="Edit form with validation" width="800">
 
 In this screenshot, you might notice the address fields are blank. This is explained by the error in your console.
 
@@ -742,7 +742,7 @@ To fix, add a `name` attribute to all the address fields. For example:
 
 Now values should display in all fields and `name` should be required.
 
-{% image blog/angular-oidc/edit-form-names.png alt:"Edit form with names and validation" width:"800" %}
+<img src="/img/blog/angular-oidc/edit-form-names.png" alt="Edit form with names and validation" width="800">
 
 If you want to provide your own validation messages instead of relying on the browser’s, complete the following steps:
 
@@ -767,7 +767,7 @@ To integrate [Okta](https://developer.okta.com) for user authentication, you'll 
 
 Login to your Okta account, or [create one](https://developer.okta.com/signup/) if you don’t have one. Navigate to **Applications** and click on the **Add Application** button. Select **SPA** and click **Next**. On the next page, specify `http://localhost:4200` as a Base URI, Login redirect URI, and Logout redirect URI. Click **Done** and you should see settings like the following.
 
-{% image blog/angular-oidc/oidc-settings.png alt:"OIDC App Settings" width:"700" %}{: .center-image }
+<img src="/img/blog/angular-oidc/oidc-settings.png" alt="OIDC App Settings" width="700" class="center-image">
 
 Install [Manfred Steyer's](https://github.com/manfredsteyer) project to [add OAuth 2 and OpenID Connect support](https://github.com/manfredsteyer/angular-oauth2-oidc) using npm.
 
@@ -904,15 +904,15 @@ export class AppModule { }
 
 After making these changes, you should be able to run `ng serve` and see a login button.
 
-{% image blog/angular-oidc/okta-login-button.png alt:"Login button" width:"800" %}
+<img src="/img/blog/angular-oidc/okta-login-button.png" alt="Login button" width="800">
 
 Click the **Login** button and sign-in with one of the people that's configured in your Okta application.
 
-{% image blog/angular-oidc/okta-login-form.png alt:"Okta Login form" width:"800" %}
+<img src="/img/blog/angular-oidc/okta-login-form.png" alt="Okta Login form" width="800">
 
 After logging in, you'll be able to click *Search* and view people's information.
 
-{% image blog/angular-oidc/okta-post-login.png alt:"View after login" width:"800" %}
+<img src="/img/blog/angular-oidc/okta-post-login.png" alt="View after login" width="800">
 
 If it works - great! If you want to build your own login form in your app, continue reading to learn how to use the [Okta Auth SDK](https://github.com/okta/okta-auth-js) with `OAuthService`.
 
@@ -1074,7 +1074,7 @@ Change `HomeComponent` to declare `OktaAuth` and modify its `template` so it has
 
 After making these changes, the `HomeComponent` should render as follows.
 
-{% image blog/angular-oidc/sign-in-form.png alt:"Custom sign-in form" width:"800" %}
+<img src="/img/blog/angular-oidc/sign-in-form.png" alt="Custom sign-in form" width="800">
 
 Add local variables for the username and password fields, import `OktaAuthWrapper`, and implement a `loginWithPassword()` method in `HomeComponent`.
 
@@ -1098,7 +1098,7 @@ loginWithPassword() {
 
 You should be able to sign in using the form, using one of your app's registered users. After logging in, you'll be able to click the **Search** link and view people's information.
 
-{% image blog/angular-oidc/sign-in-form-success.png alt:"View after sign-in" width:"800" %}
+<img src="/img/blog/angular-oidc/sign-in-form-success.png" alt="View after sign-in" width="800">
 
 ## Angular + Okta
 

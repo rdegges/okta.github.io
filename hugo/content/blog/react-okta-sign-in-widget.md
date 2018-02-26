@@ -31,7 +31,7 @@ npm install @okta/okta-signin-widget@2.3.0 --save
 
 This will add the Okta Sign-In Widget code to your `node_modules` folder. We’ll be using version 2.3.0 of the Sign-In Widget.
 
-{% image blog/react-sign-in-widget/Okta-Widget-NPM-Modules-Screener.png alt:"Okta in node_modules" %}
+<img src="/img/blog/react-sign-in-widget/Okta-Widget-NPM-Modules-Screener.png" alt="Okta in node_modules">
 
 Then add the styles for the widget in your `index.html` file from the Okta CDN. Add these lines inside the `<head>` tag:
 
@@ -84,7 +84,7 @@ In order to use Okta as your OpenID Connect provider for authentication, you’l
 
 If you don't have an Okta developer account, [go create one](https://developer.okta.com/signup/)! Once you're logged in, click on **Applications** in the top navbar, then click **Add Application**. Select SPA as the platform and click Next. Change the redirect URI to `http://localhost:3000`, and click Done. The application will be created with the following settings:
 
-{% image blog/react-sign-in-widget/react-sample-app-settings.png alt:"OIDC Application Settings" width:"800" %}
+<img src="/img/blog/react-sign-in-widget/react-sample-app-settings.png" alt="OIDC Application Settings" width="800">
 
 Now that you have an application created in Okta, you can set up the widget to talk to your new app!
 
@@ -288,7 +288,7 @@ npm install
 
 When you run the app now (with `npm start`), you should see something like this:
 
-{% image blog/react-sign-in-widget/Finished-Sample-Screener.gif alt:"Finished Sample" %}
+<img src="/img/blog/react-sign-in-widget/Finished-Sample-Screener.gif" alt="Finished Sample">
 
 If you have any problems with the application, one thing to try first is, delete the `node_modules` folder **and** the `package-lock.json` file and re-run the `npm install` command. This should fix any problems with package dependency management.
 

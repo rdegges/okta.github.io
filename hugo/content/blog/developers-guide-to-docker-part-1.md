@@ -43,7 +43,7 @@ To list the images you have downloaded to your host machine, run a simple comman
 docker image list
 ```
 
-{% image blog/docker-for-developers/docker-image-list.png alt:"Docker Image List" width:"800" %}
+<img src="/img/blog/docker-for-developers/docker-image-list.png" alt="Docker Image List" width="800">
 
 You should see some headers, but nothing in the listing (unless you have pulled some container images before). I have a few images already on my machine.
 
@@ -52,7 +52,7 @@ To pull the latest version of the [NGINX](https://www.nginx.com/) image from [Do
 ```bash
 docker pull nginx:latest
 ```
-{% image blog/docker-for-developers/docker-pull.png alt:"Docker Pull" width:"800" %}
+<img src="/img/blog/docker-for-developers/docker-pull.png" alt="Docker Pull" width="800">
 
 You can leave off the `:latest` and Docker will pull the image tagged with latest, but we'll be explicit here. Just remember that `:latest` changes every time the owner of that image uploads a new version. So it’s not a good idea to use latest in production. Generally, the latest image will also have another tag (1.13.0 at the time of this article) that is much better to use for production. It will still be the same image, even if NGINX uploads a new version of the image tomorrow.
 
@@ -63,7 +63,7 @@ You can now run a container based on the `nginx:latest` image by running:
 ```bash
 docker run -it nginx:latest /bin/bash
 ```
-{% image blog/docker-for-developers/docker-run-it.png alt:"Docker Run" width:"800" %}
+<img src="/img/blog/docker-for-developers/docker-run-it.png" alt="Docker Run" width="800">
 
 This tells Docker that we want to run a container based on the `nginx:latest` image, that we want it to be interactive (`-i`), that we want a pseudo tty shell (`-t`), and finally, we want the main command for this container to be `/bin/bash`. This runs the `/bin/bash` command at process ID 1 in the container. This means, when the bash shell in the container exits, the container will stop.
 
@@ -76,7 +76,7 @@ docker container list
 ```
 this should give is a listing like:
 
-{% image blog/docker-for-developers/docker-ps.png alt:"Docker Container List" %}
+<img src="/img/blog/docker-for-developers/docker-ps.png" alt="Docker Container List">
 
 You can see the container's ID is: 511b121137ac and at the command line inside the container, I am logged in as `root@511b121137ac`. You can also see the command is `/bin/bash` that is running at PID 1 in the container and the container name is `determined_banach` (it will be different for you). If you don't specify a name for the container, Docker will make one from a list of adjectives and famous computer scientist last names (think `hungry_babbage` or `slippery_bohr`).
 
@@ -88,7 +88,7 @@ But what if you want to see **all** the containers whether they're running or no
 docker container list -a
 ```
 
-{% image blog/docker-for-developers/docker-ps-a.png alt:"Docker Image List All" width:"800" %}
+<img src="/img/blog/docker-for-developers/docker-ps-a.png" alt="Docker Image List All" width="800">
 
 As you can see the nginx-based container is now stopped and it exited with a code '0', meaning it exited normally.
 

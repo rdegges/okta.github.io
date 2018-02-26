@@ -78,19 +78,19 @@ Now, you should be able to fire them both up (with `dotnet run` from the command
 
 If you don't already have an account with Okta, set up your free-forever developer account at <https://developer.okta.com/signup/>. Once you've logged into the dashboard, click on the **Applications** menu item, then click **Add Application**.
 
-{% image blog/webapi-token-auth/AddApplication.png alt:"Add Application Screen" width:"800" %}{: .center-image }
+<img src="/img/blog/webapi-token-auth/AddApplication.png" alt="Add Application Screen" width="800" class="center-image">
 
 From the Create New Application screen choose **Service**, and click **Next**.
 
-{% image blog/webapi-token-auth/CreateServiceScreen.png alt:"Create Service Screen" width:"800" %}{: .center-image }
+<img src="/img/blog/webapi-token-auth/CreateServiceScreen.png" alt="Create Service Screen" width="800" class="center-image">
 
 Name the application "API Sample App", and click **Done**.
 
-{% image blog/webapi-token-auth/NameServiceScreen.png alt:"Name Service Screen" width:"800" %}{: .center-image }
+<img src="/img/blog/webapi-token-auth/NameServiceScreen.png" alt="Name Service Screen" width="800" class="center-image">
 
 On the API Sample App's general settings, you will see the Client Credentials box with the client ID and client secret in it. You will use these to authenticate a client wishing to call your API.
 
-{% image blog/webapi-token-auth/ApplicationGeneralSettings.png alt:"General Settings Screen" width:"800" %}{: .center-image }
+<img src="/img/blog/webapi-token-auth/ApplicationGeneralSettings.png" alt="General Settings Screen" width="800" class="center-image">
 
 >For each client that you’ll want to have access to the API, you’ll need to create an Okta application for it, and give it the Client ID and Client Secret.
 
@@ -510,12 +510,12 @@ public class ValuesController : Controller
 
 You can now run the API and try to hit it with a browser. You'll see a screen that says the page isn't working with an HTTP error of 401.
 
-{% image blog/webapi-token-auth/RunningApiWithValidation.png alt:"API failing in Browser" width:"800" %}{: .center-image }
+<img src="/img/blog/webapi-token-auth/RunningApiWithValidation.png" alt="API failing in Browser" width="800" class="center-image">
 
 
 That's it! If you run your app you will see the application displaying the values as before. You now have an API that is protected with access tokens provided by Okta, and only the worthy shall pass.
 
-{% image blog/webapi-token-auth/ProtectedService.png alt:"App calling protected API" width:"800" %}{: .center-image }
+<img src="/img/blog/webapi-token-auth/ProtectedService.png" alt="App calling protected API" width="800" class="center-image">
 
 ## Learn More
 

@@ -81,7 +81,7 @@ namespace AspnetOkta.Domain.Authorization
 
 As you can see here, in the constructor, you are creating an `OktaClient` object to be stored in a class-level variable called client. You'll need your `OrgUrl` from Okta (probably something like dev-1234.oktapreview.com) and an API token which you can get from the Okta Developer Dashboard under `API` > `Tokens`.
 
-{% image blog/aspnet-authz/tokens.png alt:"API Token Page" width:"800" %}
+<img src="/img/blog/aspnet-authz/tokens.png" alt="API Token Page" width="800">
 
 _Be aware that you only get to see the API token when you create it, so make sure you save it somewhere so you can reference it later._
 
@@ -108,11 +108,11 @@ This tells the application that you want to transform the claims and which claim
 ## Prove that it Works
 You'll need to set up two users in two different groups in your Okta Developer Dashboard, call one group "Admin" and the other "Enthusiast".
 
-{% image blog/aspnet-authz/add-groups.png alt:"Add Groups Page" width:"800" %}
+<img src="/img/blog/aspnet-authz/add-groups.png" alt="Add Groups Page" width="800">
 
 Make sure the groups are assigned to your application:
 
-{% image blog/aspnet-authz/group-assignments.png alt:"Assing Groups To Application" width:"800" %}
+<img src="/img/blog/aspnet-authz/group-assignments.png" alt="Assing Groups To Application" width="800">
 
 Then create some routes in the `UserController` decorated with the `AuthorizeAttribute`.
 

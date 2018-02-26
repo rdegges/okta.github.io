@@ -70,13 +70,13 @@ spring run helloWorld.groovy
 
 Navigate to `http://localhost:8080` and you'll be prompted to login with your browser's basic authentication dialog. Enter `user` for the username and copy/paste the generated password from your console. If you copied and pasted the password successfully, you'll see `Hello World` in your browser.
 
-{% image blog/spring-boot-oauth/hello-world.png alt:"Hello World" width:"800" %}{: .center-image }
+<img src="/img/blog/spring-boot-oauth/hello-world.png" alt="Hello World" width="800" class="center-image">
 
 ### Get Your Authorization Server Settings
 
 Log in to your Okta account and navigate to **API** > **Authorization Servers** in the top menu. There should be a "default" server listed with an audience and issuer URI specified.
 
-{% image blog/spring-boot-oauth/default-as-server.png alt:"Default AS" width:"700" %}{: .center-image }
+<img src="/img/blog/spring-boot-oauth/default-as-server.png" alt="Default AS" width="700" class="center-image">
 
 The Metadata URI you see in this screenshot will come in handy later when you need to specify `accessTokenUri` and `userAuthorizationUri` values.
 
@@ -84,7 +84,7 @@ The Metadata URI you see in this screenshot will come in handy later when you ne
 
 To get a client id and secret, you need to create a new OpenID Connect (OIDC) app. Navigate to **Applications** and click on **Add Application**. Select **Web** and click **Next**. Give the application a name (e.g. “My OIDC App”) and specify `http://localhost:8080/login` as a Login redirect URI. Click **Done** and admire your handiwork!
 
-{% image blog/spring-boot-oauth/oidc-settings.png alt:"My OIDC App" width:"700" %}{: .center-image }
+<img src="/img/blog/spring-boot-oauth/oidc-settings.png" alt="My OIDC App" width="700" class="center-image">
 
 Your `clientId` and `clientSecret` values for this app will be just below the fold.
 
@@ -126,7 +126,7 @@ security:
 
 Start your app with `spring run helloOAuth.groovy` and navigate to `http://localhost:8080`. You'll be redirected to Okta to login. 
 
-{% image blog/spring-boot-oauth/okta-login.png alt:"Okta Login" width:"800" %}{: .center-image }
+<img src="/img/blog/spring-boot-oauth/okta-login.png" alt="Okta Login" width="800" class="center-image">
 
 If you're already logged in, you should be redirected back to your app. If it works - congrats!
 
@@ -141,7 +141,7 @@ String home(java.security.Principal user) {
 
 This should result in your app showing a result like the following.
 
-{% image blog/spring-boot-oauth/login-success.png alt:"Success" width:"800" %}{: .center-image }
+<img src="/img/blog/spring-boot-oauth/login-success.png" alt="Success" width="800" class="center-image">
 
 ## Get the Source Code
 

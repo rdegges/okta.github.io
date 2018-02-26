@@ -26,13 +26,13 @@ Speaking of compelling, have you heard of [JHipster](http://www.jhipster.tech)? 
 
 You can generate boilerplate code (often called CRUD, for Create, Read, Update, and Delete) for domain objects for the application you’re developing. JHipster’s [JDL Studio](http://www.jhipster.tech/jdl-studio/) makes modeling domain objects as easy as creating a file that describes your entities and their relationships to one another. For example, here’s what a bug tracker's JDL looks like.
 
-{% image blog/oidc-with-jhipster/jdl-studio-example.png alt:"JDL Studio Example" width:"800" %}{: .center-image }
+<img src="/img/blog/oidc-with-jhipster/jdl-studio-example.png" alt="JDL Studio Example" width="800" class="center-image">
 
 **NOTE:** You can find other examples at <https://github.com/jhipster/jdl-samples>. 
 
 JHipster is so hip it recently won a [Duke’s Choice Award at JavaOne 2017](https://blogs.oracle.com/java/announcing-2017-dukes-choice-award-nominations). The Duke's Choice Award celebrates extreme innovation using Java technology. 
 
-{% image blog/oidc-with-jhipster/dukes-choice-award-jhipster.jpg alt:"JHipster wins a Duke’s Choice Award!" width:"600" %}{: .center-image }
+<img src="/img/blog/oidc-with-jhipster/dukes-choice-award-jhipster.jpg" alt="JHipster wins a Duke’s Choice Award!" width="600" class="center-image">
 
 A week later, it won an honorable bronze at the [JAX Innovation Awards 2017](https://jaxenter.com/winners-jax-innovation-awards-2017-137993.html) for most innovative contribution to the Java ecosystem. With over 360 contributors, it’s got a great community too!
 

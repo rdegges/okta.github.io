@@ -188,7 +188,7 @@ With that all done, you should be able to save the file and run `docker-compose 
 
 If everything completes successfully, you can then go to `http://localhost/users` and see something like the image below.
 
-{% image blog/docker-for-developers/docker-compose-running.png alt:"Docker Compose Running" width:"800" %}
+<img src="/img/blog/docker-for-developers/docker-compose-running.png" alt="Docker Compose Running" width="800">
 
 Congratulations! You have a complete environment that is defined in your source code. It can be versioned and checked in to source control. This is what people refer to as “Infrastructure as Code”. It also means that recreating this environment on the test, staging and production environments is as easy as running `docker-compose up -d` on the corresponding machine! I _told_ you good developers are lazy!
 

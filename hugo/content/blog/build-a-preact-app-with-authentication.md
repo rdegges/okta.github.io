@@ -57,7 +57,7 @@ You should see a quick build run and the screen will clear and show you that the
 application is running at `http://localhost:8080`. When you open up that URL in
 your browser, you should see a page like this:
 
-{% image blog/build-a-preact-app-with-authentication/base-preact-app.png alt:"Base Preact Application" width:"700" %}{: .center-image }
+<img src="/img/blog/build-a-preact-app-with-authentication/base-preact-app.png" alt="Base Preact Application" width="700" class="center-image">
 
 
 ### Some Things To Note About PreactCLI
@@ -92,7 +92,7 @@ Once you've created an account, go to the admin dashboard and click on
 "Applications" in the page menu. Then click the green "Add Application" button,
 then the green "Create New App" button, so that you see a modal window like:
 
-{% image blog/build-a-preact-app-with-authentication/create-application-screen.png alt:"Create Application Screen" width:"700" %}{: .center-image }
+<img src="/img/blog/build-a-preact-app-with-authentication/create-application-screen.png" alt="Create Application Screen" width="700" class="center-image">
 
 Choose "SPA" from the Platform buttons. Click the
 "Next" button to create your application.
@@ -102,7 +102,7 @@ Application wizard. Enter "OktaPreactExample" in the Application name field and
 add `http://localhost:8080` as your base URI and as a login redirect URI. When
 you're done, your form should look like this:
 
-{% image blog/build-a-preact-app-with-authentication/create-integration-screen.png alt:"Create Integration Screen" width:"700" %}{: .center-image }
+<img src="/img/blog/build-a-preact-app-with-authentication/create-integration-screen.png" alt="Create Integration Screen" width="700" class="center-image">
 
 _You'll need to create a user (if you don't already have one) and assign your
 new application to them as well. Or you can log in with the credentials you use
@@ -218,7 +218,7 @@ client ID from the application's property page in the administrative dashboard
 on the "General" tab for your application (obviously, yours won't be blurred
 out):
 
-{% image blog/build-a-preact-app-with-authentication/client-id-screen.png alt:"Client ID Screen" width:"700" %}{: .center-image }
+<img src="/img/blog/build-a-preact-app-with-authentication/client-id-screen.png" alt="Client ID Screen" width="700" class="center-image">
 
 You'll also want to change the `redirectUri` property to `http://localhost:8080`
 because the Preact uses port `8080` instead of `3000` for normal React apps.

@@ -47,11 +47,11 @@ Let’s break that down:
 
 Here it is in the browser:
 
-{% image blog/oidc_primer/code_flow_1.png alt:"code flow 1" width:"800" %}
+<img src="/img/blog/oidc_primer/code_flow_1.png" alt="code flow 1" width="800">
 
 Notice that on the new screen, you are redirected back to the `redirect_uri` originally specified:
 
-{% image blog/oidc_primer/code_flow_2.png alt:"code flow 2" width:"800" %}
+<img src="/img/blog/oidc_primer/code_flow_2.png" alt="code flow 2" width="800">
 
 Behind the scenes, a session is established with a fixed username and password. If you deploy this app on your own (which you can easily do from [here](https://github.com/oktadeveloper/okta-oidc-flows-example#okta-openid-connect-fun)), when you click the link you would be redirected to login and then redirected back to this same page.
 
@@ -76,11 +76,11 @@ It’s almost identical to the authorization code flow, except that the `respons
 
 Here’s this flow in the browser:
 
-{% image blog/oidc_primer/implicit_flow_1.png alt:"implicit flow 1" width:"800" %}
+<img src="/img/blog/oidc_primer/implicit_flow_1.png" alt="implicit flow 1" width="800">
 
 You are redirected back to the `redirect_uri` originally specified (with the returned tokens and original `state`):
 
-{% image blog/oidc_primer/implicit_flow_2.png alt:"implicit flow 2" width:"800" %}
+<img src="/img/blog/oidc_primer/implicit_flow_2.png" alt="implicit flow 2" width="800">
 
 The application can now verify the `id_token` locally. Use the `/introspect` endpoint to verify the `access_token`. It can also use the `access_token` as a bearer token to hit protected resources, such as the `/userinfo` endpoint.
 
@@ -98,15 +98,15 @@ https://micah.okta.com/oauth2/aus2yrcz7aMrmDAKZ1t7/v1/authorize?client_id=0oa2yr
 
 Here it is in the browser:
 
-{% image blog/oidc_primer/hybrid_flow_1.png alt:"hybrid flow 1" width:"800" %}
+<img src="/img/blog/oidc_primer/hybrid_flow_1.png" alt="hybrid flow 1" width="800">
 
 You are redirected back to the `redirect_uri` originally specified (with the returned code, tokens and original `state`):
 
-{% image blog/oidc_primer/hybrid_flow_2.png alt:"hybrid flow 2" width:"800" %}
+<img src="/img/blog/oidc_primer/hybrid_flow_2.png" alt="hybrid flow 2" width="800">
 
 In the next installment, we dig into how to control what's in these tokens, but here's a little taste now:
 
-{% image blog/oidc_primer/action.gif alt:"token in action" width:"800" %}
+<img src="/img/blog/oidc_primer/action.gif" alt="token in action" width="800">
 
 These tokens were produced as a result of hybrid flow with all default scopes enabled.
 

@@ -40,7 +40,7 @@ To get started with Spring Boot, navigate to [start.spring.io](https://start.spr
 * [Rest Repositories](http://projects.spring.io/spring-data-rest/): Allows you to expose your JPA repositories as REST endpoints
 * [Web](https://github.com/spring-projects/spring-boot/blob/master/spring-boot-project/spring-boot-starters/spring-boot-starter-web/pom.xml): Spring MVC with Jackson (for JSON), Hibernate Validator, and embedded Tomcat
 
-{% image blog/react-spring-boot/start.spring.io.png alt:"start.spring.io" width:"800" %}{: .center-image }
+<img src="/img/blog/react-spring-boot/start.spring.io.png" alt="start.spring.io" width="800" class="center-image">
 
 If you like the command-line better, you can use the following command to download a `demo.zip` file with [HTTPie](https://httpie.org/).
 
@@ -146,7 +146,7 @@ public class BeerCommandLineRunner implements CommandLineRunner {
 
 Rebuild your project, and you should see a list of beers printed in your terminal.
 
-{% image blog/react-spring-boot/beers-in-terminal.png alt:"Beers printed in terminal" width:"800" %}{: .center-image }
+<img src="/img/blog/react-spring-boot/beers-in-terminal.png" alt="Beers printed in terminal" width="800" class="center-image">
 
 Add a [`@RepositoryRestResource`](http://docs.spring.io/spring-data/rest/docs/2.6.x/api/org/springframework/data/rest/core/annotation/RepositoryRestResource.html) annotation to `BeerRepository` to expose all its CRUD operations as REST endpoints.
 
@@ -196,7 +196,7 @@ public class BeerController {
 
 Re-build your application and navigate to `http://localhost:8080/good-beers`. You should see the list of good beers in your browser.
 
-{% image blog/react-spring-boot/good-beers-json.png alt:"Good Beers JSON" width:"600" %}{: .center-image }
+<img src="/img/blog/react-spring-boot/good-beers-json.png" alt="Good Beers JSON" width="600" class="center-image">
 
 You should also see this same result in your terminal window when using HTTPie.
 
@@ -222,7 +222,7 @@ create-react-app client --scripts-version=react-scripts-ts
 
 After this process runs, you will have a new `client` directory with all the necessary dependencies installed. To verify everything works, cd into the `client` directory and run `yarn start`. If everything works, you should see the following in your browser.
 
-{% image blog/react-spring-boot/react-welcome.png alt:"Welcome to React" width:"800" %}{: .center-image }
+<img src="/img/blog/react-spring-boot/react-welcome.png" alt="Welcome to React" width="800" class="center-image">
 
 Thus far, you’ve created a `good-beers` API and a React app, but you haven’t created the UI to display the list of beers from your API. To do this, open `client/src/App.tsx` and add a `componentDidMount()` method.
 
@@ -319,7 +319,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 After making these changes, restart the server, refresh your browser, and you should be able to see a list of beers from your Spring Boot API.
 
-{% image blog/react-spring-boot/react-beer-list.png alt:"Beer List in Angular" width:"800" %}{: .center-image }
+<img src="/img/blog/react-spring-boot/react-beer-list.png" alt="Beer List in Angular" width="800" class="center-image">
 
 ### Create a BeerList Component
 
@@ -476,7 +476,7 @@ render() {
 
 The result should look something like the following list of beer names with images.
 
-{% image blog/react-spring-boot/react-beer-list-giphy.png alt:"Beer list with Giphy images" width:"800" %}{: .center-image }
+<img src="/img/blog/react-spring-boot/react-beer-list-giphy.png" alt="Beer list with Giphy images" width="800" class="center-image">
 
 You’ve just created a React app that talks to a Spring Boot API using cross-domain requests. Congratulations!
 
@@ -505,7 +505,7 @@ Restart your server, and `http://localhost:5000` should load with beer names and
 
 I ran a [Lighthouse](https://developers.google.com/web/tools/lighthouse/) audit in Chrome and found that this app only scores a 73/100 at this point.
 
-{% image blog/react-spring-boot/lighthouse-first.png alt:"Lighthouse Score from first audit" width:"800" %}{: .center-image }
+<img src="/img/blog/react-spring-boot/lighthouse-first.png" alt="Lighthouse Score from first audit" width="800" class="center-image">
 
 You'll notice in the screenshot above that "Manifest does not have icons at least 512px". This one sounds easy enough to fix. You can download a 512-pixel free beer icon from [this page](https://www.flaticon.com/free-icon/beer_168557#term=beer&page=1&position=29). 
 
@@ -538,9 +538,9 @@ Copy the downloaded `beer.png` to `client/public`. Modify `client/public/manifes
 
 After making this change, I was able to achieve an 82 Lighthouse score for PWA. The most prominent complaint from this report was that I wasn't using HTTPS. To see how the app would score when it used HTTPS, I deployed it to [Pivotal Cloud Foundry](https://pivotal.io/platform) and [Heroku](https://www.heroku.com/). I was pumped to discover it scored 💯 on both platforms.
 
-{% image blog/react-spring-boot/lighthouse-cloudfoundry.png alt:"Lighthouse on Cloud Foundry" width:"800" %}{: .center-image }
+<img src="/img/blog/react-spring-boot/lighthouse-cloudfoundry.png" alt="Lighthouse on Cloud Foundry" width="800" class="center-image">
 
-{% image blog/react-spring-boot/lighthouse-heroku.png alt:"Lighthouse on Heroku" width:"800" %}{: .center-image }
+<img src="/img/blog/react-spring-boot/lighthouse-heroku.png" alt="Lighthouse on Heroku" width="800" class="center-image">
 
 To read the scripts I used to deploy everything, see [`cloudfoundry.sh`](https://github.com/oktadeveloper/spring-boot-react-example/blob/master/cloudfoundry.sh) and [`heroku.sh`](https://github.com/oktadeveloper/spring-boot-react-example/blob/master/heroku.sh) in this article's companion GitHub repository. I owe a big thanks to [@starbuxman](https://twitter.com/starbuxman) and [@codefinger](https://twitter.com/codefinger) for their help creating them!
 
@@ -603,7 +603,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 
 After making these changes, you should be able to restart the server and see access denied when you try to navigate to http://localhost:8080.
 
-{% image blog/react-spring-boot/server-access-denied.png alt:"Access Denied by Okta Spring Boot Starter" width:"800" %}{: .center-image }
+<img src="/img/blog/react-spring-boot/server-access-denied.png" alt="Access Denied by Okta Spring Boot Starter" width="800" class="center-image">
 
 ### Okta's React Support
 
@@ -785,11 +785,11 @@ Add the following CSS rules to `client/src/App.css` to make the Login/Logout but
 
 Your browser should now show a Login button.
 
-{% image blog/react-spring-boot/login-button.png alt:"Login Button" width:"800" %}{: .center-image }
+<img src="/img/blog/react-spring-boot/login-button.png" alt="Login Button" width="800" class="center-image">
 
 When you click the button to log in, enter the email and password you used to create your Okta Developer account. When it redirects you back to your application, you'll likely see "Loading..." and a CORS error in your browser's console.
 
-{% image blog/react-spring-boot/cors-error.png alt:"CORS Error after login" width:"800" %}{: .center-image }
+<img src="/img/blog/react-spring-boot/cors-error.png" alt="CORS Error after login" width="800" class="center-image">
 
 This error happens because Spring's `@CrossOrigin` doesn't play well with Spring Security. To solve this problem, add a `simpleCorsFilter` bean to the body of `DemoApplication.java`.
 
@@ -894,7 +894,7 @@ render() {
 
 Now you should be able to see the beer list as an authenticated user.
 
-{% image blog/react-spring-boot/success.png alt:"Wahoo!" width:"800" %}{: .center-image }
+<img src="/img/blog/react-spring-boot/success.png" alt="Wahoo!" width="800" class="center-image">
 
 If it works, congratulations!
 

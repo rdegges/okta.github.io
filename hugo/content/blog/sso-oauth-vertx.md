@@ -42,19 +42,19 @@ The completed code example, including imports and pom.xml, can be found [on Gith
 
 To kick things off, visit the [Vert.x Starter page](http://start.vertx.io) and generate a new project.  For this tutorial, you can leave all the default values in place, and include the `Vert.x Web`, `OAuth`, and `Vert.x Config` dependencies:
 
-{% image blog/sso-oauth-vertx/vertx-generate.png alt:"Generate a Vert.x project" width:"700" %}{: .center-image }
+<img src="/img/blog/sso-oauth-vertx/vertx-generate.png" alt="Generate a Vert.x project" width="700" class="center-image">
 
 After clicking generate, downloading, and unzipping locally, you should see the following simple directory structure:
 
-{% image blog/sso-oauth-vertx/vertx-project-tree.png alt:"Vert.x project tree" width:"700" %}{: .center-image }
+<img src="/img/blog/sso-oauth-vertx/vertx-project-tree.png" alt="Vert.x project tree" width="700" class="center-image">
 
 And running with `mvn compile exec:java` from the `demo` directory should start the server on port 8080:
 
-{% image blog/sso-oauth-vertx/vertx-compile.png alt:"Vert.x project compiling" width:"700" %}{: .center-image }
+<img src="/img/blog/sso-oauth-vertx/vertx-compile.png" alt="Vert.x project compiling" width="700" class="center-image">
 
 Visiting `http://localhost:8080` in your browser returns a reassuring hello world response:
 
-{% image blog/sso-oauth-vertx/vertx-hello.png alt:"Vert.x initial hello world page" width:"700" %}{: .center-image }
+<img src="/img/blog/sso-oauth-vertx/vertx-hello.png" alt="Vert.x initial hello world page" width="700" class="center-image">
 
 At this point, a proper next step would be to switch to https before continuing to add authentication. However, to keep the tutorial short and focused, that part will be skipped and the examples will continue to use the unencrypted http server mode.
 
@@ -247,7 +247,7 @@ void startServer() {
 
 With this final change, restarting your server and once again hitting `http://localhost:8080/private/secret`, your browser should now display a message with your authenticated user's information!
 
-{% image blog/sso-oauth-vertx/vertx-final.png alt:"Browser screen shot showing user's details" width:"700" %}{: .center-image }
+<img src="/img/blog/sso-oauth-vertx/vertx-final.png" alt="Browser screen shot showing user's details" width="700" class="center-image">
 
 ## Onward and Upward
 

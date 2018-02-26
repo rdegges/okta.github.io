@@ -91,21 +91,21 @@ If you haven't already done so, create a free forever developer account at <http
 
 Once you've registered, click on **Applications** in the top menu. Then click the **Add Application** button.
 
-{% image blog/build-user-registration-with-node-react-and-okta/application-listing-screen.png alt:"application listing screen" %}{: .center-image }
+<img src="/img/blog/build-user-registration-with-node-react-and-okta/application-listing-screen.png" alt="application listing screen" class="center-image">
 
 You will then be taken to the application creation wizard. Choose the **Single-Page App** button and click **Next** at the bottom.
 
-{% image blog/build-user-registration-with-node-react-and-okta/single-page-app-screen.png alt:"single page app screen" %}{: .center-image }
+<img src="/img/blog/build-user-registration-with-node-react-and-okta/single-page-app-screen.png" alt="single page app screen" class="center-image">
 
 On the next screen, you will see the default settings provided by the single-page application template. Change the name of the application to something more descriptive, like "Membership Application". Also, change the base URIs and the login redirect URIs settings to use port 3000 because that is where your application will be running. The rest of the default settings are fine.
 
-{% image blog/build-user-registration-with-node-react-and-okta/single-page-app-settings-screen.png alt:"single page app settings screen" %}{: .center-image }
+<img src="/img/blog/build-user-registration-with-node-react-and-okta/single-page-app-settings-screen.png" alt="single page app settings screen" class="center-image">
 
 Then click the **Done** button at the bottom.
 
 Once the application has been created, select it from the applications listing, and click on the **General** tab to view the general settings for your application.
 
-{% image blog/build-user-registration-with-node-react-and-okta/general-settings-tab.png alt:"general settings tab" %}{: .center-image }
+<img src="/img/blog/build-user-registration-with-node-react-and-okta/general-settings-tab.png" alt="general settings tab" class="center-image">
 
 At the bottom, you will see a **Client ID** setting (yours won't be blurred out, obviously). Copy this to use in your React application. You will also need your Okta organization URL, which you can find at the top left of the dashboard page. It will probably look something like “https://dev-XXXXXX.oktapreview.com”.
 
@@ -618,11 +618,11 @@ The biggest things of note here are the importing of the `lib/oktaClient` (which
 
 For your Node application to make calls to your Okta application, it will need an API token. To create one, go into your Okta developer dashboard, hover over the API menu option and click on Tokens.
 
-{% image blog/build-user-registration-with-node-react-and-okta/okta-api-tokens-screen.png alt:"okta api tokens screen" %}{: .center-image }
+<img src="/img/blog/build-user-registration-with-node-react-and-okta/okta-api-tokens-screen.png" alt="okta api tokens screen" class="center-image">
 
 From there click Create Token. Give the token a name like "Membership" and click Create Token.
 
-{% image blog/build-user-registration-with-node-react-and-okta/create-token-screen.png alt:"create token screen" %}{: .center-image }
+<img src="/img/blog/build-user-registration-with-node-react-and-okta/create-token-screen.png" alt="create token screen" class="center-image">
 
 Copy the token to a safe location for use later.
 
@@ -650,7 +650,7 @@ If your Node app is still running, you will need to stop the app (with CTRL+C) a
 
 Even though the site still needs some serious style love, you will now be able to register users, log in with the newly created user and get the logged in user's profile for display on the profile page!
 
-{% image blog/build-user-registration-with-node-react-and-okta/user-profile-page.png alt:"user profile page" %}{: .center-image }
+<img src="/img/blog/build-user-registration-with-node-react-and-okta/user-profile-page.png" alt="user profile page" class="center-image">
 
 ## Learn More
 

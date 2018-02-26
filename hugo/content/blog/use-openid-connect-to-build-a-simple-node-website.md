@@ -90,7 +90,7 @@ to create a single Application.
 To get started, go log into your new Okta dashboard. Once you're in, click the
 "Applications" tab. You'll see something like this:
 
-{% image blog/use-openid-connect-to-build-a-simple-node-website/okta-application-dashboard.png alt:"Okta Application Dashboard" width:"700" %}{: .center-image }
+<img src="/img/blog/use-openid-connect-to-build-a-simple-node-website/okta-application-dashboard.png" alt="Okta Application Dashboard" width="700" class="center-image">
 
 This is where you can view all of your Okta applications, and manage them.
 
@@ -98,13 +98,13 @@ Since we don't have an Application created yet, let's do that now. Click the big
 green "Add Application" button and then click the "Web" box (because you're
 going to build a web app):
 
-{% image blog/use-openid-connect-to-build-a-simple-node-website/okta-create-application.png alt:"Okta Create Application" width:"700" %}{: .center-image }
+<img src="/img/blog/use-openid-connect-to-build-a-simple-node-website/okta-create-application.png" alt="Okta Create Application" width="700" class="center-image">
 
 Once you move to the next screen, you'll be able to configure your app settings.
 There's a lot of things you can do here (feel free to play around with it
 sometime!), but for now: leave all the defaults as-is.
 
-{% image blog/use-openid-connect-to-build-a-simple-node-website/okta-application-settings.png alt:"Okta Application Settings" width:"700" %}{: .center-image }
+<img src="/img/blog/use-openid-connect-to-build-a-simple-node-website/okta-application-settings.png" alt="Okta Application Settings" width="700" class="center-image">
 
 Next, you'll want to copy down a few settings that we'll need later on.
 
@@ -112,14 +112,14 @@ To start, you'll need the Client ID and Client Secret of your newly created
 Application. You'll find this on the page you land one once you've created your
 new Application:
 
-{% image blog/use-openid-connect-to-build-a-simple-node-website/okta-application-secrets.png alt:"Okta Application Secrets" width:"700" %}{: .center-image }
+<img src="/img/blog/use-openid-connect-to-build-a-simple-node-website/okta-application-secrets.png" alt="Okta Application Secrets" width="700" class="center-image">
 
 Next, you'll need your Okta Organization URL. If you go to the "Dashboard" page,
 you should see it at the top-right hand corner of the page. It's the setting
 called "Org URL". Here's what mine looks like, for example:
 `dev-111464.oktapreview.com`
 
-{% image blog/use-openid-connect-to-build-a-simple-node-website/okta-org-url.png alt:"Okta Org URL" width:"700" %}{: .center-image }
+<img src="/img/blog/use-openid-connect-to-build-a-simple-node-website/okta-org-url.png" alt="Okta Org URL" width="700" class="center-image">
 
 Now that you have those settings, keep them someplace safe and we'll use them
 soon.
@@ -279,7 +279,7 @@ Once the server is running, you can view the site by visiting
 Remember how I said this would be a simple website? I wasn't lying! Here's what
 your new website homepage will look like:
 
-{% image blog/use-openid-connect-to-build-a-simple-node-website/app-home.png alt:"Application Homepage" width:"700" %}{: .center-image }
+<img src="/img/blog/use-openid-connect-to-build-a-simple-node-website/app-home.png" alt="Application Homepage" width="700" class="center-image">
 
 By now, you should have a working website with no authentication. So let's take
 it one step further in the next section and add OIDC.
@@ -474,16 +474,16 @@ run and echo their basic information back to them
 
 Here's what each of the pages looks like in the flow:
 
-{% image blog/use-openid-connect-to-build-a-simple-node-website/app-home.png alt:"Application Homepage" width:"700" %}{: .center-image }
+<img src="/img/blog/use-openid-connect-to-build-a-simple-node-website/app-home.png" alt="Application Homepage" width="700" class="center-image">
 
 Then, once you click "login", you'll be taken to the login page:
 
-{% image blog/use-openid-connect-to-build-a-simple-node-website/app-login.png alt:"Application Login Page" width:"700" %}{: .center-image }
+<img src="/img/blog/use-openid-connect-to-build-a-simple-node-website/app-login.png" alt="Application Login Page" width="700" class="center-image">
 
 Finally, once you've logged in, you'll be taken to the dashboard page where you
 can view your user information:
 
-{% image blog/use-openid-connect-to-build-a-simple-node-website/app-dashboard.png alt:"Application Dashboard" width:"700" %}{: .center-image }
+<img src="/img/blog/use-openid-connect-to-build-a-simple-node-website/app-dashboard.png" alt="Application Dashboard" width="700" class="center-image">
 
 
 ## Resources

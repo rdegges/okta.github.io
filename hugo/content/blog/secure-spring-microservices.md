@@ -33,11 +33,11 @@ This tutorial shows you how you can use Spring Security, Okta, and a few Java li
 
 This tutorial builds off [Build a Microservices Architecture for Microbrews with Spring Boot](/blog/2017/06/15/build-microservices-architecture-spring-boot). A simple microservices architecture with Spring Boot and Spring Cloud looks as follows. It uses Stormpath’s Spring Boot Starter (it’s been modified to work with Okta while we work on building up Okta’s Java support) and Juiser, a library created by [Les Hazlewood](https://twitter.com/lhazlewood). Juiser is independent and open source, and is not tied to a particular identity provider.
 
-{% image blog/microservices-spring-secure/spring-microservices-diagram.png alt:"Spring Boot + Cloud Microservices Architecture" width:"800" %}{: .center-image }
+<img src="/img/blog/microservices-spring-secure/spring-microservices-diagram.png" alt="Spring Boot + Cloud Microservices Architecture" width="800" class="center-image">
 
 Once you've completed this tutorial, you'll have Spring Security locking things down, and Okta providing authentication and JWT validation.
 
-{% image blog/microservices-spring-secure/spring-secure-microservices-diagram.png alt:"Secure Spring Microservices" width:"800" %}{: .center-image }
+<img src="/img/blog/microservices-spring-secure/spring-secure-microservices-diagram.png" alt="Secure Spring Microservices" width="800" class="center-image">
 
 In this tutorial, you'll build a microservices architecture with Spring Boot and related projects. To add security with Okta, you'll have to create two applications in your developer console. The first will be a "Native" application that supports the Stormpath Java SDK, and OAuth grant types authorization code, refresh token, and resource owner password. This type of application is typically reserved for native mobile applications, but it also includes the Stormpath Java SDK. This is because the Stormpath SDK was retrofitted to work with Okta, and not built specifically for the Okta API, per se. For the Angular client, you'll need a second "SPA" application. 
 
@@ -65,7 +65,7 @@ After your application has been created, you still have a few settings you need 
 
 At this point, your application's settings should look as follows:
 
-{% image blog/microservices-spring-secure/native-app-settings.png alt:"Native App Settings" width:"700" %}{: .center-image }
+<img src="/img/blog/microservices-spring-secure/native-app-settings.png" alt="Native App Settings" width="700" class="center-image">
 
 You'll also need to create an API token:
 
@@ -483,13 +483,13 @@ cd edge-service
 
 Open your browser and navigate to `http://localhost:8081/home`. You should see a login page, prompting for your credentials.
 
-{% image blog/microservices-spring-secure/zuul-login.png alt:"Stormpath Zuul Login" width:"800" %}{: .center-image }
+<img src="/img/blog/microservices-spring-secure/zuul-login.png" alt="Stormpath Zuul Login" width="800" class="center-image">
 
 This page is served up from the `stormpath-zuul-spring-cloud-starter` using [Thymeleaf](http://www.thymeleaf.org/). Spring Boot auto-activates Thymeleaf when it finds it in the classpath. 
 
 After logging in, you should see a page displaying your user's information.
 
-{% image blog/microservices-spring-secure/zuul-home.png alt:"Stormpath Zuul Home" width:"800" %}{: .center-image }
+<img src="/img/blog/microservices-spring-secure/zuul-home.png" alt="Stormpath Zuul Home" width="800" class="center-image">
 
 Click the **Logout** button to delete the cookies in your browser and end your session.
 
@@ -499,7 +499,7 @@ To use Okta's Sign-In Widget, you'll need to create an additional app in Okta, t
 
 Create an OIDC app in Okta by going to the Developer Console and navigating to **Applications** and click on the **Add Application** button. Select **SPA** and click **Next**. On the next page, specify `http://localhost:4200` as a Base URI, Login redirect URI, and Logout redirect URI. Click **Done** and you should see settings like the following.
 
-{% image blog/microservices-spring-secure/oidc-settings.png alt:"OIDC App Settings" width:"700" %}{: .center-image }
+<img src="/img/blog/microservices-spring-secure/oidc-settings.png" alt="OIDC App Settings" width="700" class="center-image">
 
 Install [Okta's Sign-In Widget](https://developer.okta.com/code/javascript/okta_sign-in_widget) to make it possible to communicate with the secured server.
 
@@ -724,7 +724,7 @@ export class BeerListComponent implements OnInit {
 
 Start the client with `npm start`, navigate to `http://localhost:4200`, and you should see a login form like the following. 
 
-{% image blog/microservices-spring-secure/angular-login.png alt:"Angular Login" width:"800" %}{: .center-image }
+<img src="/img/blog/microservices-spring-secure/angular-login.png" alt="Angular Login" width="800" class="center-image">
 
 **NOTE:** If it logs you in automatically, this is likely because you have cookies for `http://localhost:8080` still in your browser. Clear your cookies, or try an incognito window.
 
@@ -736,11 +736,11 @@ If you want to adjust the style of the form, so it isn't right up against the to
 }
 ```
 
-{% image blog/microservices-spring-secure/angular-login-top-margin.png alt:"Angular Login Styled" width:"800" %}{: .center-image }
+<img src="/img/blog/microservices-spring-secure/angular-login-top-margin.png" alt="Angular Login Styled" width="800" class="center-image">
 
 You should be able to log in, see a welcome message, as well as a logout button.
 
-{% image blog/microservices-spring-secure/angular-welcome.png alt:"Angular Welcome" width:"800" %}{: .center-image }
+<img src="/img/blog/microservices-spring-secure/angular-welcome.png" alt="Angular Welcome" width="800" class="center-image">
 
 ## Learn More
 

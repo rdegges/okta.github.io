@@ -43,7 +43,7 @@ npm -v
 dotnet --version
 ```
 
-{% image blog/build-secure-todo-app-vuejs-aspnetcore/check-versions.gif alt:"Check tool versions in the terminal" width:"900" %}{: .center-image }
+<img src="/img/blog/build-secure-todo-app-vuejs-aspnetcore/check-versions.gif" alt="Check tool versions in the terminal" width="900" class="center-image">
 
 I'm using [Visual Studio Code](https://code.visualstudio.com/) for this project, but you can use whatever code editor you feel comfortable in. If you're on Windows, you can also use Visual Studio 2017 or later.
 
@@ -53,7 +53,7 @@ Instead of starting from absolute zero, you can use a template to help you scaff
 
 Download or clone the project from GitHub, and then open the folder in your code editor.
 
-{% image blog/build-secure-todo-app-vuejs-aspnetcore/project.png alt:"Initial project structure" width:"300" %}{: .center-image }
+<img src="/img/blog/build-secure-todo-app-vuejs-aspnetcore/project.png" alt="Initial project structure" width="300" class="center-image">
 
 Run `npm install` to restore and install all of the JavaScript packages (including Vue.js).
 
@@ -67,11 +67,11 @@ In Visual Studio Code, you can open the Integrated Terminal from the View menu t
 
 Now you're ready to run the app for the first time! Execute `dotnet run` in the terminal. After the app compiles, it should report that it's running on `localhost:5000`.
 
-{% image blog/build-secure-todo-app-vuejs-aspnetcore/dotnet-run-localhost.png alt:"Execute dotnet run in terminal" width:"800" %}{: .center-image }
+<img src="/img/blog/build-secure-todo-app-vuejs-aspnetcore/dotnet-run-localhost.png" alt="Execute dotnet run in terminal" width="800" class="center-image">
 
 Open up a browser and navigate to `http://localhost:5000`:
 
-{% image blog/build-secure-todo-app-vuejs-aspnetcore/vue-starter.png alt:"Vue.js starter template app" width:"800" %}{: .center-image }
+<img src="/img/blog/build-secure-todo-app-vuejs-aspnetcore/vue-starter.png" alt="Vue.js starter template app" width="800" class="center-image">
 
 ### Optional: Install Vue Devtools
 If Chrome is your preferred browser, I'd highly recommend the [Vue Devtools](https://github.com/vuejs/vue-devtools) extension. It adds some great debugging and inspection features to Chrome that are super useful when you're building Vue.js applications.
@@ -519,7 +519,7 @@ Most of these actions are marked with `// Todo` (no pun intended), because you'l
 
 To get started, sign up for a free [Okta Developer account](https://developer.okta.com/signup/). After you activate your new account (called an Okta organization, or org), click Applications at the top of the screen. Choose Single-Page App and click Next. Change the base URI to `http://localhost:5000`, and the login redirect URI to `http://localhost:5000/implicit/callback`:
 
-{% image blog/build-secure-todo-app-vuejs-aspnetcore/okta-app-settings.png alt:"Okta application settings" width:"700" %}{: .center-image }
+<img src="/img/blog/build-secure-todo-app-vuejs-aspnetcore/okta-app-settings.png" alt="Okta application settings" width="700" class="center-image">
 
 After you click Done, you'll be redirected to the new application's details. Scroll down and copy the Client ID. You'll need it in a minute.
 
@@ -528,7 +528,7 @@ By default, Okta stores basic information about your users: first name, last nam
 
 To add a custom field, open the Users menu at the top of the screen and click on Profile Editor. On the first row (Okta User), click Profile to edit the default user profile. Add a string attribute called `todos`:
 
-{% image blog/build-secure-todo-app-vuejs-aspnetcore/add-todos-profile-field.png alt:"Add custom field in Okta profile" width:"700" %}{: .center-image }
+<img src="/img/blog/build-secure-todo-app-vuejs-aspnetcore/add-todos-profile-field.png" alt="Add custom field in Okta profile" width="700" class="center-image">
 
 Next, you'll connect your frontend code (the Vue app) to Okta.
 
@@ -584,7 +584,7 @@ Next, paste the Client ID you copied from the application you created a minute a
 
 Try it out: run the server with `dotnet run` and try logging in with the email and password you used to sign up for Okta:
 
-{% image blog/build-secure-todo-app-vuejs-aspnetcore/logged-in.png alt:"Logged in via Okta" width:"450" %}{: .center-image }
+<img src="/img/blog/build-secure-todo-app-vuejs-aspnetcore/logged-in.png" alt="Logged in via Okta" width="450" class="center-image">
 
 The Log in button uses the Okta Vue SDK to redirect to your Okta organization's hosted login screen, which then redirects back to your app with tokens that identify the user. The `/implicit/callback` route you added to the router handles this redirect from Okta and calls the `Auth.handleCallback()` function in the Okta Vue SDK. This function takes care of parsing the tokens and letting your app know that the user logged in.
 
@@ -798,7 +798,7 @@ The new action code uses the [axios library](https://github.com/axios/axios) to 
 
 Ready to test it out? Run the project with `dotnet run` and browse to `http://localhost:5000`: 
 
-{% image blog/build-secure-todo-app-vuejs-aspnetcore/logged-in-fake-items-via-backend.png alt:"Retrieved fake items from the backend API" width:"500" %}{: .center-image }
+<img src="/img/blog/build-secure-todo-app-vuejs-aspnetcore/logged-in-fake-items-via-backend.png" alt="Retrieved fake items from the backend API" width="500" class="center-image">
 
 The data may be fake, but you've successfully connected the backend and frontend! The final step is to add data storage and token authentication to the app. You're almost there!
 
@@ -853,7 +853,7 @@ public class TodoController : Controller
 
 With the code you've added to the `Startup` class, plus the `[Authorize]` attribute on the controller, requests to `/api/todo` now require a valid access token to succeed. If you tried running the app now and looking at your browser's network console, you'd see a failed API request:
 
-{% image blog/build-secure-todo-app-vuejs-aspnetcore/api-request-401.png alt:"API request returns 401" width:"700" %}{: .center-image }
+<img src="/img/blog/build-secure-todo-app-vuejs-aspnetcore/api-request-401.png" alt="API request returns 401" width="700" class="center-image">
 
 Since your frontend code isn't yet attaching a token to the request, the `TodoController` is responding with 401 Unauthorized (access denied).
 
@@ -1184,7 +1184,7 @@ async deleteTodo({ dispatch }, data) {
 
 Start the server once more with `dotnet run` and try adding a real to-do item to the list:
 
-{% image blog/build-secure-todo-app-vuejs-aspnetcore/final-app.png alt:"Final to-do application" width:"500" %}{: .center-image }
+<img src="/img/blog/build-secure-todo-app-vuejs-aspnetcore/final-app.png" alt="Final to-do application" width="500" class="center-image">
 
 
 ## Build Secure Apps with ASP.NET Core and Vue.js

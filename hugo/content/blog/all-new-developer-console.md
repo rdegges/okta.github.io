@@ -13,7 +13,7 @@ Hello Okta Blogosphere! Another [Stormpath transplant](https://www.okta.com/blog
 
 I love consoles. Whenever I think of them, I think about mission control for the Apollo missions.  What a true console that was! Real-time, analog data streaming into an organized interface for a person to grok, sooo cool! <3 <3 Well, I don’t exactly work at NASA (as I thought I would when I was in 6th grade), but I can still capture this love of data and control for you! Over the last few months my team has built an entirely new Developer Console, and we’re really excited to share it with you!
 
-{% image blog/new-dev-console/nasa-console-1.jpg alt:"Default AS" width:"500" %}{: .center-image }
+<img src="/img/blog/new-dev-console/nasa-console-1.jpg" alt="Default AS" width="500" class="center-image">
 
 <center><small>Image courtesy of Nasa <a href="https://images.nasa.gov/#/details-S68-55742.html">https://images.nasa.gov/#/details-S68-55742.html</a></small></center>
 
@@ -31,7 +31,7 @@ But the real thing is even better!  If you’d like to see the new Developer Con
 
 As an Okta developer, your thousand foot view now looks like this:
 
-{% image blog/new-dev-console/new-dev-console.png alt:"Default AS" width:"700" %}{: .center-image }
+<img src="/img/blog/new-dev-console/new-dev-console.png" alt="Default AS" width="700" class="center-image">
 
 There’s a lot of new stuff here!  Read on to learn more about each area, and why we’re so excited to have this ready for you.
 
@@ -39,7 +39,7 @@ There’s a lot of new stuff here!  Read on to learn more about each area, and w
 
 What is a re-vamp without a re-style?  At first glance you’ll notice the new color scheme, which is a general change you’ll see across the entire developer experience at Okta, including the developer site and documentation pages.
 
-{% image blog/new-dev-console/new-console-nav.png alt:"Default AS" %}{: .center-image }
+<img src="/img/blog/new-dev-console/new-console-nav.png" alt="Default AS" class="center-image">
 
 ### Organized Navigation
 
@@ -51,31 +51,31 @@ When you first sign in to your Developer Console, you’ll be presented with the
 
 Interested in some data that you don’t see here?  Reach out and let us know!
 
-{% image blog/new-dev-console/metrics-tiles.png alt:"Default AS" width:"700" %}{: .center-image }
+<img src="/img/blog/new-dev-console/metrics-tiles.png" alt="Default AS" width="700" class="center-image">
 
 ### New Application Creation Wizard
 
 Okta is powerful, and with that power comes a lot of options :) If you’ve tried to build a custom application against Okta, you likely ran into some questions about which application type to create.  The new developer experience is focused around our [Open ID Connect solutions](https://developer.okta.com/standards/OIDC/), and we’ve built a new application creation wizard that helps you navigate this.  Simply select the type of application you’re building and we’ll help you on your way!  Need multiple types of applications?  Not a problem!  Okta is built for that.
 
-{% image blog/new-dev-console/app-wizard.png alt:"Default AS" %}{: .center-image }
+<img src="/img/blog/new-dev-console/app-wizard.png" alt="Default AS" class="center-image">
 
 ### Sane Defaults
 
 In the new application wizard you’ll notice that we pre-fill a lot of the values for you.  These defaults are designed to work with our example applications, so that you don’t have to do a lot of extra configuration to get a proof-of-concept running.  Of course you’ll change these settings as you near production, but the defaults should get you running locally with little effort.
 
-{% image blog/new-dev-console/app-settings.png alt:"Default AS" %}{: .center-image }
+<img src="/img/blog/new-dev-console/app-settings.png" alt="Default AS" class="center-image">
 
 ### Contextual Help and Examples
 
 Creating and configuring your Okta application is just the first step, from there you need to integrate it into your actual application or service.  As you know, this is best done by example.  When you are creating or editing your application in Okta, there is a new sidebar on the right that will link you to our new [Quickstart Documentation](https://developer.okta.com/quickstart/), tailored to the type of application you are working on.
 
-{% image blog/new-dev-console/quickstarts.png alt:"Default AS" %}{: .center-image }
+<img src="/img/blog/new-dev-console/quickstarts.png" alt="Default AS" class="center-image">
 
 ### Keep Building Great Apps!
 
 Modern development means integrating a lot of SaaS products, including Okta, and none of us have time to waste.  T-minus-zero for your project was technically last week, right? I hope that our new Developer Console helps you get there faster.  So go on, keep building your spaceship!
 
-{% image blog/new-dev-console/nasa-console-2.jpg alt:"Default AS" width:"500" %}{: .center-image }
+<img src="/img/blog/new-dev-console/nasa-console-2.jpg" alt="Default AS" width="500" class="center-image">
 
 <center><small>Image courtesy of Nasa <a href="https://images.nasa.gov/#/details-KSC-03pd2450.html">https://images.nasa.gov/#/details-KSC-03pd2450.html</a></small></center>
 

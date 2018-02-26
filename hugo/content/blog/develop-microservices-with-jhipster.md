@@ -67,7 +67,7 @@ To build a microservices architecture with JHipster, you'll need to generate two
 
 You can see how these components fit in the diagram below.
 
-{% image blog/microservices-jhipster/jhipster-microservices-architecture.png alt:"JHipster Microservices Architecture" width:"800" %}
+<img src="/img/blog/microservices-jhipster/jhipster-microservices-architecture.png" alt="JHipster Microservices Architecture" width="800">
 
 To see what's happening inside your applications, you can use the [JHipster Console](https://jhipster.github.io/monitoring/#jhipster-console), 
 a monitoring tool based on the [ELK Stack](https://www.elastic.co/products). I'll cover JHipster Console in the Docker Compose section.
@@ -114,7 +114,7 @@ to include. Create the `blog` application with the following settings:
 * Testing frameworks: `Gatling, Protractor`
 * Install other generators from the JHipster Marketplace: `No`
 
-{% image blog/microservices-jhipster/generate-blog.png alt:"Generating the gateway" width:"800" %}
+<img src="/img/blog/microservices-jhipster/generate-blog.png" alt="Generating the gateway" width="800">
 
 If you'd like to use the same settings I did, you can place the following `.yo-rc.json` file in the `blog` directory and 
 run `jhipster` in it. You won't be prompted to answer any questions because the answers are already in `.yo-rc.json`.
@@ -166,7 +166,7 @@ run `jhipster` in it. You won't be prompted to answer any questions because the 
 The project creation process will take a couple of minutes to run, depending on your internet connection speed. When it's 
 finished, you should see output like this:
 
-{% image blog/microservices-jhipster/generation-success.png alt:"Generation success" width:"600" %}
+<img src="/img/blog/microservices-jhipster/generation-success.png" alt="Generation success" width="600">
 
 Before you can run this project, you'll need to download and start an instance of the [JHipster Registry](https://github.com/jhipster/jhipster-registry). 
 Run the following commands in the `jhipster-microservices-example` directory.
@@ -186,27 +186,27 @@ It includes dashboards to monitor and manage your JHipster applications.
 
 JHipster Registry starts on port 8761 by default.
 
-{% image blog/microservices-jhipster/jhipster-registry.png alt:"JHipster Registry" width:"800" %}
+<img src="/img/blog/microservices-jhipster/jhipster-registry.png" alt="JHipster Registry" width="800">
 
 In a new terminal window, navigate to `jhipster-microservices-example/blog` and run `./mvnw` to start the blog application 
 and open `http://localhost:8080` in your favorite browser. The first thing you'll notice is a dapper-looking fellow 
 explaining how you can sign in or register.
 
-{% image blog/microservices-jhipster/default-homepage.png alt:"Default homepage" width:"800" %}
+<img src="/img/blog/microservices-jhipster/default-homepage.png" alt="Default homepage" width="800">
 
 Sign in with username `admin` and password `admin` and you'll have access to navigate through the Administration section. 
 This section offers nice looking UIs on top of some Spring Boot's many monitoring and configuration features. It also 
 allows you to administer users:
 
-{% image blog/microservices-jhipster/user-management.png alt:"User management" width:"800" %}
+<img src="/img/blog/microservices-jhipster/user-management.png" alt="User management" width="800">
 
 It gives you insights into Application and JVM metrics:
 
-{% image blog/microservices-jhipster/app-metrics.png alt:"Application and JVM Metrics" width:"800" %}
+<img src="/img/blog/microservices-jhipster/app-metrics.png" alt="Application and JVM Metrics" width="800">
 
 And it allows you to see the Swagger docs associated with its API.
 
-{% image blog/microservices-jhipster/swagger-docs.png alt:"Swagger docs" width:"800" %}
+<img src="/img/blog/microservices-jhipster/swagger-docs.png" alt="Swagger docs" width="800">
 
 You can run the following command (in a separate terminal window) to start the Protractor tests and confirm everything is 
 working properly.
@@ -245,7 +245,7 @@ JHipster supports several methods of code generation. The first uses its [entity
 
 Below is the entity diagram and JDL code needed to generate a simple blog with blogs, entries, and tags.
 
-{% image blog/microservices-jhipster/jdl-studio-blog.png alt:"Blog entity diagram" width:"800" %}
+<img src="/img/blog/microservices-jhipster/jdl-studio-blog.png" alt="Blog entity diagram" width="800">
 
 You can [click on this URL](http://bit.ly/jhipster4-blog-jdl), or copy/paste the contents of the file below to your hard 
 drive if you'd like to follow along.
@@ -290,9 +290,9 @@ file, as well as others.
 Start the application with `/.mvnw` and run `yarn start` (in another window) to view the UI for the generated entities. 
 Create a couple of blogs for the existing `admin` and `user` users, as well as a few blog entries.
 
-{% image blog/microservices-jhipster/blogs.png alt:"Blogs" width:"800" %}
+<img src="/img/blog/microservices-jhipster/blogs.png" alt="Blogs" width="800">
 
-{% image blog/microservices-jhipster/entries.png alt:"Entries" width:"800" %}
+<img src="/img/blog/microservices-jhipster/entries.png" alt="Entries" width="800">
 
 From these screenshots, you can see that users can see each other's data, and modify it.
 
@@ -338,7 +338,7 @@ After making this change, re-compiling `BlogResource` should trigger a restart o
 [Spring Boot's Developer tools](http://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-devtools.html). 
 If you navigate to `http://localhost:9000/blogs`, you should only see the blog for the current user.
 
-{% image blog/microservices-jhipster/blogs-admin.png alt:"Admin's blog" width:"800" %}
+<img src="/img/blog/microservices-jhipster/blogs-admin.png" alt="Admin's blog" width="800">
 
 To add this same logic for entries, open `EntryResource.java` and find the `getAllEntries()` method. Change the following line:
 
@@ -360,7 +360,7 @@ Page<Entry> findByBlogUserLoginOrderByDateDesc(String currentUserLogin, Pageable
 
 Recompile both changed classes and verify that the `user` user only sees the entries you created for them.
 
-{% image blog/microservices-jhipster/entries-user.png alt:"User's entries" width:"800" %}
+<img src="/img/blog/microservices-jhipster/entries-user.png" alt="User's entries" width="800">
 
 After making this changes, commit them to Git.
 
@@ -390,7 +390,7 @@ In this section, you'll change the following:
 
 If you enter HTML in the `content` field of a blog entry, you'll notice it's escaped on the list screen.
 
-{% image blog/microservices-jhipster/entries-with-html-escaped.png alt:"Escaped HTML" width:"800" %}
+<img src="/img/blog/microservices-jhipster/entries-with-html-escaped.png" alt="Escaped HTML" width="800">
 
 To change this behavior, open `entry.component.html` and change the following line:
 
@@ -408,7 +408,7 @@ To:
 
 After making this change, you'll see that the HTML is no longer escaped.
 
-{% image blog/microservices-jhipster/entries-with-html.png alt:"HTML in entries" width:"800" %}
+<img src="/img/blog/microservices-jhipster/entries-with-html.png" alt="HTML in entries" width="800">
 
 #### Improve the layout
 
@@ -447,7 +447,7 @@ To make the list of entries look like a blog, replace `<div class="table-respons
 
 Now it looks more like a regular blog!
 
-{% image blog/microservices-jhipster/blog-entries.png alt:"Blog entries" width:"800" %}
+<img src="/img/blog/microservices-jhipster/blog-entries.png" alt="Blog entries" width="800">
 
 Commit all your changes to Git.
 
@@ -485,7 +485,7 @@ Use the following settings to generate a microservice that uses MongoDB for its 
 * Testing frameworks: `Gatling`
 * Install other generators from the JHipster Marketplace: `No`
 
-{% image blog/microservices-jhipster/generate-store.png alt:"Generating the microservice" width:"800" %}
+<img src="/img/blog/microservices-jhipster/generate-store.png" alt="Generating the microservice" width="800">
 
 The `.yo-rc.json` created by this process is as follows:
 
@@ -570,7 +570,7 @@ Use the following answers for the questions asked:
 
 Your terminal should look similar to the following after you've answered all these questions.
 
-{% image blog/microservices-jhipster/generate-product.png alt:"Generating product entity" width:"800" %}
+<img src="/img/blog/microservices-jhipster/generate-product.png" alt="Generating product entity" width="800">
 
 ### Generate UI for Product Entity
 
@@ -589,7 +589,7 @@ Use the following answers to the questions asked:
 
 A visual of these questions and answers is in the screenshot below.
 
-{% image blog/microservices-jhipster/generate-product-ui.png alt:"Generating product entity UI" width:"800" %}
+<img src="/img/blog/microservices-jhipster/generate-product-ui.png" alt="Generating product entity UI" width="800">
 
 Commit your changes to Git.
 
@@ -611,7 +611,7 @@ The [Docker Compose](#docker-compose) section shows how you can run all your ser
 Navigate to `http://localhost:8080`, log in with admin/admin, and go to Entities > Product. You should be able to
 add a product and see that it has a MongoDB identifier.
 
-{% image blog/microservices-jhipster/add-product.png alt:"Add Product" width:"800" %}
+<img src="/img/blog/microservices-jhipster/add-product.png" alt="Add Product" width="800">
 
 ## Build for Production
 
@@ -742,14 +742,14 @@ start all the components of your application with a single command.
     * Set up monitoring: `JHipster Console with ELK/Zipkin`
     * The admin password for the JHipster Registry: `admin`
     
-    {% image blog/microservices-jhipster/generate-docker.png alt:"Generating Docker" width:"800" %}
+    <img src="/img/blog/microservices-jhipster/generate-docker.png" alt="Generating Docker" width="800">
     
 4. Run `docker-compose up` to run all your services and see the logs in the same window. Add `-d` if you want to run 
 them as a daemon
     
 5. Use [Kitematic](https://kitematic.com/) to view the ports and logs for the services deployed
 
-{% image blog/microservices-jhipster/kitematic.png alt:"Kitematic" width:"800" %}
+<img src="/img/blog/microservices-jhipster/kitematic.png" alt="Kitematic" width="800">
 
 You can view the JHipster Registry at `http://localhost:8761`.
 
@@ -761,7 +761,7 @@ To produce data for the JHipster Console to display, run some Gatling tests in t
 
 These simulations can take a while (> 10m) to complete. When they're finished, you can view their pretty reports.
 
-{% image blog/microservices-jhipster/gatling-results.png alt:"Gatling Results" width:"800" %}
+<img src="/img/blog/microservices-jhipster/gatling-results.png" alt="Gatling Results" width="800">
 
 You can see the JHipster Console at `http://localhost:5601`. Navigate to Dashboards > Open to display some pre-built 
 dashboards for the JVM, logs, metrics, microservices, and performance. The screenshots below show you what some of 
@@ -769,12 +769,12 @@ these look like.
 
 <table>
 <tr>
-<td>{% image blog/microservices-jhipster/dashboard-jvm.png alt:"JVM Dashboard" width:"400" %}</td>
-<td>{% image blog/microservices-jhipster/dashboard-metrics.png alt:"Metrics Dashboard" width:"400" %}</td>
+<td><img src="/img/blog/microservices-jhipster/dashboard-jvm.png" alt="JVM Dashboard" width="400"></td>
+<td><img src="/img/blog/microservices-jhipster/dashboard-metrics.png" alt="Metrics Dashboard" width="400"></td>
 </tr>
 <tr>
-<td>{% image blog/microservices-jhipster/dashboard-microservices.png alt:"Microservices Dashboard" width:"400" %}</td>
-<td>{% image blog/microservices-jhipster/dashboard-performance.png alt:"Performance Dashboard" width:"400" %}</td>
+<td><img src="/img/blog/microservices-jhipster/dashboard-microservices.png" alt="Microservices Dashboard" width="400"></td>
+<td><img src="/img/blog/microservices-jhipster/dashboard-performance.png" alt="Performance Dashboard" width="400"></td>
 </tr>
 </table>
 
@@ -824,7 +824,7 @@ and [Minikube](https://github.com/kubernetes/minikube/releases)
     * Base Docker repository name (e.g. `mraible`): `<your-docker-hub-username>`
     * Command to push Docker image to repository: `docker push`
     
-    {% image blog/microservices-jhipster/generate-kubernetes.png alt:"Generating Kubernetes" width:"800" %}
+    <img src="/img/blog/microservices-jhipster/generate-kubernetes.png" alt="Generating Kubernetes" width="800">
   
 6. Run the following commands to tag your Docker images. The Kubernetes sub-generator says to run `docker push` as well, 
 but you don't need that for a Minikube deployment.
@@ -844,7 +844,7 @@ but you don't need that for a Minikube deployment.
     
     The deployment process can take several minutes to complete. Run `minikube dashboard` to see the deployed containers.
     
-    {% image blog/microservices-jhipster/minikube-dashboard.png alt:"Minikube Dashboard" width:"800" %}
+    <img src="/img/blog/microservices-jhipster/minikube-dashboard.png" alt="Minikube Dashboard" width="800">
     
     You can also run `kubectl get po -o wide --watch` to see the status of each pod.
 

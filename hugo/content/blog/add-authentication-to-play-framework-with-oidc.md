@@ -23,7 +23,7 @@ I figured it’d be fun to revisit Play and see how easy it is to integrate a mo
 
 Play has continued to evolve over the past several years, becoming a [staple framework for services at LinkedIn](https://engineering.linkedin.com/play/play-framework-linkedin) and [increasing productivity at Verizon](https://twitter.com/marcospereira/status/921144001021071362). It’s also a key component of Lightbend’s microservices framework, [Lagom](https://www.lightbend.com/lagom-framework). However, it’s popularity seemed to peak around the time I was learning it. The [tag trends from Stack Overflow provide some evidence](http://sotagtrends.com/?tags=[playframework-2.0,playframework]&relative=true) of this.
 
-{% image blog/play-oidc-pac4j/stackoverflow-trends.png alt:"Stack Overflow Tag Trends" width:"600" %}{: .center-image }
+<img src="/img/blog/play-oidc-pac4j/stackoverflow-trends.png" alt="Stack Overflow Tag Trends" width="600" class="center-image">
 
 ## My Experiences with Play
 
@@ -72,7 +72,7 @@ I proved everything worked by navigating into the project and running `sbt run`.
 
 I opened my browser to http://localhost:9000 and was pleased to see everything worked!
 
-{% image blog/play-oidc-pac4j/welcome-to-play.png alt:"Welcome to Play" width:"800" %}{: .center-image }
+<img src="/img/blog/play-oidc-pac4j/welcome-to-play.png" alt="Welcome to Play" width="800" class="center-image">
 
 ## Security Options for Play Framework
 
@@ -380,11 +380,11 @@ oidc.discoveryUri = "https://dev-158606.oktapreview.com/oauth2/default/.well-kno
 
 After making these changes, you should be able to refresh your browser and log in. Play handles recompiling any new/changed files when you reload – a very slick feature!
 
-{% image blog/play-oidc-pac4j/play-with-oidc-link.png alt:"Play with OIDC Link" width:"800" %}{: .center-image }
+<img src="/img/blog/play-oidc-pac4j/play-with-oidc-link.png" alt="Play with OIDC Link" width="800" class="center-image">
 
-{% image blog/play-oidc-pac4j/okta-login.png alt:"Okta Login" width:"800" %}{: .center-image }
+<img src="/img/blog/play-oidc-pac4j/okta-login.png" alt="Okta Login" width="800" class="center-image">
 
-{% image blog/play-oidc-pac4j/oidc-profiles.png alt:"Profiles after login" width:"800" %}{: .center-image }
+<img src="/img/blog/play-oidc-pac4j/oidc-profiles.png" alt="Profiles after login" width="800" class="center-image">
 
 You might notice (in the bottom right corner) that roles are set to `ROLE_ADMIN`. This value is hardcoded in `SecurityModule`. In the following section, I’ll show you how to map Okta groups to roles.
 
@@ -394,7 +394,7 @@ You can create groups and include them as claims. For example, create a `ROLE_AD
 
 Navigate to **API** > **Authorization Servers**, click the **Authorization Servers** tab and edit the `default` one. Click the **Claims** tab and **Add Claim**. Name it "groups" or "roles", and include it in the ID Token. Set the value type to "Groups" and set the filter to be a Regex of `.*`.
 
-{% image blog/play-oidc-pac4j/add-groups-claim.png alt:"Add groups claim" width:"600" %}{: .center-image }
+<img src="/img/blog/play-oidc-pac4j/add-groups-claim.png" alt="Add groups claim" width="600" class="center-image">
 
 After adding the `groups` claim, you can modify `SecurityModule.java` to use it for the roles.
 
@@ -425,7 +425,7 @@ oidcClient.addAuthorizationGenerator((ctx, profile) -> {
 
 After integrating groups with roles, logging in with a user that belongs to both groups will show up with these roles.
 
-{% image blog/play-oidc-pac4j/roles-from-okta.png alt:"Roles from Okta" width:"800" %}{: .center-image }
+<img src="/img/blog/play-oidc-pac4j/roles-from-okta.png" alt="Roles from Okta" width="800" class="center-image">
 
 ## Source Code
 

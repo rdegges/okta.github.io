@@ -76,7 +76,7 @@ Project 'angular-okta-example' successfully created.
 
 This will create a new `angular-okta-example` directory and install all the necessary dependencies. To verify everything works, run `ng e2e` in a terminal window. All tests should pass and you should see results like the following.
 
-{% image blog/angular-sign-in-widget/e2e-success.png alt:"Running e2e" width:"800" %}{: .center-image }
+<img src="/img/blog/angular-sign-in-widget/e2e-success.png" alt="Running e2e" width="800" class="center-image">
 
 ## Integrate Okta’s Sign-In Widget in Angular
 
@@ -140,7 +140,7 @@ OpenID Connect is built on top of the OAuth 2.0 protocol. It allows clients to v
 
 Login to your Okta account, or [create one](https://developer.okta.com/signup/) if you don't have one. Navigate to **Applications** and click on the **Add Application** button. Select **SPA** and click **Next**. On the next page, specify `http://localhost:4200` as a Base URI, Login redirect URI, and Logout redirect URI. Click **Done** and you should see settings like the following.
 
-{% image blog/angular-sign-in-widget/oidc-settings.png alt:"OIDC App Settings" width:"700" %}{: .center-image }
+<img src="/img/blog/angular-sign-in-widget/oidc-settings.png" alt="OIDC App Settings" width="700" class="center-image">
 
 ## Show the Sign-In Widget
 
@@ -214,7 +214,7 @@ And modify `app.component.html` to have a `<div>` with `id="okta-login-container
 Run `ng serve`, and open your browser to `http://localhost:4200`. You should see the sign-in widget. Enter one of
 your user's credentials to login. You should see a "Hello {email}" message with a logout button.
 
-{% image blog/angular-sign-in-widget/login-success.png alt:"Login Success" width:"800" %}{: .center-image }
+<img src="/img/blog/angular-sign-in-widget/login-success.png" alt="Login Success" width="800" class="center-image">
 
 If it works - congrats! If it doesn't, please post a question to Stack Overflow with an [okta tag](http://stackoverflow.com/questions/tagged/okta), or hit me up [on Twitter](https://twitter.com/mraible).
 
@@ -254,7 +254,7 @@ Add an `@import` for [Bootstrap 4](https://getbootstrap.com/) and a few style ru
 
 After making these changes, the sign-in widget will look like the following screenshot.
 
-{% image blog/angular-sign-in-widget/custom-css.png alt:"Custom CSS" width:"800" %}{: .center-image }
+<img src="/img/blog/angular-sign-in-widget/custom-css.png" alt="Custom CSS" width="800" class="center-image">
 
 ## Fix Your Tests
 If you try to run `npm test` or `ng test`, tests will fail:

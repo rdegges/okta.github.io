@@ -100,7 +100,7 @@ You should be able to start the `server` application by running it in your favor
 
 After the app has started, navigate to `http://localhost:8080/good-beers`. You should see the list of good beers in your browser.
 
-{% image blog/ionic-spring-boot/good-beers-json.png alt:"Good Beers JSON" width:"800" %}
+<img src="/img/blog/ionic-spring-boot/good-beers-json.png" alt="Good Beers JSON" width="800">
 
 ## Create an Ionic App
 
@@ -127,7 +127,7 @@ ionic serve
 
 This will open your default browser on `http://localhost:8100`. You can click through the tabbed interface to see the default structure of the app.
 
-{% image blog/ionic-spring-boot/ionic-tabs.png alt:"Ionic shell with tabs" width:"800" %}
+<img src="/img/blog/ionic-spring-boot/ionic-tabs.png" alt="Ionic shell with tabs" width="800">
 
 Open the `ionic-beer` project in your preferred IDEA to start creating your UI. I recommend using IntelliJ IDEA because it has good TypeScript support and can auto-import classes just like it does for Java project.
 
@@ -376,7 +376,7 @@ Start the Spring Boot app in one terminal window and run `ionic serve` in anothe
 Uncaught (in promise): Error: No provider for Http!
 ```
 
-{% image blog/ionic-spring-boot/no-http-provider.png alt:"No provider for Http!" width:"800" %}
+<img src="/img/blog/ionic-spring-boot/no-http-provider.png" alt="No provider for Http!" width="800">
 
 This highlights one of the slick features of Ionic: errors display in your browser, not just the browser's console. Add `HttpModule` to the list of imports in `src/app/app.module.ts` to solve this issue.
 
@@ -412,7 +412,7 @@ Recompile this class, and DevTools should restart the application.
 
 If everything works as expected, you should see a page similar to the one below in your browser.
 
-{% image blog/ionic-spring-boot/good-beers-ui.png alt:"Good Beers UI" width:"800" %}
+<img src="/img/blog/ionic-spring-boot/good-beers-ui.png" alt="Good Beers UI" width="800">
 
 ### Add a Modal for Editing
 
@@ -618,7 +618,7 @@ Now if you try to edit a beer's name, you'll see another CORS in your browser's 
 
 Re-compile and now everything should work as expected. For example, below is a screenshot that shows I added a new beer and what it looks like when editing it.
 
-{% image blog/ionic-spring-boot/beer-modal.png alt:"Mmmmm, Guinness" width:"800" %}
+<img src="/img/blog/ionic-spring-boot/beer-modal.png" alt="Mmmmm, Guinness" width="800">
 
 ### Add Swipe to Delete
 
@@ -686,7 +686,7 @@ remove(id: string) {
 
 After making these additions, you should be able to delete beer names. To emulate a left swipe in your browser, click on the item and drag it to the left.
 
-{% image blog/ionic-spring-boot/beer-delete.png alt:"Left swipe" width:"512" %}
+<img src="/img/blog/ionic-spring-boot/beer-delete.png" alt="Left swipe" width="512">
 
 ## PWAs with Ionic
 
@@ -694,7 +694,7 @@ Ionic ships with support for creating progressive web apps (PWAs). If you'd like
 
 If you run the [Lighthouse Chrome extension](https://developers.google.com/web/tools/lighthouse/) on this application, you'll likely get a mediocre score in the 50s.
 
-{% image blog/ionic-spring-boot/lighthouse-51.png alt:"Lighthouse: 51" width:"800" %}
+<img src="/img/blog/ionic-spring-boot/lighthouse-51.png" alt="Lighthouse: 51" width="800">
 
 To register a service worker, and improve the app's score, uncomment the following block in `src/index.html`.
 
@@ -730,7 +730,7 @@ It's pretty cool that you're able to develop mobile apps with Ionic in your brow
 
 To see how your application will look on different devices you can run `ionic serve --lab`. The `--lab` flag opens a page in your browser that lets you see how your app looks on different devices.
 
-{% image blog/ionic-spring-boot/ionic-labs.png alt:"Ionic Labs" width:"800" %}
+<img src="/img/blog/ionic-spring-boot/ionic-labs.png" alt="Ionic Labs" width="800">
 
 ### iOS
 
@@ -767,7 +767,7 @@ Select your phone as the target in Xcode and click the play button to run your a
 
 Once you've configured your phone, computer, and Apple ID to work, you should be able to open the app and see the beer list you created. Below is how it looks on my iPhone 6s Plus.
 
-{% image blog/ionic-spring-boot/iphone-beer-list.jpg alt:"Phone Beer List" width:"500" %}
+<img src="/img/blog/ionic-spring-boot/iphone-beer-list.jpg" alt="Phone Beer List" width="500">
 
 ### Android
 
@@ -809,7 +809,7 @@ To solve this problem, open Android Studio, select “Open an existing Android S
 
 After performing these steps, you should be able to run `ionic cordova emulate android` and see your app running in the AVD.
 
-{% image blog/ionic-spring-boot/android-beer-list.png alt:"Android Beer List" width:"540" %}
+<img src="/img/blog/ionic-spring-boot/android-beer-list.png" alt="Android Beer List" width="540">
 
 **NOTE**: If you get an application error that says "The connection to the server was unsuccessful. (`file:///android/www/index.html`)", add the following line to `config.xml`. This sets the default timeout to 60 seconds (default is 20). Thanks to [Stack Overflow](http://stackoverflow.com/a/31377846) for the answer.
 

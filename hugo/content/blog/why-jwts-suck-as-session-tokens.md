@@ -16,7 +16,7 @@ tweets:
 - Stop using JSON Web Tokens for web authentication. Use cookies and session IDs instead.
 ---
 
-{% image blog/why-jwts-suck-as-session-tokens/jwts-so-hot-right-now.jpg alt:"JWTs: So Hot Right Now" %}
+<img src="/img/blog/why-jwts-suck-as-session-tokens/jwts-so-hot-right-now.jpg" alt="JWTs: So Hot Right Now">
 
 JSON Web Tokens (JWTs) are *so* hot right now. They're all the rage in web
 development:
@@ -41,7 +41,7 @@ complicated!
 The way I like to think of JWTs is that they're just some JSON data that you can
 verify came from someone you know.
 
-{% image blog/why-jwts-suck-as-session-tokens/json-web-token.png alt:"JSON Web Token" %}
+<img src="/img/blog/why-jwts-suck-as-session-tokens/json-web-token.png" alt="JSON Web Token">
 
 Pretend I'm blind and hard of hearing. Let's also pretend that last week you
 bought me lunch, and now I need your Venmo address to pay you back. If I ask you
@@ -65,7 +65,7 @@ actually came from you.
 JWTs are JSON data, encoded as a string, and cryptographically signed. I know
 that sounds fancy, but it really isn’t.
 
-{% image blog/why-jwts-suck-as-session-tokens/jwt-formula.png alt:"JSON Web Token Formula" %}
+<img src="/img/blog/why-jwts-suck-as-session-tokens/jwt-formula.png" alt="JSON Web Token Formula">
 
 The core of any JWT is claims. Claims are the JSON data inside the JWT. It’s the
 data you care about, and want to pass along securely to someone else. I’m not
@@ -97,7 +97,7 @@ login/single sign-on).
 
 ### JWT Encryption Note
 
-{% image blog/why-jwts-suck-as-session-tokens/key-sketch.png alt:"Key Sketch" %}
+<img src="/img/blog/why-jwts-suck-as-session-tokens/key-sketch.png" alt="Key Sketch">
 
 One final note I want to make about JWTs before moving on: their contents (the
 JSON data inside of them) are usually **not** encrypted. This means that anyone can
@@ -121,7 +121,7 @@ generate a JWT that contains the user’s ID, as well as some other critical
 information, and then send it to the browser/API/etc. to store as a session
 token.
 
-{% image blog/why-jwts-suck-as-session-tokens/jwt-session.png alt:"JWT Session" %}
+<img src="/img/blog/why-jwts-suck-as-session-tokens/jwt-session.png" alt="JWT Session">
 
 When that user visits another page on the website, for instance, their browser
 will automatically send that JWT to the server, which will validate the JWT to
@@ -156,7 +156,7 @@ embedding extra user information in your tokens as well!
 
 ## Why Do JWTs Suck?
 
-{% image blog/why-jwts-suck-as-session-tokens/rage-face.jpg alt:"Rage Face" width:"200" %}
+<img src="/img/blog/why-jwts-suck-as-session-tokens/rage-face.jpg" alt="Rage Face" width="200">
 
 Now that we’ve seen how JWTs are used for authentication purposes, let’s get
 into my favorite subject of all: why JWTs are not good session tokens.
@@ -213,7 +213,7 @@ size has now inflated to 304 bytes. For storing a simple user session, that is a
 ~51x size inflation on every single page request in exchange for cryptographic
 signing (as well as some header metadata).
 
-{% image blog/why-jwts-suck-as-session-tokens/jwt-size.png alt:"JWT Size" %}
+<img src="/img/blog/why-jwts-suck-as-session-tokens/jwt-size.png" alt="JWT Size">
 
 For reference, here were the JWT claims I used to get that number:
 
@@ -244,7 +244,7 @@ than just a user ID, greatly increasing these byte counts.
 As I mentioned above, most websites that require user login are primarily
 generating dynamic user content for CRUD operations (create, update, delete).
 
-{% image blog/why-jwts-suck-as-session-tokens/youll-hit-the-db-anyway.png alt:"You'll Hit the DB Anyway" %}
+<img src="/img/blog/why-jwts-suck-as-session-tokens/youll-hit-the-db-anyway.png" alt="You'll Hit the DB Anyway">
 
 The issue with using JWTs on these websites is that for almost every single page
 the user loads, the user object needs to be loaded from a cache / database
@@ -316,7 +316,7 @@ event loop.
 
 If JWTs suck, then what’s a better solution? Plain old sessions!
 
-{% image blog/why-jwts-suck-as-session-tokens/sessionid-vs-jwt.png alt:"SessionID vs JWT" %}
+<img src="/img/blog/why-jwts-suck-as-session-tokens/sessionid-vs-jwt.png" alt="SessionID vs JWT">
 
 If you’re building a simple website like the ones described above, then your
 best bet is to stick with boring, simple, and secure server side sessions.
@@ -349,7 +349,7 @@ using JWTs as your API tokens is a very smart idea. In this scenario:
   trusted and can perform some action without needing to perform a network
   validation
 
-{% image blog/why-jwts-suck-as-session-tokens/good-jwt-example.png alt:"Good JWT Example" %}
+<img src="/img/blog/why-jwts-suck-as-session-tokens/good-jwt-example.png" alt="Good JWT Example">
 
 For these types of API services, JWTs make perfect sense because clients will be
 making requests frequently, with limited scope, and usually authentication data

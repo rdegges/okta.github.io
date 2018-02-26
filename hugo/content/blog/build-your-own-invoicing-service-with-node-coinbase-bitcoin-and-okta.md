@@ -31,7 +31,7 @@ I do a bit of consulting work myself and will be using this in the future. =)
 
 **PS**: If you want to skip the article and go [straight to the code](https://github.com/oktadeveloper/crypto-invoicer), go for it! I'm using Node.js, Express.js, and [Coinbase](https://www.coinbase.com) to power the application.
 
-{% image blog/node-invoicing-service/crypto-invoicer.png alt:"Crypto Invoicer" width:"620" %}{: .center-image }
+<img src="/img/blog/node-invoicing-service/crypto-invoicer.png" alt="Crypto Invoicer" width="620" class="center-image">
 
 
 ## Get Started with Coinbase, Okta, and Node.js
@@ -54,7 +54,7 @@ To do this, you'll need to visit the Coinbase [API management page](https://www.
 
 When you see the popup modal that prompts you for permissions, use the settings below:
 
-{% image blog/node-invoicing-service/coinbase-api-key-options.png alt:"Coinbase API Key Options" width:"620" %}{: .center-image }
+<img src="/img/blog/node-invoicing-service/coinbase-api-key-options.png" alt="Coinbase API Key Options" width="620" class="center-image">
 
 What you're doing here is requesting API permission to:
 
@@ -71,7 +71,7 @@ Now that your Coinbase account is ready for usage, you need to set up your Okta 
 
 Log into your Okta dashboard and copy down the **Org URL** value you see at the top right of the page. **You will need this value later.** It looks something like this:
 
-{% image blog/node-invoicing-service/okta-org-url.png alt:"Okta Org URL" width:"620" %}{: .center-image }
+<img src="/img/blog/node-invoicing-service/okta-org-url.png" alt="Okta Org URL" width="620" class="center-image">
 
 You next need to create a new Okta Application. Using Okta, you can manage users for many applications you might have.
 
@@ -79,13 +79,13 @@ To do this, click the large Applications menu item and click Add Application. Th
 
 Now you'll see a page asking you to define your Application settings. Use the values below:
 
-{% image blog/node-invoicing-service/okta-create-app.png alt:"Okta Create App" width:"620" %}{: .center-image }
+<img src="/img/blog/node-invoicing-service/okta-create-app.png" alt="Okta Create App" width="620" class="center-image">
 
 These settings basically tell Okta where your web app will be running (locally in this example) and what sort of security rules to apply.
 
 Once you've finished creating the Application, you'll then be taken to your settings page for this newly created Application. You'll want to copy down two values, your **Client ID** and **Client Secret**. **These will be needed later.**
 
-{% image blog/node-invoicing-service/okta-app-credentials.png alt:"Okta App Credentials" width:"620" %}{: .center-image }
+<img src="/img/blog/node-invoicing-service/okta-app-credentials.png" alt="Okta App Credentials" width="620" class="center-image">
 
 These credentials will be used to communicate securely with Okta in order to authenticate yourself into the web portal later.
 
@@ -232,7 +232,7 @@ block body
 
 This template simply displays a basic home page that prompts the user to log into their account to continue:
 
-{% image blog/node-invoicing-service/crypto-invoicer-2.png alt:"Crypto Invoicer" width:"620" %}{: .center-image }
+<img src="/img/blog/node-invoicing-service/crypto-invoicer-2.png" alt="Crypto Invoicer" width="620" class="center-image">
 
 The last view you need to inspect is the `dashboard.pug` view. This view renders the dashboard page that allows a user to create and view their invoices.
 
@@ -301,11 +301,11 @@ This page is a bit more complex. It does a few key things:
 
 When you render this page, you'll see the invoice creation form:
 
-{% image blog/node-invoicing-service/crypto-invoicer-form.png alt:"Crypto Invoicer Form" width:"620" %}{: .center-image }
+<img src="/img/blog/node-invoicing-service/crypto-invoicer-form.png" alt="Crypto Invoicer Form" width="620" class="center-image">
 
 And… If you've generated any past invoices, you'll see them listed below:
 
-{% image blog/node-invoicing-service/crypto-invoicer-list.png alt:"Crypto Invoicer List" width:"620" %}{: .center-image }
+<img src="/img/blog/node-invoicing-service/crypto-invoicer-list.png" alt="Crypto Invoicer List" width="620" class="center-image">
 
 You'll also notice that if you click one of the table headers, you're able to sort all of the invoices by any column you want.
 
@@ -609,7 +609,7 @@ By forcing the cache refresh after each new invoice is created, this prevents an
 
 When invoices are generated and Coinbase sends out an email, the client receives an email that looks something like this:
 
-{% image blog/node-invoicing-service/crypto-invoicer-email.png alt:"Crypto Invoicer Email" width:"620" %}{: .center-image }
+<img src="/img/blog/node-invoicing-service/crypto-invoicer-email.png" alt="Crypto Invoicer Email" width="620" class="center-image">
 
 This is quite nice, because then a click can simply click the "Complete this payment." button, and be redirected to Coinbase where they can complete the transaction using either Bitcoin or their local currency (USD) to pay.
 
