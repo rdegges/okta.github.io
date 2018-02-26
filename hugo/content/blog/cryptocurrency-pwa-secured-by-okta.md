@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: mraible
 date: 2018-01-18T00:00:00Z
 description: In this article, you'll learn how to add authentication to an Ionic progressive

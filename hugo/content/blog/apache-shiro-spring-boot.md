@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: bdemers
 date: 2017-07-13T00:00:00Z
 tags:

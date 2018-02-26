@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: mraible
 date: 2017-09-14T00:00:00Z
 description: This article shows you how to add authentication to a Vue.js application

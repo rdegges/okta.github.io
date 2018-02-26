@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: mraible
 date: 2017-09-28T00:00:00Z
 description: This article contains a list of the top 10 JavaOne 2017 sessions for

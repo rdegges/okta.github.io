@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: mraible
 date: 2018-01-30T00:00:00Z
 description: This article shows you how to use Ionic for JHipster to create a hybrid

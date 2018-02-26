@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: mraible
 date: 2017-06-13T00:00:00Z
 description: In this article, I'll show you how you can lock down a Spring Boot app,

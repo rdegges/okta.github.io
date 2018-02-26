@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: rdegges
 date: 2017-10-11T00:00:00Z
 description: Serverless is becoming a popular pattern in the web development world--but

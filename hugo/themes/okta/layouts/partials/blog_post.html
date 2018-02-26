@@ -1,5 +1,5 @@
 {{ $author := index .Site.Data.authors .Params.author }}
-<article class="BlogPost{{ if eq .Parent.Params.layout "blog_index" }} is-excerpt{{ end }}">
+<article class="BlogPost">
 
 	<header class="BlogPost-header">
 
@@ -7,13 +7,7 @@
 			{{ .Date.Format "January 2, 2006" }}
 		</time>
 
-		<h1 class="BlogPost-title">
-			{{ if eq .Parent.Params.layout "blog_index" }}
-				<a href="{{ .URL }}">{{ .Title }}</a>
-			{{ else }}
-				{{ .Title }}
-			{{ end }}
-		</h1>
+		<h1 class="BlogPost-title">{{ .Title }}</h1>
 
 		<div class="BlogPost-attribution">
 			{{ if $author.avatar }}
@@ -25,21 +19,20 @@
 	</header>
 
 	<div class="BlogPost-content">
-		<p>{{ .Content | plainify | truncate 400 }}</p>
-		<p><a class="BlogPost-more" href="{{ .URL }}">Read more</a></p>
+		<p>{{ .Content }}</p>
 	</div>
-	{{ if and (eq .Params.layout "blog_index") (ne .Params.comments false) }}
+	{{ if ne .Params.comments false }}
 	<div id="disqus">
 		<div id="disqus_thread"></div>
 		<script type="text/javascript">
 		var disqus_title = '{{ .Title }}';
-		var disqus_url = '{{ .URL }}';
+		var disqus_url = '{{ .URL | absURL }}';
 
 		(function () {
 			var dsq = document.createElement('script');
 			dsq.async = true;
 			dsq.type = 'text/javascript';
-				dsq.src = '//{{ .Site.disqusShortname }}.disqus.com/embed.js';
+				dsq.src = '//{{ .Site.DisqusShortname }}.disqus.com/embed.js';
 			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 		})();
 		</script>

@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: mraible
 date: 2017-09-19T00:00:00Z
 description: In this tutorial, you'll learn how to write a note-taking application

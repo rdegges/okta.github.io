@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: mraible
 date: 2017-10-10T00:00:00Z
 description: A follow up article to NoSQL Options for Java Developers. This article

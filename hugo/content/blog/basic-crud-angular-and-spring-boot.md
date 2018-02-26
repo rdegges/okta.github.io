@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: mraible
 date: 2017-12-04T00:00:00Z
 description: Angular and Spring Boot are arguably the two most popular frameworks

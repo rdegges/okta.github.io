@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: leebrandt
 date: 2017-06-27T00:00:00Z
 tags:

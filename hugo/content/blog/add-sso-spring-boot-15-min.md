@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: silas-b
 date: 2017-11-20T00:00:00Z
 redirect_from:

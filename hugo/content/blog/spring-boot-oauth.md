@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: mraible
 date: 2017-03-21T00:00:00Z
 description: In this tutorial you’ll learn how to integrate Spring Security into a

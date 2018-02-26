@@ -2,7 +2,7 @@
 <section class="Blog is-index">
 	{{ $paginator := $.Paginator }}
 	{{ range $paginator.Pages }}
-		{{ partial "blog_post.html" . }}
+		{{ partial "blog_post_excerpt.html" . }}
 	{{ end }}
 
 	{{ if gt $paginator.TotalPages 1 }}

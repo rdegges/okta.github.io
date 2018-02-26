@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: mraible
 date: 2017-12-18T00:00:00Z
 description: Learn how to use Spring Security 5.0 and its OAuth 2.0 Login and OIDC

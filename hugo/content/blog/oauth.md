@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: karl_mcguinness
 date: 2015-12-07T00:00:00Z
 tags:

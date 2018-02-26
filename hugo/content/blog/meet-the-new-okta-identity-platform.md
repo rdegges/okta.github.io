@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: rdegges
 date: 2017-08-29T00:00:00Z
 description: Okta's newly launched identity platform seamlessly handles user management,

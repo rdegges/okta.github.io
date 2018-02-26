@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: rdegges
 date: 2017-09-06T00:00:00Z
 description: In this article you'll learn how to build a simple static website using

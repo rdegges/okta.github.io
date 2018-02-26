@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: jon_todd
 date: 2015-05-08T00:00:00Z
 tags:

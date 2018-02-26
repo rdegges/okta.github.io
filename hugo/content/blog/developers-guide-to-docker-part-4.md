@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: leebrandt
 date: 2018-02-07T00:00:00Z
 description: In this article, you'll learn how to set up a cluster of containers using

@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: dogeared
 date: 2017-12-04T00:00:00Z
 tags:

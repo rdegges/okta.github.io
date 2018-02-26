@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: mraible
 date: 2017-08-21T00:00:00Z
 description: In this post, we introduce you to the Developer Relations team at Okta

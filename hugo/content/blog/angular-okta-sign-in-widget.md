@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: mraible
 date: 2017-03-27T00:00:00Z
 description: In this article, you'll learn how to get started with Angular, and add

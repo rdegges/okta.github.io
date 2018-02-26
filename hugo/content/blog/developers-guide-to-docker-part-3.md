@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: leebrandt
 date: 2017-10-11T00:00:00Z
 redirect_from:

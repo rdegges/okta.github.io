@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: mraible
 date: 2017-12-06T00:00:00Z
 description: This post shows how you can build a UI and an API as separate apps. You’ll

@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: vimarsh_karbhari
 date: 2015-06-11T00:00:00Z
 tags:

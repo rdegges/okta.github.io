@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author:
 - jon_todd
 - william_dawson

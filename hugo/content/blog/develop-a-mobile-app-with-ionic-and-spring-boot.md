@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: mraible
 date: 2017-05-17T00:00:00Z
 description: This tutorial will show you how to build a Spring Boot API and an Ionic

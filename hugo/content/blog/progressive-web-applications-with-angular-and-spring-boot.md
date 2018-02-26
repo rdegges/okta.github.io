@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: mraible
 date: 2017-05-09T00:00:00Z
 description: This article will show you how to build a PWA with a Spring Boot backend

@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: mraible
 date: 2017-10-20T00:00:00Z
 description: JHipster is one of the hippest things to happen to Java developers in

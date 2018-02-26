@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: rdegges
 date: 2018-01-24T00:00:00Z
 description: In this article you'll build an invoicing web app that bills clients

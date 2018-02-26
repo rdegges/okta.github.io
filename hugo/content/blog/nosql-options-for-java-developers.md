@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: mraible
 date: 2017-09-08T00:00:00Z
 description: In this article, I'll show you several options for NoSQL databases. After

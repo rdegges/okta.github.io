@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: mraible
 date: 2017-10-31T00:00:00Z
 description: Play Framework is a key component of Lightbend's Lagom microservices

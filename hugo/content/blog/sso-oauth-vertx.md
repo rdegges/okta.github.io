@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: silas-b
 date: 2018-01-11T00:00:00Z
 tags:

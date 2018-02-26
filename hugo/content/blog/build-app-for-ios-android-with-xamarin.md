@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: nbarbettini
 date: 2018-01-10T00:00:00Z
 tags:

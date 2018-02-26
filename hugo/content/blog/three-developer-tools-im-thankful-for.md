@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: rdegges
 date: 2017-11-22T00:00:00Z
 description: What developer tools do you use every day? To celebrate Thanksgiving,

@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: william_dawson
 date: 2015-12-02T00:00:00Z
 redirect_from:

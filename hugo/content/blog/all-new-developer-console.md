@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: robert
 date: 2017-09-25T00:00:00Z
 tags:

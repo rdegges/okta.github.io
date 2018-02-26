@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: rdegges
 date: 2017-08-17T00:00:00Z
 description: Learn why you should never use JSON web tokens as session tokens (either

@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: matt_loughran
 date: 2015-05-22T00:00:00Z
 tags:

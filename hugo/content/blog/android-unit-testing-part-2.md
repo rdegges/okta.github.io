@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: victor_ronin
 date: 2015-04-07T00:00:00Z
 redirect_from:

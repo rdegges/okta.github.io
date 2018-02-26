@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: mraible
 date: 2017-04-17T00:00:00Z
 description: In this article, you’ll see how build a simple web application with Angular

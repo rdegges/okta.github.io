@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: dogeared
 date: 2017-08-01T00:00:00Z
 redirect_from:

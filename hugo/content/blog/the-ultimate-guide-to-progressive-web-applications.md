@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: mraible
 date: 2017-07-20T00:00:00Z
 description: In this guide, you’ll learn about the essential ingredients in a PWA,

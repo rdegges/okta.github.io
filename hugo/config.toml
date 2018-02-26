@@ -6,6 +6,7 @@ googleAnalytics = "UA-15777010-3"
 disqusShortname = "oktadevblog"
 paginate = 10
 paginatePath = "page"
+description = "test"
 
 [permalinks]
   post = "/:year/:month/:day/:slug/"

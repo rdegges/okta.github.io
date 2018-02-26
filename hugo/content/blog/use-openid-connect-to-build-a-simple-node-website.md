@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: rdegges
 date: 2017-10-19T00:00:00Z
 description: In this article you'll learn how to use OpenID Connect to build a simple

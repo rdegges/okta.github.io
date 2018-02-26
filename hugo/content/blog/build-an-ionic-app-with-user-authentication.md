@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: mraible
 date: 2017-08-22T00:00:00Z
 description: Ionic is an open source mobile SDK for developing native and progressive

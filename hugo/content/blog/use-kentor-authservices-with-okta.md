@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author:
 - raphael_londner
 date: 2016-03-22T00:00:00Z

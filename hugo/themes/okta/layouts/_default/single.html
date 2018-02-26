@@ -1,8 +1,28 @@
 {{ define "main" }}
-<div style="margin:25px;">
-	<h1>{{.Title}}</h1>
-	<div style="color:grey; font-size:16px;">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</div>
-	<div style="color:grey; font-size:16px;">{{if .Params.author}}Author: {{.Params.Author}}{{end}}</div>
-	<div style="font-size:18px;">{{.Content}}</div>
-</div>
+
+{{ $author := index .Site.Data.authors .Params.author }}
+
+<section class="Blog is-single">
+
+	<div class="Blog-social">
+		{{ if $author.github }}
+			<a href="{{ $author.github }}" target="_blank"><i class="fa fa-github"></i></a>
+		{{ end }}
+
+		{{ if $author.twitter }}
+			<a href="{{ $author.twitter }}" target="_blank"><i class="fa fa-twitter"></i></a>
+		{{ end }}
+
+		{{ if $author.linkedin }}
+			<a href="{{ $author.linkedin }}" target="_blank"><i class="fa fa-linkedin"></i></a>
+		{{ end }}
+
+		{{ if $author.web }}
+			<a href="{{ $author.web }}" target="_blank"><i class="fa fa-external-link"></i></a>
+		{{ end }}
+	</div>
+	{{ partial "blog_post.html" . }}
+
+</section>
+
 {{ end }}

@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: mraible
 date: 2017-04-26T00:00:00Z
 description: This tutorial shows you how to develop a Spring Boot API and an Angular

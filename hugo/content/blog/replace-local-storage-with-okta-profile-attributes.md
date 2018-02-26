@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: mraible
 date: 2018-01-23T00:00:00Z
 description: Using an Okta Developer account will allow you to store your cryptocurrency

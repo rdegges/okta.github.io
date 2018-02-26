@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: mraible
 date: 2017-06-20T00:00:00Z
 description: This tutorial shows you how to build microservices with JHipster. You'll

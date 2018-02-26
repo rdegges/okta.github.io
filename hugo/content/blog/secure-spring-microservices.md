@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: mraible
 date: 2017-08-08T00:00:00Z
 description: This tutorial shows you how you can use Spring Security, Okta, and a

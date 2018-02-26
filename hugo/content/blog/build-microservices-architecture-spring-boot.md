@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: mraible
 date: 2017-06-15T00:00:00Z
 description: This article shows you how to build a microservices architecture with

@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: jf
 date: 2017-10-17T00:00:00Z
 tags:

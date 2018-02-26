@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: mraible
 date: 2017-06-21T00:00:00Z
 description: OAuth 2.0 is a standard that apps can use to provide client applications

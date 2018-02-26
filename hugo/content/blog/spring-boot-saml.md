@@ -1,4 +1,5 @@
 ---
+layout: blog_post
 author: mraible
 date: 2017-03-16T00:00:00Z
 description: Learn how to build a Spring Boot application that authenticates against
