@@ -1,4 +1,4 @@
 ---
 title: Blog
+js: docsIndex.js
 ---
-Documentation page

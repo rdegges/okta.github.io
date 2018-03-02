@@ -17,5 +17,6 @@ paginatePath = "page"
   github_username = "oktadeveloper"
   dev_forum = "https://devforum.okta.com/"
   description = "Secure, scalable, and highly available authentication and user management for any app."
+  documentation_dirs = [ "code", "documentation", "docs", "standards", "use_cases" ]
 
 googleAnalytics = "UA-15777010-3"

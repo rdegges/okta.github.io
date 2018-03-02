@@ -6,7 +6,7 @@
             <div class="Column--3 Column--medium-6 Column--xSmall-12">
 
                 <a class="Logo" href="https://www.okta.com/" target="_blank" rel="noopener noreferrer">
-                    <img src="{{ .Site.BaseURL }}/sites/all/themes/developer/images/logo-footer.png" alt="Okta">
+                    <img src="{{ .Site.baseURL }}/sites/all/themes/developer/images/logo-footer.png" alt="Okta">
                     Visit okta.com
                 </a>
 
@@ -47,6 +47,7 @@
 </footer>
 
 {{/*{% js master %}*/}}
+<script type="text/javascript" src="/js/vendor/jquery-3.1.0.min.js"></script>
 <script src="/js/master.js"></script>
 
 {{/*{% js myOkta %}*/}}
@@ -64,6 +65,7 @@
 {{/*{% js '{{page.js}}' %}*/}}
 {{/*{% endif %}*/}}
 
-{{/*{% if layout.js %}*/}}
-{{/*{% js '{{layout.js}}' %}*/}}
-{{/*{% endif %}*/}}
+{{ printf "%#v" .Params }}
+{{ if isset .Params "js" }}
+    <script type="text/javascript" src="/js/{{ .Params.js }}"></script>
+{{ end }}
