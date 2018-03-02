@@ -31,3 +31,8 @@ hugo
 - [x] header.html
 - [x] footer.html
 - [x] post-footer.html
+
+
+### Port over the documentation 
+- [] We host our developer documentation in this project as well currently. 
+- [] migrating all the /documentation content.
