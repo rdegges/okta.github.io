@@ -1,0 +1,158 @@
+<aside class="Sidebar">
+  <h2 class="Sidebar-location Sidebar-toggle h6">Navigation</h2>
+  <div class="Sidebar-close Sidebar-toggle"></div>
+  <div>
+    <h3 class="Sidebar-title"><a href = "/authentication-guide/">Authentication Guide</a></h3>
+    <ul class="Sidebar-nav">
+      {{/*<li{% if page.id contains '/auth-overview' %} class="is-active"{% endif %}>*/}}
+        {{/*<a href = "/authentication-guide/auth-overview/">OAuth 2.0 Overview</a>*/}}
+        {{/*{% if page.id contains "auth-overview" %}*/}}
+          {{/*<ul>{% assign guides = site.authentication-guide | sort: 'weight' %}*/}}
+            {{/*{% for guide in guides %}{% unless guide.id contains "auth-overview" %}{% continue %}{% endunless %}*/}}
+              {{/*{% if guide.id contains "/index" %}{% continue %}{% endif %}*/}}
+                {{/*<li{% if guide.title == page.title %} class="is-active"{% endif %}>*/}}
+                  {{/*<a href="{{ guide.id }}">{{ guide.title }}</a>*/}}
+                {{/*</li>*/}}
+            {{/*{% endfor %}*/}}
+          {{/*</ul>*/}}
+        {{/*{% endif %}*/}}
+      {{/*</li>*/}}
+      {{/*<li{% if page.id contains '/implementing-authentication' %} class="is-active"{% endif %}>*/}}
+        {{/*<a href = "/authentication-guide/implementing-authentication/">Implementing OAuth 2.0</a>*/}}
+        {{/*{% if page.id contains "implementing-authentication" %}*/}}
+          {{/*<ul>{% assign guides = site.authentication-guide | sort: 'id' %}*/}}
+            {{/*{% for guide in guides %}{% unless guide.id contains "implementing-authentication" %}{% continue %}{% endunless %}*/}}
+              {{/*{% if guide.id contains "/index" %}{% continue %}{% endif %}*/}}
+                {{/*<li{% if guide.title == page.title %} class="is-active"{% endif %}>*/}}
+                  {{/*<a href="{{ guide.id }}">{{ guide.title }}</a>*/}}
+                {{/*</li>*/}}
+            {{/*{% endfor %}*/}}
+          {{/*</ul>*/}}
+        {{/*{% endif %}*/}}
+      {{/*</li>*/}}
+      {{/*<li{% if page.id contains '/social-login' %} class="is-active"{% endif %}>*/}}
+      {{/*<a href = "/authentication-guide/social-login/">Social Login</a>*/}}
+      {{/*{% if page.id contains "social-login" %}*/}}
+        {{/*<ul>{% assign guides = site.authentication-guide | sort: 'id' %}*/}}
+          {{/*{% for guide in guides %}{% unless guide.id contains "social-login" %}{% continue %}{% endunless %}*/}}
+            {{/*{% if guide.id contains "/index" %}{% continue %}{% endif %}*/}}
+              {{/*<li{% if guide.title == page.title %} class="is-active"{% endif %}>*/}}
+                {{/*<a href="{{ guide.id }}">{{ guide.title }}</a>*/}}
+              {{/*</li>*/}}
+          {{/*{% endfor %}*/}}
+        {{/*</ul>*/}}
+      {{/*{% endif %}*/}}
+      {{/*</li>*/}}
+      {{/*<li{% if page.id contains '/saml-login' %} class="is-active"{% endif %}>*/}}
+      {{/*<a href = "/authentication-guide/saml-login/">SAML Login</a>*/}}
+      {{/*{% if page.id contains "saml-login" %}*/}}
+        {{/*<ul>{% assign guides = site.authentication-guide | sort: 'weight' %}*/}}
+          {{/*{% for guide in guides %}{% unless guide.id contains "saml-login" %}{% continue %}{% endunless %}*/}}
+            {{/*{% if guide.id contains "/index" %}{% continue %}{% endif %}*/}}
+              {{/*<li{% if guide.title == page.title %} class="is-active"{% endif %}>*/}}
+                {{/*<a href="{{ guide.id }}">{{ guide.title }}</a>*/}}
+              {{/*</li>*/}}
+          {{/*{% endfor %}*/}}
+        {{/*</ul>*/}}
+      {{/*{% endif %}*/}}
+      {{/*</li>*/}}
+      {{/*<li{% if page.id contains '/tokens' %} class="is-active"{% endif %}>*/}}
+      {{/*<a href = "/authentication-guide/tokens/">Working With Tokens</a>*/}}
+      {{/*{% if page.id contains "tokens" %}*/}}
+        {{/*<ul>{% assign guides = site.authentication-guide | sort: 'weight' %}*/}}
+          {{/*{% for guide in guides %}{% unless guide.id contains "tokens" %}{% continue %}{% endunless %}*/}}
+            {{/*{% if guide.id contains "/index" %}{% continue %}{% endif %}*/}}
+              {{/*<li{% if guide.title == page.title %} class="is-active"{% endif %}>*/}}
+                {{/*<a href="{{ guide.id }}">{{ guide.title }}</a>*/}}
+              {{/*</li>*/}}
+          {{/*{% endfor %}*/}}
+        {{/*</ul>*/}}
+      {{/*{% endif %}*/}}
+      {{/*</li>*/}}
+      {{/*<!--*/}}
+      {{/*<li{% if page.id contains '/custom-login' %} class="is-active"{% endif %}>*/}}
+      {{/*<a href = "/authentication-guide/custom-login/">Customizing Login</a>*/}}
+      {{/*{% if page.id contains "custom-login" %}*/}}
+        {{/*<ul>{% assign guides = site.authentication-guide | sort: 'weight' %}*/}}
+          {{/*{% for guide in guides %}{% unless guide.id contains "custom-login" %}{% continue %}{% endunless %}*/}}
+            {{/*{% if guide.id contains "/index" %}{% continue %}{% endif %}*/}}
+              {{/*<li{% if guide.title == page.title %} class="is-active"{% endif %}>*/}}
+                {{/*<a href="{{ guide.id }}">{{ guide.title }}</a>*/}}
+              {{/*</li>*/}}
+          {{/*{% endfor %}*/}}
+        {{/*</ul>*/}}
+      {{/*{% endif %}*/}}
+      {{/*</li>*/}}
+    {{/*-->*/}}
+    </ul>
+
+    <h3 class="Sidebar-title">Use Cases</h3>
+    <ul class="Sidebar-nav">
+      {{ range $element := where .Site.RegularPages "Section" "==" "use_cases" }}
+        {{ if in $element.Path "/index"}}
+          <li{{ if in $.URL $element.Dir }} class="is-active"{{ end }}>
+            <a href="{{ .URL }}">{{ .Title }}</a>
+          </li>
+        {{ end }}
+      {{ end }}
+    </ul>
+    <h3 class="Sidebar-title">Reference</h3>
+    <ul class="Sidebar-nav">
+      <li{{ if in .Title "/getting_started" }} class="is-active"{{ end }}>
+        <a href="/docs/api/getting_started/api_test_client">Getting Started</a>
+        {{ if in .Title "/getting_started" }}
+        <ul>
+          {{ range $element := where .Site.RegularPages "Section" "==" "docs" }}
+            {{ if in $.URL "docs/api/getting_started" }}
+              {{ if in $element.Path "/index" }}
+              {{ else }}
+                <li{{ if in $.URL $element.Dir }} class="is-active"{{ end }}>
+                  <a href="{{ .URL }}">{{ .Title }}</a>
+                </li>
+              {{ end }}
+            {{ end }}
+          {{ end }}
+        </ul>
+        {{ end }}
+      </li>
+      <li>
+        <a href="/docs/api/resources/authn">Authentication API</a>
+        {{ if in $.URL "docs/api/resources"}}
+          <ul id="Sidebar_References" class="Sidebar-hide">
+          {{ range $element := where .Site.RegularPages "Section" "==" "docs" }}
+            <li{{ if doc.title == page.title }} class="is-active"{{ end }}>
+                <a href="{{ .URL }}">{{ .Title }}</a>
+            </li>
+          {{ end }}
+          </ul>
+        {{ end }}
+      </li>
+      {{/*<li>*/}}
+        {{/*<a href="/docs/api/resources/apps">Management API</a>{% if page.id contains "docs/api/resources" %}*/}}
+        {{/*<ul id="Sidebar_Resources" class="Sidebar-hide">{% assign docs = site.docs %}{% assign docids = api_references %}{% for docid in docids %}{% for doc in docs %}{% if doc.beta %}{% continue %}{% endif %}{% unless doc.id == docid %}{% continue %}{% endunless %}*/}}
+          {{/*<li{% if doc.title == page.title%} class="is-active"{% endif %}><a href="{{ doc.url }}">{{ doc.title }}</a></li>{% endfor %}{% endfor %}*/}}
+        {{/*</ul>{% endif %}*/}}
+      {{/*</li>{% assign documents = site.reference %}{% for document in documents %}{% if document.id contains "docs/api/getting_started" %}{% continue %}{% endif %}{% if document.id contains "docs/api/resources" %}{% continue %}{% endif %}{% if document.id contains "reference/api_reference" %}{% continue %}{% endif %}{% if document.id contains "reference/getting_started" %}{% continue %}{% endif %}{% if document.id contains "reference/authentication_reference" %}{% continue %}{% endif %}*/}}
+      {{/*<li{% if document.title == page.title or page.title contains document.title %} class="is-active"{% endif %}>*/}}
+        {{/*<a href="{% if document.id contains '/index' %}{{ document.url | remove: '/index' | append: '/'}}{% else %}{{ document.link }}{% endif %}">{{ document.title }}</a>*/}}
+      {{/*</li>{% endfor %}*/}}
+    </ul>
+
+    <h3 class="Sidebar-title">Standards</h3>
+    <ul class="Sidebar-nav">{{ range where .Site.RegularPages "Section" "==" "standards" }}
+        <li>
+            <a href="{{ .URL }}">{{ .Title }}</a>
+        </li>{{ end }}
+    </ul>
+
+    <script>
+      if (document.querySelectorAll("#Sidebar_Resources .is-active").length) {
+        document.getElementById('Sidebar_Resources').classList.remove('Sidebar-hide');
+      }
+
+      if (document.querySelectorAll("#Sidebar_References .is-active").length) {
+        document.getElementById('Sidebar_References').classList.remove('Sidebar-hide');
+      }
+    </script>
+  </div>
+</aside>
