@@ -15,15 +15,16 @@
 				<h1>Use Cases</h1>
 				<!-- START Subpages Grid -->
 				<div class="Row">
-		{{/*{% assign documents = site.use_cases | sort:'weight' %}*/}}
-		{{ range where .Site.RegularPages "Section" "==" "use_cases" }}
-					<div class="Column--4 Column--small-12">
-						<a href="{{ .URL }}">
-							<h3 class="h4">{{ .Title }}</h3>
-						</a>
-						<p> {{ .Params.excerpt }} </p>
-					</div>
-		{{ end }}
+					{{ range $element := where .Site.RegularPages "Section" "==" "use_cases" }}
+						{{ if in $element.Path "/index.md"}}
+							<div class="Column--4 Column--small-12">
+								<a href="{{ .URL }}">
+									<h3 class="h4">{{ .Title }}</h3>
+								</a>
+								<p> {{ .Params.excerpt }} </p>
+							</div>
+						{{ end }}
+					{{ end }}
 				</div>
 				<!-- END Subpages Grid -->
 
