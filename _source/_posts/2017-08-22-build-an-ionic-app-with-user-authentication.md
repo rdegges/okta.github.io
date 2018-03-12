@@ -19,7 +19,7 @@ Cordova and PhoneGap allow you to target multiple platforms (e.g. Android and iO
 
 I first started using Ionic in late 2013. The project I was working on was developing a native application, but wanted to build several screens of the application with HTML so web developers could author them. I [wrote about my experience in March 2014](https://raibledesigns.com/rd/entry/developing_an_ios_native_app). I enjoyed working with it and found that porting an existing app to use it was more about modifying HTML and tweaking CSS. 
 
-Ionic 2 was [released in January](http://blog.ionic.io/announcing-ionic-2-0-0-final/), making it possible to develop Ionic applications with Angular. Ionic 3 was [released in April](http://blog.ionic.io/ionic-3-0-has-arrived/), allowing development with Angular 4.
+Ionic 2 was [released in January](http://blog.ionicframework.com/announcing-ionic-2-0-0-final/), making it possible to develop Ionic applications with Angular. Ionic 3 was [released in April](http://blog.ionicframework.com/ionic-3-0-has-arrived/), allowing development with Angular 4.
 
 **NOTE:** “Angular” is the common name for Angular 2+. AngularJS is the common name for the 1.x versions. The reason for #ItsJustAngular is Angular 4 was released in March 2017. See [Branding Guidelines for Angular and AngularJS](http://angularjs.blogspot.com/2017/01/branding-guidelines-for-angular-and.html) for more information.
 
@@ -463,7 +463,7 @@ cd platforms/ios/cordova && npm install ios-sim
 
 **TIP:** The biggest problem I found when running the app in Simulator was that it was difficult to get the keyboard to pop up. To workaround this, I used **Hardware** > **Keyboard** > **Toggle Software Keyboard** when I needed to type text in a field.
 
-If you enter your credentials on the login screen you'll notice nothing happens. Open Safari and navigate to **Develop** > **Simulator** > MyApp / **Login**, and you'll see that eventually, an error shows up in the console. If you don't see a Develop menu, review the steps in [this article](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/iOS_Simulator_Guide/GettingStartedwithiOSSimulator/GettingStartedwithiOSSimulator.html) to enable it.
+If you enter your credentials on the login screen you'll notice nothing happens. Open Safari and navigate to **Develop** > **Simulator** > MyApp / **Login**, and you'll see that eventually, an error shows up in the console. If you don't see a Develop menu, review the steps in [this article](https://www.computerworld.com/article/3156141/apple-mac/how-to-use-the-safari-develop-menu-on-a-mac.html) to enable it.
 
 {% img blog/ionic-authentication/webinspector-error.png alt:"Web Inspector Error" %}
 
@@ -625,37 +625,16 @@ To emulate or deploy to an Android device, you'll first need to install [Android
 
 **If you've just installed Android Studio, make sure to open it to complete the installation.**
 
-To deploy to the Android emulator, run `ionic cordova emulate android`. This command will install Android support and print out instructions about how to create an emulator image.
+To deploy to the Android emulator, run `ionic cordova emulate android`. This command will install Android support and display an error if you don’t have any AVD (Android Virtual Device) images.
 
 ```
-Error: No emulator images (avds) found.
-1. Download desired System Image by running:
-/Users/mraible/Library/Android/sdk/tools/android sdk
+(node:9300) UnhandledPromiseRejectionWarning: CordovaError: No emulator images (avds) found.
+1. Download desired System Image by running: /Users/mraible/Library/Android/sdk/tools/android sdk
 2. Create an AVD by running: /Users/mraible/Library/Android/sdk/tools/android avd
 HINT: For a faster emulator, use an Intel System Image and install the HAXM device driver
 ```
 
-Run the first suggestion and download your desired system image. Then run the second command and created an AVD (Android Virtual Device) with the following settings:
-
-```
-AVD Name: TestPhone
-Device: Nexus 5
-Target: Android 7.1.1
-CPU/ABI: Google APIs Intel Axom (x86_64)
-Skin: Skin with dynamic hardware controls
-```
-
-**WARNING:** These instructions won't work with version 2.3.2 of Android Studio on Mac. When you try to run the first command, it'll say the following:
-
-```
-*************************************************************************
-The "android" command is deprecated.
-For manual SDK, AVD, and project management, please use Android Studio.
-For command-line tools, use tools/bin/sdkmanager and tools/bin/avdmanager
-*************************************************************************
-```
-
-To solve this problem, open Android Studio, select “Open an existing Android Studio project” and select the `ionic-auth/platforms/android` directory. If prompted to upgrade, choose “OK”, then proceed to create a new AVD as [described in Android Studio's documentation](https://developer.android.com/studio/run/managing-avds.html#createavd).
+To create a new AVD, open Android Studio and navigate to **Tools** > **Android** > **AVD Manager**. Create a new Virtual Device and click Play. I chose a Pixel 2.
 
 After performing these steps, you should be able to run `ionic cordova emulate android` and see your app running in the AVD.
 
@@ -673,7 +652,7 @@ Ionic ships with support for creating progressive web apps (PWAs). This means yo
 You can see how to enable service workers and make your app into a PWA by reading the [PWAs section](/blog/2017/05/17/develop-a-mobile-app-with-ionic-and-spring-boot#pwas-with-ionic) of [how to develop a mobile app with Ionic and Spring Boot](/blog/2017/05/17/develop-a-mobile-app-with-ionic-and-spring-boot). A PWA is a web application that can be “installed” on your system. It works offline when you don't have an internet connection, leveraging data cached during your last interactions with the app. Adding PWA features can make your apps load a lot faster, creating happy users. To learn more about PWAs, see [The Ultimate Guide to Progressive Web Applications](/blog/2017/07/20/the-ultimate-guide-to-progressive-web-applications). 
 
 Ionic has invested heavily in supporting PWAs. You can read more about why in [
-What Progressive Web Apps can do for you](http://blog.ionic.io/what-progressive-web-apps-can-do-for-you/).
+What Progressive Web Apps can do for you](http://blog.ionicframework.com/what-progressive-web-apps-can-do-for-you/).
 
 ## Learn More
 
@@ -689,4 +668,5 @@ To learn more about Ionic, Angular, or Okta, please see the following resources:
 
 **Changelog:**
 
+* Mar 7, 2018: Updated instructions for creating an AVD with Android Studio 3.0.
 * Jan 11, 2018: Updated to use Ionic CLI 3.19.0 and angular-oauth2-oidc 3.1.4. See the code changes in the [example app on GitHub](https://github.com/oktadeveloper/okta-ionic-auth-example/pull/6). Changes to this article can be viewed [in this pull request](https://github.com/okta/okta.github.io/pull/1628).
