@@ -1,7 +1,6 @@
 {{ define "main" }}
 
-{{ $author := index .Site.Data.authors .Params.author }}
-
+{{ $author := index $.Site.Data.authors (print .Params.author) }}
 <section class="Blog is-single">
 
 	<div class="Blog-social">

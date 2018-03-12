@@ -1,4 +1,4 @@
-{{ $author := index .Site.Data.authors .Params.author }}
+{{ $author := index $.Site.Data.authors (print .Params.author) }}
 <article class="BlogPost is-excerpt">
 
 	<header class="BlogPost-header">
