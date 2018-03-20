@@ -25,3 +25,8 @@ paginatePath = "page"
   reference = [ "/reference/api_reference/", "/reference/getting_started/", "/reference/authentication_reference/"]
 
 googleAnalytics = "UA-15777010-3"
+
+[outputFormats]
+[outputFormats.RSS]
+mediatype = "application/rss"
+baseName = "feed"
