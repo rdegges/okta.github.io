@@ -1,10 +1,10 @@
 ---
 layout: docs_page
-title: Create a Token with a Groups Claim Using the App Profile
-excerpt: How to use the app profile to create an ID token or access token that contains a groups claim
+title: Create an ID Token or Access Token Containing a Groups Claim
+excerpt: Use the app profile to create an ID token or access token that contains a groups claim
 ---
 
-## How to Create a Token with a Groups Claim Using the App Profile
+# Create an ID Token or Access Token Containing a Groups Claim
 
 You can add a groups claim for any combination of application groups and user groups into ID tokens to perform SSO using Okta Authorization Server, or ID tokens and access tokens to perform authentication and authorization using Custom Authorization Server (API Access Management required).
 This process optionally uses Okta's flexible app profile, which accepts any JSON-compliant content, to create a whitelist of groups
@@ -145,9 +145,9 @@ To use the group whitelist for every client that gets this claim in a token, put
 
 For the Okta Authorization Server, you can only create an ID token with a groups claim, not an access token.
 
-> This step requires the Okta user interface. If you are using the Developer Console, select the drop-down control in the left side of the top banner to switch to Classic UI for Step Three.
+> This step requires the administrator UI. If you are using the Developer Console, select the drop-down control in the left side of the top banner to switch to Classic UI for Step Three.
 
- a. In the Okta user interface, navigate to the Sign On tab of the client application you are configuring, and click the **Edit** button in the Open ID Connect ID Token section.
+ a. In the administrator UI, navigate to the Sign On tab of the client application you are configuring, and click the **Edit** button in the Open ID Connect ID Token section.
 
  b. In **Groups claim type**, choose **Expression**.
 
@@ -388,7 +388,7 @@ Now when you mint a token, groups in the `groupwhitelist` that also have the use
 
 #### Step Four: Send a Test Request
 
-To obtain a token with the configured groups claim, send a request for an ID token that includes one of the scopes that the claim is associated with: `https://{yourOktaDomain}.com/oauth2/${authorizationServerId}/v1/authorize`.
+To obtain a token with the configured groups claim, send a request for an ID token that includes one of the scopes that the claim is associated with: `https://{yourOktaDomain}.com/oauth2/${authServerId}/v1/authorize`.
 
 Request Example for Custom Authorization Server:
 
@@ -458,6 +458,6 @@ Example Payload Data for an Access Token:
 
 The ID token or access token contains the group WestCoastDivision so the audience (`aud`) has access to the group information about the user.
 
-For flows other than implicit, post to the token endpoint `https://{yourOktaDomain}.com/oauth2/${authorizationServerId}/v1/token` with the user or client you want. Make sure the user is assigned to the app and to one of the groups from your whitelist.
+For flows other than implicit, post to the token endpoint `https://{yourOktaDomain}.com/oauth2/${authServerId}/v1/token` with the user or client you want. Make sure the user is assigned to the app and to one of the groups from your whitelist.
 
 If the results aren't as expected, start your troubleshooting by inspecting the System Log to see what went wrong. Also, try requesting only an ID token instead of both and ID token and access token.

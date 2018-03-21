@@ -69,6 +69,7 @@ As part of the authentication call either the username and password or the token
 | ----------- | :--------------------------------------------------------------------------------------------------------------------- | :--------- | :-------------------------------- | :------- | :------- |
 | username    | User's non-qualified short-name (e.g. dade.murphy) or unique fully-qualified login (e.g dade.murphy@example.com) | Body       | String                            | FALSE    |          |
 | password    | User's password credential                                                                                       | Body       | String                            | FALSE    |          |
+| audience    | App ID of the target app the user is signing into                                                       | Body       | String                            | FALSE    |          |
 | relayState  | Optional state value that is persisted for the lifetime of the authentication transaction                              | Body       | String                            | FALSE    |  2048    |
 | options     | Opt-in features for the authentication transaction                                                                     | Body       | [Options Object](#options-object) | FALSE    |          |
 | context     | Provides additional context for the authentication transaction                                                         | Body       | [Context Object](#context-object) | FALSE    |          |
@@ -957,7 +958,8 @@ curl -v -X POST \
 ~~~
 
 
-### Step-up Authentication
+
+### SP-initiated Step-up Authentication
 {:.api .api-operation}
 
 {% api_lifecycle ea %} 
@@ -1226,7 +1228,7 @@ User is assigned to a Sign-On Policy or App Sign-On Policy that requires additio
             },
             "_links":{  
                "verify":{  
-                  "href":"https://{yourOktaDomain}.okta.com/api/v1/authn/factors/opf1cla0yyvOBWxuC1d8/verify",
+                  "href":"https://{yourOktaDomain}.com/api/v1/authn/factors/opf1cla0yyvOBWxuC1d8/verify",
                   "hints":{  
                      "allow":[  
                         "POST"
@@ -1341,6 +1343,309 @@ User is assigned to a Sign-On Policy or App Sign-On Policy that requires additio
 }
 ~~~
 
+### IDP-initiated Step-up Authentication
+{:.api .api-operation}
+
+{% api_operation post /api/v1/authn %}
+
+{% api_lifecycle ea %}
+
+Authenticates a user for signing into the specified application.
+
+Note:
+* Only WS-Federation, SAML based apps are supported.
+* Pass the application instance ID of the app as ["audience"](#request-parameters-for-primary-authentication) along with the user credentials.
+
+> Okta Sign-on Policy and the related App Sign-on Policy will be evaluated after successful primary authentication.
+
+##### Request Example for IDP initiated Step-up Authentication
+{:.api .api-request .api-request-example}
+
+~~~sh
+curl -v -X POST \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-d '{
+  "username": "dade.murphy@example.com",
+  "password": "correcthorsebatterystaple",
+  "audience": "0oa6gva7owNAhDam50h7",
+  "options": {
+    "multiOptionalFactorEnroll": false,
+    "warnBeforePasswordExpired": true
+  }
+}' "https://{yourOktaDomain}.com/api/v1/authn"
+~~~
+
+##### Response Example When MFA Isn't Required
+{:.api .api-response .api-response-example}
+
+~~~json
+{
+   "stateToken":"00quAZYqYjXg9DZhS5UzE1wrJuQ6KKb_kzOeH7OGB5",
+   "type":"SESSION_STEP_UP",
+   "expiresAt":"2017-05-30T23:19:40.000Z",
+   "status":"SUCCESS",
+   "_embedded":{
+      "user":{
+         "id":"00ub0oNGTSWTBKOLGLNR",
+         "passwordChanged":"2017-03-29T21:37:25.000Z",
+         "profile":{
+            "login":"dade.murphy@example.com",
+            "firstName":"Dade",
+            "lastName":"Murphy",
+            "locale":"en_US",
+            "timeZone":"America/Los_Angeles"
+         }
+      },
+      "target":{
+         "type":"APP",
+         "name":"salesforce",
+         "label":"Salesforce.com",
+         "_links":{
+            "logo":{
+               "name":"medium",
+               "href":"https://{yourOktaDomain}.com/assets/img/logos/salesforce_logo.dbd7e0b4de118a1dae1c39d60a3c30e5.png",
+               "type":"image/png"
+            }
+         }
+      }
+   },
+   "_links":{
+      "next":{
+         "name":"original",
+         "href":"https://{yourOktaDomain}.com/login/step-up/redirect?stateToken=00quAZYqYjXg9DZhS5UzE1wrJuQ6KKb_kzOeH7OGB5",
+         "hints":{
+            "allow":[
+               "GET"
+            ]
+         }
+      }
+   }
+}
+~~~
+
+> Sign in to the app by following the `next` link relation.
+
+##### Response Example for Factor Enroll
+{:.api .api-response .api-response-example}
+
+User is assigned to an MFA Policy that requires enrollment during sign-on and must [select a factor to enroll](#enroll-factor) to complete the authentication transaction.
+
+~~~json
+{
+   "stateToken":"00zEfSRIpELrl87ndYiHNkvOEbyEPrBmTYuf9dsGLl",
+   "type":"SESSION_STEP_UP",
+   "expiresAt":"2017-05-30T22:58:09.000Z",
+   "status":"MFA_ENROLL",
+   "_embedded":{
+      "user":{
+         "id":"00ub0oNGTSWTBKOLGLNR",
+         "passwordChanged":"2017-03-29T21:37:25.000Z",
+         "profile":{
+            "login":"dade.murphy@example.com",
+            "firstName":"Dade",
+            "lastName":"Murphy",
+            "locale":"en_US",
+            "timeZone":"America/Los_Angeles"
+         }
+      },
+      "factors":[
+         {
+            "factorType":"sms",
+            "provider":"OKTA",
+            "vendorName":"OKTA",
+            "_links":{
+               "enroll":{
+                  "href":"https://{yourOktaDomain}.com/api/v1/authn/factors",
+                  "hints":{
+                     "allow":[
+                        "POST"
+                     ]
+                  }
+               }
+            },
+            "status":"NOT_SETUP"
+         }
+      ],
+      "target":{
+         "type":"APP",
+         "name":"salesforce",
+         "label":"Salesforce.com",
+         "_links":{
+            "logo":{
+               "name":"medium",
+               "href":"https://{yourOktaDomain}.com/assets/img/logos/salesforce_logo.dbd7e0b4de118a1dae1c39d60a3c30e5.png",
+               "type":"image/png"
+            }
+         }
+      }
+   },
+   "_links":{
+      "cancel":{
+         "href":"https://{yourOktaDomain}.com/api/v1/authn/cancel",
+         "hints":{
+            "allow":[
+               "POST"
+            ]
+         }
+      }
+   }
+}
+~~~
+
+##### Response Example for Factor Challenge
+{:.api .api-response .api-response-example}
+
+User is assigned to a Sign-on Policy or App Sign-on Policy that requires additional verification and must [select and verify](#verify-factor) a previously enrolled [factor](#factor-object) by `id` to complete the authentication transaction.
+
+~~~json
+{
+   "stateToken":"00POAgFjELRueYUC1p7GFAmrm32EQa2HXw0_YssJ5J",
+   "type":"SESSION_STEP_UP",
+   "expiresAt":"2017-05-30T23:07:00.000Z",
+   "status":"MFA_REQUIRED",
+   "_embedded":{
+      "user":{
+         "id":"00ub0oNGTSWTBKOLGLNR",
+         "passwordChanged":"2017-03-29T21:37:25.000Z",
+         "profile":{
+            "login":"dade.murphy@example.com",
+            "firstName":"Dade",
+            "lastName":"Murphy",
+            "locale":"en_US",
+            "timeZone":"America/Los_Angeles"
+         }
+      },
+      "factors":[
+         {
+            "id":"opf1cla0gggOBWxuC1d8",
+            "factorType":"push",
+            "provider":"OKTA",
+            "vendorName":"OKTA",
+            "profile":{
+               "credentialId":"abcd@okta.com",
+               "deviceType":"SmartPhone_Android",
+               "keys":[
+                  {
+                     "kty":"PKIX",
+                     "use":"sig",
+                     "kid":"default",
+                     "x5c":[
+                        "Mdkkdfjkdjf"
+                     ]
+                  }
+               ],
+               "name":"SM-N9005",
+               "platform":"ANDROID",
+               "version":"21"
+            },
+            "_links":{
+               "verify":{
+                  "href":"https://{yourOktaDomain}.com/api/v1/authn/factors/opf1cla0yyvOBWxuC1d8/verify",
+                  "hints":{
+                     "allow":[
+                        "POST"
+                     ]
+                  }
+               }
+            }
+         },
+         {
+            "id":"smsph8F1esz8LlSjo0g3",
+            "factorType":"sms",
+            "provider":"OKTA",
+            "vendorName":"OKTA",
+            "profile":{
+               "phoneNumber":"+1 XXX-XXX-3161"
+            },
+            "_links":{
+               "verify":{
+                  "href":"https://{yourOktaDomain}.com/api/v1/authn/factors/smsph8F1esz8LlSjo0g3/verify",
+                  "hints":{
+                     "allow":[
+                        "POST"
+                     ]
+                  }
+               }
+            }
+         }
+      ],
+      "policy":{
+         "allowRememberDevice":true,
+         "rememberDeviceLifetimeInMinutes":1440,
+         "rememberDeviceByDefault":false,
+         "factorsPolicyInfo": {
+             "opf1cla0gggOBWxuC1d8": {
+                 "autoPushEnabled": true
+             }
+         }
+      },
+      "target":{
+         "type":"APP",
+         "name":"salesforce",
+         "label":"Salesforce.com",
+         "_links":{
+            "logo":{
+               "name":"medium",
+               "href":"https://{yourOktaDomain}.com/assets/img/logos/salesforce_logo.dbd7e0b4de118a1dae1c39d60a3c30e5.png",
+               "type":"image/png"
+            }
+         }
+      }
+   },
+   "_links":{
+      "cancel":{
+         "href":"https://{yourOktaDomain}.com/api/v1/authn/cancel",
+         "hints":{
+            "allow":[
+               "POST"
+            ]
+         }
+      }
+   }
+}
+~~~
+
+
+##### Response Example for Invalid or Unknown Application
+{:.api .api-response .api-response-example}
+
+~~~http
+HTTP/1.1 400 Bad Request
+Content-Type: application/json
+
+{
+    "errorCode": "E0000001",
+    "errorSummary": "Api validation failed: authRequest",
+    "errorLink": "E0000001",
+    "errorId": "oae-W6QeEcJQKarRZv8JcmtrA",
+    "errorCauses": [
+        {
+            "errorSummary": "Invalid or unknown audience '0oa6gva7owNAhDam50h7'."
+        }
+    ]
+}
+~~~
+
+##### Response Example for Unsupported Application
+{:.api .api-response .api-response-example}
+
+~~~http
+HTTP/1.1 400 Bad Request
+Content-Type: application/json
+
+{
+    "errorCode": "E0000001",
+    "errorSummary": "Api validation failed: authRequest",
+    "errorLink": "E0000001",
+    "errorId": "oaelApNWe8WR4uiK7EROTqp-Q",
+    "errorCauses": [
+        {
+            "errorSummary": "Sign-in not allowed for app '0oapt2yIp38ySYiMP0g3'."
+        }
+    ]
+}
+~~~
 
 ### Change Password
 {:.api .api-operation}
@@ -3155,23 +3460,28 @@ Activation gets the registration information from the U2F token using the API an
 <!-- Get the u2f-api.js from https://github.com/google/u2f-ref-code/tree/master/u2f-gae-demo/war/js -->
 <script src="/u2f-api.js"></script>
 <script>
-//use the appId from the activation object
-var appId = activation.appId;
-var registerRequests = [{
-    version: activation.version, //use the version from the activation object
-    challenge: activation.nonce //use the nonce from the activation object
-    }];
-u2f.register(appId, registerRequests, [], function (data) {
-  if (data.errorCode && data.errorCode !== 0) {
-    //Error from U2F platform
-  } else {
-	  //Get the registrationData from the callback result
-	  var registrationData = data.registrationData;
+  // Use the appId from the activation object
+  var appId = activation.appId;
 
-	  //Get the clientData from the callback result
-	  var clientData = data.clientData;
-  }
-});
+  // Use the version and nonce from the activation object
+  var registerRequests = [
+    {
+      version: activation.version,
+      challenge: activation.nonce
+    }
+  ];
+
+  u2f.register(appId, registerRequests, [], function (data) {
+    if (data.errorCode && data.errorCode !== 0) {
+      // Error from U2F platform
+    } else {
+      // Get the registrationData from the callback result
+      var registrationData = data.registrationData;
+
+      // Get the clientData from the callback result
+      var clientData = data.clientData;
+    }
+  });
 </script>
 ~~~
 
@@ -3890,7 +4200,7 @@ curl -v -X POST \
 -H "Content-Type: application/json" \
 -d '{
   "stateToken": "${stateToken}"
-}' "https://{yourOktaDomain}.com/api/v1/authn/factors/${factorId]/verify"
+}' "https://{yourOktaDomain}.com/api/v1/authn/factors/${factorId}/verify"
 ~~~
 
 ##### Response Example for Verify Duo Factor
@@ -4022,7 +4332,7 @@ curl -v -X POST \
 -H "Content-Type: application/json" \
 -d '{
   "stateToken": "${stateToken}"
-}' "https://{yourOktaDomain}.com/api/v1/authn/factors/${factorId]/verify"
+}' "https://{yourOktaDomain}.com/api/v1/authn/factors/${factorId}/verify"
 ~~~
 
 ##### Verification Poll Response Example
@@ -4081,7 +4391,7 @@ curl -v -X POST \
 -H "Content-Type: application/json" \
 -d '{
   "stateToken": "${stateToken}"
-}' "https://{yourOktaDomain}.com/api/v1/authn/factors/${factorId]/verify"
+}' "https://{yourOktaDomain}.com/api/v1/authn/factors/${factorId}/verify"
 ~~~
 
 ##### Response Example for Verify U2F Factor
@@ -4164,29 +4474,36 @@ curl -v -X POST \
 <!-- Get the u2f-api.js from https://github.com/google/u2f-ref-code/tree/master/u2f-gae-demo/war/js -->
 <script src="/u2f-api.js"></script>
 <script>
-var challengeNonce = factor._embedded.challenge.nonce; //use the nonce from the challenge object
-var appId = factor.profile.appId; //use the appId from factor profile object
+  // Use the nonce from the challenge object
+  var challengeNonce = factor._embedded.challenge.nonce;
 
-//Use the version and credentialId from factor profile object
-var registeredKeys = [{version: factor.profile.version, keyHandle: factor.profile.credentialId }];
+  // Use the appId from factor profile object
+  var appId = factor.profile.appId;
 
-//Call the U2F javascript API to get signed assertion from the U2F token
-u2f.sign(appId, factorData.challenge.nonce, registeredKeys, function (data) {
-  if (data.errorCode && data.errorCode !== 0) {
-    //Error from U2F platform
-  } else {
-	  //Get the client data from callback result
-	  var clientData = data.clientData;
+  // Use the version and credentialId from factor profile object
+  var registeredKeys = [
+    {
+      version: factor.profile.version,
+      keyHandle: factor.profile.credentialId
+    }
+  ];
 
-    //Get the signature data from callback result
-	  var signatureData = data.signatureData;
-  }
-}
+  // Call the U2F javascript API to get signed assertion from the U2F token
+  u2f.sign(appId, factorData.challenge.nonce, registeredKeys, function (data) {
+    if (data.errorCode && data.errorCode !== 0) {
+      // Error from U2F platform
+    } else {
+      // Get the client data from callback result
+      var clientData = data.clientData;
+
+      // Get the signature data from callback result
+      var signatureData = data.signatureData;
+    }
+  });
 </script>
 ~~~
 
 #### Post the Signed Assertion to Okta to Complete Verification
-
 
 ##### Request Example for Signed Assertion
 {:.api .api-request .api-request-example}
@@ -4199,7 +4516,7 @@ curl -v -X POST \
   "stateToken": "${stateToken}",
   "clientData":"eyAiY2hhbGxlbmdlIjogIlJ6ZDhQbEJEWUEyQ0VsbXVGcHlMIiwgIm9yaWdpbiI6ICJodHRwczpcL1wvc25hZ2FuZGxhLm9rdGFwcmV2aWV3LmNvbSIsICJ0eXAiOiAibmF2aWdhdG9yLmlkLmdldEFzc2VydGlvbiIgfQ==",
   "signatureData":"AQAAAAEwRQIgRDEdmXr_jh1bEHtoUs1l7mMd-eUDO0eKqXKkrK5hUi0CIQDaVX030GgxVPr4RX3c4XgugildmHwDLwKRL0aMS3Sbpw==",
-}' "https://{yourOktaDomain}.com/api/v1/authn/factors/${factorId]/verify"
+}' "https://{yourOktaDomain}.com/api/v1/authn/factors/${factorId}/verify"
 ~~~
 
 ##### Response of U2F Verification Example
@@ -4409,7 +4726,7 @@ username    | User's non-qualified short-name (e.g. dade.murphy) or unique fully
 factorType  | Recovery factor to use for primary authentication                                                                 | Body       | `EMAIL` or `SMS` or `Voice Call`  | FALSE    |           |
 relayState  | Optional state value that is persisted for the lifetime of the recovery transaction                               | Body       | String                            | FALSE    |   2048    |
 
-> A valid `factorType` is required for requests without an API token with admin privileges. For more information, see [Forgot Password with Trusted Application](#forgot-password-with-trusted-application).
+> A valid `factorType` is required for requests without an API token with administrator privileges. For more information, see [Forgot Password with Trusted Application](#forgot-password-with-trusted-application).
 
 The response is different, depending on whether the request is for a public application or a trusted application.
 
@@ -4480,7 +4797,6 @@ curl -v -X POST \
   "recoveryType": "PASSWORD"
 }
 ~~~
-
 
 #### Forgot Password with SMS Factor
 
@@ -4703,7 +5019,7 @@ username    | User's non-qualified short-name (dade.murphy) or unique fully-qual
 factorType  | Recovery factor to use for primary authentication                                                                | Body       | `EMAIL` or `SMS`                  | FALSE    |            |
 relayState  | Optional state value that is persisted for the lifetime of the recovery transaction                              | Body       | String                            | FALSE    |  2048      |
 
-> A valid `factoryType` is required for requests without an API token with admin privileges. (See [Unlock Account with Trusted Application](#unlock-account-with-trusted-application))
+> A valid `factoryType` is required for requests without an API token with administrator privileges. (See [Unlock Account with Trusted Application](#unlock-account-with-trusted-application))
 
 ##### Response Parameter Public Application for Unlock Account
 {:.api .api-response .api-response-params}
@@ -5249,7 +5565,6 @@ curl -v -X POST \
 ~~~
 
 The `factorType` and `recoveryType` properties vary depending on the recovery transaction.
-
 
 ### Verify Recovery Token
 {:.api .api-operation}
@@ -5875,7 +6190,6 @@ curl -v -X POST \
 }
 ~~~
 
-
 ## Transaction Model
 
 The Authentication API is a *stateful* API that implements a finite state machine with [defined states](#transaction-state) and transitions.  Each initial authentication or recovery request is issued a unique [state token](#state-token) that must be passed with each subsequent request until the transaction is complete or canceled.
@@ -5895,7 +6209,6 @@ The Authentication API leverages the [JSON HAL](http://tools.ietf.org/html/draft
 | factorResult  | optional status of last verification attempt for a given factor                                        | [Factor Result](#factor-result)                                | TRUE     | TRUE     |           |
 | _embedded     | [embedded resources](#embedded-resources) for the current `status`                                     | [JSON HAL](http://tools.ietf.org/html/draft-kelly-json-hal-06) | TRUE     | TRUE     |           |
 | _links        | [link relations](#links-object) for the current `status`                                               | [JSON HAL](http://tools.ietf.org/html/draft-kelly-json-hal-06) | TRUE     | TRUE     |           |
-
 
 > The `relayState` parameter is an opaque value for the transaction and processed as untrusted data which is just echoed in a response.  It is the client's responsibility to escape/encode this value before displaying in a UI such as a HTML document using [best practices](https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet)
 
@@ -5930,7 +6243,7 @@ An authentication or recovery transaction has one of the following states:
 | `RECOVERY`            | The user has requested a recovery token to reset their password or unlock their account.                  | POST to the `next` link relation to [answer the user's recovery question](#answer-recovery-question).          |
 | `RECOVERY_CHALLENGE`  | The user must verify the factor-specific recovery challenge.                                              | POST to the `verify` link relation to [verify the recovery factor](#verify-recovery-factor).                         |
 | `PASSWORD_RESET`      | The user successfully answered their recovery question and must to set a new password.                    | POST to the `next` link relation to [reset the user's password](#reset-password).                              |
-| `LOCKED_OUT`          | The user account is locked; self-service unlock or admin unlock is required.                              | POST to the `unlock` link relation to perform a [self-service unlock](#unlock-account).                              |
+| `LOCKED_OUT`          | The user account is locked; self-service unlock or administrator unlock is required.                              | POST to the `unlock` link relation to perform a [self-service unlock](#unlock-account).                              |
 | `MFA_ENROLL`          | The user must select and enroll an available factor for additional verification.                          | POST to the `enroll` link relation for a specific factor to [enroll the factor](#enroll-factor).                     |
 | `MFA_ENROLL_ACTIVATE` | The user must activate the factor to complete enrollment.                                                 | POST to the `next` link relation to [activate the factor](#activate-factor).                                         |
 | `MFA_REQUIRED`        | The user must provide additional verification with a previously enrolled factor.                          | POST to the `verify` link relation for a specific factor to [provide additional verification](#verify-factor).       |
@@ -5988,7 +6301,7 @@ You advance the authentication or recovery transaction to the next state by post
 
 Represents the type of authentication
 
-Currently available only during [step-up authentication](#step-up-authentication).
+Currently available only during [SP-initiated step-up authentication](#sp-initiated-step-up-authentication) and [IDP-initiated step-up authentication](#idp-initiated-step-up-authentication).
 
 ### Tokens
 
@@ -6139,20 +6452,20 @@ A subset of policy settings of the Sign-On Policy or App Sign-On Policy publishe
 ##### When sign-on policy is device based
 
 ~~~json
-{  
-   "allowRememberDevice":true,
-   "rememberDeviceByDefault":false,
-   "rememberDeviceLifetimeInMinutes":0
+{
+  "allowRememberDevice": true,
+  "rememberDeviceByDefault": false,
+  "rememberDeviceLifetimeInMinutes": 0
 }
 ~~~
 
 ##### When sign-on policy is time based
 
 ~~~json
-{  
-   "allowRememberDevice":true,
-   "rememberDeviceByDefault":false, 
-   "rememberDeviceLifetimeInMinutes":5 
+{
+  "allowRememberDevice": true,
+  "rememberDeviceByDefault": false,
+  "rememberDeviceLifetimeInMinutes": 5
 }
 ~~~
 
@@ -6172,7 +6485,7 @@ A subset of policy settings of the Sign-On Policy or App Sign-On Policy publishe
 
 {% api_lifecycle ea %}
 Represents the target resource that user tried accessing. Typically this is the app that user is trying to sign-in.
-Currently this is available only during [step-up authentication](#step-up-authentication).
+Currently this is available only during [SP-initiated step-up authentication](#sp-initiated-step-up-authentication) and [IDP-initiated step-up authentication](#idp-initiated-step-up-authentication).
 
 | Property  | Description                                                                                                                  | DataType | Nullable | Unique | Readonly |
 | --------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------| -------- | ------ | -------- |
@@ -6259,7 +6572,7 @@ A subset of [factor properties](factors#factor-model) published in an authentica
 | id             | unique key for factor                                                                    | String                                                         | TRUE     | TRUE   | TRUE     |
 | factorType     | type of factor                                                                           | [Factor Type](factors#factor-type)                        | FALSE    | TRUE   | TRUE     |
 | provider       | factor provider                                                                          | [Provider Type](factors#provider-type)                    | FALSE    | TRUE   | TRUE     |
-| vendorName     | factor Vendor Name (Same as provider but for On Prem MFA it depends on Admin Settings)   | [Provider Type](factors#provider-type)                    | FALSE    | TRUE   | TRUE     |
+| vendorName     | factor Vendor Name (Same as provider but for On Prem MFA it depends on Administrator Settings)   | [Provider Type](factors#provider-type)                    | FALSE    | TRUE   | TRUE     |
 | profile        | profile of a [supported factor](factors#supported-factors-for-providers)            | [Factor Profile Object](factors#factor-profile-object)    | TRUE     | FALSE  | TRUE     |
 | _embedded      | [embedded resources](#factor-embedded-resources) related to the factor                   | [JSON HAL](http://tools.ietf.org/html/draft-kelly-json-hal-06) | TRUE     | FALSE  | TRUE     |
 | _links         | [discoverable resources](#factor-links-object) for the factor                            | [JSON HAL](http://tools.ietf.org/html/draft-kelly-json-hal-06) | TRUE     | FALSE  | TRUE     |
