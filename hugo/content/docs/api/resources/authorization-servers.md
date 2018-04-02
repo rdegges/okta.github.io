@@ -31,15 +31,15 @@ Use the following operations to manage Custom Authorization Servers:
 
 Okta provides a pre-configured Custom Authorization Server with the name `default`.
 This default authorization server includes a basic access policy and rule, which you can edit to control access.
-It allows you to specify `default` instead of the `authorizationServerId` in requests to it:
+It allows you to specify `default` instead of the `authServerId` in requests to it:
 
 * `https://{yourOktaDomain}.com/api/v1/authorizationServers/default` vs
-* `https://{yourOktaDomain}.com/api/v1/authorizationServers/${authorizationServerId}` for other Custom Authorization Servers
+* `https://{yourOktaDomain}.com/api/v1/authorizationServers/${authServerId}` for other Custom Authorization Servers
 
 #### Create Authorization Server
 {:.api .api-operation}
 
-{% api_operation post /api/v1/authorizationServers %}
+{{< api_operation post "/api/v1/authorizationServers" >}}
 
 Creates a new [Custom Authorization Server](#authorization-server-object)
 
@@ -72,7 +72,7 @@ The [Custom Authorization Server](#authorization-server-object) you just created
 #### List Authorization Servers
 {:.api .api-operation}
 
-{% api_operation GET /api/v1/authorizationServers %}
+{{< api_operation GET "/api/v1/authorizationServers" >}}
 
 Lists all Custom Authorization Servers in this Okta organization
 
@@ -100,16 +100,16 @@ The [Custom Authorization Servers](#authorization-server-object) in this Okta or
 #### Get Authorization Server
 {:.api .api-operation}
 
-{% api_operation get /api/v1/authorizationServers/${authorizationServerId} %}
+{{< api_operation get "/api/v1/authorizationServers/${authServerId}" >}}
 
-Returns the [Custom Authorization Server](#authorization-server-object) identified by `authorizationServerId`.
+Returns the [Custom Authorization Server](#authorization-server-object) identified by `authServerId`.
 
 ##### Request Parameters
 {:.api .api-request .api-request-params}
 
 | Parameter             | Description                                                              | Type   | Required |
 |:----------------------|:-------------------------------------------------------------------------|:-------|:---------|
-| authorizationServerId | Custom Authorization Server ID. You can find the ID in the Okta user interface. | String | True     |
+| authServerId | Custom Authorization Server ID. You can find the ID in the Okta user interface. | String | True     |
 
 #### Request Example
 {:.api .api-request .api-request-example}
@@ -125,14 +125,14 @@ curl -v -X GET \
 ##### Response Example
 {:.api .api-response .api-response-example}
 
-The [Custom Authorization Server](#authorization-server-object) you requested by '{authorizationServerId}`.
+The [Custom Authorization Server](#authorization-server-object) you requested by '{authServerId}`.
 
 #### Update Authorization Server
 {:.api .api-operation}
 
-{% api_operation put /api/v1/authorizationServers/${authorizationServerId} %}
+{{< api_operation put "/api/v1/authorizationServers/${authServerId}" >}}
 
-Updates authorization server identified by `authorizationServerId`.
+Updates authorization server identified by `authServerId`.
 
 >NOTE: Switching between rotation modes won't change the active signing key.
 
@@ -171,16 +171,16 @@ The [Custom Authorization Server](#authorization-server-object) you updated
 #### Delete Authorization Server
 {:.api .api-operation}
 
-{% api_operation delete /api/v1/authorizationServers/${authorizationServerId} %}
+{{< api_operation delete "/api/v1/authorizationServers/${authServerId}" >}}
 
-Deletes the Custom Authorization Server identified by `authorizationServerId`.
+Deletes the Custom Authorization Server identified by `authServerId`.
 
 ##### Request Parameters
 {:.api .api-request .api-request-params}
 
 | Parameter             | Description                                  | Type   | Required |
 |:----------------------|:---------------------------------------------|:-------|:---------|
-| authorizationServerId | The ID of a Custom Authorization Server to delete | String | TRUE     |
+| authServerId | The ID of a Custom Authorization Server to delete | String | TRUE     |
 
 ##### Request Example
 {:.api .api-request .api-request-example}
@@ -203,7 +203,7 @@ HTTP 204: No Content
 #### Activate Authorization Server
 {:.api .api-operation}
 
-{% api_operation post /api/v1/authorizationServers/${authorizationServerId}/lifecycle/activate %}
+{{< api_operation post "/api/v1/authorizationServers/${authServerId}/lifecycle/activate" >}}
 
 Make a Custom Authorization Server for use by clients
 
@@ -212,7 +212,7 @@ Make a Custom Authorization Server for use by clients
 
 | Parameter             | Description                                    | Type   | Required |
 |:----------------------|:-----------------------------------------------|:-------|:---------|
-| authorizationServerId | The ID of a Custom Authorization Server to activate | String | TRUE     |
+| authServerId | The ID of a Custom Authorization Server to activate | String | TRUE     |
 
 ##### Request Example
 {:.api .api-request .api-request-example}
@@ -235,7 +235,7 @@ HTTP 204: No Content
 #### Deactivate Authorization Server
 {:.api .api-operation}
 
-{% api_operation post /api/v1/authorizationServers/${authorizationServerId}/lifecycle/deactivate %}
+{{< api_operation post "/api/v1/authorizationServers/${authServerId}/lifecycle/deactivate" >}}
 
 Make a Custom Authorization Server unavailable to clients. An inactive Custom Authorization Server can be returned to `ACTIVE` status by activating it again.
 
@@ -244,7 +244,7 @@ Make a Custom Authorization Server unavailable to clients. An inactive Custom Au
 
 | Parameter             | Description                                      | Type   | Required |
 |:----------------------|:-------------------------------------------------|:-------|:---------|
-| authorizationServerId | The ID of a Custom Authorization Server to deactivate | String | TRUE     |
+| authServerId | The ID of a Custom Authorization Server to deactivate | String | TRUE     |
 
 ##### Request Example
 {:.api .api-request .api-request-example}
@@ -275,7 +275,7 @@ HTTP 204: No Content
 #### Get All Policies
 {:.api .api-operation}
 
-{% api_operation get /api/v1/authorizationServers/${authorizationServerId}/policies %}
+{{< api_operation get "/api/v1/authorizationServers/${authServerId}/policies" >}}
 
 Returns all the policies for the specified Custom Authorization Server
 
@@ -284,7 +284,7 @@ Returns all the policies for the specified Custom Authorization Server
 
 | Parameter             | Description                   | Type   | Required |
 |:----------------------|:------------------------------|:-------|:---------|
-| authorizationServerId | ID of a Custom Authorization Server | String | True     |
+| authServerId | ID of a Custom Authorization Server | String | True     |
 
 ##### Request Example
 {:.api .api-request .api-request-example}
@@ -304,7 +304,7 @@ Returns the [policies](#policy-object) defined in the specified Custom Authoriza
 
 #### Get a Policy
 
-{% api_operation get /api/v1/authorizationServers/${authorizationServerId}/policies/${policyId} %}
+{{< api_operation get "/api/v1/authorizationServers/${authServerId}/policies/${policyId}" >}}
 
 Returns a policy by ID defined in the specified Custom Authorization Server
 
@@ -313,7 +313,7 @@ Returns a policy by ID defined in the specified Custom Authorization Server
 
 | Parameter             | Description                   | Type   | Required |
 |:----------------------|:------------------------------|:-------|:---------|
-| authorizationServerId | ID of a Custom Authorization Server | String | True     |
+| authServerId | ID of a Custom Authorization Server | String | True     |
 | policyId              | ID of a policy                | String | True     |
 
 ##### Request Example
@@ -334,7 +334,7 @@ Returns the [policy](#policy-object) you requested
 
 #### Create a Policy
 
-{% api_operation post /api/v1/authorizationServers/${authorizationServerId}/policies %}
+{{< api_operation post "/api/v1/authorizationServers/${authServerId}/policies" >}}
 
 Create a policy for a Custom Authorization Server
 
@@ -374,7 +374,7 @@ Returns the [policy](#policy-object) you created
 
 #### Update a Policy
 
-{% api_operation put /api/v1/authorizationServers/${authorizationServerId}/policies/${policyId} %}
+{{< api_operation put "/api/v1/authorizationServers/${authServerId}/policies/${policyId}" >}}
 
 Change the configuration of a policy specified by the `policyId`
 
@@ -383,7 +383,7 @@ Change the configuration of a policy specified by the `policyId`
 
 | Parameter             | Description                   | Type   | Required |
 |:----------------------|:------------------------------|:-------|:---------|
-| authorizationServerId | ID of a Custom Authorization Server | String | True     |
+| authServerId | ID of a Custom Authorization Server | String | True     |
 | policyId              | ID of a policy                | String | True     |
 
 
@@ -420,7 +420,7 @@ Returns the [policy](#policy-object) you updated
 
 #### Delete a Policy
 
-{% api_operation DELETE /api/v1/authorizationServers/${authorizationServerId}/policies/:policyId %}
+{{< api_operation DELETE "/api/v1/authorizationServers/${authServerId}/policies/${policyId}" >}}
 
 Delete a policy specified by the `policyId`
 
@@ -430,7 +430,7 @@ Delete a policy specified by the `policyId`
 
 | Parameter             | Description                   | Type   | Required |
 |:----------------------|:------------------------------|:-------|:---------|
-| authorizationServerId | ID of a Custom Authorization Server | String | True     |
+| authServerId | ID of a Custom Authorization Server | String | True     |
 | policyId              | ID of a policy                | String | True     |
 
 ##### Request Example
@@ -462,7 +462,7 @@ Status 204: No content
 #### Get All Scopes
 {:.api .api-operation}
 
-{% api_operation get /api/v1/authorizationServers/${authorizationServerId}/scopes %}
+{{< api_operation get "/api/v1/authorizationServers/${authServerId}/scopes" >}}
 
 Get the scopes defined for a specified Custom Authorization Server
 
@@ -471,7 +471,7 @@ Get the scopes defined for a specified Custom Authorization Server
 
 | Parameter             | Description                   | Type   | Required |
 |:----------------------|:------------------------------|:-------|:---------|
-| authorizationServerId | ID of a Custom Authorization Server | String | True     |
+| authServerId | ID of a Custom Authorization Server | String | True     |
 
 ##### Request Example
 {:.api .api-request .api-request-example}
@@ -492,7 +492,7 @@ Returns the [scopes](#scope-object) defined in the specified Custom Authorizatio
 
 #### Get a Scope
 
-{% api_operation get /api/v1/authorizationServers/${authorizationServerId}/scopes/:scopeId %}
+{{< api_operation get "/api/v1/authorizationServers/${authServerId}/scopes/${scopeId}" >}}
 
 Get a scope specified by the `scopeId`
 
@@ -501,7 +501,7 @@ Get a scope specified by the `scopeId`
 
 | Parameter             | Description                   | Type   | Required |
 |:----------------------|:------------------------------|:-------|:---------|
-| authorizationServerId | ID of a Custom Authorization Server | String | True     |
+| authServerId | ID of a Custom Authorization Server | String | True     |
 | scopeId               | ID of a scope                 | String | True     |
 
 ##### Request Example
@@ -522,7 +522,7 @@ Returns the [scope](#scope-object) you requested
 
 #### Create a Scope
 
-{% api_operation post /api/v1/authorizationServers/${authorizationServerId}/scopes %}
+{{< api_operation post "/api/v1/authorizationServers/${authServerId}/scopes" >}}
 
 Create a scope for a Custom Authorization Server
 
@@ -531,7 +531,7 @@ Create a scope for a Custom Authorization Server
 
 | Parameter             | Description                   | Type   | Required |
 |:----------------------|:------------------------------|:-------|:---------|
-| authorizationServerId | ID of a Custom Authorization Server | String | True     |
+| authServerId | ID of a Custom Authorization Server | String | True     |
 
 ##### Request Example
 {:.api .api-request .api-request-example}
@@ -554,7 +554,7 @@ Returns the [scope](#scope-object) you created
 
 #### Update a Scope
 
-{% api_operation put /api/v1/authorizationServers/${authorizationServerId}/scopes/:scopeId %}
+{{< api_operation put "/api/v1/authorizationServers/${authServerId}/scopes/${scopeId}" >}}
 
 Change the configuration of a scope specified by the `scopeId`
 
@@ -563,7 +563,7 @@ Change the configuration of a scope specified by the `scopeId`
 
 | Parameter             | Description                   | Type   | Required |
 |:----------------------|:------------------------------|:-------|:---------|
-| authorizationServerId | ID of a Custom Authorization Server | String | True     |
+| authServerId | ID of a Custom Authorization Server | String | True     |
 | scopeId               | ID of a scope                 | String | True     |
 
 
@@ -589,7 +589,7 @@ Returns the [scope](#scope-object) you updated
 
 #### Delete a Scope
 
-{% api_operation DELETE /api/v1/authorizationServers/${authorizationServerId}/scopes/:scopeId %}
+{{< api_operation DELETE "/api/v1/authorizationServers/${authServerId}/scopes/${scopeId}" >}}
 
 Delete a scope specified by the `scopeId`
 
@@ -599,7 +599,7 @@ Delete a scope specified by the `scopeId`
 
 | Parameter             | Description                   | Type   | Required |
 |:----------------------|:------------------------------|:-------|:---------|
-| authorizationServerId | ID of a Custom Authorization Server | String | True     |
+| authServerId | ID of a Custom Authorization Server | String | True     |
 | scopeId               | ID of a scope                 | String | True     |
 
 ##### Request Example
@@ -631,7 +631,7 @@ HTTP 204: No Content
 #### Get All Claims
 {:.api .api-operation}
 
-{% api_operation get /api/v1/authorizationServers/${authorizationServerId}/claims %}
+{{< api_operation get "/api/v1/authorizationServers/${authServerId}/claims" >}}
 
 Get the claims defined for a specified a Custom Authorization Server
 
@@ -640,7 +640,7 @@ Get the claims defined for a specified a Custom Authorization Server
 
 | Parameter             | Description                   | Type   | Required |
 |:----------------------|:------------------------------|:-------|:---------|
-| authorizationServerId | ID of a Custom Authorization Server | String | True     |
+| authServerId | ID of a Custom Authorization Server | String | True     |
 
 ##### Request Example
 {:.api .api-request .api-request-example}
@@ -661,7 +661,7 @@ Returns the [claims](#claim-object) defined in the specified Custom Authorizatio
 
 #### Get a Claim
 
-{% api_operation get /api/v1/authorizationServers/${authorizationServerId}/claims/:claimId %}
+{{< api_operation get "/api/v1/authorizationServers/${authServerId}/claims/${claimId}" >}}
 
 Returns the claim specified by the `claimId`
 
@@ -670,7 +670,7 @@ Returns the claim specified by the `claimId`
 
 | Parameter             | Description                   | Type   | Required |
 |:----------------------|:------------------------------|:-------|:---------|
-| authorizationServerId | ID of a Custom Authorization Server | String | True     |
+| authServerId | ID of a Custom Authorization Server | String | True     |
 | claimId               | ID of a claim                 | String | True     |
 
 ##### Request Example
@@ -691,7 +691,7 @@ Returns the [claim](#claim-object) you requested
 
 #### Create a Claim
 
-{% api_operation post /api/v1/authorizationServers/${authorizationServerId}/claims %}
+{{< api_operation post "/api/v1/authorizationServers/${authServerId}/claims" >}}
 
 Creates a claim for a Custom Authorization Server
 
@@ -700,7 +700,7 @@ Creates a claim for a Custom Authorization Server
 
 | Parameter             | Description                   | Type   | Required |
 |:----------------------|:------------------------------|:-------|:---------|
-| authorizationServerId | ID of a Custom Authorization Server | String | True     |
+| authServerId | ID of a Custom Authorization Server | String | True     |
 
 ##### Request Example
 {:.api .api-request .api-request-example}
@@ -731,7 +731,7 @@ Returns the [claim](#claim-object) you created
 
 #### Update a Claim
 
-{% api_operation put /api/v1/authorizationServers/${authorizationServerId}/claims/:claimId %}
+{{< api_operation put "/api/v1/authorizationServers/${authServerId}/claims/${claimId}" >}}
 
 Change the configuration of a claim specified by the `claimId`
 
@@ -740,7 +740,7 @@ Change the configuration of a claim specified by the `claimId`
 
 | Parameter             | Description                   | Type   | Required |
 |:----------------------|:------------------------------|:-------|:---------|
-| authorizationServerId | ID of an Authorization server | String | True     |
+| authServerId | ID of an Authorization server | String | True     |
 | claimId               | ID of a claim                 | String | True     |
 
 
@@ -776,7 +776,7 @@ Returns the [claim](#claim-object) you updated
 
 #### Delete a Claim
 
-{% api_operation DELETE /api/v1/authorizationServers/${authorizationServerId}/claims/:claimId %}
+{{< api_operation DELETE "/api/v1/authorizationServers/${authServerId}/claims/${claimId}" >}}
 
 Delete a claim specified by the `claimId`
 
@@ -786,7 +786,7 @@ Delete a claim specified by the `claimId`
 
 | Parameter             | Description                   | Type   | Required |
 |:----------------------|:------------------------------|:-------|:---------|
-| authorizationServerId | ID of an Authorization server | String | True     |
+| authServerId | ID of an Authorization server | String | True     |
 | claimId               | ID of a claim                 | String | True     |
 
 ##### Request Example
@@ -814,7 +814,7 @@ HTTP 204: No Content
 #### Get Authorization Server Keys
 {:.api .api-operation}
 
-{% api_operation get /api/v1/authorizationServers/${authorizationServerId}/credentials/keys %}
+{{< api_operation get "/api/v1/authorizationServers/${authServerId}/credentials/keys" >}}
 
 Returns the current, future, and expired [keys](#certificate-json-web-key-object) used by the Custom Authorization Server.
 
@@ -823,7 +823,7 @@ Returns the current, future, and expired [keys](#certificate-json-web-key-object
 
 | Parameter             | Description | Type | Required |
 |:----------------------|:------------|:-----|:---------|
-| authorizationServerId | description | type | True     |
+| authServerId | description | type | True     |
 
 ##### Request Example
 {:.api .api-request .api-request-example}
@@ -915,7 +915,7 @@ curl -v -X GET \
 #### Rotate Authorization Server Keys
 {:.api .api-operation}
 
-{% api_operation post /api/v1/authorizationServers/${authorizationServerId}/credentials/lifecycle/keyRotate %}
+{{< api_operation post "/api/v1/authorizationServers/${authServerId}/credentials/lifecycle/keyRotate" >}}
 
 Rotates the current [keys](#certificate-json-web-key-object) for a Custom Authorization Server. If you rotate keys, the `ACTIVE` key becomes the `EXPIRED` key, the `NEXT` key becomes the `ACTIVE` key, and the Custom Authorization Server immediately begins using the new active key to sign tokens.
 
@@ -1333,16 +1333,16 @@ Token limits:
 
 | Property                            | Description                                                                                           | Type    | Default      | Required for create or update |
 |:-------------------------------------|:------------------------------------------------------------------------------------------------------|:--------|:-------------|:------------------------------|
-| consent {% api_lifecycle beta %}     | Indicates whether a consent dialog is needed for the scope. Valid values: `REQUIRED`, `IMPLICIT`.      | Enum    | `IMPLICIT`   | False                         |
+| consent {{< api_lifecycle ea >}}     | Indicates whether a consent dialog is needed for the scope. Valid values: `REQUIRED`, `IMPLICIT`.      | Enum    | `IMPLICIT`   | False                         |
 | default                              | Whether test the scope is a default scope                                                              | Boolean |              | False                         |
 | description                          | Description of the scope                                                                               | String  |              | False                         |
-| displayName {% api_lifecycle beta %} | Name of the end user displayed in a consent dialog                                                     | String  |              | False                         |
+| displayName {{< api_lifecycle ea >}} | Name of the end user displayed in a consent dialog                                                     | String  |              | False                         |
 | id                                   | ID of the scope                                                                                        | String  |              | False                         |
 | metadataPublish                      | Whether or not the scope should be included in the metadata. Valid values: `NO_CLIENTS`, `ALL_CLIENTS` | Enum    | `NO_CLIENTS` | True except for create        |
 | name                                 | Name of the scope                                                                                      | String  |              | True                          |
 | system                               | Whether Okta created the scope                                                                         | Boolean |              | False                         |
 
-* {% api_lifecycle beta %} A consent dialog is displayed depending on the values of three elements:
+* {{< api_lifecycle ea >}} A consent dialog is displayed depending on the values of three elements:
     * `prompt`, a query parameter used in requests to [`/authorize`](/docs/api/resources/oidc#authorize)
     * `consent_method`, a property on [apps](/docs/api/resources/apps#settings-7)
     * `consent`, a property on scopes as listed in the table above
@@ -1355,7 +1355,9 @@ Token limits:
     | `NONE`            | `REQUIRED`                       | `REQUIRED`                  | Prompted     |
     | `NONE`            | `REQUIRED`                       | `IMPLICIT`                  | Not prompted | 
 
-> {% api_lifecycle beta %} Note: Apps created on `/api/v1/apps` default to `consent_method=TRUSTED`, while those created on `/api/v1/clients` default to `consent_method=REQUIRED`.
+> Notes:
+  * Apps created on `/api/v1/apps` default to `consent_method=TRUSTED`, while those created on `/api/v1/clients` default to `consent_method=REQUIRED`.
+  * If you request a scope that requires consent while using the `client_credentials` flow, an error is returned. Because there is no user, no consent can be given.
 
 ### Claim Object
 
@@ -1521,3 +1523,316 @@ This object defines a [JSON Web Key Set](https://tools.ietf.org/html/rfc7517) fo
 | n         | RSA modulus value.                                              | String |
 | status    | `ACTIVE`, `NEXT`, or `EXPIRED`                                                         | Enum   |
 | use       | How the key is used. Valid value: `sig`                                                | String |
+
+## Client Resource Operations
+
+{{< api_lifecycle ea >}}
+
+### List Client Resources for an Authorization Server
+{:.api .api-operation}
+
+{{< api_lifecycle ea >}}
+
+{{< api_operation get "/api/v1/authorizationServers/${authorizationServerId}/clients" >}}
+
+Lists all client resources for which the specified authorization server has tokens
+
+#### Request Parameters
+{:.api .api-request .api-request-params}
+
+| Parameter              | Description                    | Parameter Type | DataType | Required |
+|:-----------------------|:-------------------------------|:---------------|:---------|:---------|
+| authorizationServerId  | ID of the authorization server | URL            | String   | TRUE     |
+
+#### Request Example
+{:.api .api-request .api-request-example}
+
+~~~sh
+curl -v -X GET \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-H "Authorization: SSWS ${api_token}" \
+"https://{yourOktaDomain}.com/api/v1/authorizationServers/ausnsopoM6vBRB3PD0g3/clients"
+~~~
+
+#### Response Example
+{:.api .api-response .api-response-example}
+
+~~~json
+[
+    {
+        "client_id": "0oabskvc6442nkvQO0h7",
+        "client_name": "My App",
+        "client_uri": null,
+        "logo_uri": null,
+        "_links": {
+            "tokens": {
+                "href": "https://{yourOktaDomain}.com/api/v1/authorizationServers/ausnsopoM6vBRB3PD0g3/clients/0oabskvc6442nkvQO0h7/tokens"
+            }
+        }
+    }
+]
+~~~
+
+## OAuth 2.0 Token Management Operations
+
+* [List OAuth 2.0 Tokens for Authorization Server and Client](#list-oauth-20-tokens-for-authorization-server-and-client)
+* [Get OAuth 2.0 Token for Authorization Server and Client](#get-oauth-20-token-for-authorization-server-and-client)
+* [Revoke OAuth 2.0 Tokens for Authorization Server and Client](#revoke-oauth-20-tokens-for-authorization-server-and-client)
+* [Revoke OAuth 2.0 Token for Authorization Server and Client](#revoke-oauth-20-token-for-authorization-server-and-client)
+
+### List OAuth 2.0 Tokens for Authorization Server and Client
+{:.api .api-operation}
+
+{{< api_operation get "/api/v1/authorizationServers/${authorizationServerId}/clients/${clientId}/tokens" >}}
+
+Lists all tokens for the authorization server and client.
+
+#### Request Parameters
+{:.api .api-request .api-request-params}
+
+| Parameter             | Description                                                                                  | Param Type | DataType | Required | Default |
+|:----------------------|:---------------------------------------------------------------------------------------------|:-----------|:---------|:---------|:--------|
+| authorizationServerId | ID of the authorization server                                                               | URL        | String   | TRUE     |         |
+| clientId              | ID of the client                                                                             | URL        | String   | TRUE     |         |
+| expand                | Valid value: `scope`. If specified, scope details are included in the `_embedded` attribute. | Query      | String   | FALSE    |         |
+| limit                 | The maximum number of tokens to return                                                       | Query      | Number   | FALSE    | 20      |
+| after                 | Specifies the pagination cursor for the next page of tokens                                  | Query      | String   | FALSE    |         |
+
+* The maximum value for `limit` is 200.
+
+#### Request Example
+{:.api .api-request .api-request-example}
+
+~~~sh
+curl -v -X GET \
+-H "Accept: application/json" \
+-H "Authorization: SSWS ${api_token}" \
+"https://{yourOktaDomain}.com/api/v1/authorizationServers/ausnsopoM6vBRB3PD0g3/clients/0oabskvc6442nkvQO0h7/tokens"
+~~~
+
+#### Response Example
+{:.api .api-response .api-response-example}
+
+~~~json
+[
+  {
+    "id": "oar579Mcp7OUsNTlo0g3",
+    "status": "ACTIVE",
+    "created": "2018-03-09T03:18:06.000Z",
+    "lastUpdated": "2018-03-09T03:18:06.000Z",
+    "expiresAt": "2018-03-16T03:18:06.000Z",
+    "issuer": "https://{yourOktaDomain}.com/oauth2/ausnsopoM6vBRB3PD0g3",
+    "clientId": "0oabskvc6442nkvQO0h7",
+    "userId": "00upcgi9dyWEOeCwM0g3",
+    "scopes": [
+      "offline_access",
+      "car:drive"
+    ],
+    "_links": {
+      "app": {
+        "href": "https://{yourOktaDomain}.com/api/v1/apps/0oabskvc6442nkvQO0h7",
+        "title": "Native"
+      },
+      "self": {
+        "href": "https://{yourOktaDomain}.com/api/v1/authorizationServers/ausnsopoM6vBRB3PD0g3/clients/0oabskvc6442nkvQO0h7/tokens/oar579Mcp7OUsNTlo0g3"
+      },
+      "revoke": {
+        "href": "https://{yourOktaDomain}.com/api/v1/authorizationServers/ausnsopoM6vBRB3PD0g3/clients/0oabskvc6442nkvQO0h7/tokens/oar579Mcp7OUsNTlo0g3",
+        "hints": {
+          "allow": [
+            "DELETE"
+          ]
+        }
+      },
+      "client": {
+        "href": "https://{yourOktaDomain}.com/oauth2/v1/clients/0oabskvc6442nkvQO0h7",
+        "title": "Example Client App"
+      },
+      "user": {
+        "href": "https://{yourOktaDomain}.com/api/v1/users/00upcgi9dyWEOeCwM0g3",
+        "title": "Saml Jackson"
+      },
+      "authorizationServer": {
+        "href": "https://{yourOktaDomain}.com/api/v1/authorizationServers/ausnsopoM6vBRB3PD0g3",
+        "title": "Example Authorization Server"
+      }
+    }
+  }
+]
+~~~
+
+
+### Get OAuth 2.0 Token for Authorization Server and Client
+{:.api .api-operation}
+
+{{< api_operation get "/api/v1/authorizationServers/${authorizationServerId}/clients/${clientId}/tokens/${tokenId}" >}}
+
+Gets a token for the specified authorization server and client
+
+#### Request Parameters
+{:.api .api-request .api-request-params}
+
+| Parameter             | Description                                                                                  | Param Type | DataType | Required | Default |
+|:----------------------|:---------------------------------------------------------------------------------------------|:-----------|:---------|:---------|:--------|
+| authorizationServerId | ID of the authorization server                                                               | URL        | String   | TRUE     |         |
+| clientId              | ID of the client                                                                             | URL        | String   | TRUE     |         |
+| tokenId               | ID of the token                                                                              | URL        | String   | TRUE     |         |
+| expand                | Valid value: `scope`. If specified, scope details are included in the `_embedded` attribute. | Query      | String   | FALSE    |         |
+
+#### Request Example
+{:.api .api-request .api-request-example}
+
+~~~sh
+curl -v -X GET \
+-H "Accept: application/json" \
+-H "Authorization: SSWS ${api_token}" \
+"https://{yourOktaDomain}.com/api/v1/authorizationServers/default/clients/0oabskvc6442nkvQO0h7/tokens/oar579Mcp7OUsNTlo0g3?expand=scope"
+~~~
+
+#### Response Example
+{:.api .api-response .api-response-example}
+
+~~~json
+{
+  "id": "oar579Mcp7OUsNTlo0g3",
+  "status": "ACTIVE",
+  "created": "2018-03-09T03:18:06.000Z",
+  "lastUpdated": "2018-03-09T03:18:06.000Z",
+  "expiresAt": "2018-03-16T03:18:06.000Z",
+  "issuer": "https://{yourOktaDomain}.com/oauth2/default",
+  "clientId": "0oabskvc6442nkvQO0h7",
+  "userId": "00upcgi9dyWEOeCwM0g3",
+  "scopes": [
+    "offline_access",
+    "car:drive"
+  ],
+  "_embedded": {
+    "scopes": [
+      {
+        "id": "scppb56cIl4GvGxy70g3",
+        "name": "offline_access",
+        "description": "Requests a refresh token by default, used to obtain more access tokens without re-prompting the user for authentication.",
+        "_links": {
+          "scope": {
+            "href": "https://{yourOktaDomain}.com/api/v1/authorizationServers/default/scopes/scppb56cIl4GvGxy70g3",
+            "title": "offline_access"
+          }
+        }
+      },
+      {
+        "id": "scp142iq2J8IGRUCS0g4",
+        "name": "car:drive",
+        "displayName": "Drive car",
+        "description": "Allows the user to drive a car.",
+        "_links": {
+          "scope": {
+            "href": "https://{yourOktaDomain}.com/api/v1/authorizationServers/default/scopes/scp142iq2J8IGRUCS0g4",
+            "title": "Drive car"
+          }
+        }
+      }
+    ]
+  },
+  "_links": {
+    "app": {
+      "href": "https://{yourOktaDomain}.com/api/v1/apps/0oabskvc6442nkvQO0h7",
+      "title": "Native"
+    },
+    "self": {
+      "href": "https://{yourOktaDomain}.com/api/v1/authorizationServers/default/clients/0oabskvc6442nkvQO0h7/tokens/oar579Mcp7OUsNTlo0g3"
+    },
+    "revoke": {
+      "href": "https://{yourOktaDomain}.com/api/v1/authorizationServers/default/clients/0oabskvc6442nkvQO0h7/tokens/oar579Mcp7OUsNTlo0g3",
+      "hints": {
+        "allow": [
+          "DELETE"
+        ]
+      }
+    },
+    "client": {
+      "href": "https://{yourOktaDomain}.com/oauth2/v1/clients/0oabskvc6442nkvQO0h7",
+      "title": "Example Client App"
+    },
+    "user": {
+      "href": "https://{yourOktaDomain}.com/api/v1/users/00upcgi9dyWEOeCwM0g3",
+      "title": "Saml Jackson"
+    },
+    "authorizationServer": {
+      "href": "https://{yourOktaDomain}.com/api/v1/authorizationServers/default",
+      "title": "Example Authorization Server"
+    }
+  }
+}
+~~~
+
+### Revoke OAuth 2.0 Tokens for Authorization Server and Client
+{:.api .api-operation}
+
+{{< api_lifecycle ea >}}
+
+{{< api_operation delete "/api/v1/authorizationServers/${authorizationServerId}/clients/${clientId}/tokens" >}}
+
+Revokes all tokens for the specified authorization server and client
+
+#### Request Parameters
+{:.api .api-request .api-request-params}
+
+| Parameter             | Description                              | Parameter Type | DataType | Required |
+|:----------------------|:-----------------------------------------|:---------------|:---------|:---------|
+| authorizationServerId | ID of the authorization server           | URL            | String   | TRUE     |
+| clientId              | ID of the client                         | URL            | String   | TRUE     |
+
+#### Request Example
+{:.api .api-request .api-request-example}
+
+~~~sh
+curl -v -X DELETE \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-H "Authorization: SSWS ${api_token}" \
+"https://{yourOktaDomain}.com/api/v1/authorizationServers/default/clients/0oabskvc6442nkvQO0h7/tokens"
+~~~
+
+#### Response Example
+{:.api .api-response .api-response-example}
+
+~~~sh
+HTTP/1.1 204 No Content
+~~~
+
+### Revoke OAuth 2.0 Token for Authorization Server and Client
+{:.api .api-operation}
+
+{{< api_lifecycle ea >}}
+
+{{< api_operation delete "/api/v1/authorizationServers/${authServerId}/clients/${clientId}/tokens/${tokenId}" >}}
+
+Revokes the specified token for the specified authorization server and client
+
+#### Request Parameters
+{:.api .api-request .api-request-params}
+
+| Parameter             | Description                              | Parameter Type | DataType | Required |
+|:----------------------|:-----------------------------------------|:---------------|:---------|:---------|
+| authorizationServerId | ID of the authorization server           | URL            | String   | TRUE     |
+| clientId              | ID of the client                         | URL            | String   | TRUE     |
+| tokenId               | ID of the token                          | URL            | String   | TRUE     |
+
+#### Request Example
+{:.api .api-request .api-request-example}
+
+~~~sh
+curl -v -X DELETE \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-H "Authorization: SSWS ${api_token}" \
+"https://{yourOktaDomain}.com/api/v1/authorizationServers/default/clients/0oabskvc6442nkvQO0h7/tokens/oar579Mcp7OUsNTlo0g3"
+~~~
+
+#### Response Example
+{:.api .api-response .api-response-example}
+
+~~~sh
+HTTP/1.1 204 No Content
+~~~

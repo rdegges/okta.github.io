@@ -27,7 +27,7 @@ Each identity provider (IdP) requires some setup. Use the Okta setup guide for y
 ### Add Identity Provider
 {:.api .api-operation}
 
-{% api_operation post /api/v1/idps %}
+{{< api_operation post "/api/v1/idps" >}}
 
 Adds a new IdP to your organization
 
@@ -866,7 +866,7 @@ curl -v -X POST \
 ### Get Identity Provider
 {:.api .api-operation}
 
-{% api_operation get /api/v1/idps/*:id* %}
+{{< api_operation get "/api/v1/idps/${idpId}" >}}
 
 Fetches an IdP by `id`
 
@@ -875,7 +875,7 @@ Fetches an IdP by `id`
 
 Parameter | Description     | Param Type | DataType | Required |
 --------- | --------------- | ---------- | -------- | -------- |
-id        | `id` of an IdP  | URL        | String   | TRUE     |
+idpId       | `id` of an IdP  | URL        | String   | TRUE     |
 
 ##### Response Parameters
 {:.api .api-response .api-response-params}
@@ -889,7 +889,8 @@ curl -v -X GET \
 -H "Accept: application/json" \
 -H "Content-Type: application/json" \
 -H "Authorization: SSWS ${api_token}" \
-"https://{yourOktaDomain}.com/api/v1/idps/0oa62bfdjnK55Z5x80h7"
+-d '{
+}' "https://{yourOktaDomain}.com/api/v1/idps/0oa62bfdjnK55Z5x80h7"
 ~~~
 
 ##### Response Example
@@ -982,7 +983,7 @@ curl -v -X GET \
 ### List Identity Providers
 {:.api .api-operation}
 
-{% api_operation get /api/v1/idps %}
+{{< api_operation get "/api/v1/idps" >}}
 
 Enumerates IdPs in your organization with pagination. A subset of IdPs can be returned that match a supported filter expression or query.
 
@@ -1023,7 +1024,8 @@ curl -v -X GET \
 -H "Accept: application/json" \
 -H "Content-Type: application/json" \
 -H "Authorization: SSWS ${api_token}" \
-"https://{yourOktaDomain}.com/api/v1/idps?limit=20"
+-d '{
+}' "https://{yourOktaDomain}.com/api/v1/idps?limit=20"
 ~~~
 
 ##### Response Example
@@ -1405,7 +1407,8 @@ curl -v -X GET \
 -H "Accept: application/json" \
 -H "Content-Type: application/json" \
 -H "Authorization: SSWS ${api_token}" \
-"https://{yourOktaDomain}.com/api/v1/idps?q=Example&limit=10"
+-d '{
+}' "https://{yourOktaDomain}.com/api/v1/idps?q=Example&limit=10"
 ~~~
 
 ##### Response Example
@@ -1540,7 +1543,8 @@ curl -v -X GET \
 -H "Accept: application/json" \
 -H "Content-Type: application/json" \
 -H "Authorization: SSWS ${api_token}" \
-"https://{yourOktaDomain}.com/api/v1/idps?type=SAML2"
+-d '{
+}' "https://{yourOktaDomain}.com/api/v1/idps?type=SAML2"
 ~~~
 
 ##### Response Example
@@ -1670,7 +1674,7 @@ Link: <https://{yourOktaDomain}.com/api/v1/idps?after=0oaxdqpA88PtFNmhu0g3&limit
 ### Update Identity Provider
 {:.api .api-operation}
 
-{% api_operation put /api/v1/idps/*:id* %}
+{{< api_operation put "/api/v1/idps/${idpId}" >}}
 
 Updates the configuration for an IdP
 
@@ -1679,7 +1683,7 @@ Updates the configuration for an IdP
 
 Parameter | Description                       | Param Type | DataType                                      | Required |
 --------- | --------------------------------- | ---------- | --------------------------------------------- | -------- |
-id        | id of the group to update         | URL        | String                                        | TRUE     |
+id        | id of the IdP to update         | URL        | String                                        | TRUE     |
 idp       | Updated configuration for the IdP | Body       | [Identity Provider](#identity-provider-model) | TRUE     |
 
 All properties must be specified when updating IdP configuration. Partial updates are not supported.
@@ -1821,7 +1825,7 @@ curl -v -X PUT \
 ### Delete Identity Provider
 {:.api .api-operation}
 
-{% api_operation delete /api/v1/idps/*:id* %}
+{{< api_operation delete "/api/v1/idps/${idpId}" >}}
 
 Removes an IdP from your organization.
 
@@ -1833,7 +1837,7 @@ Removes an IdP from your organization.
 
 Parameter | Description                 | Param Type | Data Type | Required |
 --------- | --------------------------- | ---------- | --------- | -------- |
-id        | `id` of the IdP to delete   | URL        | String    | TRUE     |
+idpId       | `id` of the IdP to delete   | URL        | String    | TRUE     |
 
 ##### Response Parameters
 {:.api .api-response .api-response-params}
@@ -1848,7 +1852,8 @@ curl -v -X DELETE \
 -H "Accept: application/json" \
 -H "Content-Type: application/json" \
 -H "Authorization: SSWS ${api_token}" \
-"https://{yourOktaDomain}.com/api/v1/idps/0oa1k5d68qR2954hb0g4"
+-d '{
+}' "https://{yourOktaDomain}.com/api/v1/idps/0oa1k5d68qR2954hb0g4"
 ~~~
 
 
@@ -1864,7 +1869,7 @@ HTTP/1.1 204 No Content
 ### Activate Identity Provider
 {:.api .api-operation}
 
-{% api_operation post /api/v1/idps/*:id*/lifecycle/activate %}
+{{< api_operation post "/api/v1/idps/${idpId}/lifecycle/activate" >}}
 
 Activates an inactive IdP
 
@@ -1873,7 +1878,7 @@ Activates an inactive IdP
 
 Parameter | Description             | Param Type | DataType | Required |
 --------- | ----------------------- | ---------- | -------- | -------- |
-id        | `id` of IdP to activate | URL        | String   | TRUE     |
+idpId       | `id` of IdP to activate | URL        | String   | TRUE     |
 
 ##### Response Parameters
 {:.api .api-response .api-response-params}
@@ -1888,7 +1893,8 @@ curl -v -X POST \
 -H "Accept: application/json" \
 -H "Content-Type: application/json" \
 -H "Authorization: SSWS ${api_token}" \
-"https://{yourOktaDomain}.com/api/v1/idps/0oa62bfdiumsUndnZ0h7/lifecycle/activate"
+-d '{
+}' "https://{yourOktaDomain}.com/api/v1/idps/0oa62bfdiumsUndnZ0h7/lifecycle/activate"
 ~~~
 
 ##### Response Example
@@ -1982,7 +1988,7 @@ curl -v -X POST \
 ### Deactivate Identity Provider
 {:.api .api-operation}
 
-{% api_operation post /api/v1/idps/*:id*/lifecycle/deactivate %}
+{{< api_operation post "/api/v1/idps/${idpId}/lifecycle/deactivate" >}}
 
 Deactivates an active IdP
 
@@ -1991,7 +1997,7 @@ Deactivates an active IdP
 
 Parameter | Description               | Param Type | DataType | Required |
 --------- | ------------------------- | ---------- | -------- | -------- |
-id        | `id` of IdP to deactivate | URL        | String   | TRUE     |
+idpId       | `id` of IdP to deactivate | URL        | String   | TRUE     |
 
 ##### Response Parameters
 {:.api .api-response .api-response-params}
@@ -2006,7 +2012,8 @@ curl -v -X POST \
 -H "Accept: application/json" \
 -H "Content-Type: application/json" \
 -H "Authorization: SSWS ${api_token}" \
-"https://{yourOktaDomain}.com/api/v1/idps/0oa62bfdiumsUndnZ0h7/lifecycle/deactivate"
+-d '{
+}' "https://{yourOktaDomain}.com/api/v1/idps/0oa62bfdiumsUndnZ0h7/lifecycle/deactivate"
 ~~~
 
 ##### Response Example
@@ -2099,12 +2106,44 @@ curl -v -X POST \
 
 ## Identity Provider Transaction Operations
 
-Operations for just-in-time provisioning or account linking with a `CALLOUT` action (webhook)
+Operations for just-in-time provisioning or account linking with a `callout` action (webhook)
+
+All transaction operations require a transaction ID which is obtained as part of the authentication call. 
+
+Use `callout` actions when you need to retrieve information from the profile of a user when you link or create them, or to perform other tasks that must be done before the link or create is completed.
+
+Before you can use transaction operations, set up the following:
+
+1. Add or create an app in Okta with settings that support `callout`: 
+  * **Allowed grant types** must include one or more **Client acting on behalf of a user** options selected.
+2. Configure a social IdP with settings that support `callout`:
+  * Be sure to complete the setup instructions in the **View Setup Instructions** link
+  * Select appropriate scopes for the client you configured in the previous step, and for the IdP as described in the **View Setup Instructions**.
+  * In the **Show Advanced Settings** link, be sure that you have either **Account Link Policy** or **Provisioning Policy** set to **Callout**.
+
+Once your IdP and app are set up, you can issue an authentication request and capture the transaction ID to verify your setup. The following example shows a request for an ID token, which is typically a simple request:
+
+~~~sh
+https://{myOktaDomain}.com/oauth2/v1/authorize?
+  idp=0oae5emt1lCVpXD2b0h7&
+  client_id=B6YnDUIpt6Oq354YYaNR&
+  response_type=id_token&
+  response_mode=fragment&
+  scope=openid&
+  redirect_uri=https://httpbin.org/get&state=state&nonce=nonce
+~~~
+
+The response will contain a transaction ID. You can then use the transaction ID to exercise the endpoints in this section. Unfinished or uncanceled transactions end after about ten minutes.
+
+If you aren't receiving a transaction ID, check that:
+
+* The user that you are adding with JIT or linking doesn't already exist in the app. If they do, deactivate and delete.
+* You don't have any sessions open for the IdP or the Okta org for the app.
 
 ### Get Identity Provider Transaction
 {:.api .api-operation}
 
-{% api_operation get /api/v1/idps/tx/*:tid* %}
+{{< api_operation get "/api/v1/idps/tx/${transactionId}" >}}
 
 Fetches an IdP transaction by `id`
 
@@ -2116,7 +2155,7 @@ to obtain an IdP transaction `id`.
 
 Parameter | Description                | Param Type | DataType | Required |
 --------- | -------------------------- | ---------- | -------- | -------- |
-tid       | `id` of an IdP transaction | URL        | String   | TRUE     |
+transactionId       | `id` of an IdP transaction | URL        | String   | TRUE     |
 
 ##### Response Parameters
 {:.api .api-response .api-response-params}
@@ -2131,7 +2170,8 @@ curl -v -X GET \
 -H "Accept: application/json" \
 -H "Content-Type: application/json" \
 -H "Authorization: SSWS ${api_token}" \
-"https://{yourOktaDomain}.com/api/v1/idps/tx/satvklBYyJmwa6qOg0g3"
+-d '{
+}' "https://{yourOktaDomain}.com/api/v1/idps/tx/satvklBYyJmwa6qOg0g3"
 ~~~
 
 ##### Response Example
@@ -2183,7 +2223,7 @@ curl -v -X GET \
 ### Get Source IdP User for IdP Transaction
 {:.api .api-operation}
 
-{% api_operation get /api/v1/idps/tx/*:tid*/source %}
+{{< api_operation get "/api/v1/idps/tx/${transactionId}/source" >}}
 
 Fetches the source [IdP user](#identity-provider-user-model) for a transaction
 
@@ -2192,7 +2232,7 @@ Fetches the source [IdP user](#identity-provider-user-model) for a transaction
 
 Parameter | Description                | Param Type | DataType | Required |
 --------- | -------------------------- | ---------- | -------- | -------- |
-tid       | `id` of an IdP transaction | URL        | String   | TRUE     |
+transactionId       | `id` of an IdP transaction | URL        | String   | TRUE     |
 
 ##### Response Parameters
 {:.api .api-response .api-response-params}
@@ -2207,7 +2247,8 @@ curl -v -X GET \
 -H "Accept: application/json" \
 -H "Content-Type: application/json" \
 -H "Authorization: SSWS ${api_token}" \
-"https://{yourOktaDomain}.com/api/v1/idps/tx/satvklBYyJmwa6qOg0g3/source"
+-d '{
+}' "https://{yourOktaDomain}.com/api/v1/idps/tx/satvklBYyJmwa6qOg0g3/source"
 ~~~
 
 ##### Response Example
@@ -2235,7 +2276,7 @@ curl -v -X GET \
 ### Get Target User for IdP Provision Transaction
 {:.api .api-operation}
 
-{% api_operation get /api/v1/idps/tx/*:tid*/target %}
+{{< api_operation get "/api/v1/idps/tx/${transactionId}/target" >}}
 
 Fetches the target transformed [Okta user profile](/docs/api/resources/users#profile-object) for a just-in-time provisioning transaction
 
@@ -2244,7 +2285,7 @@ Fetches the target transformed [Okta user profile](/docs/api/resources/users#pro
 
 Parameter | Description                | Param Type | DataType | Required |
 --------- | -------------------------- | ---------- | -------- | -------- |
-tid       | `id` of an IdP transaction | URL        | String   | TRUE     |
+transactionId       | `id` of an IdP transaction | URL        | String   | TRUE     |
 
 ##### Response Parameters
 {:.api .api-response .api-response-params}
@@ -2259,7 +2300,8 @@ curl -v -X GET \
 -H "Accept: application/json" \
 -H "Content-Type: application/json" \
 -H "Authorization: SSWS ${api_token}" \
-"https://{yourOktaDomain}.com/api/v1/idps/tx/satvklBYyJmwa6qOg0g3/source"
+-d '{
+}' "https://{yourOktaDomain}.com/api/v1/idps/tx/satvklBYyJmwa6qOg0g3/source"
 ~~~
 
 ##### Response Example
@@ -2292,7 +2334,7 @@ curl -v -X GET \
 ### List Users for IdP Link Transaction
 {:.api .api-operation}
 
-{% api_operation get /api/v1/idps/tx/*:tid*/users %}
+{{< api_operation get "/api/v1/idps/tx/${transactionId}/users" >}}
 
 Enumerates the candidate [Okta users](/docs/api/resources/users#user-model) for an account link transaction
 
@@ -2303,7 +2345,7 @@ Link candidates are determined by the IdP's [account link policy](#account-link-
 
 Parameter | Description                | Param Type | DataType | Required |
 --------- | -------------------------- | ---------- | -------- | -------- |
-tid       | `id` of an IdP transaction | URL        | String   | TRUE     |
+transactionId       | `id` of an IdP transaction | URL        | String   | TRUE     |
 
 ##### Response Parameters
 {:.api .api-response .api-response-params}
@@ -2318,7 +2360,8 @@ curl -v -X GET \
 -H "Accept: application/json" \
 -H "Content-Type: application/json" \
 -H "Authorization: SSWS ${api_token}" \
-"https://{yourOktaDomain}.com/api/v1/idps/tx/satvklBYyJmwa6qOg0g3/users"
+-d '{
+}' "https://{yourOktaDomain}.com/api/v1/idps/tx/satvklBYyJmwa6qOg0g3/users"
 ~~~
 
 ##### Response Example
@@ -2383,7 +2426,7 @@ curl -v -X GET \
 ### Provision IdP User
 {:.api .api-operation}
 
-{% api_operation post /api/v1/idps/tx/*:tid*/lifecycle/provision %}
+{{< api_operation post "/api/v1/idps/tx/${transactionId}/lifecycle/provision" >}}
 
 Provisions an IdP user as a new Okta user.
 
@@ -2392,7 +2435,7 @@ Provisions an IdP user as a new Okta user.
 
 Parameter | Description                                        | Param Type | DataType                                              | Required | Default
 --------- | -------------------------------------------------- | ---------- | ----------------------------------------------------- | -------- | --------------------------------
-tid       | `id` of an IdP transaction                         | URL        | String                                                | TRUE     |
+transactionId       | `id` of an IdP transaction                         | URL        | String                                                | TRUE     |
 profile   | profile for [Okta user](/docs/api/resources/users#profile-object) | Body       | [Okta User Profile Object](/docs/api/resources/users#profile-object) | FALSE    | UD transformed Okta user profile
 
 ##### Response Parameters
@@ -2459,7 +2502,7 @@ curl -v -X POST \
 ### Link IdP User
 {:.api .api-operation}
 
-{% api_operation post /api/v1/idps/tx/*:tid*/lifecycle/confirm/*:uid* %}
+{{< api_operation post "/api/v1/idps/tx/${transactionId}/lifecycle/confirm/${userId}" >}}
 
 Links an IdP user to an [existing Okta user](#list-users-for-idp-link-transaction)
 
@@ -2468,8 +2511,8 @@ Links an IdP user to an [existing Okta user](#list-users-for-idp-link-transactio
 
 Parameter | Description                                                                 | Param Type | DataType                                              | Required |
 --------- | --------------------------------------------------------------------------- | ---------- | ----------------------------------------------------- | -------- |
-tid       | `id` of an IdP transaction                                                  | URL        | String                                                | TRUE     |
-uid       | `id` of an Okta user [link candidate](#list-users-for-idp-link-transaction) | URL        | String                                                | TRUE     |
+transactionId       | `id` of an IdP transaction                                                  | URL        | String                                                | TRUE     |
+userId       | `id` of an Okta user [link candidate](#list-users-for-idp-link-transaction) | URL        | String                                                | TRUE     |
 profile   | profile for [Okta user](/docs/api/resources/users#profile-object)                     | Body       | [Okta User Profile Object](/docs/api/resources/users#profile-object) | FALSE    |
 
 ##### Response Parameters
@@ -2533,101 +2576,70 @@ curl -v -X POST \
 }
 ~~~
 
-
-### Find Users
+### Finish Identity Provider Transaction
 {:.api .api-operation}
 
-{% api_operation get /api/v1/idps/*:id*/users %}
+{{< api_operation POST "/api/v1/idps/tx/${transactionId}/finish" >}}
 
-Find all the users linked to an identity provider
+Finishes an IdP transaction
 
-##### Request Parameters
+No actions are completed when using `callout` until the `/finish` request completes.
+
+#### Request Parameters
 {:.api .api-request .api-request-params}
 
-Parameter | Description             | Param Type | DataType | Required |
---------- | ----------------------- | ---------- | -------- | -------- |
-id        | `id` of IdP to search   | URL        | String   | TRUE     |
+| Parameter | Description | Datatype | Required |
+| :------------- | :-------------- | :------------ | :----------- |
+| transactionId          | The transaction ID referenced by all intermediate steps in the transaction  | String | TRUE |
 
-##### Response Parameters
-{:.api .api-response .api-response-params}
-
-List of the users that are linked to the specified identity provider
-
-##### Request Example
+#### Request Example
 
 ~~~sh
-GET https://{yourOktaDomain}.com/api/v1/idps/0oa4lb6lbtmH355Hx0h7/users
-200 OK
+curl -v -X POST \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-H "Authorization: SSWS ${api_token}" \
+-d '{
+}' "https://{yourOktaDomain}/api/v1/idps/tx/sat4h4zexs17NrXWc0h6/finish"
 ~~~
 
-##### Response Example
+#### Response Example
 
-~~~json
-[
-  {
-      "id": "00u5cl9lo7nMjHjPr0h7",
-      "externalId": "109912936038778",
-      "created": "2015-11-03T19:10:11.000Z",
-      "lastUpdated": "2015-11-03T19:11:49.000Z",
-      "profile": {
-          "firstName": "Carol",
-          "middleName": "Lee",
-          "lastName": "Johnson",
-          "email": "carol_johnson@tfbnw.net",
-          "displayName": "Carol Johnson",
-          "profile": "https://www.facebook.com/app_scoped_user_id/109912936038778/"
-      },
-      "_links": {
-        "self": {
-          "href": "https://{yourOktaDomain}.com/api/v1/idps/0oa4lb6lbtmH355Hx0h7/users/00u5cl9lo7nMjHjPr0h7",
-          "hints": {
-              "allow": [
-                  "GET",
-                  "DELETE"
-                ]
-          }
-        },
-        "idp": {
-            "href": "https://{yourOktaDomain}.com/api/v1/idps/0oa4lb6lbtmH355Hx0h7"
-        },
-        "user": {
-            "href": "https://{yourOktaDomain}.com/api/v1/users/00u5cl9lo7nMjHjPr0h7"
-        }
-     }
-  }
-]
+~~~sh
+HTTP/1.1 200 OK
 ~~~
 
-### Unlink User from IdP
+### Cancel Identity Provider Transaction
 {:.api .api-operation}
 
-{% api_operation delete /api/v1/idps/*:id*/users/*:uid* %}
+{{< api_operation POST "/api/v1/idps/tx/${transactionId}/cancel" >}}
 
-Removes the link between the Okta user and the IdP user.
-The next time the user federates into Okta via this IdP, they have to re-link their account according to the account link policy configured in Okta for this IdP.
+Cancels an IdP transaction
 
-##### Request Parameters
+No actions are completed when using `callout` if the transaction is canceled.
+
+#### Request Parameters
 {:.api .api-request .api-request-params}
 
-Parameter | Description             | Param Type | DataType | Required |
---------- | ----------------------- | ---------- | -------- | -------- |
-id        | `id` of IdP to activate | URL        | String   | TRUE     |
-uid       | `uid` of user to delete | URL        | String   | TRUE     |
+| Parameter | Description | Datatype | Required |
+| :------------- | :-------------- | :------------ | :----------- |
+| transactionId          | The transaction ID referenced by all intermediate steps in the transaction  | String | TRUE |
 
-##### Response Parameters
-{:.api .api-response .api-response-params}
-
-
-##### Request Example
+#### Request Example
 
 ~~~sh
-DELETE https://{yourOktaDomain}.com//api/v1/idps/0oa4lb6lbtmH355Hx0h7/users/00u5cl9lo7nMjHjPr0h7
+curl -v -X POST \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-H "Authorization: SSWS ${api_token}" \
+-d '{
+}' "https://{yourOktaDomain}/api/v1/idps/tx/sat4jmxahzdtLDHOm0h6/cancel"
 ~~~
 
-##### Response Example
+#### Response Example
 
 ~~~sh
-204 - No Content
+HTTP/1.1 200 OK
 ~~~
 
 ## Identity Provider Key Store Operations
@@ -2635,7 +2647,7 @@ DELETE https://{yourOktaDomain}.com//api/v1/idps/0oa4lb6lbtmH355Hx0h7/users/00u5
 ### Add X.509 Certificate Public Key
 {:.api .api-operation}
 
-{% api_operation post /api/v1/idps/credentials/keys %}
+{{< api_operation post "/api/v1/idps/credentials/keys" >}}
 
 Adds a new X.509 certificate credential to the IdP key store
 
@@ -2719,7 +2731,7 @@ Location: https://{yourOktaDomain}.com/api/v1/idps/credentials/keys/74bb2164-e0c
 ### Get Key
 {:.api .api-operation}
 
-{% api_operation get /api/v1/idps/credentials/keys/*:kid* %}
+{{< api_operation get "/api/v1/idps/credentials/keys/${kid}" >}}
 
 Gets a specific [IdP Key Credential](#identity-provider-key-credential-model) by `kid`
 
@@ -2784,7 +2796,7 @@ curl -v -X GET \
 ### List Keys
 {:.api .api-operation}
 
-{% api_operation get /api/v1/idps/credentials/keys %}
+{{< api_operation get "/api/v1/idps/credentials/keys" >}}
 
 Enumerates IdP key credentials
 
@@ -2852,7 +2864,7 @@ curl -v -X GET \
 ### Delete Key
 {:.api .api-operation}
 
-{% api_operation delete /api/v1/idps/credentials/keys/*:kid* %}
+{{< api_operation delete "/api/v1/idps/credentials/keys/${kid}" >}}
 
 Deletes a specific [IdP Key Credential](#identity-provider-key-credential-model) by `kid` if it is not currently being used by an Active or Inactive IdP
 
@@ -2876,7 +2888,8 @@ curl -v -X DELETE \
 -H "Accept: application/json" \
 -H "Content-Type: application/json" \
 -H "Authorization: SSWS ${api_token}" \
-"https://{yourOktaDomain}.com/api/v1/idps/credentials/keys/74bb2164-e0c8-4457-862b-7c29ba6cd2c9"
+-d '{
+}' "https://{yourOktaDomain}.com/api/v1/idps/credentials/keys/74bb2164-e0c8-4457-862b-7c29ba6cd2c9"
 ~~~
 
 ##### Response Example
@@ -2893,7 +2906,7 @@ HTTP/1.1 204 No Content
 ### Generate New IdP Signing Key Credential
 {:.api .api-operation}
 
-{% api_operation post /api/v1/idps/*:id*/credentials/keys/generate %}
+{{< api_operation post "/api/v1/idps/${idpId}/credentials/keys/generate" >}}
 
 Generates a new X.509 certificate for an IdP signing key credential to be used for signing assertions sent to the IdP
 
@@ -2904,7 +2917,7 @@ Generates a new X.509 certificate for an IdP signing key credential to be used f
 
 Parameter     | Description                                                                 | Param Type | DataType                                      | Required |
 ------------- | --------------------------------------------------------------------------- | ---------- | --------------------------------------------- | -------- |
-id            | `id` of the IdP                                                             | URL        | String                                        | TRUE     |
+idpId           | `id` of the IdP                                                             | URL        | String                                        | TRUE     |
 validityYears | expiry of the [IdP Key Credential](#identity-provider-key-credential-model) | Query      | Number                                        | TRUE     |
 
 ##### Response Parameters
@@ -2967,7 +2980,7 @@ Content-Type: application/json
 ### List Signing Key Credentials for IdP
 {:.api .api-operation}
 
-{% api_operation get /api/v1/idps/*:id*/credentials/keys %}
+{{< api_operation get "/api/v1/idps/${idpId}/credentials/keys" >}}
 
 Enumerates signing key credentials for an IdP
 
@@ -2976,7 +2989,7 @@ Enumerates signing key credentials for an IdP
 
 Parameter     | Description        | Param Type | DataType                                      | Required |
 ------------- | ------------------ | ---------- | --------------------------------------------- | -------- |
-id            | `id` of the IdP    | URL        | String                                        | TRUE     |
+idpId           | `id` of the IdP    | URL        | String                                        | TRUE     |
 
 ##### Response Parameters
 {:.api .api-response .api-response-params}
@@ -3029,7 +3042,7 @@ curl -v -X GET \
 ### Get Signing Key Credential for IdP
 {:.api .api-operation}
 
-{% api_operation get /api/v1/idps/*:id*/credentials/keys/*:kid* %}
+{{< api_operation get "/api/v1/idps/${idpId}/credentials/keys/${kid}" >}}
 
 Gets a specific [IdP Key Credential](#identity-provider-key-credential-model) by `kid`
 
@@ -3038,7 +3051,7 @@ Gets a specific [IdP Key Credential](#identity-provider-key-credential-model) by
 
 Parameter     | Description                                                                     | Param Type | DataType                                      | Required |
 ------------- | ------------------------------------------------------------------------------- | ---------- | --------------------------------------------- | -------- |
-id            | `id` of the IdP                                                                 | URL        | String                                        | TRUE     |
+idpId           | `id` of the IdP                                                                 | URL        | String                                        | TRUE     |
 kid           | unique key of [IdP Key Credential](#identity-provider-key-credential-model)     | URL        | String                                        | TRUE     |
 
 ##### Response Parameters
@@ -3078,7 +3091,7 @@ curl -v -X GET \
 ### Clone Signing Key Credential for IdP
 {:.api .api-operation}
 
-{% api_operation post /api/v1/idps/*:id*/credentials/keys/*:kid*/clone?targetIdpId=*:targetIdpId* %}
+{{< api_operation post "/api/v1/idps/${idpId}/credentials/keys/${kid}/clone?targetIdpId=${targetIdpId}" >}}
 
 Clones a X.509 certificate for an IdP signing key credential from a source IdP to target IdP
 
@@ -3089,7 +3102,7 @@ Clones a X.509 certificate for an IdP signing key credential from a source IdP t
 
 Parameter     | Description                                                                     | Param Type | DataType                                      | Required |
 ------------- | ------------------------------------------------------------------------------- | ---------- | --------------------------------------------- | -------- |
-id            | `id` of the source IdP                                                          | URL        | String                                        | TRUE     |
+idpId           | `id` of the source IdP                                                          | URL        | String                                        | TRUE     |
 kid           | Unique key of [IdP Key Credential](#identity-provider-key-credential-model)     | URL        | String                                        | TRUE     |
 targetIdPId   | `id` of the target IdP                                                          | Query      | String                                        | TRUE     |
 
@@ -3153,7 +3166,7 @@ Content-Type: application/json
 ### Generate Signing CSR for IdP
 {:.api .api-operation}
 
-{% api_operation post /api/v1/idps/*:id*/credentials/csrs %}
+{{< api_operation post "/api/v1/idps/${idpId}/credentials/csrs" >}}
 
 Generates a new key pair and returns a Certificate Signing Request for it.
 
@@ -3164,7 +3177,7 @@ Generates a new key pair and returns a Certificate Signing Request for it.
 
 Parameter     | Description                                                                     | Param Type | DataType                                      | Required |
 ------------- | ------------------------------------------------------------------------------- | ---------- | --------------------------------------------- | -------- |
-id            | `id` of the IdP                                                                 | URL        | String                                        | TRUE     |
+idpId           | `id` of the IdP                                                                 | URL        | String                                        | TRUE     |
 metadata      | Metadata for the CSR                                                            | Body       | [CSR Metadata](apps#csr-metadata-object)                 | TRUE     |
 
 ##### Response Parameters
@@ -3266,7 +3279,7 @@ Content-Type: application/json
 ### Publish Signing CSR for IdP
 {:.api .api-operation}
 
-{% api_operation post /api/v1/idps/*:id*/credentials/csrs/*:csrid*/lifecycle/publish %}
+{{< api_operation post "/api/v1/idps/${idpId}/credentials/csrs/${csrModelId}/lifecycle/publish" >}}
 
 Update the CSR with a signed X.509 certificate and add it into the signing key credentials for the IdP.
 
@@ -3277,8 +3290,8 @@ Update the CSR with a signed X.509 certificate and add it into the signing key c
 
 Parameter     | Description                                                                     | Param Type | DataType                                      | Required |
 ------------- | ------------------------------------------------------------------------------- | ---------- | --------------------------------------------- | -------- |
-id            | `id` of the IdP                                                                 | URL        | String                                        | TRUE     |
-csrid         | `id` of [CSR model](#identity-provider-csr-model)                               | URL        | String                                        | TRUE     |
+idpId           | `id` of the IdP                                                                 | URL        | String                                        | TRUE     |
+csrModelId         | `id` of [CSR model](#identity-provider-csr-model)                               | URL        | String                                        | TRUE     |
 certificate   | The signed X.509 certificate                                                    | Body       | X.509 certififcate in ``DER``, ``PEM`` or ``CER`` format  | TRUE     |
 
 For ``DER`` and ``CER`` formated certificate, the client can either post in binary or in base64 encoded. If the post is base64 encoded, the ``Content-Transfer-Encoding`` header should be set to ``base64``.
@@ -3322,7 +3335,8 @@ curl -v -X POST \
 -H "Content-Type: application/x-x509-ca-cert" \
 -H "Authorization: SSWS ${api_token}" \
 --data-binary @certificate.cer \
-"https://{yourOktaDomain}.com/api/v1/idps/0oa1ysid1U3iyFqLu0g4/credentials/csrs/h9zkutaSe7fZX0SwN1GqDApofgD1OW8g2B5l2azha50/lifecycle/publish"
+-d '{
+}' "https://{yourOktaDomain}.com/api/v1/idps/0oa1ysid1U3iyFqLu0g4/credentials/csrs/h9zkutaSe7fZX0SwN1GqDApofgD1OW8g2B5l2azha50/lifecycle/publish"
 ~~~
 
 ##### Response Example
@@ -3371,7 +3385,7 @@ Content-Type: application/json
 ### Revoke Signing CSR from IdP
 {:.api .api-operation}
 
-{% api_operation delete /api/v1/idps/*:id*/credentials/csrs/*:csrid* %}
+{{< api_operation delete "/api/v1/idps/${idpId}/credentials/csrs/${csrModelId}" >}}
 
 Revoke a CSR and delete the key pair from the IdP
 
@@ -3380,8 +3394,8 @@ Revoke a CSR and delete the key pair from the IdP
 
 Parameter | Description                                     | Param Type | DataType | Required |
 --------- | ----------------------------------------------- | ---------- | -------- | -------- |
-id        | `id` of the IdP                                 | URL        | String   | TRUE     |
-csrid     | `id` of [CSR model](#identity-provider-csr-model)     | URL        | String   | TRUE     |
+idpId       | `id` of the IdP                                 | URL        | String   | TRUE     |
+csrModelId     | `id` of [CSR model](#identity-provider-csr-model)     | URL        | String   | TRUE     |
 
 ##### Response Parameters
 {:.api .api-response .api-response-params}
@@ -3396,7 +3410,8 @@ curl -v -X DELETE \
 -H "Accept: application/json" \
 -H "Content-Type: application/json" \
 -H "Authorization: SSWS ${api_token}" \
-"https://{yourOktaDomain}.com/api/v1/idps/0oad5lTSBOMUBOBVVQSC/credentials/csrs/-_-BFwAGoUYN-DDvsSKQFdx7OXaPZqrEPpFDO1hu-rg"
+-d '{
+}' "https://{yourOktaDomain}.com/api/v1/idps/0oad5lTSBOMUBOBVVQSC/credentials/csrs/-_-BFwAGoUYN-DDvsSKQFdx7OXaPZqrEPpFDO1hu-rg"
 ~~~
 
 ##### Response Example
@@ -3409,7 +3424,7 @@ HTTP/1.1 204 No Content
 ### List Signing CSRs for IdP
 {:.api .api-operation}
 
-{% api_operation get /api/v1/idps/*:id*/credentials/csrs %}
+{{< api_operation get "/api/v1/idps/${idpId}/credentials/csrs" >}}
 
 Enumerates signing CSRs for an IdP
 
@@ -3418,7 +3433,7 @@ Enumerates signing CSRs for an IdP
 
 Parameter     | Description                                     | Param Type | DataType                                      | Required |
 ------------- | ----------------------------------------------- | ---------- | --------------------------------------------- | -------- |
-id            | `id` of the IdP                                 | URL        | String                                        | TRUE     |
+idpId           | `id` of the IdP                                 | URL        | String                                        | TRUE     |
 
 ##### Response Parameters
 {:.api .api-response .api-response-params}
@@ -3498,17 +3513,17 @@ curl -v -X GET \
 ### Get Signing CSR for IdP
 {:.api .api-operation}
 
-{% api_operation get /api/v1/idps/*:id*/credentials/csrs/*:csrid* %}
+{{< api_operation get "/api/v1/idps/${idpId}/credentials/csrs/${csrModelId}" >}}
 
-Gets a specific [CSR model](#identity-provider-csr-model) by `csrid`
+Gets a specific [CSR model](#identity-provider-csr-model) by `id`
 
 ##### Request Parameters
 {:.api .api-request .api-request-params}
 
 Parameter     | Description                                                                     | Param Type | DataType                                      | Required |
 ------------- | ------------------------------------------------------------------------------- | ---------- | --------------------------------------------- | -------- |
-id            | `id` of the IdP                                                                 | URL        | String                                        | TRUE     |
-csrid         | `id` of [CSR model](#identity-provider-csr-model)                               | URL        | String                                        | TRUE     |
+idpId           | `id` of the IdP                                                                 | URL        | String                                        | TRUE     |
+csrModelId         | `id` of [CSR model](#identity-provider-csr-model)                               | URL        | String                                        | TRUE     |
 
 ##### Response Parameters
 {:.api .api-response .api-response-params}
@@ -3560,10 +3575,77 @@ curl -v -X GET \
 
 ## Identity Provider User Operations
 
+### Find Users
+{:.api .api-operation}
+
+{{< api_operation get "/api/v1/idps/${idpId}/users" >}}
+
+Find all the users linked to an identity provider
+
+##### Request Parameters
+{:.api .api-request .api-request-params}
+
+Parameter | Description             | Param Type | DataType | Required |
+--------- | ----------------------- | ---------- | -------- | -------- |
+idpId       | `id` of IdP to search   | URL        | String   | TRUE     |
+
+##### Response Parameters
+{:.api .api-response .api-response-params}
+
+List of the users that are linked to the specified identity provider
+
+##### Request Example
+
+~~~sh
+curl -v -X GET \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-H "Authorization: SSWS ${api_token}" \
+ "GET https://{yourOktaDomain}.com/api/v1/idps/0oa4lb6lbtmH355Hx0h7/users"
+~~~
+
+##### Response Example
+
+~~~json
+[
+  {
+      "id": "00u5cl9lo7nMjHjPr0h7",
+      "externalId": "109912936038778",
+      "created": "2015-11-03T19:10:11.000Z",
+      "lastUpdated": "2015-11-03T19:11:49.000Z",
+      "profile": {
+          "firstName": "Carol",
+          "middleName": "Lee",
+          "lastName": "Johnson",
+          "email": "carol_johnson@tfbnw.net",
+          "displayName": "Carol Johnson",
+          "profile": "https://www.facebook.com/app_scoped_user_id/109912936038778/"
+      },
+      "_links": {
+        "self": {
+          "href": "https://{yourOktaDomain}.com/api/v1/idps/0oa4lb6lbtmH355Hx0h7/users/00u5cl9lo7nMjHjPr0h7",
+          "hints": {
+              "allow": [
+                  "GET",
+                  "DELETE"
+                ]
+          }
+        },
+        "idp": {
+            "href": "https://{yourOktaDomain}.com/api/v1/idps/0oa4lb6lbtmH355Hx0h7"
+        },
+        "user": {
+            "href": "https://{yourOktaDomain}.com/api/v1/users/00u5cl9lo7nMjHjPr0h7"
+        }
+     }
+  }
+]
+~~~
+
 ### List IdPs Associated with a User
 {:.api .api-operation}
 
-{% api_operation GET /api/v1/users/*:uid*/idps %}
+{{< api_operation GET "/api/v1/users/${userId}/idps" >}}
 
 Lists the IdPs associated with the user. This endpoint doesn't support the SAML2 [Identity Provider Type](#identity-provider-type).
 
@@ -3572,7 +3654,7 @@ Lists the IdPs associated with the user. This endpoint doesn't support the SAML2
 
 Parameter     | Description                                                                     | Param Type | DataType                                      | Required |
 ------------- | ------------------------------------------------------------------------------- | ---------- | --------------------------------------------- | -------- |
-uid           | `id` of the Okta User                                                           | URL        | String                                        | TRUE     |
+userId           | `id` of a user                                                           | URL        | String                                        | TRUE     |
 
 ##### Response Parameters
 {:.api .api-response .api-response-params}
@@ -3587,7 +3669,8 @@ curl -v -X GET \
 -H "Accept: application/json" \
 -H "Content-Type: application/json" \
 -H "Authorization: SSWS ${api_token}" \
-"https://{yourOktaDomain}.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/idps"
+-d '{
+}' "https://{yourOktaDomain}.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/idps"
 ~~~
 
 ##### Response Example
@@ -3704,7 +3787,7 @@ Content-Type: application/json
 ### Get a Linked Identity Provider User 
 {:.api .api-operation}
 
-{% api_operation GET /api/v1/idps/*:id*/users/*:uid* %}
+{{< api_operation GET "/api/v1/idps/${idpId}/users/${userId}" >}}
 
 Fetches a linked [IdP user](#identity-provider-user-model) by ID. This endpoint doesn't support the SAML2 [Identity Provider Type](#identity-provider-type).
 
@@ -3713,8 +3796,8 @@ Fetches a linked [IdP user](#identity-provider-user-model) by ID. This endpoint 
 
 Parameter     | Description                                                                     | Param Type | DataType                                      | Required |
 ------------- | ------------------------------------------------------------------------------- | ---------- | --------------------------------------------- | -------- |
-id | ID of the [Identity Provider](#identity-provider-model) | URL | String | TRUE |
-uid           | ID of the Okta User                                                           | URL        | String                                        | TRUE     |
+idpId| ID of the [Identity Provider](#identity-provider-model) | URL | String | TRUE |
+userId           | `id` of a user                                                           | URL        | String                                        | TRUE     |
 
 ##### Response Parameters
 {:.api .api-response .api-response-params}
@@ -3789,7 +3872,7 @@ Content-Type: application/json
 ### Link a User to a Social Provider without a Transaction
 {:.api .api-operation}
 
-{% api_operation POST /api/v1/idps/*:id*/users/*:uid* %}
+{{< api_operation POST "/api/v1/idps/${idpId}/users/${userId}" >}}
 
 Links an Okta user to an existing [social provider](#identity-provider-model). This endpoint doesn't support the SAML2 [Identity Provider Type](#identity-provider-type).
 
@@ -3798,8 +3881,8 @@ Links an Okta user to an existing [social provider](#identity-provider-model). T
 
 Parameter     | Description                                                                     | Param Type | DataType                                      | Required |
 ------------- | ------------------------------------------------------------------------------- | ---------- | --------------------------------------------- | -------- |
-id            | `id` of the IdP                                                                 | URL        | String                                        | TRUE     |
-uid           | `id` of the Okta User                                                           | URL        | String                                        | TRUE     |
+idpId           | `id` of the IdP                                                                 | URL        | String                                        | TRUE     |
+userId           | `id` of a user                                                           | URL        | String                                        | TRUE     |
 externalId    | unique IdP-specific identifier for user                                         | Body       | String                                        | TRUE     |
 
 ##### Response Parameters
@@ -3864,10 +3947,48 @@ Content-Type: application/json
 }
 ~~~
 
+### Unlink User from IdP
+{:.api .api-operation}
+
+{{< api_operation delete "/api/v1/idps/${idpId}/users/${userId}" >}}
+
+Removes the link between the Okta user and the IdP user.
+The next time the user federates into Okta via this IdP, they have to re-link their account according to the account link policy configured in Okta for this IdP.
+
+##### Request Parameters
+{:.api .api-request .api-request-params}
+
+Parameter | Description             | Param Type | DataType | Required |
+--------- | ----------------------- | ---------- | -------- | -------- |
+idpId       | `id` of IdP to activate | URL        | String   | TRUE     |
+userId       | `id` of user to delete | URL        | String   | TRUE     |
+
+##### Response Parameters
+{:.api .api-response .api-response-params}
+
+
+##### Request Example
+
+~~~sh
+curl -v -X DELETE \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-H "Authorization: SSWS ${api_token}" \
+-d '{
+}' "https://{yourOktaDomain}.com//api/v1/idps/0oa4lb6lbtmH355Hx0h7/users/00u5cl9lo7nMjHjPr0h7"
+~~~
+
+##### Response Example
+
+~~~sh
+204 - No Content
+~~~
+
+
 ### Social Authentication Token Operation
 {:.api .api-operation}
 
-{% api_operation GET /api/v1/idps/*:id*/users/*:uid*/credentials/tokens %}
+{{< api_operation GET "/api/v1/idps/${idpId}/users/${userId}/credentials/tokens" >}}
 
 Okta doesn't import all the user information from a social provider. If the app needs information which isn't imported, it can get the user token from this endpoint, then make an API call to the social provider with the token to request the additional information. 
 
@@ -3876,8 +3997,8 @@ Okta doesn't import all the user information from a social provider. If the app 
 
 Parameter     | Description                                                                     | Param Type | DataType                                      | Required |
 ------------- | ------------------------------------------------------------------------------- | ---------- | --------------------------------------------- | -------- |
-id            | `id` of the IdP                                                                 | URL        | String                                        | TRUE     |
-uid           | `id` of the Okta User                                                           | URL        | String                                        | TRUE     |
+idpId           | `id` of the IdP                                                                 | URL        | String                                        | TRUE     |
+userId           | `id` of a user                                                           | URL        | String                                        | TRUE     |
 
 ##### Response Parameters
 {:.api .api-response .api-response-params}
@@ -3892,6 +4013,7 @@ curl -v -X GET \
 -H "Accept: application/json" \
 -H "Content-Type: application/json" \
 -H "Authorization: SSWS ${api_token}" \
+-d '{
 }' "https://{yourOktaDomain}.com/api/v1/idps/0oa62b57p7c8PaGpU0h7/users/00ub0oNGTSWTBKOLGLNR/credentials/tokens"
 ~~~
 
@@ -4556,7 +4678,7 @@ The IdP Authorization Server (AS) endpoints are currently defined as part of the
 }
 ~~~
 
-##### OAuth 2.0 and Openid Connect Client Credentials Object
+##### OAuth 2.0 and OpenID Connect Client Credentials Object
 
 Client authentication credentials for an [OAuth 2.0 Authorization Server (AS)](https://tools.ietf.org/html/rfc6749#section-2.3).
 
@@ -4998,7 +5120,7 @@ Specifies the behavior for establishing, validating, and matching a username for
 | userNameTemplate | [Okta EL Expression](../getting_started/okta_expression_lang) to generate or transform a unique username for the IdP user     | [UserName Template Object](#username-template-object)  | FALSE    | FALSE    |           |           | [Okta EL Expression](../getting_started/okta_expression_lang)  |
 | filter           | Optional [regular expression pattern](https://en.wikipedia.org/wiki/Regular_expression) used to filter untrusted IdP usernames      | String                                                 | TRUE     | FALSE    | 0         | 1024      |                                                                     |
 | matchType        | Determines the Okta user profile attribute match conditions for account linking and authentication of the transformed IdP username  | `USERNAME`, `EMAIL`, `USERNAME_OR_EMAIL` or `CUSTOM_ATTRIBUTE`      | FALSE    | FALSE    |           |           |
-| matchAttribute        | Okta user profile attribute for matching transformed IdP username. Only for matchType `CUSTOM_ATTRIBUTE` ( {% api_lifecycle ea %}) and `SAML2` IdP  | String      | TRUE    | FALSE    |           |           |  See `matchAttribute` Validation  |
+| matchAttribute        | Okta user profile attribute for matching transformed IdP username. Only for matchType `CUSTOM_ATTRIBUTE` ( {{< api_lifecycle ea >}}) and `SAML2` IdP  | String      | TRUE    | FALSE    |           |           |  See `matchAttribute` Validation  |
 
  matchAttribute Validation
 
@@ -5411,13 +5533,13 @@ All linked IdP users have the following properties:
 
 ### Identity Provider User Profile Object
 
-Identity Provider user profiles are IdP-specific but may be customized by the Profile Editor in the Okta Admin UI.
+Identity Provider user profiles are IdP-specific but may be customized by the Profile Editor in the administrator UI.
 
-{% img okta-admin-ui-profile-editor-idp.png alt:"IdP Profile Editor UI" %}
+<img src="/img/okta-admin-ui-profile-editor-idp.png" alt="IdP Profile Editor UI">
 
 > Okta variable names have reserved characters that may conflict with the name of an IdP assertion attribute.  You can use the **External name** to define the attribute name as defined in an IdP assertion such as a SAML attribute name.
 
-{% img okta-admin-ui-profile-editor-attribute-idp.png alt:"IdP Profile Editor Attribute Modal UI" %}
+<img src="/img/okta-admin-ui-profile-editor-attribute-idp.png" alt="IdP Profile Editor Attribute Modal UI">
 
 #### Example Profile Object
 

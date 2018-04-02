@@ -13,7 +13,7 @@ redirect_from:
 
 A great way to learn an API is to issue requests and inspect the responses. You can easily use our Postman collections to do just that.
 
-{% img okta_postman_logo.png alt:"Postman and an Okta Collection" %}
+<img src="/img/okta_postman_logo.png" alt="Postman and an Okta Collection">
 
 To use these collections, you'll need to set up your local environment and import the collections. Then, you can send a test request and verify the results.
 
@@ -86,7 +86,7 @@ Import any Okta API collection for Postman from the following list:
 | Groups                                    |   [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/0bb414f9594ed93672a0){:target="_blank"} |
 | Identity Providers (IdP)                  |   [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/00a7a643fc0ab3bb54c8){:target="_blank"} |
 | Logs                                      |   [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/9cfb0dd661a5432a77c6){:target="_blank"} |
-| Admin Roles                               |   [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/04f5ec85685ac6f2827e){:target="_blank"} |
+| Administrator Roles                               |   [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/04f5ec85685ac6f2827e){:target="_blank"} |
 | Schemas                                   |   [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/443242e60287fb4b8d6d){:target="_blank"} |
 | Users                                     |   [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/1755573c5cf5fbf7968b){:target="_blank"} |
 | Custom SMS Templates                      |   [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/d71f7946d8d56ccdaa06){:target="_blank"} |
@@ -99,7 +99,7 @@ Now that you have a working collection, you can use the following tips to work m
 
 ### Find IDs for Okta API Requests
 
-Your imported collections contain URLs and JSON request bodies that have sample data with variables such as **\{\{userId\}\}**.
+Your imported collections contain URLs and JSON request bodies that have sample data with variables such as `{{userId}}`.
 Replace URL and body variables with the IDs of the resources you wish to specify.
 
 To find an ID:

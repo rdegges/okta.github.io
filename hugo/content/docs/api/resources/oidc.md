@@ -1,7 +1,9 @@
 ---
 layout: docs_page
 title: OpenID Connect & OAuth 2.0 API
-redirect_from: "/docs/api/resources/oauth2"
+redirect_from: 
+    - "/docs/api/resources/oauth2"
+    - "/docs/how-to/beta-auth-service/api-access-management-troubleshooting"
 ---
 
 # OpenID Connect & OAuth 2.0 API
@@ -28,7 +30,7 @@ This page contains detailed information about the OAuth 2.0 / OpenID Connect end
 
 ### Composing Your Base URL
 
-All of the endpoints on this page start with an authorization server. You have two types of authorization servers to choose from, depending on your use case:
+All of the endpoints on this page start with an authorization server, however the URL for that server will vary depending on the endpoint and the type of authorization server. You have two types of authorization servers to choose from, depending on your use case:
 
 #### 1. Single sign-on to Okta
 
@@ -40,7 +42,7 @@ This is for the use case where your users are all part of your Okta organization
 
 This is for use cases where Okta is the identity and authorization platform for your application or API, so your users will be logging in to something other than Okta. In this case you are using a Custom Authorization Server inside Okta, and your full URL looks like this:
 
-`https://{yourOktaDomain}.com/oauth2/${authorizationServerId}/v1/authorize`
+`https://{yourOktaDomain}.com/oauth2/${authServerId}/v1/authorize`
 
 If you have a developer account, you can use the `default` authorization server that was created along with your account, in which case the full URL looks like this:
 
@@ -49,7 +51,7 @@ If you have a developer account, you can use the `default` authorization server 
 ### /authorize
 {:.api .api-operation}
 
-{% api_operation get ${baseUrl}/v1/authorize %}
+{{< api_operation get "${baseUrl}/v1/authorize" >}}
 
 > This endpoint's base URL will vary depending on whether you are using a custom authorization server or not. For more information, see [Composing Your Base URL](#composing-your-base-url).
 
@@ -65,7 +67,7 @@ of the callback response.
 | client_id             | Obtained during either manual client registration or via the [Dynamic Client Registration API](oauth-clients.html). It identifies the client and must match the value preregistered in Okta.                                                                                                                                                                                                                        | Query      | String   | TRUE     |
 | code_challenge        | A challenge for [PKCE](/authentication-guide/implementing-authentication/auth-code-pkce). The challenge is verified in the access token request.                                                                                                                                                                                                                                                                                                       | Query      | String   | FALSE    |
 | code_challenge_method | Method used to derive the code challenge for [PKCE](/authentication-guide/implementing-authentication/auth-code-pkce). Valid value: `S256`                                                                                                                                                                                                                                                                                                                                               | Query      | String   | FALSE    |
-| display               | How to display the authentication and consent UI. Valid values: `page` or `popup`                                                                                                                                                                                                                                                                                                                      | Query      | String   | FALSE    |
+| display               | How to display the authentication and [consent](/docs/api/resources/apps#add-oauth-20-client-application) UI. Valid value: `page`                                                                                                                                                                                                                                                                                                                      | Query      | String   | FALSE    |
 | idp_scope             | A space delimited list of scopes to be provided to the Social Identity Provider when performing [Social Login](social_authentication.html). These scopes are used in addition to the scopes already configured on the Identity Provider.                                                                                                                                                                 | Query      | String   | FALSE    |
 | [idp](idps.html)       | Identity provider (default is Okta, unless you are using [Social Login](/authentication-guide/social-login/) or enterprise SAML)                                                                                                                                                                                                                                                                                                                                                                      | Query      | String   | FALSE    |
 | login_hint            | A username to prepopulate if prompting for authentication.                                                                                                                                                                                                                                                                                                                                              | Query      | String   | FALSE    |
@@ -236,7 +238,7 @@ https://www.example.com/#error=invalid_scope&error_description=The+requested+sco
 ### /token
 {:.api .api-operation}
 
-{% api_operation post ${baseUrl}/v1/token %}
+{{< api_operation post "${baseUrl}/v1/token" >}}
 
 This endpoint returns access tokens, ID tokens, and refresh tokens, depending on the request parameters. For [password](/authentication-guide/implementing-authentication/password), [client credentials](/authentication-guide/implementing-authentication/client-creds), and [refresh token](/authentication-guide/tokens/refreshing-tokens) flows, calling `/token` is the only step of the flow. For the [authorization code](/authentication-guide/implementing-authentication/auth-code) flow, calling `/token` is the second step of the flow.
 
@@ -333,7 +335,7 @@ Content-Type: application/json;charset=UTF-8
 ### /introspect
 {:.api .api-operation}
 
-{% api_operation post ${baseUrl}/v1/introspect %}
+{{< api_operation post "${baseUrl}/v1/introspect" >}}
 
 > This endpoint's base URL will vary depending on whether you are using a custom authorization server or not. For more information, see [Composing Your Base URL](#composing-your-base-url).
 
@@ -442,7 +444,7 @@ Content-Type: application/json;charset=UTF-8
 {:.api .api-operation}
 
 
-{% api_operation post ${baseUrl}/v1/revoke %}
+{{< api_operation post "${baseUrl}/v1/revoke" >}}
 
 > This endpoint's base URL will vary depending on whether you are using a custom authorization server or not. For more information, see [Composing Your Base URL](#composing-your-base-url).
 
@@ -497,7 +499,7 @@ Content-Type: application/json;charset=UTF-8
 ### /logout
 {:.api .api-operation}
 
-{% api_operation get ${baseUrl}/v1/logout %}
+{{< api_operation get "${baseUrl}/v1/logout" >}}
 
 > This endpoint's base URL will vary depending on whether you are using a custom authorization server or not. For more information, see [Composing Your Base URL](#composing-your-base-url).
 
@@ -560,7 +562,7 @@ Content-Type: application/json;charset=UTF-8
 ### /keys
 {:.api .api-operation}
 
-{% api_operation get ${baseUrl}/v1/keys %}
+{{< api_operation get "${baseUrl}/v1/keys" >}}
 
 > This endpoint's base URL will vary depending on whether you are using a custom authorization server or not. For more information, see [Composing Your Base URL](#composing-your-base-url).
 
@@ -649,7 +651,7 @@ You can use an [introspection request](#introspect) for validation.
 ### /userinfo
 {:.api .api-operation}
 
-{% api_operation get ${baseUrl}/v1/userinfo %}
+{{< api_operation get "${baseUrl}/v1/userinfo" >}}
 
 > This endpoint's base URL will vary depending on whether you are using a custom authorization server or not. For more information, see [Composing Your Base URL](#composing-your-base-url).
 
@@ -713,7 +715,7 @@ WWW-Authenticate: Bearer error="insufficient_scope", error_description="The acce
 ### /.well-known/oauth-authorization-server
 {:.api .api-operation}
 
-{% api_operation get /oauth2/${authorizationServerId}/.well-known/oauth-authorization-server %}
+{% api_operation get /oauth2/${authServerId}/.well-known/oauth-authorization-server %}
 
 > This endpoint is only available on custom authorization servers, so there are no distinct [base URLs](#composing-your-base-url).
 
@@ -726,7 +728,7 @@ Returns OAuth 2.0 metadata related to your custom authorization server. This inf
 
 ~~~sh
 curl -X GET \
-  "https://{yourOktaDomain}.com/oauth2/${authorizationServerId}/.well-known/oauth-authorization-server?client_id=0oabzljih3rnr6aGt0h7" \
+  "https://{yourOktaDomain}.com/oauth2/${authServerId}/.well-known/oauth-authorization-server?client_id=0oabzljih3rnr6aGt0h7" \
 ~~~
 
 #### Response Properties
@@ -761,11 +763,11 @@ curl -X GET \
 
 ~~~json
 {
-    "issuer": "https://{yourOktaDomain}.com/oauth2/${authorizationServerId}",
-    "authorization_endpoint": "https://{yourOktaDomain}.com/oauth2/${authorizationServerId}/v1/authorize",
-    "token_endpoint": "https://{yourOktaDomain}.com/oauth2/${authorizationServerId}/v1/token",
+    "issuer": "https://{yourOktaDomain}.com/oauth2/${authServerId}",
+    "authorization_endpoint": "https://{yourOktaDomain}.com/oauth2/${authServerId}/v1/authorize",
+    "token_endpoint": "https://{yourOktaDomain}.com/oauth2/${authServerId}/v1/token",
     "registration_endpoint": "https://{baseUrl}/clients",
-    "jwks_uri": "https://{yourOktaDomain}.com/oauth2/${authorizationServerId}/v1/keys",
+    "jwks_uri": "https://{yourOktaDomain}.com/oauth2/${authServerId}/v1/keys",
     "response_types_supported": [
         "code",
         "token",
@@ -811,21 +813,21 @@ curl -X GET \
     "code_challenge_methods_supported": [
         "S256"
     ],
-    "introspection_endpoint": "https://{yourOktaDomain}.com/oauth2/${authorizationServerId}/v1/introspect",
+    "introspection_endpoint": "https://{yourOktaDomain}.com/oauth2/${authServerId}/v1/introspect",
     "introspection_endpoint_auth_methods_supported": [
         "client_secret_basic",
         "client_secret_post",
         "client_secret_jwt",
         "none"
     ],
-    "revocation_endpoint": "https://{yourOktaDomain}.com/oauth2/${authorizationServerId}/v1/revoke",
+    "revocation_endpoint": "https://{yourOktaDomain}.com/oauth2/${authServerId}/v1/revoke",
     "revocation_endpoint_auth_methods_supported": [
         "client_secret_basic",
         "client_secret_post",
         "client_secret_jwt",
         "none"
-    ]
-    "end_session_endpoint": "https://{yourOktaDomain}.com/oauth2/${authorizationServerId}/v1/logout",
+    ],
+    "end_session_endpoint": "https://{yourOktaDomain}.com/oauth2/${authServerId}/v1/logout",
     "request_parameter_supported": true,
     "request_object_signing_alg_values_supported": [
         "HS256",
@@ -841,7 +843,7 @@ curl -X GET \
 HTTP 404 Not Found
 {
     "errorCode": "E0000007",
-    "errorSummary": "Not found: Resource not found: ${authorizationServerId} (AuthorizationServer)",
+    "errorSummary": "Not found: Resource not found: ${authServerId} (AuthorizationServer)",
     "errorLink": "E0000007",
     "errorId": "oaeQdc5IvrlSGGnewf-cqqDqA",
     "errorCauses": []
@@ -851,9 +853,11 @@ HTTP 404 Not Found
 ### /.well-known/openid-configuration
 {:.api .api-operation}
 
-{% api_operation get ${baseUrl}/.well-known/openid-configuration %}
+{% api_operation get https://{yourOktaDomain}.com/.well-known/openid-configuration %}
 
-> This endpoint's base URL will vary depending on whether you are using a custom authorization server or not. For more information, see [Composing Your Base URL](#composing-your-base-url).
+{% api_operation get https://{yourOktaDomain}.com/oauth2/${authServerId}/.well-known/openid-configuration %}
+
+> This endpoint's base URL will vary depending on whether you are using a custom authorization server or not. The custom authorization server URL specifies an `authServerId`. For example, the custom Authorization Server automatically created for you by Okta has an `authServerId` value of `default`.
 
 Returns OpenID Connect metadata about your authorization server. This information can be used by clients to programmatically configure their interactions with Okta. Custom scopes and custom claims aren't returned.
 
@@ -864,7 +868,7 @@ This API doesn't require any authentication.
 
 ~~~sh
 curl -X GET \
-  "https:/{yourOktaDomain}.com/oauth2/${authorizationServerId}/.well-known/openid-configuration?client_id=0oabzljih3rnr6aGt0h7" \
+  "https://{yourOktaDomain}.com/oauth2/${authServerId}/.well-known/openid-configuration?client_id=0oabzljih3rnr6aGt0h7" \
 ~~~
 
 #### Response Properties
@@ -872,7 +876,7 @@ curl -X GET \
 
 | Property  | Description                                                                                                   | Type    |
 |:-----------|:-------------------------------------------------------------------------------------------------------------|:--------|
-| authorization endpoint | URL of the authorization server's [authorization endpoint](#authorize). | String |
+| authorization_endpoint | URL of the authorization server's [authorization endpoint](#authorize). | String |
 | claims_supported | A list of the claims supported by this authorization server. | Array |
 | code_challenge_methods_supported| JSON array containing a list of [PKCE code challenge](/authentication-guide/implementing-authentication/auth-code-pkce) methods supported by this authorization server. | Array |
 | end_session_endpoint | URL of the authorization server's [logout endpoint](#logout). | String |
@@ -1009,7 +1013,7 @@ curl -X GET \
 HTTP 404 Not Found
 {
     "errorCode": "E0000007",
-    "errorSummary": "Not found: Resource not found: ${authorizationServerId} (AuthorizationServer)",
+    "errorSummary": "Not found: Resource not found: ${authServerId} (AuthorizationServer)",
     "errorLink": "E0000007",
     "errorId": "oaeQdc5IvrlSGGnewf-cqqDqA",
     "errorCauses": []

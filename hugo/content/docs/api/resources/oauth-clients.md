@@ -12,7 +12,7 @@ OAuth 2.0 and OpenID Connect endpoints. This API largely follows the contract de
 and [OpenID Connect Dynamic Client Registration 1.0](https://openid.net/specs/openid-connect-registration-1_0.html).
 
 Note that clients managed via this API are modeled as applications in Okta and appear in the Applications section of the
-Administrator dashboard. Changes made via the API appear in the UI and vice versa. Tokens issued by these clients
+administrator UI. Changes made via the API appear in the UI and vice versa. Tokens issued by these clients
 follow the rules for Access Tokens and ID Tokens.
 
 ## Getting Started
@@ -24,7 +24,7 @@ Explore the Client Application API: [![Run in Postman](https://run.pstmn.io/butt
 ### Register New Client
 {:.api .api-operation}
 
-{% api_operation post /oauth2/v1/clients %}
+{{< api_operation post "/oauth2/v1/clients" >}}
 
 Adds a new client application to your organization
 
@@ -40,7 +40,7 @@ Adds a new client application to your organization
 
 The [OAuth Client](#client-application-model) created by the request
 
-> {% api_lifecycle beta %} Note: Apps created on `/api/v1/apps` default to `consent_method=TRUSTED`, while those created on `/api/v1/clients` default to `consent_method=REQUIRED`.
+> {{< api_lifecycle beta >}} Note: Apps created on `/api/v1/apps` default to `consent_method=TRUSTED`, while those created on `/api/v1/clients` default to `consent_method=REQUIRED`.
 
 ##### Request Example
 {:.api .api-request .api-request-example}
@@ -126,7 +126,7 @@ Content-Type: application/json
 ### List Client Applications
 {:.api .api-operation}
 
-{% api_operation get /oauth2/v1/clients %}
+{{< api_operation get "/oauth2/v1/clients" >}}
 
 Lists all the client applications in your organization (with optional pagination)
 
@@ -266,7 +266,7 @@ Response body:
 ### List Client Applications Matching a Search Filter
 {:.api .api-operation}
 
-{% api_operation get /oauth2/v1/clients?q=*:term* %}
+{{< api_operation get "/oauth2/v1/clients?q=${term}" >}}
 
 Lists all clients that match a search filter on `client_name`
 
@@ -341,7 +341,7 @@ Response body:
 ### Get OAuth Client
 {:.api .api-operation}
 
-{% api_operation get /oauth2/v1/clients/*:clientId* %}
+{{< api_operation get "/oauth2/v1/clients/${clientId}" >}}
 
 Fetches a specific client by `clientId` from your organization
 
@@ -350,7 +350,7 @@ Fetches a specific client by `clientId` from your organization
 
 | Parameter | Description                      | ParamType | DataType | Required |
 |:----------|:---------------------------------|:----------|:---------|:---------|
-| client_id | `client_id` of a specific client | URL       | String   | TRUE     |
+| clientId| `client_id` of a specific client | URL       | String   | TRUE     |
 
 ##### Response Parameters
 {:.api .api-response .api-response-params}
@@ -419,7 +419,7 @@ Content-Type: application/json
 ### Update Client Application
 {:.api .api-operation}
 
-{% api_operation put /oauth2/v1/clients/*:clientId* %}
+{{< api_operation put "/oauth2/v1/clients/${clientId}" >}}
 
 Updates the settings for a client application from your organization.
 
@@ -428,7 +428,7 @@ Updates the settings for a client application from your organization.
 
 Parameter | Description                        | ParamType | DataType                               | Required |
 --------- | ---------------------------------- | --------- | -------------------------------------- | -------- |
-client_id  | `client_id` of a specific client    | URL       | String                                 | TRUE     |
+clientId | `client_id` of a specific client    | URL       | String                                 | TRUE     |
 settings  | OAuth client registration settings | Body      | [Client Settings](#client-application-model) | TRUE     |
 
 > All settings must be specified when updating a client application, **partial updates are not supported.** If any settings are missing when updating a client application the update fails. The exceptions are: `client_secret_expires_at`, or `client_id_issued_at` must not be included in the request, and the `client_secret` can be omitted.
@@ -523,7 +523,7 @@ Content-Type: application/json;charset=UTF-8
 ### Generate New Client Secret
 {:.api .api-operation}
 
-{% api_operation put /oauth2/v1/clients/*:client_id*/lifecycle/newSecret %}
+{{< api_operation put "/oauth2/v1/clients/${clientId}/lifecycle/newSecret" >}}
 
 Generates a new client secret for the specified client application.
 
@@ -532,7 +532,7 @@ Generates a new client secret for the specified client application.
 
 Parameter | Description                        | ParamType | DataType                               | Required |
 --------- | ---------------------------------- | --------- | -------------------------------------- | -------- |
-client_id  | `client_id` of a specific client    | URL       | String                                 | TRUE     |
+clientId | `client_id` of a specific client    | URL       | String                                 | TRUE     |
 
 > This operation only applies to client applications which use the `client_secret_post` or `client_secret_basic` method for token endpoint authorization.
 
@@ -609,7 +609,7 @@ Content-Type: application/json;charset=UTF-8
 ### Remove Client Application
 {:.api .api-operation}
 
-{% api_operation delete /oauth2/v1/clients/*:client_id* %}
+{{< api_operation delete "/oauth2/v1/clients/${clientId}" >}}
 
 Removes a client application from your organization.
 
@@ -618,7 +618,7 @@ Removes a client application from your organization.
 
 | Parameter | Description                      | ParamType | DataType | Required |
 |:----------|:---------------------------------|:----------|:---------|:---------|
-| client_id | `client_id` of a specific client | URL       | String   | TRUE     |
+| clientId| `client_id` of a specific client | URL       | String   | TRUE     |
 
 ##### Response Parameters
 {:.api .api-response .api-response-params}
@@ -712,8 +712,8 @@ Client applications have the following properties:
 | grant_types                         | Array of OAuth 2.0 grant type strings. Default value: `authorization_code`                                                 | Array of `authorization_code`, `implicit`, `password`, `refresh_token`, `client_credentials` | TRUE     | FALSE  | FALSE     |
 | token_endpoint_auth_method          | requested authentication method for the token endpoint. Default value: `client_secret_basic`                               | `none`, `client_secret_post`, `client_secret_basic`, or `client_secret_jwt`                  | TRUE     | FALSE  | FALSE     |
 | initiate_login_uri                  | URL that a third party can use to initiate a login by the client                                                           | String                                                                                       | TRUE     | FALSE  | FALSE     |
-| tos_uri {% api_lifecycle beta %}    | URL string of a web page providing the client's terms of service document                                                                                         | URL                                                                                          | TRUE     | FALSE  | FALSE     |
-| policy_uri {% api_lifecycle beta %} | URL string of a web page providing the client's policy document                                                                                                   | URL                                                                                          | TRUE     | FALSE  | FALSE     |
+| tos_uri {{< api_lifecycle beta >}}    | URL string of a web page providing the client's terms of service document                                                                                         | URL                                                                                          | TRUE     | FALSE  | FALSE     |
+| policy_uri {{< api_lifecycle beta >}} | URL string of a web page providing the client's policy document                                                                                                   | URL                                                                                          | TRUE     | FALSE  | FALSE     |
 
 Property Details
 
@@ -747,4 +747,3 @@ Property Details
     available to a client influence the `response_types` that the client is allowed to use, and vice versa. For instance, a `grant_types`
     value that includes `authorization_code` implies a `response_types` value that includes `code`, as both values are defined as part of
     the OAuth 2.0 authorization code grant.
-

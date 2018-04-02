@@ -34,5 +34,12 @@ hugo
 
 
 ### Port over the documentation 
-- [] We host our developer documentation in this project as well currently. 
-- [] migrating all the /documentation content.
+- [x] We host our developer documentation in this project as well currently. 
+- [x] migrating all the /documentation content.
+
+## How to migrate tags:
+```bash
+python scripts/hugo_import_jekyll.py --target=_source/_docs/api/resources --source=hugo/content/docs/api/resources
+python scripts/hugo_import_jekyll.py --target=_source/_docs/api/getting_started --output=hugo/content/docs/api/getting_started
+python scripts/hugo_import_jekyll.py --target=_source/_docs/how-to --output=hugo/content/docs/how-to
+```

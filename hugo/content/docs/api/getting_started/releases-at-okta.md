@@ -52,7 +52,7 @@ Beta releases are either high touch or low touch:
 * High-touch Beta releases involve regular contact with Okta, typically consisting of conference calls covering specified use cases, deployment guidance, and feedback.
 * Low-touch Beta releases are self-directed without ongoing support and limited to collecting feedback.
 
-Documentation for features in Beta release is marked with the Beta icon: {% api_lifecycle beta %}
+Documentation for features in Beta release is marked with the Beta icon: {{< api_lifecycle beta >}}
 
 ## Early Access (EA)
 
@@ -68,7 +68,7 @@ Also, although we strive for API-first development, a feature in EA may add func
 
 Any bug fixes or improvements are managed and fixed with the same timeline and processes as those in General Availability.
 
-Features in EA release are marked with the EA icon: {% api_lifecycle ea %}
+Features in EA release are marked with the EA icon: {{< api_lifecycle ea >}}
 
 ## General Availability (GA)
 
@@ -88,14 +88,14 @@ A feature identified as Deprecated is no longer recommended and may be removed i
 The recommended path forward is included in the relevant documentation, libraries, or references.
 When Okta schedules an end-of-life plan, that information is also included.
 
-Documentation for features that have been deprecated are marked with the Deprecated icon: {% api_lifecycle deprecated %}
+Documentation for features that have been deprecated are marked with the Deprecated icon: {{< api_lifecycle deprecated >}}
 
 ## Exceptions to the Beta-EA-GA Lifecycle
 
 Some changes may not go through the full Beta-EA-GA lifecycle:
 
 *  Bug fixes that change only the incorrect behavior of the bug.
-* Cosmetic changes, such as changing the label of a field in the Okta User Interface.
+* Cosmetic changes, such as changing the label of a field in the administrator UI.
 * Changes that are narrow in scope or effect, or purely additive, such as adding a new attribute.
 
 Changes like these may be released to preview orgs any week of the month, and appear in production the next week.
@@ -104,6 +104,6 @@ Other exceptions include:
 
 * Occasionally, a feature is released using an iterative, custom schedule to enable close monitoring.
 Such features may spend more than one month between preview and production for their GA release.
-* Features exposed in the Okta user interface may be EA or GA without the corresponding API being in the same stage of the lifecycle, or available at all.
+* Features exposed in the administrator UI may be EA or GA without the corresponding API being in the same stage of the lifecycle, or available at all.
 
 As with all changes that affect our customers, changes outside the regular Beta-EA-GA lifecycle are reported in the [Okta API Release Notes](/docs/change-log/).

@@ -5,7 +5,7 @@ title: Zones
 
 # Zones API
 
-> This API is an {% api_lifecycle ea %} feature.
+> This API is an {{< api_lifecycle ea >}} feature.
 
 The Okta Zones API provides operations to manage zones in your organization. Zones may be used to guide policy decisions.
 
@@ -16,7 +16,7 @@ IP zones are the only type currently supported by the Zones API. IP zones are us
 ### Create an IP Zone
 {:.api .api-operation}
 
-{% api_operation post /api/v1/zones %}
+{{< api_operation post "/api/v1/zones" >}}
 
 Creates a new IP Zone
 
@@ -161,7 +161,7 @@ curl -X POST
 ~~~
 
 ### Get an IP Zone
-{% api_operation get /api/v1/zones/*:zoneId* %}
+{{< api_operation get "/api/v1/zones/${zoneId}" >}}
 
 Gets an IP zone by id
 
@@ -221,7 +221,7 @@ curl -X GET \
 ~~~
 
 ### List Zones
-{% api_operation get /api/v1/zones %}
+{{< api_operation get "/api/v1/zones" >}}
 
 Lists all zones
 
@@ -532,7 +532,7 @@ curl -X GET \
 ### Update an IP Zone
 {:.api .api-operation}
 
-{% api_operation put /api/v1/zones/*:zoneId* %}
+{{< api_operation put "/api/v1/zones/${zoneId}" >}}
 
 Updates an existing IP Zone
 

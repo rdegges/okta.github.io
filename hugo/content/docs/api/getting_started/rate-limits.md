@@ -3,7 +3,7 @@ layout: docs_page
 title: Rate Limiting at Okta
 weight: 3
 redirect_from:
-  - "/docs/getting_started/design_principles#rate-limiting"
+  - "/docs/getting_started/design_principles"
 excerpt: Understand rate limits at Okta and learn how to design for efficient use of resources
 ---
 
@@ -13,8 +13,8 @@ The number of API requests for an organization is limited for all APIs in order 
 
 Okta has two types of rate limits:
 
-* [Org-wide rate limits](#org-wide-rate-limits) that vary by API endpoint
-* [Concurrent rate limits](#concurrent-rate-limits) on the number of simultaneous transactions regardless of endpoint
+* [Org-wide rate limits](#org-wide-rate-limits) that vary by API endpoint. These limits are applied on a per-minute or per-second basis, and some are also applied on a per-user basis. For example, if your org sends a request to list applications more than one hundred times in a minute, the org-wide rate limit is exceeded. These limits protect against denial-of-service attacks, and help ensure that adequate resources are available for all customers.
+* [Concurrent rate limits](#concurrent-rate-limits) on the number of simultaneous transactions regardless of endpoint. For example, if you sent 77 very long-lasting requests to any API endpoint simultaneously, you might exceed the concurrent rate limit.
 
 Rate limits may be changed to protect customers. We provide advance warning of changes when possible.
 
@@ -36,7 +36,7 @@ When reading the following tables, remember that a more specific limit is consid
 | Authenticate different end users | `/api/v1/authn`                             |   500 |
 | Creating or listing groups | `/api/v1/groups`                                     |   500 |
 | Get, update, or delete a group | `/api/v1/groups/{id}`                       | 1000 |
-| Get System Log data | `/api/v1/logs`                                                |     60 |
+| Get System Log data | `/api/v1/logs`                                                |     120 |
 | Get session information | `/api/v1/sessions`                                    |   750 |
 | Create or list users | `/api/v1/users`                                                 |   600 |
 | Get a user by user ID | `/api/v1/users/{id}`                                       | 2000 |
@@ -76,13 +76,14 @@ The following endpoints are used by the Okta home page for authentication and si
 
 ### End-User Rate Limit
 
-Okta limits the number of requests from the Okta user interface to 40 requests per user per 10 seconds per endpoint. This rate limit protects users from each other, and from other API requests in the system. 
+Okta limits the number of requests from the administrator UI to 40 requests per user per 10 seconds per endpoint. This rate limit protects users from each other, and from other API requests in the system. 
 
-If a user is able to exceed this limit, they are locked out until the rate limit passes, and a message is written to the user interface and the System Log. 
+If a user exceeds this limit, they receive an HTTP 429 response without affecting other users in your org.
+A message is written to the System Log indicating that the end-user rate limit was encountered. 
 
 ## Concurrent Rate Limits
 
-Okta also enforces concurrent rate limits, which are distinct from [the org-wide, per-minute API rate limits](#org-wide-rate-limits).
+In order to protect the service for all customers, Okta enforces concurrent rate limits, a limit on the number of simultaneous transactions. Concurrent rate limits are distinct from [the org-wide, per-minute API rate limits](#org-wide-rate-limits), which measure the total number of transactions per minute. Transactions are typically very short-lived. Even very large bulk loads rarely use more than 10 simultaneous transactions at a time.
 
 For concurrent rate limits, traffic is measured in three different areas. Counts in one area aren't included in counts for the other two:
 
@@ -90,10 +91,11 @@ For concurrent rate limits, traffic is measured in three different areas. Counts
 * For Office365 traffic, the limit is 75 concurrent transactions per org.
 * For all other traffic including API requests, the limit is 75 concurrent transactions per org.
 
-Any request that would cause Okta to exceed the concurrent limit returns an HTTP 429 error, and the first error every 60 seconds is written to the log.
-Reporting concurrent rate limits once a minute keeps log volume manageable. 
+Okta has verified that these limits are sufficient based on current usage. As a result of verification, we increased the limit for some orgs to 150 transactions.
 
->Important: Operations rarely hit the concurrent rate limit: even very large bulk loads rarely use more than 10 threads at a time.
+The first request to exceed the concurrent limit returns an HTTP 429 error, and the first error every sixty seconds is written to the log. Reporting concurrent rate limits once a minute keeps log volume manageable.
+
+> Important: Under normal circumstances, customers don't exceed the concurrency limits. Exceeding them may be an indication of a problem which requires investigation.
 
 ## Check Your Rate Limits with Okta's Rate Limit Headers
 
@@ -139,7 +141,7 @@ X-Rate-Limit-Reset: 1516308901
 The following example show a rate limit header being returned for a request that has exceeded the rate limit for the `/api/v1/users` endpoint:
 
 ~~~http
-HTTP/1.1 200 
+HTTP/1.1 429 
 Date: Tue, 27 Jan 2018 21:33:25 GMT
 X-Rate-Limit-Limit: 600
 X-Rate-Limit-Remaining: 0
@@ -161,7 +163,7 @@ X-Rate-Limit-Reset: 1506461721
 The first two header values are always `0` for concurrent rate limit errors.
 The third header reports an estimated time interval when the concurrent rate limit may be resolved. It is not a guarantee.
 
-The error condition resolves itself as soon as there is another concurrent thread available. No intervention is required.
+The error condition resolves itself as soon as there is another concurrent thread available. Normally, no intervention is required. However, if you notice frequent bursts of 429 errors, or if the concurrent rate limit isn't quickly resolved, you may be exceeding the concurrent rate limit. If you can't identify what is causing you to exceed the limit by examining activity in the log before the burst of 429 errors are logged, {{site.contact_support_lc}}.
 
 
 ### Example Error Response Events for Concurrent Rate Limit
@@ -277,7 +279,7 @@ The error condition resolves itself as soon as there is another concurrent threa
 
 You can request a temporary rate limit increase. For example, if you are importing a large number of users and groups you may need a temporary rate limit increase.
 
-To request an exception, open a case 10 days before you need the increase, with Okta Support and provide the following details:
+To request an exception, {{site.contact_support_lc}} 10 days before you need the increase, and provide the following details:
 
 * Your Org Name: the entire URL, for example https://cloudcompany.okta.com or https://unicorn.oktapreview.com
 * Endpoints and Rates: the URI that need to have their limits increased and how much of an increase is required

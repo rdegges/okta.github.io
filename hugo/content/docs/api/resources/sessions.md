@@ -33,7 +33,7 @@ Explore the Sessions API: [![Run in Postman](https://run.pstmn.io/button.svg)](h
 ### Create Session with Session Token
 {:.api .api-operation}
 
-{% api_operation post /api/v1/sessions %}
+{{< api_operation post "/api/v1/sessions" >}}
 
 Creates a new session for a user with a valid session token. Use this API if, for example, you want to set the session cookie yourself instead of allowing Okta to set it, or want to hold the session ID in order to delete a session via the API instead of visiting the logout URL.
 
@@ -127,11 +127,11 @@ curl -v -X POST \
 #### Get Session
 {:.api .api-operation}
 
-{% api_operation get /api/v1/sessions/*:id* %}
+{{< api_operation get "/api/v1/sessions/${sessionId}" >}}
 
 Get session information for a given session id.
 
-> Note this is an admin operation and requires an API token.
+> Note this is an administrator operation and requires an API token.
 
 ##### Request Example
 {:.api .api-request .api-request-example}
@@ -203,13 +203,13 @@ If the session is invalid, a `404 Not Found` response will be returned.
 ### Extend Session
 {:.api .api-operation}
 
-{% api_operation put /api/v1/sessions/*:id* %} {% api_lifecycle deprecated %}
+{{< api_operation put "/api/v1/sessions/${sessionId}" >}} {{< api_lifecycle deprecated >}}
 
 Extends the lifetime of a user's session.
 
 > This endpoint is deprecated. Use the [Refresh Session](#refresh-session) API instead.
 
-> Note this is an admin operation and requires an API token.
+> Note this is an administrator operation and requires an API token.
 
 ##### Request Parameters
 {:.api .api-request .api-request-params}
@@ -292,9 +292,9 @@ curl -v -X PUT \
 
 Refresh an existing session using the `id` for that session. (This is equivalent to the deprecated [Extend Session](#extend-session) operation).
 
-> Note this is an admin operation and requires an API token.
+> Note this is an administrator operation and requires an API token.
 
-{% api_operation post /api/v1/sessions/*:id*/lifecycle/refresh %}
+{{< api_operation post "/api/v1/sessions/${sessionId}/lifecycle/refresh" >}}
 
 ##### Request Parameters
 {:.api .api-request .api-request-params}
@@ -375,11 +375,11 @@ curl -v -X POST \
 ### Close Session
 {:.api .api-operation}
 
-{% api_operation delete /api/v1/sessions/*:id* %}
+{{< api_operation delete "/api/v1/sessions/${sessionId}" >}}
 
 Closes a user's session (logout).
 
-> Note this is an admin operation and requires an API token.
+> Note this is an administrator operation and requires an API token.
 
 ##### Request Parameters
 {:.api .api-request .api-request-params}
@@ -416,7 +416,7 @@ HTTP/1.1 204 No Content
 ### Get Current Session
 {:.api .api-operation}
 
-{% api_operation get /api/v1/sessions/me %} {% api_cors %}
+{{< api_operation get "/api/v1/sessions/me" >}} {% api_cors %}
 
 Get session information for the current user. Use this method in a browser based application to determine if the user is logged in.
 
@@ -495,7 +495,7 @@ Refresh the session for the current user.
 
 > This operation requires a session cookie for the user. API token is not allowed for this operation.
 
-{% api_operation post /api/v1/sessions/me/lifecycle/refresh %} {% api_cors %}
+{{< api_operation post "/api/v1/sessions/me/lifecycle/refresh" >}} {% api_cors %}
 
 ##### Request Example
 {:.api .api-request .api-request-example}
@@ -564,6 +564,26 @@ If the session is invalid, a `404 Not Found` response will be returned.
 }
 ~~~
 
+#### Option: Use the HTTP Header Prefer
+Okta now supports [the HTTP Header `Prefer`](https://tools.ietf.org/html/rfc7240#section-4.2) in [the Sessions API for refreshing sessions](/docs/api/resources/sessions#refresh-current-session). You can extend the session lifetime, but skip any processing work related to building the response body.
+
+##### Example Request
+~~~sh
+curl -v -X POST \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-H "Prefer: return=minimal" \
+-H "Authorization: SSWS ${api_token}" \
+"https://{yourOktaDomain}.com/api/v1/sessions/me/refresh"
+~~~
+Note: `me` can also be an ID.
+
+##### Example Response
+~~~http
+HTTP/1.1 204 No Content
+Preference-Applied: return=minimal
+~~~
+
 ### Close Current Session
 {:.api .api-request}
 
@@ -571,7 +591,7 @@ Close the session for the currently logged in user. Use this method in a browser
 
 > This operation requires a session cookie for the user. API token is not allowed for this operation.
 
-{% api_operation delete /api/v1/sessions/me %} {% api_cors %}
+{{< api_operation delete "/api/v1/sessions/me" >}} {% api_cors %}
 
 ##### Response Example
 {:.api .api-response .api-response-example}
@@ -667,7 +687,7 @@ Sessions have the following properties:
 | mfaActive                                 | indicates whether the user has [enrolled an MFA factor](factors#list-enrolled-factors) | Boolean                                   | FALSE    | FALSE  | TRUE     |
 |-------------------------------------------+-----------------------------------------------------------------------------------------------+-------------------------------------------+----------+--------+----------|
 
-> The `mfaActive` parameter is a {% api_lifecycle deprecated %} feature. Use the `lastFactorVerification` attribute in conjunction with `amr` to understand if the user has performed MFA for the current session. Use the [Factors API](factors#list-enrolled-factors) to query the factor enrollment status for a given user.
+> The `mfaActive` parameter is a {{< api_lifecycle deprecated >}} feature. Use the `lastFactorVerification` attribute in conjunction with `amr` to understand if the user has performed MFA for the current session. Use the [Factors API](factors#list-enrolled-factors) to query the factor enrollment status for a given user.
 
 #### Optional Session Properties
 
@@ -680,9 +700,9 @@ The [Create Session](#create-session-with-session-token) operation can optionall
 | cookieTokenUrl                                | URL for a a transparent 1x1 pixel image which contains a one-time session token which when visited sets the session cookie in your browser for your organization.                  |
 |-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-> The `cookieToken` is a {% api_lifecycle deprecated %} property. Instead, use the [Authentication API](authn), which supports the full user authentication pipeline and produces a `sessionToken` which can be used in this API.
+> The `cookieToken` is a {{< api_lifecycle deprecated >}} property. Instead, use the [Authentication API](authn), which supports the full user authentication pipeline and produces a `sessionToken` which can be used in this API.
 
-> The `cookieTokenUrl` is a {% api_lifecycle deprecated %} property, because modern browsers block cookies set via embedding images from another origin (cross-domain).
+> The `cookieTokenUrl` is a {{< api_lifecycle deprecated >}} property, because modern browsers block cookies set via embedding images from another origin (cross-domain).
 
 ### Session Status
 
