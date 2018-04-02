@@ -1,23 +1,15 @@
 ---
 layout: blog_post
+title: 'Set Up and Enforce Multi-Factor Authentication with the Okta API'
 author: dogeared
 date: 2018-02-08T00:00:00Z
-description: If you're building an application that needs multi-factor authentication,
-  using Okta is a great way to shortcut the pain. In this short article you'll see
-  how Okta helps simplify multi-factor authentication for your apps!
-redirect_from:
-- /blog/2018/02/07/use-okta-api-for-mfa
-tags:
-- security
-- mfa
-- multi-factor authentication
-- authentication
-- api
-title: Set Up and Enforce Multi-Factor Authentication with the Okta API
+description: "If you're building an application that needs multi-factor authentication, using Okta is a great way to shortcut the pain. In this short article you'll see how Okta helps simplify multi-factor authentication for your apps!"
+tags: [security, mfa, multi-factor authentication, authentication, api]
 tweets:
-- Love APIs & MFA? Watch as @afitnerd walks you through MFA setup with the @Okta API.
-- '@OktaDev <3 APIs. Watch as @afitnerd walks you through MFA setup with the @Okta
-  API.'
+  - "Love APIs & MFA? Watch as @afitnerd walks you through MFA setup with the @Okta API."
+  - "@OktaDev <3 APIs. Watch as @afitnerd walks you through MFA setup with the @Okta API."
+redirect_from:
+  - "/blog/2018/02/07/use-okta-api-for-mfa"
 ---
 
 So, you're building a custom app and you need to include support for multi-factor authentication (MFA). Did you know that [Okta's API](https://developer.okta.com/) can support multi-step MFA workflows?
@@ -35,7 +27,6 @@ I created a screencast to demonstrate how you can manage the whole MFA enrollmen
 </div>
 
 Interested in learning more about secure authentication with Okta? Check out our [Product Documentation](https://developer.okta.com/documentation/), our hands-on [Platform for Developers](https://www.okta.com/services/training/) course, or any of these great posts from our developer blog:
-
 * [Build an App for iOS and Android with Xamarin](/blog/2018/01/10/build-app-for-ios-android-with-xamarin)
 * [Get Started with Spring Security 5.0 and OIDC](/blog/2017/12/18/spring-security-5-oidc)
 * [Use Kong Gateway to Centralize Authentication](/blog/2017/12/04/use-kong-gateway-to-centralize-authentication)

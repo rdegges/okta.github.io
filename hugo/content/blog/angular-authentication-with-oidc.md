@@ -1,19 +1,10 @@
 ---
 layout: blog_post
+title: Angular Authentication with OpenID Connect and Okta in 20 Minutes
 author: mraible
 date: 2017-04-17T00:00:00Z
-description: In this article, you’ll see how build a simple web application with Angular
-  CLI, a tool for Angular development. You’ll also create an application with search
-  and edit features, then add authentication.
-tags:
-- angular
-- authentication
-- oidc
-- openid connect
-- okta
-- typescript
-- angular-cli
-title: Angular Authentication with OpenID Connect and Okta in 20 Minutes
+description: "In this article, you’ll see how build a simple web application with Angular CLI, a tool for Angular development. You’ll also create an application with search and edit features, then add authentication."
+tags: [angular, authentication, oidc, openid connect, okta, typescript, angular-cli]
 ---
 
 Angular (formerly called Angular 2.0) is quickly becoming one of the most powerful ways to build a modern single-page app. A core strength is Angular’s focus on building reusable components, which help you decouple the various concerns in your application. Take authentication, for example: it can be painful to build, but once you wrap it in a component, the authentication logic can be reused throughout your application.
@@ -1115,7 +1106,6 @@ You can find a completed version of the application created in this blog post [o
 * Nov 30, 2017: Updated to use Angular CLI 1.5.5 and angular-oauth2-oidc 3.0.1. See the code changes in the [example app on GitHub](https://github.com/oktadeveloper/okta-angular-openid-connect-example/pull/3/files). Changes to this article can be viewed [in this pull request](https://github.com/okta/okta.github.io/pull/1517).
 * Sep 28, 2017: Updated "create an OIDC app" instructions for the [Okta Developer Console](/blog/2017/09/25/all-new-developer-console).
 * Aug 31, 2017: Updated to use Angular CLI 1.3.2 and angular-oauth2-oidc 2.0.12. See the code changes in the [example app on GitHub](https://github.com/oktadeveloper/okta-angular-openid-connect-example/pull/2/files).
-
 
 
 

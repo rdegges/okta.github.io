@@ -1,19 +1,12 @@
 ---
 layout: blog_post
+title: "Build an App for iOS and Android with Xamarin"
 author: nbarbettini
 date: 2018-01-10T00:00:00Z
-tags:
-- native
-- mobile
-- ios
-- android
-- dotnet
-- xamarin
-title: Build an App for iOS and Android with Xamarin
-tweets:
-- Learn how to use Xamarin to build iOS and Android apps fast →
-- 'Want to build mobile apps? Start with this short #xamarin tutorial by @nbarbettini
-  →'
+tags: [native, mobile, ios, android, dotnet, xamarin]
+tweets: 
+  - "Learn how to use Xamarin to build iOS and Android apps fast →"
+  - "Want to build mobile apps? Start with this short #xamarin tutorial by @nbarbettini →"
 ---
 
 [Xamarin](https://www.xamarin.com/) is a cross-platform technology that makes it possible to build native applications for Android and iOS using a single, shared codebase. Like other technologies such as React Native and NativeScript, it allows development teams to spend less time writing code for both platforms.
@@ -56,7 +49,7 @@ In Visual Studio, choose **File - New Project**, pick the **Cross-Platform** cat
 
 Then, pick the **Blank App** template and the platforms you want to build the app for. Choose **Xamarin.Forms** as the UI Technology, and **.NET Standard** as the Code Sharing Strategy:
 
-<img src="/img/blog/build-app-for-ios-android-with-xamarin/vs-xamarin-new-project-subtype.png" alt="Choose project creation options" width="500"class="center-image">
+<img src="/img/blog/build-app-for-ios-android-with-xamarin/vs-xamarin-new-project-subtype.png" alt="Choose project creation options" width="500" class="center-image">
 
 In Visual Studio for Mac, choose **File - New Solution**, pick the **Multiplatform - App** category, and choose the **Blank Forms App** template:
 

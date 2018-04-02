@@ -1,15 +1,12 @@
 ---
 layout: blog_post
+title: Android Unit Testing Part IV&#58; Mocking
 author: victor_ronin
 date: 2015-04-23T00:00:00Z
+tags: [android, testing]
 redirect_from:
-- /blog/2015-04-14-android-unit-testing-part-4
-tags:
-- android
-- testing
-title: Android Unit Testing Part IV&#58; Mocking
+  - "/blog/2015-04-14-android-unit-testing-part-4"
 ---
-
 *This is the third of a four part series on Android Unit Testing. In
 the last two articles I discussed the [general principles of having
 good

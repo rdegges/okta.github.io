@@ -1,25 +1,14 @@
 ---
 layout: blog_post
+title: "Use Okta (Instead of Local Storage) to Store Your User’s Data Securely"
 author: mraible
 date: 2018-01-23T00:00:00Z
-description: Using an Okta Developer account will allow you to store your cryptocurrency
-  holdings as custom profile attributes instead of using local storage. While LocalStorage
-  is great for demos, using custom profile attributes will allow you to access your
-  data across different devices.
-tags:
-- localstorage
-- cryptocurrency
-- spring-boot
-- java
-- okta-java-sdk
-title: Use Okta (Instead of Local Storage) to Store Your User’s Data Securely
+description: "Using an Okta Developer account will allow you to store your cryptocurrency holdings as custom profile attributes instead of using local storage. While LocalStorage is great for demos, using custom profile attributes will allow you to access your data across different devices."
+tags: [localstorage, cryptocurrency, spring-boot, java, okta-java-sdk]
 tweets:
-- Learn how to use the @okta Java SDK to store custom profile attributes to manage
-  your cryptocurrency portfolio  →
-- Did you know that we provide a @java SDK for talking to our REST API? It's pretty
-  slick. This blog post shows you how to use it to manage custom profile attributes.
+ - "Learn how to use the @okta Java SDK to store custom profile attributes to manage your cryptocurrency portfolio  →"
+ - "Did you know that we provide a @java SDK for talking to our REST API? It's pretty slick. This blog post shows you how to use it to manage custom profile attributes."
 ---
-
 Local Storage is a JavaScript API technically known as `localStorage` that arrived with HTML5. It allows you to store information on a user’s browser quickly and easily. There are many debates on the web as to whether it’s better than cookies. Some say it’s faster (because it doesn’t send data with every request like cookies do) and more secure.
 Whether it’s more secure or not is debatable, especially when compared with secure cookies that have an [HttpOnly flag](https://www.owasp.org/index.php/HttpOnly). It does, however, offer the ability to store a lot more data than cookies. Cookies [can hold up to 4KB](http://browsercookielimits.squawky.net/), while local storage [can hold 5MB or more](https://www.html5rocks.com/en/tutorials/offline/quota-research/), depending on your browser.
 

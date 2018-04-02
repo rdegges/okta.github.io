@@ -23,7 +23,7 @@ This tutorial will take you step by step through scaffolding a Vue.js project, o
 
 Vue.js is a robust but simple Javascript framework. It has one of the lowest barriers to entry of any modern framework while providing all the required features for high performance web applications.
 
-{% img blog/vue-crud-node/vue-homepage.png alt:"Vue.js Homepage" width:"800" %}{: .center-image }
+<img src="/img/blog/vue-crud-node/vue-homepage.png" alt="Vue.js Homepage" width="800" class="center-image">
 
 This tutorial covers two primary builds, a frontend web app and backend REST API server. The frontend will be a single page application (SPA) with a homepage, login and logout, and a posts manager.
 
@@ -64,7 +64,7 @@ npm run dev
 
 Point your favorite browser to `http://localhost:8080` and you should see the fruits of your labor:
 
-{% img blog/vue-crud-node/welcome-to-vue-pwa.png alt:"Welcome to Your Vue.js PWA" width:"800" %}{: .center-image }
+<img src="/img/blog/vue-crud-node/welcome-to-vue-pwa.png" alt="Welcome to Your Vue.js PWA" width="800" class="center-image">
 
 **Extra Credit**: Check out the other [templates](https://github.com/vuejs-templates) available for `vue-cli`.
 
@@ -103,19 +103,19 @@ new Vue({
 
 Dealing with authentication in a web app is the bane of every developer's existence. That's where Okta comes in to secure your web applications with minimal code. To get started, you will need to create an OIDC application in Okta. [Sign up for a forever-free developer account](https://developer.okta.com/signup/) (or log in if you already have one).
 
-{% img blog/vue-crud-node/okta-developer-sign-up.png alt:"Okta Developer Sign Up" width:"800" %}{: .center-image }
+<img src="/img/blog/vue-crud-node/okta-developer-sign-up.png" alt="Okta Developer Sign Up" width="800" class="center-image">
 
 Once logged in, create a new application by clicking "Add Application".
 
-{% img blog/vue-crud-node/add-application.png alt:"Add Application" width:"800" %}{: .center-image }
+<img src="/img/blog/vue-crud-node/add-application.png" alt="Add Application" width="800" class="center-image">
 
 Select the "Single-Page App" platform option.
 
-{% img blog/vue-crud-node/new-application-options.png alt:"New Application Options" width:"800" %}{: .center-image }
+<img src="/img/blog/vue-crud-node/new-application-options.png" alt="New Application Options" width="800" class="center-image">
 
 The default application settings should be the same as those pictured.
 
-{% img blog/vue-crud-node/okta-application-settings.png alt:"Okta Application Settings" width:"800" %}{: .center-image }
+<img src="/img/blog/vue-crud-node/okta-application-settings.png" alt="Okta Application Settings" width="800" class="center-image">
 
 To install the Okta Vue SDK, run the following command:
 
@@ -332,21 +332,21 @@ Create a new file `./src/components/PostsManager.vue` and paste the following co
 
 In your terminal run `npm run dev` (if it's not already running). Navigate to `http://localhost:8080` and you should see the new homepage.
 
-{% img blog/vue-crud-node/new-homepage.png alt:"Hello World" width:"800" %}{: .center-image }
+<img src="/img/blog/vue-crud-node/new-homepage.png" alt="Hello World" width="800" class="center-image">
 
 If you click **Posts Manager** or **Login** you should be directed to Okta's flow.  Enter your Okta dev account credentials.
 
 **NOTE:** If you are logged in to your Okta Developer Account you will be redirected automatically back to the app. You can test this by using incognito or private browsing mode.
 
-{% img blog/vue-crud-node/okta-sign-in.png alt:"Okta Sign-In" width:"800" %}{: .center-image }
+<img src="/img/blog/vue-crud-node/okta-sign-in.png" alt="Okta Sign-In" width="800" class="center-image">
 
 If successful, you should return to the homepage logged in.
 
-{% img blog/vue-crud-node/homepage-authenticated.png alt:"Homepage after logging in" width:"800" %}{: .center-image }
+<img src="/img/blog/vue-crud-node/homepage-authenticated.png" alt="Homepage after logging in" width="800" class="center-image">
 
 Clicking on **Posts Manager** link should render the protected component.
 
-{% img blog/vue-crud-node/posts-manager.png alt:"Posts Manager" width:"800" %}{: .center-image }
+<img src="/img/blog/vue-crud-node/posts-manager.png" alt="Posts Manager" width="800" class="center-image">
 
 ## Add a Backend REST API Server
 
@@ -754,11 +754,11 @@ npm run dev
 
 Navigate to `http://localhost:8080` and give it a whirl.
 
-{% img blog/vue-crud-node/new-post.png alt:"New Post" width:"800" %}{: .center-image }
+<img src="/img/blog/vue-crud-node/new-post.png" alt="New Post" width="800" class="center-image">
 
-{% img blog/vue-crud-node/new-post-hello-world.png alt:"New Hello World Post" width:"800" %}{: .center-image }
+<img src="/img/blog/vue-crud-node/new-post-hello-world.png" alt="New Hello World Post" width="800" class="center-image">
 
-{% img blog/vue-crud-node/delete-post.png alt:"Delete Post" width:"800" %}{: .center-image }
+<img src="/img/blog/vue-crud-node/delete-post.png" alt="Delete Post" width="800" class="center-image">
 
 
 ## Do More With Vue!

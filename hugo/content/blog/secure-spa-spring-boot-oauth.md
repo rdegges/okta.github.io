@@ -1,23 +1,18 @@
 ---
 layout: blog_post
+title: 'Secure your SPA with Spring Boot and OAuth'
 author: bdemers
 date: 2017-10-27T00:00:00Z
-tags:
-- oauth
-- oauth2
-- oauth2.0
-- oauth 2.0
-- spring
-- spring boot
-- spring security
-title: Secure your SPA with Spring Boot and OAuth
----
+tags: [oauth, oauth2, oauth2.0, oauth 2.0, spring, spring boot, spring security]
+--- 
 
 If you have a JavaScript single-page application (SPA) that needs to securely access resources from a Spring Boot application, you likely want to use the OAuth 2.0 implicit flow! With this flow your client will send a bearer token with each request and your server side application will verify the token with an Identity Provider (IdP). This allows your resource server to trust that your client is authorized to make the request. In OAuth terms your SPA is the client and your Spring Boot application is the Resource Server. For a more detailed explanation on the various OAuth flows take a look at our [What the Heck is OAuth](/blog/2017/06/21/what-the-heck-is-oauth) post.
 
 Today you are going to build two small applications that demonstrate these principles in action: a simple SPA client app with a little bit of JQuery and a backend service with Spring Boot. You'll start out by using the standard Spring OAuth bits and then switch to the Okta Spring Boot Starter and check out its added features. Obviously (this is the Okta developer blog), you'll be using Okta for your IdP, but the first sections will be vendor agnostic.
 
 ## Create a Spring Boot Application
+
+**Update:** You must use Spring Boot version 1.5.x. 
 
 If you haven't tried out [start.spring.io](https://start.spring.io) go check it out right now... with a couple of clicks it will get you a basic, runnable Spring Boot Application.
 
@@ -28,6 +23,7 @@ curl https://start.spring.io/starter.tgz \
  -d language=java \
  -d type=maven-project \
  -d baseDir=oauth-implicit-example \
+ -d bootVersion=1.5.8.RELEASE \
  | tar -xzvf -
 ```
 

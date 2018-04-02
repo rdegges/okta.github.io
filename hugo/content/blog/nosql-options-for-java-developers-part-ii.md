@@ -1,24 +1,13 @@
 ---
 layout: blog_post
+title: 'NoSQL Options for Java Developers, Part II'
 author: mraible
 date: 2017-10-10T00:00:00Z
-description: A follow up article to NoSQL Options for Java Developers. This article
-  asks a number of experts if they agree that the top five NoSQL options are MongoDB,
-  Redis, Cassandra, Neo4j, and PostgreSQL.
+description: "A follow up article to NoSQL Options for Java Developers. This article asks a number of experts if they agree that the top five NoSQL options are MongoDB, Redis, Cassandra, Neo4j, and PostgreSQL."
+tags: [nosql, java, redis, mongodb, cassandra, neo4j, postgresql, spring boot, spring data]
 redirect_from:
-- /blog/2017/09/08/nosql-options-for-java-developers-part-ii
-- /blog/2017/10/11/nosql-options-for-java-developers-part-ii
-tags:
-- nosql
-- java
-- redis
-- mongodb
-- cassandra
-- neo4j
-- postgresql
-- spring boot
-- spring data
-title: NoSQL Options for Java Developers, Part II
+  - "/blog/2017/09/08/nosql-options-for-java-developers-part-ii"
+  - "/blog/2017/10/11/nosql-options-for-java-developers-part-ii"
 ---
 
 Last month, I wrote about [NoSQL Options for Java Developers](/blog/2017/09/08/nosql-options-for-java-developers). I analyzed the data available from a variety of sources (Indeed jobs, GitHub stars, Stack Overflow tags) to pick the top five options: MongoDB, Redis, Cassandra, Neo4j, and PostgreSQL. After writing this article, I shared it with a few experts I know in the Java and NoSQL communities and asked them the following questions:
@@ -145,6 +134,5 @@ Other teams use Redis and Couchbase a lot, but I cannot really give you many det
 **Laurent:** There are roughly two reasons to go NoSQL. Scale or non relational storage. Anyone looking into NoSQL for scale should read [Aphyr's blog post series](https://aphyr.com/tags/jepsen) before making any choice.
         
 Thanks to Justin, Rafal, Vlad, and Laurent for sharing all their NoSQL knowledge! I hope you learned something from these questions and answers.
-
 
 

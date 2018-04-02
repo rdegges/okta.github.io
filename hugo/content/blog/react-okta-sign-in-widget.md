@@ -1,13 +1,9 @@
 ---
 layout: blog_post
+title: Build a React Application with User Authentication in 15 Minutes
 author: leebrandt
 date: 2017-03-30T00:00:00Z
-tags:
-- react
-- sign-in widget
-- okta
-- es6
-title: Build a React Application with User Authentication in 15 Minutes
+tags: [react, sign-in widget, okta, es6]
 ---
 
 React has quickly become one of the most favored front-end web frameworks, and is second only to plain old HTML5, [according to JAXenter](https://jaxenter.com/technology-trends-2017-top-frameworks-131993.html). So it’s no surprise that [developers are learning it](https://www.lynda.com/React-js-training-tutorials/7049-0.html), and [employers are asking for it](https://stackoverflow.com/jobs?sort=i&q=ReactJS).

@@ -1,21 +1,15 @@
 ---
 layout: blog_post
+title: 'Build a Cryptocurrency Comparison Site with Vue.js'
 author: rdegges
 date: 2017-09-06T00:00:00Z
-description: In this article you'll learn how to build a simple static website using
-  Vue.js that shows you the current prices of the top 10 cryptocurrencies as well
-  as a lot of other data.
-tags:
-- vuejs
-- javascript
-- bitcoin
-- cryptocurrency
-title: Build a Cryptocurrency Comparison Site with Vue.js
+description: "In this article you'll learn how to build a simple static website using Vue.js that shows you the current prices of the top 10 cryptocurrencies as well as a lot of other data."
+tags: [vuejs, javascript, bitcoin, cryptocurrency]
 tweets:
-- Like cryptocurrencies? Like @vuejs? Let's build something fun! <3
-- Spend your next hour building a fun cryptocurrency website instead of scrolling
-  through twitter
+    - "Like cryptocurrencies? Like @vuejs? Let's build something fun! <3"
+    - "Spend your next hour building a fun cryptocurrency website instead of scrolling through twitter"
 ---
+
 
 [Vue.js][] is a simple JavaScript framework that lets you build dynamic front-end
 web applications. Lots of people compare it to [React][] and [Angular][].
@@ -109,7 +103,7 @@ As you can see in the example above, I'm defining a new `data` object inside the
 telling Vue that I'd like it to manage a message for me.
 
 
-You'll also notice that my HTML code now contains a variable: `{{ message }}`.
+You'll also notice that my HTML code now contains a variable: `{% raw %}{{ message }}{% endraw %}`.
 After Vue starts up, and scans the `app` div for code, it will start replacing any
 variables it finds with the related `data` objects you've defined.
 

@@ -1,17 +1,10 @@
 ---
 layout: blog_post
+title: "The Lazy Developer's Guide to Authentication with Vue.js"
 author: mraible
 date: 2017-09-14T00:00:00Z
-description: This article shows you how to add authentication to a Vue.js application
-  using the Okta Auth SDK and Okta API.
-tags:
-- authentication
-- auth
-- vue.js
-- vue
-- oidc
-- lazy developer
-title: The Lazy Developer's Guide to Authentication with Vue.js
+description: "This article shows you how to add authentication to a Vue.js application using the Okta Auth SDK and Okta API."
+tags: [authentication, auth, vue.js, vue, oidc, lazy developer]
 ---
 
 I’ll happily admit that like many of you, I’m a lazy developer. I tend to look for solutions someone else has already built before I try to build them myself. In the “old days” of the early 2000s, I used to spend a lot more time coding solutions myself. But today many solutions to coding problems are just a keyword search away. In that spirit, I approached this tutorial using keywords – looking for existing solutions first, then fitting my favorite solution on top of it. I think you’ll like the results!

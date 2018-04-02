@@ -1,28 +1,13 @@
 ---
 layout: blog_post
+title: 'Secure a Spring Microservices Architecture with Spring Security, JWTs, Juiser, and Okta'
 author: mraible
 date: 2017-08-08T00:00:00Z
-description: This tutorial shows you how you can use Spring Security, Okta, and a
-  few Java libraries to secure your microservices architecture. Not only that, but
-  I'll show you how to protect everything, so even your backend services can communicate
-  securely!
-tags:
-- spring
-- microservices
-- spring security
-- jwt
-- juiser
-- java
-- okta sign-in widget
-title: Secure a Spring Microservices Architecture with Spring Security, JWTs, Juiser,
-  and Okta
-tweets:
-- 'You''ve built a microservices architecture with Spring Boot and Spring Cloud. But
-  what about security? This tutorial shows you how to lock everything down with Spring
-  Security. '
-- 'Learn how to use Juiser + @SpringSecurity to lock down your microservices architecture
-  and not share keys between your gateway/load balancer and backend servers (gateway
-  + microservices). '
+description: "This tutorial shows you how you can use Spring Security, Okta, and a few Java libraries to secure your microservices architecture. Not only that, but I'll show you how to protect everything, so even your backend services can communicate securely!"
+tweets: 
+    - "You've built a microservices architecture with Spring Boot and Spring Cloud. But what about security? This tutorial shows you how to lock everything down with Spring Security. "
+    - "Learn how to use Juiser + @SpringSecurity to lock down your microservices architecture and not share keys between your gateway/load balancer and backend servers (gateway + microservices). "
+tags: [spring, microservices, spring security, jwt, juiser, java, okta sign-in widget]
 ---
 
 You've built a microservices architecture with Spring Boot and Spring Cloud. You're happy with the results, and you like how it adds resiliency to your application. You're also pleased with how it scales and how different teams can deploy microservices independently. But what about security? 
@@ -85,9 +70,7 @@ export OKTA_AUTHORIZATIONSERVER_ID=default
 
 ## Add Stormpath's Zuul Support to the Edge Service
 
-> **NOTE:** I'm using Stormpath's Java SDK in this example. It has been updated to work with Okta's API. We plan to release 
-Okta libraries that have this same functionality soon. I'll make sure to update this post when the Okta Zuul support has 
-been released.
+> **NOTE:** I'm using Stormpath's Java SDK in this example. It has been updated to work with Okta's API. If you'd like to see how to do this same tutorial using Spring Security and its OAuth support, please [Secure a Spring Microservices Architecture with OAuth 2.0](/blog/2018/02/13/secure-spring-microservices-with-oauth).
 
 The **edge-service** application handles the routing to the backend `beer-catalog-service`, so it's the best place to start securing things. Add the Stormpath BOM (Bill Of Materials) in the `dependencyManagement` section of `edge-service/pom.xml`.
 
@@ -754,6 +737,8 @@ git checkout okta
 ```
 
 Learn more about Okta and its APIs at [developer.okta.com](http://developer.okta.com). If you have questions about this tutorial, please hit me up on Twitter [@mraible](https://twitter.com/mraible) or post a question to [Stack Overflow with an “okta” tag](https://stackoverflow.com/questions/tagged/okta).
+
+**Update:** To learn how to lock down this application with Spring Security and OAuth, see [Secure a Spring Microservices Architecture with Spring Security and OAuth 2.0](/blog/2018/02/13/secure-spring-microservices-with-oauth).
 
 **Changelog:**
 

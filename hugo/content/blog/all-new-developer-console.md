@@ -1,10 +1,9 @@
 ---
 layout: blog_post
+title: "The Okta Developer Console: All New, All You"
 author: robert
 date: 2017-09-25T00:00:00Z
-tags:
-- okta
-title: 'The Okta Developer Console: All New, All You'
+tags: [okta]
 ---
 
 Hello Okta Blogosphere! Another [Stormpath transplant](https://www.okta.com/blog/2017/03/stormpath-welcome-to-Okta/) here! As you know, the Okta developer experience team has been working hard to make it easier for YOU to work hard... on integrating your applications with Okta. We recently launched an update to our Developer Console, an all-new Okta experience that is catered to your needs as an application developer.  In this post we’ll discuss the new features, and why we built it the way we did.

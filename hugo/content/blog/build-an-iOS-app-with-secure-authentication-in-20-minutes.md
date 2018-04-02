@@ -1,15 +1,9 @@
 ---
 layout: blog_post
+title: 'Build an iOS App with Secure Authentication in 20 Minutes'
 author: jmelberg
 date: 2017-11-20T00:00:00Z
-tags:
-- authentication
-- oidc
-- ios
-- swift
-- cocoapods
-- oauth
-title: Build an iOS App with Secure Authentication in 20 Minutes
+tags: [authentication, oidc, ios, swift, cocoapods, oauth]
 ---
 
 What does it take to build a successful mobile application in today’s ever-changing market? There are (what seems like an infinite) number of design, build, and test cycles performed, just to release your app into the hands of a user.
@@ -151,7 +145,7 @@ If there is a successful login event, our application is bounced back to the mai
 Now, let's see it in action!
 
 ## Run your App in the Simulator
-To build and run your iOS application, use the Xcode [Simulator](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/iOS_Simulator_Guide/Introduction/Introduction.html).
+To build and run your iOS application, use the Xcode [Simulator](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/simulator_help_topics/Chapter/Chapter.html).
   - Click the ▶️  button on the top-left of your editor.
   - Alternatively, select **Run** under the **Product** toolbar to launch the default simulator.
 

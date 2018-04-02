@@ -1,19 +1,15 @@
 ---
 layout: blog_post
+title: "Three Developer Tools I'm Thankful For"
 author: rdegges
 date: 2017-11-22T00:00:00Z
-description: What developer tools do you use every day? To celebrate Thanksgiving,
-  here's a list of Randall Degges' favorite developer tools. Learn why he likes them
-  and how they can help you.
-redirect_from:
-- /blog/2017/11/22/three-developer-tools-im-thankful-for
-tags:
-- holiday
-- tools
-title: Three Developer Tools I'm Thankful For
+description: "What developer tools do you use every day? To celebrate Thanksgiving, here's a list of Randall Degges' favorite developer tools. Learn why he likes them and how they can help you."
+tags: [holiday, tools]
 tweets:
-- '@rdegges really likes zsh, vim, and tmux. What about you?'
-- What developer tools are you thankful for?
+    - "@rdegges really likes zsh, vim, and tmux. What about you?"
+    - "What developer tools are you thankful for?"
+redirect_from:
+    - "/blog/2017/11/22/three-developer-tools-im-thankful-for"
 ---
 
 I’ve been writing code since I was 12 years old. When I first got started, I

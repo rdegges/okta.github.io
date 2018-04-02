@@ -2,6 +2,7 @@
 layout: blog_post
 title: "Everything You Need to Know About the Twelve-Factor App"
 author: rdegges
+date: 2018-03-30T00:00:00Z
 description: "A breakdown of the twelve-factor app pattern and how you can use it to build more secure web services."
 tags: [twelve-factor, best practices, patterns]
 tweets:
@@ -9,7 +10,7 @@ tweets:
 - "Familiar with the twelve-factor app? If not, you'll want to read this:"
 ---
 
-{% img blog/twelve-factor/twelve-factor.png alt:"the twelve-factor app" width:"800" %}{: .center-image }
+<img src="/img/blog/twelve-factor/twelve-factor.png" alt="the twelve-factor app" width="800" class="center-image">
 
 Ever heard of the [twelve-factor app](https://12factor.net/)? Earlier this week I was scrolling through one of my favorite websites, [Hacker News](https://news.ycombinator.com/), and stumbled across the twelve-factor app for the first time.
 
@@ -22,7 +23,7 @@ My hope is that this guide shows you how you can make any web app far more secur
 
 ## Why You Need Twelve Factor
 
-{% img blog/twelve-factor/stick-figure-teacher.png alt:"stick figure teacher" width:"200" %}{: .center-image }
+<img src="/img/blog/twelve-factor/stick-figure-teacher.png" alt="stick figure teacher" width="200" class="center-image">
 
 The idea behind the [twelve-factor app](https://12factor.net/) app is simple: logging users into websites and mobile apps is insecure. No matter how much time you spend securing your websites and mobile apps, it still isn't enough.
 
@@ -33,7 +34,7 @@ The twelve-factor app is an excellent security pattern designed to dramatically 
 
 ## The Problem with Current Login Technology
 
-{% img blog/twelve-factor/rage-face.png alt:"rage face" width:"200" %}{: .center-image }
+<img src="/img/blog/twelve-factor/rage-face.png" alt="rage face" width="200" class="center-image">
 
 Time for a quick history lesson.
 
@@ -85,7 +86,7 @@ Which brings us to the new official security recommendation of 2018: the twelve-
 
 ## What is the Twelve-Factor App?
 
-{% img blog/twelve-factor/confused-stick-figure.jpg alt:"confused stick figure" width:"100" %}{: .center-image }
+<img src="/img/blog/twelve-factor/confused-stick-figure.jpg" alt="confused stick figure" width="100" class="center-image">
 
 The twelve-factor app is a new best practice for building secure login systems that picks up where multi-factor left off.
 
@@ -113,7 +114,7 @@ Let's say an attacker is able to get a hold of your username/password and your p
 
 ## How to Adopt Twelve-Factor in Your Apps
 
-{% img blog/twelve-factor/stick-figure-beard.jpg alt:"stick figure beard" width:"150" %}{: .center-image }
+<img src="/img/blog/twelve-factor/stick-figure-beard.jpg" alt="stick figure beard" width="150" class="center-image">
 
 The twelve-factor app takes the concept of multi-factor authentication to the next level and is the minimum needed to keep mainstream websites and mobile apps secure.
 
@@ -137,7 +138,7 @@ Please [tweet at me](https://twitter.com/rdegges) if you have any security quest
 <!--
 ## Gotcha!
 
-{% img blog/twelve-factor/stick-figure-happy.gif alt:"stick figure happy" width:"200" %}{: .center-image }
+<img src="/img/blog/twelve-factor/stick-figure-happy.gif" alt="stick figure happy" width="200" class="center-image">
 
 Congratulations on making it this far: happy April Fools' Day!
 
@@ -146,7 +147,7 @@ I'm not insane (*despite what my friends and co-workers might tell you*), and I'
 
 ## What is Twelve-Factor, Really?
 
-{% img blog/twelve-factor/stick-figure-eyeroll.gif alt:"stick figure eyeroll" width:"200" %}{: .center-image }
+<img src="/img/blog/twelve-factor/stick-figure-eyeroll.gif" alt="stick figure eyeroll" width="200" class="center-image">
 
 The [twelve-factor app](https://12factor.net/) is a collection of best practices for building modern web applications. It's called twelve-factor because there are twelve separate guidelines that it recommends every developer follow to build simple and scalable applications:
 
@@ -170,7 +171,7 @@ With that said, it should be obvious that the twelve-factor app has nothing to d
 
 ## Why is Twelve-Factor Authentication Bad?
 
-{% img blog/twelve-factor/stick-figure-thinking.jpg alt:"stick figure thinking" width:"250" %}{: .center-image }
+<img src="/img/blog/twelve-factor/stick-figure-thinking.jpg" alt="stick figure thinking" width="250" class="center-image">
 
 While it's true that more factors provides more security, twelve-factor authentication is bad for a few primary reasons.
 
@@ -185,7 +186,7 @@ Finally, twelve-factor authentication as I laid it out above would also create a
 
 ## Multi-Factor is Good, but Adaptive Multi-Factor is Better
 
-{% img blog/twelve-factor/nerdy-stick-figure.png alt:"nerdy stick figure" width:"200" %}{: .center-image }
+<img src="/img/blog/twelve-factor/nerdy-stick-figure.png" alt="nerdy stick figure" width="200" class="center-image">
 
 Multi-factor authentication is awesome:
 
@@ -211,7 +212,7 @@ Once you've gotten used to adaptive multi-factor, there's no going back. At Okta
 
 ## Best Practices for Secure Login
 
-{% img blog/twelve-factor/stick-figure-officer.gif alt:"stick figure officer" width:"100" %}{: .center-image }
+<img src="/img/blog/twelve-factor/stick-figure-officer.gif" alt="stick figure officer" width="100" class="center-image">
 
 Thanks for reading this far, I hope you had as much fun reading this as I had writing it!
 

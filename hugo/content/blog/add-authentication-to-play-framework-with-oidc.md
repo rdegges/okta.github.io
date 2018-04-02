@@ -1,20 +1,10 @@
 ---
 layout: blog_post
+title: 'Add Authentication to Play Framework with OIDC and Okta'
 author: mraible
 date: 2017-10-31T00:00:00Z
-description: Play Framework is a key component of Lightbend's Lagom microservices
-  framework. This article shows you how to integrate play-pac4j and use its OIDC support
-  to authenticate with Okta.
-tags:
-- authentication
-- play
-- play framework
-- java
-- pac4j
-- play-pac4j
-- oidc
-- oauth
-title: Add Authentication to Play Framework with OIDC and Okta
+description: "Play Framework is a key component of Lightbend's Lagom microservices framework. This article shows you how to integrate play-pac4j and use its OIDC support to authenticate with Okta."
+tags: [authentication, play, play framework, java, pac4j, play-pac4j, oidc, oauth]
 ---
 
 I’ve fallen in love with Play Framework in the past, but then found a more attractive framework in Spring Boot. I fell in love partly because Play was new and sexy at the time, but also because it’s “live reloading" of Java code was a killer feature I’d been looking for. When it added support for Scala in v2.0, I was very excited to learn Scala and discover the power of functional programming. Part of the reason I fell out of love with Play is that I fell *really hard* for Spring Boot. I’d used Spring for ten years before I found Spring Boot, so I knew how most things worked. With Play, I had to learn a lot of new things, and it was difficult to keep up.
@@ -444,4 +434,3 @@ If you’re a Java dev who’s interested in reading more about integrating Okta
 * [Identity, Claims, & Tokens – An OpenID Connect Primer, Part 1 of 3](/blog/2017/07/25/oidc-primer-part-1)
 
 And finally, I’d love to have you follow our whole team on Twitter for more awesome content. Check us out [@oktadev](https://twitter.com/OktaDev)!
-

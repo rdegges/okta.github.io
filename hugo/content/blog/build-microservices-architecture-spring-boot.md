@@ -1,23 +1,14 @@
 ---
 layout: blog_post
+title: 'Build a Microservices Architecture for Microbrews with Spring Boot'
 author: mraible
 date: 2017-06-15T00:00:00Z
-description: This article shows you how to build a microservices architecture with
-  Spring Boot, Netflix Eureka, Feign, and Hystrix.
-tags:
-- microservices
-- spring boot
-- spring cloud
-- netflix eureka
-- java
-title: Build a Microservices Architecture for Microbrews with Spring Boot
+description: "This article shows you how to build a microservices architecture with Spring Boot, Netflix Eureka, Feign, and Hystrix."
+tags: [microservices, spring boot, spring cloud, netflix eureka, java]
 tweets:
-- "Want to see how to build a microservices architecture with Spring Boot, Netflix
-  Eureka, Feign, and Hystrix? We have just the \U0001F39F → "
-- "Do you like good \U0001F37A? If so, you'll \U0001F499 this tutorial that shows
-  you how to build a microservices architecture for microbrews! "
+  - "Want to see how to build a microservices architecture with Spring Boot, Netflix Eureka, Feign, and Hystrix? We have just the 🎟 → "
+  - "Do you like good 🍺? If so, you'll 💙 this tutorial that shows you how to build a microservices architecture for microbrews! "
 ---
-
 Adopting a microservice architecture provides unique opportunities to add failover and resiliency to your systems, so 
 your components can handle load spikes and errors gracefully. Microservices make change less expensive too. It can also 
 be a good idea when you have a large team working on a single product. Your project can likely be broken up into components 
@@ -194,7 +185,6 @@ assumes you’re putting all classes in the same file.
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 @Entity
 class Beer {
 
@@ -238,7 +228,6 @@ If you’re using an editor that doesn’t auto-import classes, here’s the lis
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -486,7 +475,8 @@ Content-Type: application/json;charset=UTF-8
 Date: Wed, 07 Feb 2018 16:51:38 GMT
 Transfer-Encoding: chunked
 X-Application-Context: edge-service:8081
-
+```
+```json
 {
     "error": "Internal Server Error",
     "exception": "feign.RetryableException",
@@ -643,6 +633,8 @@ If you have any questions about this article, you can email me at matt.raible@ok
 or [create an issue on GitHub](https://github.com/oktadeveloper/spring-boot-microservices-example/issues/new).
 
 **Update:** To learn about how security fits into all this, see [Secure a Spring Microservices Architecture with Spring Security, JWTs, Juiser, and Okta](/blog/2017/08/08/secure-spring-microservices).
+
+**Update 2:** To learn how to lock this application down with Spring Security and OAuth, see [Secure a Spring Microservices Architecture with Spring Security and OAuth 2.0](/blog/2018/02/13/secure-spring-microservices-with-oauth).
 
 **Changelog:**
 

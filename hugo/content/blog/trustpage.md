@@ -1,16 +1,10 @@
 ---
 layout: blog_post
+title: The New Age of Trust
 author: vimarsh_karbhari
 date: 2015-06-11T00:00:00Z
-tags:
-- trust
-- trust pages
-- trust relationship
-- product
-- engineering
-- customer success
-- functional design
-title: The New Age of Trust
+tags: [trust, trust pages, trust relationship, product, engineering, customer success, functional design]
+
 ---
 
 I recently read an excellent article about how amazing products shape the **trust relationship** with customers. I think great products are the _first step_ in building a trust relationship. And like other aspects of the product that are derived from the product but are not physically part of it, the trust relationship is now more important than ever before.

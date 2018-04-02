@@ -1,12 +1,9 @@
 ---
 layout: blog_post
+title: Okta Software Engineering Design Principles
 author: jon_todd
 date: 2015-05-08T00:00:00Z
-tags:
-- software_engineering
-- architecture
-- design_principles
-title: Okta Software Engineering Design Principles
+tags: [software_engineering, architecture, design_principles]
 ---
 
 Okta has been an agile development shop since the beginning. One important
@@ -185,7 +182,7 @@ performing code:
   enforce limits and design for infinity.
 * Slow query and frequent query monitoring to detect poor access patterns
 
-<img src="/img/2015-05-08-software-engineering-design-principles-more_is_less.jpg" style="max-width:300px" alt="if less is more, does that mean more is less?">
+<img src="/img/2015-05-08-software-engineering-design-principles-more_is_less.jpg" style="max-width=300px" alt="if less is more, does that mean more is less?">
 
 ### Reference
 

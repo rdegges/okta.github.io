@@ -1,19 +1,12 @@
 ---
 layout: blog_post
+title: "Build a Secure To-Do App with Vue, ASP.NET Core, and Okta"
 author: nbarbettini
 date: 2018-01-31T00:00:00Z
-tags:
-- vue.js
-- vue
-- oidc
-- dotnet
-- aspnetcore
-title: Build a Secure To-Do App with Vue, ASP.NET Core, and Okta
-tweets:
-- 'ICYMI: @nbarbettini shows how to build a to-do app with #vuejs and #aspnetcore
-  step-by-step'
-- 'In-depth tutorial on building full-stack #vuejs and #aspnetcore apps by our own
-  @nbarbettini'
+tags: [vue.js, vue, oidc, dotnet, aspnetcore]
+tweets: 
+  - "ICYMI: @nbarbettini shows how to build a to-do app with #vuejs and #aspnetcore step-by-step"
+  - "In-depth tutorial on building full-stack #vuejs and #aspnetcore apps by our own @nbarbettini"
 ---
 
 I love lists. I keep everything I need to do (too many things, usually) in a big to-do list, and the list helps keep me sane throughout the day. It's like having a second brain!
@@ -216,7 +209,7 @@ The Dashboard component is responsible for displaying all the user's to-do items
 
 This component has HTML in the `<template>` section, JavaScript in the `<script>` section, and CSS in the `<style>` section, all stored in one `.vue` file. If your Vue components become too large or unwieldy, you can choose to split them into separate HTML, JS, and CSS files as needed.
 
-When you use `{{moustaches}}` or attributes like `v-for` in the component's HTML, Vue.js automatically inserts (or **binds**) data that's available to the component. In this case, you've defined a handful of JavaScript methods in the `computed` section that retrieve things like the user's name and the user's to-do list from the data store. That data is then automatically rendered by Vue. Don't worry about `$store` and `$auth` yet. You'll add these pieces in a few minutes.
+When you use {% raw %}`{{moustaches}}`{% endraw %} or attributes like `v-for` in the component's HTML, Vue.js automatically inserts (or **binds**) data that's available to the component. In this case, you've defined a handful of JavaScript methods in the `computed` section that retrieve things like the user's name and the user's to-do list from the data store. That data is then automatically rendered by Vue. Don't worry about `$store` and `$auth` yet. You'll add these pieces in a few minutes.
 
 Notice the `components: { TodoItem }` line? The Dashboard component relies on another component called TodoItem. Create a file called `TodoItem.vue`:
 

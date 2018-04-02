@@ -1,23 +1,13 @@
 ---
 layout: blog_post
+title: 'Protect Your Cryptocurrency Wealth Tracking PWA with Okta'
 author: mraible
 date: 2018-01-18T00:00:00Z
-description: In this article, you'll learn how to add authentication to an Ionic progressive
-  web app (PWA). You'll also learn how to use cloud services like Okta (for authentication)
-  and Firebase (for hosting) to make things even simpler.
-tags:
-- cryptocurrency
-- ionic
-- authentication
-- oidc
-- angular
-- okta
-title: Protect Your Cryptocurrency Wealth Tracking PWA with Okta
+description: "In this article, you'll learn how to add authentication to an Ionic progressive web app (PWA). You'll also learn how to use cloud services like Okta (for authentication) and Firebase (for hosting) to make things even simpler."
+tags: [cryptocurrency, ionic, authentication, oidc, angular, okta]
 tweets:
-- "Want to learn how to build an @ionicframework app to manage your cryptocurrencies?
-  @joshuamorony has the \U0001F39F! See how to lock it down with @okta →"
-- Leverage OIDC and @okta to add authentication to your cryptocurrency wealth tracking
-  Ionic app →
+  - "Want to learn how to build an @ionicframework app to manage your cryptocurrencies? @joshuamorony has the 🎟! See how to lock it down with @okta →"
+  - "Leverage OIDC and @okta to add authentication to your cryptocurrency wealth tracking Ionic app →"
 ---
 
 Cryptocurrencies are all the rage. Over the last year, the value of Bitcoin alone has risen 1,603%, driving more and more people to wonder if they're missing out on the "next big thing." Because of the massive influx of money into cryptocurrencies like Bitcoin, Ethereum, Monero, and Ripple &mdash; blockchain technology (which is the foundation of all cryptocurrency) has become an area of intense technical study. At its core, blockchain technology does nothing more than maintain a decentralized log of transactions that can be easily shared across many nodes (miners).
@@ -51,7 +41,7 @@ npm install -g ionic
 
 Run the app so you can see its basic functionality before adding authentication.
 
-| [<img src="/img/blog/cryptocurrency-pwa/crypto-pwa-home.png" alt="Crypto PWA - Home" width="280">](/assets/blog/cryptocurrency-pwa/crypto-pwa-home-d0a91ea78cd6721c87a451cb3adca75bd114751aa71562d017e809b539047a87.png) | [<img src="blog/cryptocurrency-pwa/crypto-pwa-add.png" title="" alt="Crypto PWA - Add" width="280">](/assets/blog/cryptocurrency-pwa/crypto-pwa-add-80d7da9233d958a26ef1b67970f09174944c3d19d20eb712fcbbcf0450e9c94d.png) | [<img src="blog/cryptocurrency-pwa/crypto-pwa-home-btc.png" title="" alt="Crypto PWA - Home with BTC" width="280">](/assets/blog/cryptocurrency-pwa/crypto-pwa-home-btc-ca4b31a2243804ea89de4f68650a8ec4b5d684bef382561529917be2220a5a34.png) |  
+| [{% img blog/cryptocurrency-pwa/crypto-pwa-home.png alt:"Crypto PWA - Home" width:"280" %}](/assets/blog/cryptocurrency-pwa/crypto-pwa-home-d0a91ea78cd6721c87a451cb3adca75bd114751aa71562d017e809b539047a87.png) | [{% img blog/cryptocurrency-pwa/crypto-pwa-add.png alt:"Crypto PWA - Add" width:"280" %}](/assets/blog/cryptocurrency-pwa/crypto-pwa-add-80d7da9233d958a26ef1b67970f09174944c3d19d20eb712fcbbcf0450e9c94d.png) | [{% img blog/cryptocurrency-pwa/crypto-pwa-home-btc.png alt:"Crypto PWA - Home with BTC" width:"280" %}](/assets/blog/cryptocurrency-pwa/crypto-pwa-home-btc-ca4b31a2243804ea89de4f68650a8ec4b5d684bef382561529917be2220a5a34.png) |  
 
 You can verify it works offline &mdash; like a PWA should &mdash; by toggling offline mode in your browser (in Chrome: Developer Tools > Network > Offline).
 
@@ -287,11 +277,11 @@ firebase deploy
 
 I deployed mine to <https://cryptopwa-oidc.firebaseapp.com> and received a [Lighthouse](https://developers.google.com/web/tools/lighthouse/) score of 91. Lighthouse is an automated tool for auditing the quality of web pages. You can run it against any web page to see audits for performance, accessibility, progressive web apps, and more.
 
-<img src="/img/blog/cryptocurrency-pwa/lighthouse-score-okta1.png" alt="Lighthouse Score: 91" width="800" class="center-image">
+<img src="/img/blog/cryptocurrency-pwa/lighthouse-score-okta1.png" alt="Lighthouse Score= 91" width="800" class="center-image">
 
 I compared this with the original tutorial's production instance at <https://cryptopwa.com> and found it received the same score.
 
-<img src="/img/blog/cryptocurrency-pwa/lighthouse-score-original.png" alt="Original Lighthouse Score: 91" width="800" class="center-image">
+<img src="/img/blog/cryptocurrency-pwa/lighthouse-score-original.png" alt="Original Lighthouse Score= 91" width="800" class="center-image">
 
 I scrolled down my report to see why I didn't receive a perfect 💯. I had two failed audits:
 
@@ -321,7 +311,7 @@ firebase deploy
 
 Rerunning Lighthouse should give you a perfect PWA score of 100. *Huzzah!*
 
-<img src="/img/blog/cryptocurrency-pwa/huzzah.png" alt="Lighthouse Score: 100" width="800" class="center-image">
+<img src="/img/blog/cryptocurrency-pwa/huzzah.png" alt="Lighthouse Score= 100" width="800" class="center-image">
 
 ## Learn More About Ionic and PWAs
 

@@ -1,30 +1,14 @@
 ---
 layout: blog_post
+title: "Use Ionic for JHipster to Create Mobile Apps with OIDC Authentication"
 author: mraible
 date: 2018-01-30T00:00:00Z
-description: This article shows you how to use Ionic for JHipster to create a hybrid
-  mobile app that runs on your phone. It supports JWT authentication, as well as OAuth
-  2.0 / OIDC. It even works with JHipster microservices!
-tags:
-- ionic
-- ionicframework
-- jhipster
-- oidc
-- oauth
-- cordova
-- opencollective
-- ios
-- android
-title: Use Ionic for JHipster to Create Mobile Apps with OIDC Authentication
+description: "This article shows you how to use Ionic for JHipster to create a hybrid mobile app that runs on your phone. It supports JWT authentication, as well as OAuth 2.0 / OIDC. It even works with JHipster microservices!"
+tags: [ionic, ionicframework, jhipster, oidc, oauth, cordova, opencollective, ios, android]
 tweets:
-- 'Learn how to use Ionic for JHipster to create a mobile app that works with Okta
-  for authentication → '
-- 'Did you know that the team behind @oktadev developed and maintains an Ionic Module
-  for JHipster? It''s pretty sweet. This blog post shows you how to use it to generate
-  a mobile app. '
-- "Just when you thought @java_hipster couldn't get any better, we released an @ionicframework
-  module that allows generating a hybrid mobile app! You should try it; it'll be fun!
-  \U0001F60B "
+- "Learn how to use Ionic for JHipster to create a mobile app that works with Okta for authentication → "
+- "Did you know that the team behind @oktadev developed and maintains an Ionic Module for JHipster? It's pretty sweet. This blog post shows you how to use it to generate a mobile app. "
+- "Just when you thought @java_hipster couldn't get any better, we released an @ionicframework module that allows generating a hybrid mobile app! You should try it; it'll be fun! 😋 "
 ---
 
 We 💙 Ionic, JHipster, and Java here at Okta. Ionic is a framework for building native mobile apps using web technologies. Technically, this is called a “hybrid” app because it’s not using native SDKs. Hybrid mobile apps are distributed just like native apps: they can be installed on mobile devices, and they’re listed in app stores. As an end user, there’s a good chance you can’t tell the difference between a hybrid mobile app and a native mobile app.
@@ -71,7 +55,7 @@ mkdir blog && cd blog && jhipster
 JHipster asks many questions about the type of application you want to create and what features you’d like to include. The table below shows the choices I made to create a blog application with Angular, OAuth 2.0 / OIDC authentication, and Gradle.
 
 | Question | Answer |
-|---|---|---|
+|---|---|
 | Type of application? | `Monolith` |
 | Name? | `blog` |
 | Java package name? | `com.okta.developer`  |
@@ -242,7 +226,7 @@ The iOS emulator runs on port 8080, so you will need to change your backend to r
 
 Restart the blog app, then run the Ionic app with `ionic cordova emulate ios`. You should be able to log in to your Ionic app, tap **Entities** and view the list of blogs.
 
-| <img src="/img/blog/jhipster-ionic/emulator-welcome.png" alt="Emulator Welcome" width="300"> | <img src="blog/jhipster-ionic/emulator-entities.png" title="" alt="Emulator Entities" width="300" >}} | <img src="blog/jhipster-ionic/emulator-no-blogs.png" title="" alt="Emulator No Blogs" width="300"> |
+| {% img blog/jhipster-ionic/emulator-welcome.png alt:"Emulator Welcome" width:"300" %} | {% img blog/jhipster-ionic/emulator-entities.png alt:"Emulator Entities" width:"300" %} | {% img blog/jhipster-ionic/emulator-no-blogs.png alt:"Emulator No Blogs" width:"300" %} |
 
 Add a blog in the JHipster app at http://localhost:8888.
 

@@ -13,7 +13,7 @@ tweets:
 
 JHipster is a development platform to generate, develop, and deploy Spring Boot + Angular web applications and Spring microservices. It supports using many types of authentication: JWT, session-based, and OAuth 2.0. In its 5.0 release, it'll also add React as a UI option. The 5.0 version is under active development and will likely be released in the next few months.
 
-{% img blog/microservices-jhipster-oauth/what-is-jhipster.png alt:"Spring Boot + Angular = JHipster" width:"800" %}{: .center-image }
+<img src="/img/blog/microservices-jhipster-oauth/what-is-jhipster.png" alt="Spring Boot + Angular = JHipster" width="800" class="center-image">
 
 In addition to having two popular UI frameworks, JHipster also has modules that support generating mobile applications. If you like Ionic, which currently leverages Angular, you can use [Ionic for JHipster](/blog/2018/01/30/jhipster-ionic-with-oidc-authentication). If you're a React aficionado, you can use [Ignite JHipster](https://github.com/ruddell/ignite-jhipster).
 
@@ -149,7 +149,7 @@ Start the `gateway` app by navigating to its directory in a terminal and running
 
 Open your browser and go to `http://localhost:8761`. Log in with `admin/admin`, and you should see a welcome page that shows the gateway has registered.
 
-{% img blog/microservices-jhipster-oauth/jhipster-registry-with-gateway.png alt:"JHipster Registry with Gateway registered" width:"800" %}{: .center-image }
+<img src="/img/blog/microservices-jhipster-oauth/jhipster-registry-with-gateway.png" alt="JHipster Registry with Gateway registered" width="800" class="center-image">
 
 ## Generate a Blog Microservice Application
 
@@ -296,23 +296,23 @@ There's a lot of services to start if you want to see all your applications runn
 
 Once everything finishes starting, open a browser to `http://localhost:8080` and click **sign in**. You should be redirected to your Okta org to sign-in, then back to the gateway once you've entered valid credentials.
 
-{% img blog/microservices-jhipster-oauth/welcome-jhipster.png alt:"Welcome, JHipster" width:"800" %}{: .center-image }
+<img src="/img/blog/microservices-jhipster-oauth/welcome-jhipster.png" alt="Welcome, JHipster" width="800" class="center-image">
 
-{% img blog/microservices-jhipster-oauth/okta-sign-in.png alt:"Okta Sign-In" width:"800" %}{: .center-image }
+<img src="/img/blog/microservices-jhipster-oauth/okta-sign-in.png" alt="Okta Sign-In" width="800" class="center-image">
 
-{% img blog/microservices-jhipster-oauth/jhipster-logged-in.png alt:"JHipster after Okta SSO" width:"800" %}{: .center-image }
+<img src="/img/blog/microservices-jhipster-oauth/jhipster-logged-in.png" alt="JHipster after Okta SSO" width="800" class="center-image">
 
 You should be able to navigate to **Entities** > **Blog** and add a new blog record to your blog microservice.
 
-{% img blog/microservices-jhipster-oauth/new-blog.png alt:"New Blog" width:"800" %}{: .center-image }
+<img src="/img/blog/microservices-jhipster-oauth/new-blog.png" alt="New Blog" width="800" class="center-image">
 
 Navigate to **Entities** > **Product** to prove your product microservice is working. Since you added an image as a property, you'll be prompted to upload one when creating a new record.
 
-{% img blog/microservices-jhipster-oauth/add-product-dialog.png alt:"Add Product Dialog" width:"800" %}{: .center-image }
+<img src="/img/blog/microservices-jhipster-oauth/add-product-dialog.png" alt="Add Product Dialog" width="800" class="center-image">
 
 Click **Save** and you'll know it's correctly using MongoDB based on the generated ID.
 
-{% img blog/microservices-jhipster-oauth/new-product.png alt:"New Product" width:"800" %}{: .center-image }
+<img src="/img/blog/microservices-jhipster-oauth/new-product.png" alt="New Product" width="800" class="center-image">
 
 ### Use Docker Compose to Run Everything
 
@@ -364,7 +364,7 @@ When everything has finished building, run `docker-compose up -d` from the `dock
 
 **TIP:** Before you start everything, make sure you’ve provided adequate CPUs and Memory to Docker. It defaults to one CPU and 2 GB of memory. Not quite enough for 14 containers!
 
-{% img blog/microservices-jhipster-oauth/kitematic.png alt:"Kitematic" width:"800" %}{: .center-image }
+<img src="/img/blog/microservices-jhipster-oauth/kitematic.png" alt="Kitematic" width="800" class="center-image">
 
 After you've verified everything works, you can stop all your Docker containers using the following command:
 
@@ -496,4 +496,3 @@ To learn more about microservices, authentication, and JHipster, see the followi
 * [JHipster Security Documentation](http://www.jhipster.tech/security/)
 
 If you have any feedback, I'd love to hear it! Please leave a comment below, hit me up on Twitter [@mraible](https://twitter.com/mraible), or post a question in our [Developer Forums](https://devforum.okta.com/).
-

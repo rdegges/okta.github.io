@@ -1,15 +1,9 @@
 ---
 layout: blog_post
+title: 'Use Kong Gateway to Centralize Authentication'
 author: dogeared
 date: 2017-12-04T00:00:00Z
-tags:
-- kong
-- api gateway
-- api
-- gateway
-- spring
-- spring boot
-title: Use Kong Gateway to Centralize Authentication
+tags: [kong, api gateway, api, gateway, spring, spring boot]
 ---
 
 A customer once asked me: “Hey – Can Okta integrate with Kong?” My first thought was: “What’s Kong?” A Google result later, I was introduced to the [Kong API Gateway](https://getkong.org/) – an open-source API Gateway and Microservices management layer.
@@ -41,4 +35,3 @@ I created a screencast based on [this working example](https://github.com/oktade
 In this demo, I use [Docker](https://www.docker.com/) to create a container for Kong and another for a [Spring Boot](https://projects.spring.io/spring-boot/) app that understands the `x-userinfo` HTTP header.
 
 The slides used in the screencast [can be found on Speaker Deck](https://speakerdeck.com/dogeared/okta-plus-kong-api-gateway-with-oidc). 
-

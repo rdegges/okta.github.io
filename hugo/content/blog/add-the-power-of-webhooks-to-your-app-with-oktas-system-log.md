@@ -1,11 +1,9 @@
 ---
 layout: blog_post
+title: "Add the Power of Webhooks to Your App with Okta's System Log"
 author: jf
 date: 2017-10-17T00:00:00Z
-tags:
-- webhooks
-- go
-title: Add the Power of Webhooks to Your App with Okta's System Log
+tags: [webhooks, go]
 ---
 
 If you've used webhooks before, you probably understand the magical powers they boast. Do you want to build a sleep tracker for your dog? Get notified when it's going to rain? Or maybe have new Eventbrite attendees automatically added to Salesforce? You can do all of those things with webhooks and services like Twilio, Zapier and Workato.

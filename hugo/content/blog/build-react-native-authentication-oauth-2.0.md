@@ -466,7 +466,7 @@ To fix this, open Android Studio, choose **open existing project**, and select t
 
 To create a new AVD, navigate to **Tools** > **Android** > **AVD Manager**. Create a new Virtual Device and click Play. I chose a Pixel 2 as you can see from my settings below.
 
-{% img blog/react-native-app-auth/avd-pixel-2.png alt:"AVD Pixel 2" width:"800" %}{: .center-image }
+<img src="/img/blog/react-native-app-auth/avd-pixel-2.png" alt="AVD Pixel 2" width="800" class="center-image">
 
 Run `npm run android` again. You should see a welcome screen and be able to authorize successfully.
 
@@ -561,7 +561,7 @@ Finally, add a `<Form.Label>` and `<Form.Value>` row after the one that displays
 
 Run `npm run ios` (or `npm run android`) and you should see the claims in the ID token after authorizing with Okta. Below is a screenshot proving it works in iOS Simulator.
 
-{% img blog/react-native-app-auth/ios-id-token.png alt:"ID Token on iOS" width:"500" %}{: .center-image }
+<img src="/img/blog/react-native-app-auth/ios-id-token.png" alt="ID Token on iOS" width="500" class="center-image">
 
 ### Call an API with Your Access Token
 

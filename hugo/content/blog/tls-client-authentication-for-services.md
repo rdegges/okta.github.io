@@ -1,16 +1,12 @@
 ---
 layout: blog_post
+title: TLS Client Authentication for Internal Services
+redirect_from:
+  - /blog/2015/10/29/tls-client-authentication-for-services/
 author: william_dawson
 date: 2015-12-02T00:00:00Z
-redirect_from:
-- /blog/2015/10/29/tls-client-authentication-for-services/
-tags:
-- networking
-- security
-- architecture
-title: TLS Client Authentication for Internal Services
+tags: [networking, security, architecture]
 ---
-
 If you're like me, the most aggravating thing is finding a Stack Overflow
 question that exactly describes the issue you are facing, only to scroll down
 and see that it has remained unanswered since 2011. I was recently trying to

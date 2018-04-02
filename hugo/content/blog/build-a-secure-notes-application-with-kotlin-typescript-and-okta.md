@@ -1,18 +1,10 @@
 ---
 layout: blog_post
+title: "Build a Secure Notes Application with Kotlin, TypeScript, and Okta"
 author: mraible
 date: 2017-09-19T00:00:00Z
-description: In this tutorial, you'll learn how to write a note-taking application
-  in Kotlin and TypeScript - two of the fastest growing languages of 2017. You'll
-  use two popular frameworks, Spring Boot and Angular, to make development super fast.
-tags:
-- kotlin
-- spring boot
-- typescript
-- angular
-- okta
-- authentication
-title: Build a Secure Notes Application with Kotlin, TypeScript, and Okta
+description: "In this tutorial, you'll learn how to write a note-taking application in Kotlin and TypeScript - two of the fastest growing languages of 2017. You'll use two popular frameworks, Spring Boot and Angular, to make development super fast."
+tags: [kotlin, spring boot, typescript, angular, okta, authentication]
 ---
 
 I love my job as a developer advocate at Okta. I get to learn a lot, write interesting blog posts and create example apps with cool technologies like Kotlin, TypeScript, Spring Boot, and Angular, which I’m about to demo. When it comes to writing Hello World apps with authentication, I can whip one out in a few minutes. That isn't because I'm a particularly good programmer, it's because the languages, frameworks, tools, and platforms available to developers are impressive. 
@@ -777,7 +769,7 @@ If you’re ambitious, you could even turn the client into a progressive web app
 * [Add Authentication to Your Angular PWA](/blog/2017/06/13/add-authentication-angular-pwa)
 * [The Ultimate Guide to Progressive Web Applications](/blog/2017/07/20/the-ultimate-guide-to-progressive-web-applications)
 
-My good buddy [Josh Long](https://twitter.com/starbuxman) and I recently hosted a live-coding session where we developed a Spring Boot microservices architecture on the backend and an Angular PWA on the front-end. The code we wrote is very similar to the code in this article. You can check the video out for reference [on YouTube](https://virtualjug.com/building-robust-apis-and-apps-with-spring-boot-and-angular/). 
+My good buddy [Josh Long](https://twitter.com/starbuxman) and I recently hosted a live-coding session where we developed a Spring Boot microservices architecture on the backend and an Angular PWA on the front-end. The code we wrote is very similar to the code in this article. You can check the video out for reference [on YouTube](https://www.youtube.com/watch?v=yHtSwGn7doc). 
 
 ## Deploy to Production
 

@@ -1,21 +1,10 @@
 ---
 layout: blog_post
+title: 'Use OpenID Connect Support with JHipster'
 author: mraible
 date: 2017-10-20T00:00:00Z
-description: JHipster is one of the hippest things to happen to Java developers in
-  the last few years. This article shows you how to add single sign-on to your JHipster
-  app with OpenID Connect (OIDC). You can even use Keycloak or Okta as your Identity
-  Provider!
-tags:
-- spring boot
-- angular
-- bootstrap
-- jhipster
-- java
-- typescript
-- oidc
-- oauth
-title: Use OpenID Connect Support with JHipster
+description: "JHipster is one of the hippest things to happen to Java developers in the last few years. This article shows you how to add single sign-on to your JHipster app with OpenID Connect (OIDC). You can even use Keycloak or Okta as your Identity Provider!"
+tags: [spring boot, angular, bootstrap, jhipster, java, typescript, oidc, oauth]
 ---
 
 Single sign-on (SSO) is a feature that most developers don’t care about when building one-off applications for clients or themselves. However, when developing apps for their company, which will be used by employees of their business, they often need to hook into an existing identity provider. It might be Active Directory (AD), LDAP, or a myriad of other systems. Okta provides SSO for many companies around the world and allows them to configure AD and LDAP as *masters* that sync their users to the cloud. 

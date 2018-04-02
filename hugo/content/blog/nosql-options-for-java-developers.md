@@ -1,24 +1,12 @@
 ---
 layout: blog_post
+title: 'NoSQL Options for Java Developers'
 author: mraible
 date: 2017-09-08T00:00:00Z
-description: In this article, I'll show you several options for NoSQL databases. After
-  exploring all the options, I'll narrow the choices down to the top five based on
-  Indeed Jobs, GitHub stars, and Stack Overflow tags. Then I'll let you know if they're
-  supported by Spring Data and Spring Boot.
+description: "In this article, I'll show you several options for NoSQL databases. After exploring all the options, I'll narrow the choices down to the top five based on Indeed Jobs, GitHub stars, and Stack Overflow tags. Then I'll let you know if they're supported by Spring Data and Spring Boot."
+tags: [nosql, java, redis, mongodb, cassandra, neo4j, postgresql, spring boot, spring data]
 redirect_from:
-- /blog/2017/10/10/nosql-options-for-java-developers-part-i
-tags:
-- nosql
-- java
-- redis
-- mongodb
-- cassandra
-- neo4j
-- postgresql
-- spring boot
-- spring data
-title: NoSQL Options for Java Developers
+  - "/blog/2017/10/10/nosql-options-for-java-developers-part-i"
 ---
 
 The Java community is one I know and love, so even though a NoSQL database is rarely tied to a language I'm writing this article for you, Java developers around the world. In this article, I'll show you several options for NoSQL databases. After exploring all the options, I'll narrow the choices down to the top five based on Indeed Jobs, GitHub stars, and Stack Overflow tags. Then I'll let you know if they're supported by Spring Data and Spring Boot. 

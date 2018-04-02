@@ -1,13 +1,11 @@
 ---
 layout: blog_post
+title: '7 Essential .NET Developer Tools for 2017'
 author: leebrandt
 date: 2017-06-27T00:00:00Z
-tags:
-- net
-- tools
-title: 7 Essential .NET Developer Tools for 2017
+tags: [net, tools]
 ---
-
+ 
 Every good dev knows that time spent setting up the perfect environment and searching out the latest tools is time well spent. Little things make a huge difference — upgrade your IDE plugins, automate a task or two, or look for new tools and libraries that can increase your efficiency. We’ve taken a crack at an updated list of our favorite .NET developer tools, that can simplify your life and amplify your work.
 ## 1. JSON.NET
 Chances are that for any given project these days, you’ll be consuming a RESTful JSON API, producing one, or both. And even if you’re not, you may still be using JSON to serialize data or configuration on disk. Sure, you could get it done using System.Runtime.Serialization.Json, but [JSON.NET](http://json.net/) is faster and has tons of nice features to make your life easier. Built-in [LINQ-to-JSON](http://www.newtonsoft.com/json/help/html/LINQtoJSON.htm) support, plus the ability to query JSON using [XPath-like syntax](http://www.newtonsoft.com/json/help/html/QueryJsonSelectTokenJsonPath.htm) has earned this library the reputation as the de facto JSON implementation for .NET.

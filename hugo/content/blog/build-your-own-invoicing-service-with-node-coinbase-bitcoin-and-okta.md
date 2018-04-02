@@ -1,23 +1,15 @@
 ---
-layout: blog_post
+layout: "blog_post"
+title: "Build Your Own Invoicing Service with Node, Coinbase, Bitcoin, and Okta"
 author: rdegges
 date: 2018-01-24T00:00:00Z
-description: In this article you'll build an invoicing web app that bills clients
-  in Bitcoin. It's a fun way to learn more about Node, Bitcoin, the Coinbase API,
-  and Okta (an authentication API).
-tags:
-- cryptocurrency
-- bitcoin
-- coinbase
-- okta
-- node
-title: Build Your Own Invoicing Service with Node, Coinbase, Bitcoin, and Okta
+description: "In this article you'll build an invoicing web app that bills clients in Bitcoin. It's a fun way to learn more about Node, Bitcoin, the Coinbase API, and Okta (an authentication API)."
+tags: [cryptocurrency, bitcoin, coinbase, okta, node]
 tweets:
-- 'Interested in freelancing for Bitcoin? @rdegges will show you how to build your
-  own invoicing tool using @coinbase! → '
-- 'Stop scrolling through your feed and build something fun! We''ll show you how to
-  build a cryptocurrency invoicing service using @coinbase and Node.js >:) '
+  - "Interested in freelancing for Bitcoin? @rdegges will show you how to build your own invoicing tool using @coinbase! → "
+  - "Stop scrolling through your feed and build something fun! We'll show you how to build a cryptocurrency invoicing service using @coinbase and Node.js >:) "
 ---
+
 
 I got into Bitcoin back in 2011. Since then, I've been a fan of cryptocurrencies and have always had an interest in them. I've also built several Bitcoin projects over the years (an information website, an ecommerce site, and several others) to help promote the usage of the cryptocurrency (while having some fun).
 

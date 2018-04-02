@@ -1,22 +1,13 @@
 ---
 layout: blog_post
+title: Bootiful Development with Spring Boot and Angular
 author: mraible
 date: 2017-04-26T00:00:00Z
-description: This tutorial shows you how to develop a Spring Boot API and an Angular
-  front-end that displays data from it.
-tags:
-- spring-boot
-- start.spring.io
-- java
-- angular
-- typescript
-- angular-cli
-title: Bootiful Development with Spring Boot and Angular
-tweets:
-- 'Want to see how to develop a Spring Boot API and and Angular 5 UI that talks to
-  it? We have a tutorial for that! '
-- 'Bootiful Development with Spring Boot and Angular: two beautiful frameworks, working
-  together in harmony ❤️ '
+description: "This tutorial shows you how to develop a Spring Boot API and an Angular front-end that displays data from it."
+tags: [spring-boot, start.spring.io, java, angular, typescript, angular-cli]
+tweets: 
+  - "Want to see how to develop a Spring Boot API and and Angular 5 UI that talks to it? We have a tutorial for that! "
+  - "Bootiful Development with Spring Boot and Angular: two beautiful frameworks, working together in harmony ❤️ "
 ---
 
 To simplify development and deployment, you want everything in the same artifact, so you put your Angular app "inside" your Spring Boot app, right? But what if you could create your Angular app as a standalone app and make cross-origin requests to your API? Hey guess what, you can do both!

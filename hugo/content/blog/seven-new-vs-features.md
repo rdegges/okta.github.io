@@ -1,14 +1,9 @@
 ---
 layout: blog_post
+title: Seven Awesome New Features In Visual Studio 2017
 author: leebrandt
 date: 2017-05-03T00:00:00Z
-tags:
-- visual studio
-- xamarin
-- javascript
-- jsx
-- editor config
-title: Seven Awesome New Features In Visual Studio 2017
+tags: [visual studio, xamarin, javascript, jsx, editor config]
 ---
 
 Microsoft developers have been using Visual Studio for their IDE since before .NET was even a thing. Visual Studio is twenty years old this year, and on March 7th, 2017 Microsoft released the latest version of it's flagship developer product, Visual Studio. With this release are a bunch of new features, improvements, and exciting changes for the beloved Microsoft developer environment. Here are seven features in the new IDE that will excite developers using the development environment.
@@ -50,6 +45,5 @@ With the adoption of containerization, microservices, and [Microsoft’s own wor
 <img src="/img/blog/seven-new-vs-features/vs-docker-support.png" alt="Visual Studio Docker Support">
 
 Visual Studio has always been the editor of choice for those writing .NET applications and tapping into the Microsoft ecosystem. It has always had all the tools developers need to be their best, most productive selves. Now Microsoft has done some outstanding work to include and integrate with non-Microsoft tools that developers love to use, as well as help developers discover problems in their code, and improve the performance of their IDE. With the new additions and improvements in Visual Studio 2017, developers should love it even more!
-
 
 

@@ -1,14 +1,10 @@
 ---
 layout: blog_post
+title: Get Started with Spring Boot, OAuth 2.0, and Okta
 author: mraible
 date: 2017-03-21T00:00:00Z
-description: In this tutorial you’ll learn how to integrate Spring Security into a
-  Spring Boot application, plus add authentication with OAuth using the Okta API.
-tags:
-- spring-boot
-- oauth
-- okta
-title: Get Started with Spring Boot, OAuth 2.0, and Okta
+description: "In this tutorial you’ll learn how to integrate Spring Security into a Spring Boot application, plus add authentication with OAuth using the Okta API."
+tags: [spring-boot, oauth, okta]
 ---
 
 If you’re building a Spring Boot application, you’ll eventually need to add user authentication. You can do this with OAuth 2.0 (henceforth: OAuth). OAuth is a standard that applications can use to provide client applications with “secure delegated access”. It works over HTTP and authorizes devices, APIs, servers, and applications with access tokens rather than credentials.
@@ -158,6 +154,5 @@ In a [future tutorial](/blog/2017/09/19/build-a-secure-notes-application-with-ko
 * Feb 2, 2018: Added more information to `application.yml` so it's easier to copy and paste.
 * Oct 20, 2017: Added missing `scope: openid profile email` to `application.yaml`. 
 * Oct 11, 2017: Updated instructions for the [Okta Developer Console](/blog/2017/09/25/all-new-developer-console).
-
 
 

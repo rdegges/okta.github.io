@@ -1,23 +1,10 @@
 ---
 layout: blog_post
+title: 'Develop and Deploy Microservices with JHipster'
 author: mraible
 date: 2017-06-20T00:00:00Z
-description: This tutorial shows you how to build microservices with JHipster. You'll
-  generate a gateway (powered by Netflix Zuul and the JHipster Gateway), a microservice
-  (that talks to MongoDB), and use Docker Compose to run it all. Then you'll deploy
-  it to Google Cloud using Kubernetes.
-tags:
-- microservices
-- spring boot
-- jhipster
-- angular
-- java
-- typescript
-- docker
-- kubernetes
-- minikube
-- google cloud
-title: Develop and Deploy Microservices with JHipster
+description: "This tutorial shows you how to build microservices with JHipster. You'll generate a gateway (powered by Netflix Zuul and the JHipster Gateway), a microservice (that talks to MongoDB), and use Docker Compose to run it all. Then you'll deploy it to Google Cloud using Kubernetes."
+tags: [microservices, spring boot, jhipster, angular, java, typescript, docker, kubernetes, minikube, google cloud]
 ---
 
 JHipster is one of those open-source projects you stumble upon and immediately think, "`Of course!`" It combines three 
@@ -742,7 +729,7 @@ start all the components of your application with a single command.
     * Set up monitoring: `JHipster Console with ELK/Zipkin`
     * The admin password for the JHipster Registry: `admin`
     
-    <img src="/img/blog/microservices-jhipster/generate-docker.png" alt="Generating Docker" width="800">
+    {% img blog/microservices-jhipster/generate-docker.png alt:"Generating Docker" width:"800" %}
     
 4. Run `docker-compose up` to run all your services and see the logs in the same window. Add `-d` if you want to run 
 them as a daemon
@@ -769,12 +756,12 @@ these look like.
 
 <table>
 <tr>
-<td><img src="/img/blog/microservices-jhipster/dashboard-jvm.png" alt="JVM Dashboard" width="400"></td>
-<td><img src="/img/blog/microservices-jhipster/dashboard-metrics.png" alt="Metrics Dashboard" width="400"></td>
+<td>{% img blog/microservices-jhipster/dashboard-jvm.png alt:"JVM Dashboard" width:"400" %}</td>
+<td>{% img blog/microservices-jhipster/dashboard-metrics.png alt:"Metrics Dashboard" width:"400" %}</td>
 </tr>
 <tr>
-<td><img src="/img/blog/microservices-jhipster/dashboard-microservices.png" alt="Microservices Dashboard" width="400"></td>
-<td><img src="/img/blog/microservices-jhipster/dashboard-performance.png" alt="Performance Dashboard" width="400"></td>
+<td>{% img blog/microservices-jhipster/dashboard-microservices.png alt:"Microservices Dashboard" width:"400" %}</td>
+<td>{% img blog/microservices-jhipster/dashboard-performance.png alt:"Performance Dashboard" width:"400" %}</td>
 </tr>
 </table>
 
@@ -824,7 +811,7 @@ and [Minikube](https://github.com/kubernetes/minikube/releases)
     * Base Docker repository name (e.g. `mraible`): `<your-docker-hub-username>`
     * Command to push Docker image to repository: `docker push`
     
-    <img src="/img/blog/microservices-jhipster/generate-kubernetes.png" alt="Generating Kubernetes" width="800">
+    {% img blog/microservices-jhipster/generate-kubernetes.png alt:"Generating Kubernetes" width:"800" %}
   
 6. Run the following commands to tag your Docker images. The Kubernetes sub-generator says to run `docker push` as well, 
 but you don't need that for a Minikube deployment.
@@ -844,7 +831,7 @@ but you don't need that for a Minikube deployment.
     
     The deployment process can take several minutes to complete. Run `minikube dashboard` to see the deployed containers.
     
-    <img src="/img/blog/microservices-jhipster/minikube-dashboard.png" alt="Minikube Dashboard" width="800">
+    {% img blog/microservices-jhipster/minikube-dashboard.png alt:"Minikube Dashboard" width:"800" %}
     
     You can also run `kubectl get po -o wide --watch` to see the status of each pod.
 

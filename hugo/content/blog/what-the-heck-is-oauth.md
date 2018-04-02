@@ -1,20 +1,10 @@
 ---
 layout: blog_post
+title: 'What the Heck is OAuth?'
 author: mraible
 date: 2017-06-21T00:00:00Z
-description: OAuth 2.0 is a standard that apps can use to provide client applications
-  with secure delegated access. OAuth works over HTTPS and authorizes devices, APIs,
-  servers, and applications with access tokens rather than credentials. OIDC adds
-  a signed ID token and a UserInfo endpoint.
-tags:
-- oauth
-- authorization
-- security
-- oidc
-- openid connect
-- oauth 2.0
-- okta
-title: What the Heck is OAuth?
+description: "OAuth 2.0 is a standard that apps can use to provide client applications with secure delegated access. OAuth works over HTTPS and authorizes devices, APIs, servers, and applications with access tokens rather than credentials. OIDC adds a signed ID token and a UserInfo endpoint."
+tags: [oauth, authorization, security, oidc, openid connect, oauth 2.0, okta]
 ---
 
 There's a *lot* of confusion around what OAuth *actually is*.
@@ -384,7 +374,7 @@ An Open ID Connect flow involves the following steps:
 4. Validate JWT ID token locally based on built-in dates and signature
 5. Get additional user attributes as needed with access token
 
-<img src="/img/blog/oauth/oidc-flow.png" alt="OIDC Flow" width="800" class="center-image">{: .center-image }
+<img src="/img/blog/oauth/oidc-flow.png" alt="OIDC Flow" width="800" class="center-image">
 
 ## OAuth + Okta
 [Okta](https://www.okta.com) is best known for its single-sign on services that allow you to seamlessly authenticate to the applications you use on a daily basis. But did you know Okta also has an awesome developer platform? Secure single sign-on often uses SAML as the protocol of choice, but Okta also provides several other options, including a Sign-in Widget, Auth SDK (a JavaScript-based library), Social Login, and an Authentication API for any client. If you're interested in learning about Okta straight from the source, you should attend [Oktane17](https://www.okta.com/oktane17/) in late August. There's a [track dedicated to app development](https://www.okta.com/oktane17/agenda/#AppDev).

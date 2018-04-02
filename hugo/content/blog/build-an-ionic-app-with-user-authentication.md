@@ -1,24 +1,13 @@
 ---
 layout: blog_post
+title: 'Build an Ionic App with User Authentication'
 author: mraible
 date: 2017-08-22T00:00:00Z
-description: Ionic is an open source mobile SDK for developing native and progressive
-  web applications. With Okta and OpenID Connect (OIDC) you can easily integrate authentication
-  into an Ionic application, and never have to build it yourself again.
-tags:
-- ionic
-- authentication
-- oidc
-- angular
-- cordova
-- iphone
-- android
-- ios
-- okta
-title: Build an Ionic App with User Authentication
-tweets:
-- Learn how to build an @ionicframework app with user authentication →
-- Leverage OIDC and @okta to add authentication to your Ionic app →
+description: "Ionic is an open source mobile SDK for developing native and progressive web applications. With Okta and OpenID Connect (OIDC) you can easily integrate authentication into an Ionic application, and never have to build it yourself again."
+tags: [ionic, authentication, oidc, angular, cordova, iphone, android, ios, okta]
+tweets: 
+    - "Learn how to build an @ionicframework app with user authentication →"
+    - "Leverage OIDC and @okta to add authentication to your Ionic app →"
 ---
 
 With Okta and OpenID Connect (OIDC) you can easily integrate authentication into an Ionic application, and never have to build it yourself again. OIDC allows you to authenticate directly against the [Okta API](https://developer.okta.com/product/), and this article shows you how to do just that in an Ionic application. I'll demo how to log in with OIDC redirect, using Okta's Auth SDK as well as how to use OAuth with Cordova's in-app browser; user registration is omitted as the feature is still under active development. 
@@ -31,7 +20,7 @@ Cordova and PhoneGap allow you to target multiple platforms (e.g. Android and iO
 
 I first started using Ionic in late 2013. The project I was working on was developing a native application, but wanted to build several screens of the application with HTML so web developers could author them. I [wrote about my experience in March 2014](https://raibledesigns.com/rd/entry/developing_an_ios_native_app). I enjoyed working with it and found that porting an existing app to use it was more about modifying HTML and tweaking CSS. 
 
-Ionic 2 was [released in January](http://blog.ionic.io/announcing-ionic-2-0-0-final/), making it possible to develop Ionic applications with Angular. Ionic 3 was [released in April](http://blog.ionic.io/ionic-3-0-has-arrived/), allowing development with Angular 4.
+Ionic 2 was [released in January](http://blog.ionicframework.com/announcing-ionic-2-0-0-final/), making it possible to develop Ionic applications with Angular. Ionic 3 was [released in April](http://blog.ionicframework.com/ionic-3-0-has-arrived/), allowing development with Angular 4.
 
 **NOTE:** “Angular” is the common name for Angular 2+. AngularJS is the common name for the 1.x versions. The reason for #ItsJustAngular is Angular 4 was released in March 2017. See [Branding Guidelines for Angular and AngularJS](http://angularjs.blogspot.com/2017/01/branding-guidelines-for-angular-and.html) for more information.
 
@@ -68,7 +57,7 @@ One slick feature of Ionic's `serve` command is it shows compilation errors in t
 <img src="/img/blog/ionic-authentication/typescript-error.png" alt="TypeScript Error">
 
 ## Add User Authentication
-Ionic Cloud offers a free [Auth](https://docs.ionic.io/services/auth/) service. It allows authentication with an email and password, as well as social providers like Facebook, Google, and Twitter. It provides several classes you can use to build authentication in its `@ionic/cloud-angular` dependency. It even has support [custom authentication](https://docs.ionic.io/services/auth/custom-auth.html), but it "requires your own server to handle authentication" and will be decommissioned on January 31, 2018.
+Ionic Cloud offers a free Auth service. It allows authentication with an email and password, as well as social providers like Facebook, Google, and Twitter. It provides several classes you can use to build authentication in its `@ionic/cloud-angular` dependency. It even has support for custom authentication, but it "requires your own server to handle authentication" and will be decommissioned on January 31, 2018.
 
 While there aren't many current tutorials on using this service, there are a few from last year.
 
@@ -475,7 +464,7 @@ cd platforms/ios/cordova && npm install ios-sim
 
 **TIP:** The biggest problem I found when running the app in Simulator was that it was difficult to get the keyboard to pop up. To workaround this, I used **Hardware** > **Keyboard** > **Toggle Software Keyboard** when I needed to type text in a field.
 
-If you enter your credentials on the login screen you'll notice nothing happens. Open Safari and navigate to **Develop** > **Simulator** > MyApp / **Login**, and you'll see that eventually, an error shows up in the console. If you don't see a Develop menu, review the steps in [this article](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/iOS_Simulator_Guide/GettingStartedwithiOSSimulator/GettingStartedwithiOSSimulator.html) to enable it.
+If you enter your credentials on the login screen you'll notice nothing happens. Open Safari and navigate to **Develop** > **Simulator** > MyApp / **Login**, and you'll see that eventually, an error shows up in the console. If you don't see a Develop menu, review the steps in [this article](https://www.computerworld.com/article/3156141/apple-mac/how-to-use-the-safari-develop-menu-on-a-mac.html) to enable it.
 
 <img src="/img/blog/ionic-authentication/webinspector-error.png" alt="Web Inspector Error">
 
@@ -600,7 +589,7 @@ ionic cordova emulate ios
 
 Now you should be able to log in by clicking on the “Login with Okta” button and entering valid credentials.
 
-| [<img src="/img/blog/ionic-authentication/emulator-login.png" alt="Emulator Login" width="280">](/assets/blog/ionic-authentication/emulator-login-c4b218091f6549081c063e2eb71af4b1bcf371d49cffd109d3f77e6019ec85ce.png) | [<img src="blog/ionic-authentication/emulator-okta-login.png" alt="Emulator Okta Login" width="280" >](/assets/blog/ionic-authentication/emulator-okta-login-03521c0da232257989de99fe3c41e81f1c822d1397d4b5e2e8a5371b21aef085.png) | [<img src="/img/blog/ionic-authentication/emulator-home.png" alt="Emulator Home" width="280">](/img/blog/ionic-authentication/emulator-home-935f74e0cd70e31bcf49f782c0b1371c8ad1af4d44f6da3002a91cbf42a95d55.png) |
+| [{% img blog/ionic-authentication/emulator-login.png alt:"Emulator Login" width:"280" %}](/assets/blog/ionic-authentication/emulator-login-c4b218091f6549081c063e2eb71af4b1bcf371d49cffd109d3f77e6019ec85ce.png) | [{% img blog/ionic-authentication/emulator-okta-login.png alt:"Emulator Okta Login" width:"280" %}](/assets/blog/ionic-authentication/emulator-okta-login-03521c0da232257989de99fe3c41e81f1c822d1397d4b5e2e8a5371b21aef085.png) | [{% img blog/ionic-authentication/emulator-home.png alt:"Emulator Home" width:"280" %}](/assets/blog/ionic-authentication/emulator-home-935f74e0cd70e31bcf49f782c0b1371c8ad1af4d44f6da3002a91cbf42a95d55.png) |
 
 The nice thing about using this technique is the Okta login screen has Remember Me and Forgot Password support, so you don't need to code those yourself.
 
@@ -629,7 +618,7 @@ Select your phone as the target in Xcode and click the play button to run your a
 
 Once you've configured your phone, computer, and Apple ID, you should be able to open the app and log in. Below is how it looks on my iPhone.
 
-| [<img src="/img/blog/ionic-authentication/iphone-login.png" alt="iPhone Login" width="280">](/assets/blog/ionic-authentication/iphone-login-5f731e6ba21115febd9c4c21ba802c636370a5eeb9d9e3b47812bb64171c1efb.png) | [<img src="/img/blog/ionic-authentication/iphone-okta-login.png" alt="iPhone Okta Login" width="280">](/assets/blog/ionic-authentication/iphone-okta-login-920b0eb85c7865bb6e822e471c4ff5655050ac7342832bbb21cf9a928516dfc0.png) | [<img src="blog/ionic-authentication/iphone-home.png" alt="iPhone Home" width="280">](/assets/blog/ionic-authentication/iphone-home-f50201f8cc12ab535ee9583a23990c218cc9a23b50bba61302ae708ae9dd8d47.png) |
+| [{% img blog/ionic-authentication/iphone-login.png alt:"iPhone Login" width:"280" %}](/assets/blog/ionic-authentication/iphone-login-5f731e6ba21115febd9c4c21ba802c636370a5eeb9d9e3b47812bb64171c1efb.png) | [{% img blog/ionic-authentication/iphone-okta-login.png alt:"iPhone Okta Login" width:"280" %}](/assets/blog/ionic-authentication/iphone-okta-login-920b0eb85c7865bb6e822e471c4ff5655050ac7342832bbb21cf9a928516dfc0.png) | [{% img blog/ionic-authentication/iphone-home.png alt:"iPhone Home" width:"280" %}](/assets/blog/ionic-authentication/iphone-home-f50201f8cc12ab535ee9583a23990c218cc9a23b50bba61302ae708ae9dd8d47.png) |
 
 ### Android
 
@@ -637,41 +626,20 @@ To emulate or deploy to an Android device, you'll first need to install [Android
 
 **If you've just installed Android Studio, make sure to open it to complete the installation.**
 
-To deploy to the Android emulator, run `ionic cordova emulate android`. This command will install Android support and print out instructions about how to create an emulator image.
+To deploy to the Android emulator, run `ionic cordova emulate android`. This command will install Android support and display an error if you don’t have any AVD (Android Virtual Device) images.
 
 ```
-Error: No emulator images (avds) found.
-1. Download desired System Image by running:
-/Users/mraible/Library/Android/sdk/tools/android sdk
+(node:9300) UnhandledPromiseRejectionWarning: CordovaError: No emulator images (avds) found.
+1. Download desired System Image by running: /Users/mraible/Library/Android/sdk/tools/android sdk
 2. Create an AVD by running: /Users/mraible/Library/Android/sdk/tools/android avd
 HINT: For a faster emulator, use an Intel System Image and install the HAXM device driver
 ```
 
-Run the first suggestion and download your desired system image. Then run the second command and created an AVD (Android Virtual Device) with the following settings:
-
-```
-AVD Name: TestPhone
-Device: Nexus 5
-Target: Android 7.1.1
-CPU/ABI: Google APIs Intel Axom (x86_64)
-Skin: Skin with dynamic hardware controls
-```
-
-**WARNING:** These instructions won't work with version 2.3.2 of Android Studio on Mac. When you try to run the first command, it'll say the following:
-
-```
-*************************************************************************
-The "android" command is deprecated.
-For manual SDK, AVD, and project management, please use Android Studio.
-For command-line tools, use tools/bin/sdkmanager and tools/bin/avdmanager
-*************************************************************************
-```
-
-To solve this problem, open Android Studio, select “Open an existing Android Studio project” and select the `ionic-auth/platforms/android` directory. If prompted to upgrade, choose “OK”, then proceed to create a new AVD as [described in Android Studio's documentation](https://developer.android.com/studio/run/managing-avds.html#createavd).
+To create a new AVD, open Android Studio and navigate to **Tools** > **Android** > **AVD Manager**. Create a new Virtual Device and click Play. I chose a Pixel 2.
 
 After performing these steps, you should be able to run `ionic cordova emulate android` and see your app running in the AVD.
 
-| [<img src="/img/blog/ionic-authentication/android-login.png" alt="Android Login" width="280">](/assets/blog/ionic-authentication/android-login-a0363756fc25a974e87668bc0900acb783f7eec80a1b83b0c5de0a5016004f94.png) | [<img src="/img/blog/ionic-authentication/android-okta-login.png" alt="Android Okta Login" width="280">](/assets/blog/ionic-authentication/android-okta-login-bb57b05d91580c165352d0f21d2da0415827601a25720ec2121f269ae20618ae.png) | [<img src="/img/blog/ionic-authentication/android-home.png" alt="Android Home" width="280">](/assets/blog/ionic-authentication/android-home-9438a0b8324d932abc0dcece445af75c8009350e683bb46d526baaa614e1de13.png) |   
+| [{% img blog/ionic-authentication/android-login.png alt:"Android Login" width:"280" %}](/assets/blog/ionic-authentication/android-login-a0363756fc25a974e87668bc0900acb783f7eec80a1b83b0c5de0a5016004f94.png) | [{% img blog/ionic-authentication/android-okta-login.png alt:"Android Okta Login" width:"280" %}](/assets/blog/ionic-authentication/android-okta-login-bb57b05d91580c165352d0f21d2da0415827601a25720ec2121f269ae20618ae.png) | [{% img blog/ionic-authentication/android-home.png alt:"Android Home" width:"280" %}](/assets/blog/ionic-authentication/android-home-9438a0b8324d932abc0dcece445af75c8009350e683bb46d526baaa614e1de13.png) |   
 
 **NOTE**: If you get an application error that says "The connection to the server was unsuccessful. (`file:///android/www/index.html`)", add the following line to `config.xml`. This line sets the default timeout to 60 seconds (default is 20). Thanks to the [Stack Overflow community](http://stackoverflow.com/a/31377846) for this solution.
 
@@ -685,7 +653,7 @@ Ionic ships with support for creating progressive web apps (PWAs). This means yo
 You can see how to enable service workers and make your app into a PWA by reading the [PWAs section](/blog/2017/05/17/develop-a-mobile-app-with-ionic-and-spring-boot#pwas-with-ionic) of [how to develop a mobile app with Ionic and Spring Boot](/blog/2017/05/17/develop-a-mobile-app-with-ionic-and-spring-boot). A PWA is a web application that can be “installed” on your system. It works offline when you don't have an internet connection, leveraging data cached during your last interactions with the app. Adding PWA features can make your apps load a lot faster, creating happy users. To learn more about PWAs, see [The Ultimate Guide to Progressive Web Applications](/blog/2017/07/20/the-ultimate-guide-to-progressive-web-applications). 
 
 Ionic has invested heavily in supporting PWAs. You can read more about why in [
-What Progressive Web Apps can do for you](http://blog.ionic.io/what-progressive-web-apps-can-do-for-you/).
+What Progressive Web Apps can do for you](http://blog.ionicframework.com/what-progressive-web-apps-can-do-for-you/).
 
 ## Learn More
 
@@ -701,4 +669,5 @@ To learn more about Ionic, Angular, or Okta, please see the following resources:
 
 **Changelog:**
 
+* Mar 7, 2018: Updated instructions for creating an AVD with Android Studio 3.0.
 * Jan 11, 2018: Updated to use Ionic CLI 3.19.0 and angular-oauth2-oidc 3.1.4. See the code changes in the [example app on GitHub](https://github.com/oktadeveloper/okta-ionic-auth-example/pull/6). Changes to this article can be viewed [in this pull request](https://github.com/okta/okta.github.io/pull/1628).

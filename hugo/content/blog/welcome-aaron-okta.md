@@ -2,6 +2,7 @@
 layout: blog_post
 title: "Hello, Okta!"
 author: aaronpk
+date: 2018-03-27T00:00:00Z
 description: "Welcoming Aaron Parecki to the Okta family!"
 tags: [oauth,team]
 tweets:
@@ -11,7 +12,7 @@ tweets:
 
 My name is Aaron Parecki, and last week I joined Okta on the Developer Advocacy team.
 
-{% img blog/welcome-aaron-okta/aaronpk.jpg alt:"Aaron Parecki" width:"800" %}{: .center-image }
+<img src="/img/blog/welcome-aaron-okta/aaronpk.jpg" alt="Aaron Parecki" width="800" class="center-image">
 
 I’ve been working with Okta since 2016 when we published the online version of my book, OAuth 2.0 Simplified, on oauth.com. In 2017, I worked with the team again on producing the [print version](https://oauth2simplified.com/), which we released at Okta’s conference in Las Vegas last fall.
 
@@ -32,4 +33,3 @@ I’ve also edited several specs that allow people to use their own websites as 
 I’ve always enjoyed helping people understand OAuth and web identity concepts, whether that’s by writing books and blog posts, doing on-site trainings, or giving talks at conferences. I’m excited to be able to continue this at Okta!
 
 You can find me on the internet at [aaronparecki.com](https://aaronparecki.com) or [@aaronpk](https://twitter.com/aaronpk).
-

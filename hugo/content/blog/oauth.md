@@ -1,15 +1,9 @@
 ---
 layout: blog_post
+title: Demystifying OAuth
 author: karl_mcguinness
 date: 2015-12-07T00:00:00Z
-tags:
-- oauth
-- identity
-- security
-- rest
-- oidc
-- api
-title: Demystifying OAuth
+tags: [oauth, identity, security, rest, oidc, api]
 ---
 
 It seems that OAuth 2.0 is everywhere these days. Whether you are building a hot new single page web application (SPA), a native mobile experience, or just trying to integrate with the API economy, you can't go far without running into the popular authorization framework for REST/APIs and social authentication.

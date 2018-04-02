@@ -1,21 +1,15 @@
 ---
 layout: blog_post
+title: "Use OpenID Connect to Build a Simple Node.js Website"
 author: rdegges
 date: 2017-10-19T00:00:00Z
-description: In this article you'll learn how to use OpenID Connect to build a simple
-  Node.js website with Express.js. You'll also learn how to log users into your website
-  using Okta.
-tags:
-- javascript
-- oidc
-- openid
-- nodejs
-- expressjs
-title: Use OpenID Connect to Build a Simple Node.js Website
+description: "In this article you'll learn how to use OpenID Connect to build a simple Node.js website with Express.js. You'll also learn how to log users into your website using Okta."
+tags: [javascript, oidc, openid, nodejs, expressjs]
 tweets:
-- Learn how to use OpenID Connect to build a simple Node website.
-- Come see how to build a simple Node website using OpenID Connect!
+    - "Learn how to use OpenID Connect to build a simple Node website."
+    - "Come see how to build a simple Node website using OpenID Connect!"
 ---
+
 
 If you've ever spent time trying to figure out the best way to handle user
 authentication for your Node app and been confused: you're not alone. Over the

@@ -1,22 +1,16 @@
 ---
 layout: blog_post
+title: 'Why JWTs Suck as Session Tokens'
 author: rdegges
 date: 2017-08-17T00:00:00Z
-description: Learn why you should never use JSON web tokens as session tokens (either
-  in cookies or HTML local storage).
-tags:
-- security
-- jwt
-- token
-- authentication
-- sessions
-title: Why JWTs Suck as Session Tokens
+description: "Learn why you should never use JSON web tokens as session tokens (either in cookies or HTML local storage)."
+tags: [security, jwt, token, authentication, sessions]
 tweets:
-- '@rdegges doesn''t like JSON Web Tokens. Do you?'
-- Stop using JSON Web Tokens for web authentication. Use cookies and session IDs instead.
+    - "@rdegges doesn't like JSON Web Tokens. Do you?"
+    - "Stop using JSON Web Tokens for web authentication. Use cookies and session IDs instead."
 ---
 
-<img src="/img/blog/why-jwts-suck-as-session-tokens/jwts-so-hot-right-now.jpg" alt="JWTs: So Hot Right Now">
+<img src="/img/blog/why-jwts-suck-as-session-tokens/jwts-so-hot-right-now.jpg" alt="JWTs= So Hot Right Now">
 
 JSON Web Tokens (JWTs) are *so* hot right now. They're all the rage in web
 development:

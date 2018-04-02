@@ -1,14 +1,11 @@
 ---
 layout: blog_post
+title: "Build a Preact App with Authentication"
 author: leebrandt
 date: 2017-10-19T00:00:00Z
-tags:
-- react
-- preact
-- javascript
-- security
-title: Build a Preact App with Authentication
+tags: [react, preact, javascript, security]
 ---
+
 
 React is a fast, and lightweight library, which has led to fast adoption across
 the SPA (single-page app) ecosystem. Preact is an even lighter-and-faster

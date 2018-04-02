@@ -1,15 +1,9 @@
 ---
 layout: blog_post
+title: '5 Tips for Building your Java API'
 author: bdemers
 date: 2017-08-23T00:00:00Z
-tags:
-- spring
-- jaxrs
-- java
-- rest
-- tips
-- dropwizard
-title: 5 Tips for Building your Java API
+tags: [spring, jaxrs, java, rest, tips, dropwizard]
 ---
 
 Developers use APIs to for everything! You build APIs for your own apps to consume, or as a part of a microservices architecture. Bottom line, you’re building and using APIs to make your life easier. The ongoing effort to simplify development and work more efficiently, sometimes this also means looking for new libraries or processes (or more often less process). For many teams managing authentication and access control for their apps and APIs is more work than it’s worth, or simply not an efficient use of time, so we want to share a few tips that will save you time and code, along with making your applications more secure and easier to maintain. 
@@ -44,7 +38,7 @@ http.requiresChannel()
     .anyRequest().requiresSecure(); 
 ```
 
-Or just use a [few properties](https://docs.spring.io/spring-boot/docs/current/reference/html/howto-embedded-servlet-containers.html#howto-configure-ssl) with Spring Boot:
+Or just use a [few properties](https://docs.spring.io/spring-boot/docs/1.5.10.RELEASE/reference/html/howto-embedded-servlet-containers.html#howto-configure-ssl) with Spring Boot:
 
 ```properties
 server.port=8443
@@ -55,7 +49,7 @@ server.ssl.key-password=another-secret
 
 ## 3. Build your Java web service with Spring Boot
 
-Spring Boot is an opinionated view of the Spring platform which makes it dead simple to write [twelve-factor apps](https://12factor.net/) in [very few lines](https://virtualjug.com/building-robust-apis-and-apps-with-spring-boot-and-angular/). If you’re still building WAR files you owe it to yourself to check this out. You can create complicated, application wide functions like setting up an OAuth resource server by using a single annotation (`@EnableResourceServer`) or change the server's port with a single property:
+Spring Boot is an opinionated view of the Spring platform which makes it dead simple to write [twelve-factor apps](https://12factor.net/) in [very few lines](https://www.youtube.com/watch?v=yHtSwGn7doc). If you’re still building WAR files you owe it to yourself to check this out. You can create complicated, application wide functions like setting up an OAuth resource server by using a single annotation (`@EnableResourceServer`) or change the server's port with a single property:
 ```ini
 server.port = 8090
 ```

@@ -67,11 +67,11 @@ npm install
 
 Then modify `src/.samples.config.js` to have your domain and client ID in it. Run it with `npm start`, and you'll see screenshots like the ones below.
 
-{% img blog/samples-and-quickstarts/react-sample-login-button.png alt:"React Sample - Login Button" width:"800" %}{: .center-image }
+<img src="/img/blog/samples-and-quickstarts/react-sample-login-button.png" alt="React Sample - Login Button" width="800" class="center-image">
 
-{% img blog/samples-and-quickstarts/okta-sign-in-page.png alt:"Okta Sign-In Page" width:"800" %}{: .center-image }
+<img src="/img/blog/samples-and-quickstarts/okta-sign-in-page.png" alt="Okta Sign-In Page" width="800" class="center-image">
 
-{% img blog/samples-and-quickstarts/react-sample-authenticated.png alt:"React Sample - Authenticated" width:"800" %}{: .center-image }
+<img src="/img/blog/samples-and-quickstarts/react-sample-authenticated.png" alt="React Sample - Authenticated" width="800" class="center-image">
 
 To set up the Spring Boot resource server, clone that sample's repository and run it with your issuer:
 
@@ -81,7 +81,7 @@ cd samples-java-spring/resource-server
 ./mvnw -Dokta.oauth2.issuer=https://{yourOktaDomain}.com/oauth2/default
 ```
 
-{% img blog/samples-and-quickstarts/react-sample-messages.png alt:"React Sample - Messages" width:"800" %}{: .center-image }
+<img src="/img/blog/samples-and-quickstarts/react-sample-messages.png" alt="React Sample - Messages" width="800" class="center-image">
 
 The Express resource server requires little configuration to configure it too.
 
@@ -97,7 +97,7 @@ Modify `.samples.config.json` for your app, then run `npm run resource-server`. 
 
 To see how many of the frameworks were built, you can read the plethora of [quickstart instructions](/quickstart/) the Developer Experience team has created. When you log in to your Developer Console, you'll see links to them all on your dashboard. 
 
-{% img blog/samples-and-quickstarts/quickstart-guides.png alt:"React Sample - Authenticated" width:"700" %}{: .center-image }
+<img src="/img/blog/samples-and-quickstarts/quickstart-guides.png" alt="React Sample - Authenticated" width="700" class="center-image">
 
 The instructions themselves are broken up into two categories: client setup and server setup. 
 

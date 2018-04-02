@@ -35,11 +35,11 @@ mvn archetype:generate \
 
 When prompted for various project names, this example used **com.example** for the `groupId`, **demo** for `artifactId`, and **Demo** for the `name`. The rest were given default values.
 
-{% img blog/dropwizard-oauth/maven-archetype.png alt:"Maven archetype output" width:"800" %}{: .center-image }
+<img src="/img/blog/dropwizard-oauth/maven-archetype.png" alt="Maven archetype output" width="800" class="center-image">
 
 Almost like a TODO list, Dropwizard outlines the fundamental components of your server by creating a bunch of empty directories. Most of those can be left alone for now.
 
-{% img blog/dropwizard-oauth/project-tree.png alt:"Directory structure" width:"800" %}{: .center-image }
+<img src="/img/blog/dropwizard-oauth/project-tree.png" alt="Directory structure" width="800" class="center-image">
 
 To start penciling in the new server, create a `HomePageResource.java` class in the `com.example.resources` package. This will serve as the "Hello world" entry point for testing, and can be enhanced later on with one of Dropwizard's built-in HTML templating libraries. Two key annotations are needed: one `@Path("/")` annotation at the class level, indicating that this resource will handle requests to your server's root URI, and one JAX-RS `@GET` annotation applied to a simple function that returns a test string.
 
@@ -72,7 +72,7 @@ java -jar target/demo-1.0-SNAPSHOT.jar server
 
 Once it's running, visiting `http://localhost:8080` in your browser should relay your Hello world message:
 
-{% img blog/dropwizard-oauth/hello-world.png alt:"Basic hello world response" width:"800" %}{: .center-image }
+<img src="/img/blog/dropwizard-oauth/hello-world.png" alt="Basic hello world response" width="800" class="center-image">
 
 Before getting too fancy with the UI, now is a great opportunity to enable single sign-on for your server. The next section will walk you through the process!
 
@@ -495,7 +495,7 @@ java -jar target/demo-1.0-SNAPSHOT.jar server config.yml
 
 Visiting `http:/localhost:8080` in your browser should now redirect you to sign in on Okta's domain, and following that, should present a message with your email address. If so, congratulations! If you've had difficulty at any point along the way, try running the [example](https://github.com/oktadeveloper/okta-dropwizard-oauth-example) as is.
 
-{% img blog/dropwizard-oauth/spa-message-success.png alt:"Post login message showing API response" width:"800" %}{: .center-image }
+<img src="/img/blog/dropwizard-oauth/spa-message-success.png" alt="Post login message showing API response" width="800" class="center-image">
 
 ## Extra Credit: Health Checks
 

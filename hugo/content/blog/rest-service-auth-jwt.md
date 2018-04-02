@@ -1,16 +1,10 @@
 ---
 layout: blog_post
+title: REST Service Authorization with JWTs
 author:
 - jon_todd
 - william_dawson
-date: 2016-01-05T00:00:00Z
-tags:
-- rest
-- oauth
-- identity
-- security
-- jwt
-title: REST Service Authorization with JWTs
+tags: [rest, oauth, identity, security, jwt]
 ---
 
 Many companies are adopting micro-services based architectures to promote

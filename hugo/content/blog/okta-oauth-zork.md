@@ -1,23 +1,12 @@
 ---
 layout: blog_post
+title: 'Play Zork, Learn OAuth'
 author: dogeared
 date: 2017-10-27T00:00:00Z
-tags:
-- oauth
-- oauth2
-- oauth2.0
-- oauth 2.0
-- OpenID
-- OpenID Connect
-- oidc
-- spring
-- spring boot
-- spring security
-- rbac
-title: Play Zork, Learn OAuth
+tags: [oauth, oauth2, oauth2.0, oauth 2.0, OpenID, OpenID Connect, oidc, spring, spring boot, spring security, rbac]
 ---
 
-<img src="/img/blog/okta-oauth-zork/zork.jpg alt:"Default AS"" width="150" align="right">
+<img src="/img/blog/okta-oauth-zork/zork.jpg" alt="Default AS" width="150" align="right">
 
 In the early ‘80s, some of the best “video” games were text-based adventures. These games would print out descriptive text of your surroundings and you would interact with the game using simple, but natural language commands like: “go north” or “take sword”. Fast forward some 30 years and a specification for an authorization framework called [OAuth 2.0](https://oauth.net/2/) was published. This framework allows an application to receive a token from an external party (like [Okta](https://okta.com)) that indicates a user is authorized to use the application. What do these two things have in common? Absolutely nothing. But, I thought it would be fun to mash them together to demonstrate how OAuth works by playing a text-based game.
 

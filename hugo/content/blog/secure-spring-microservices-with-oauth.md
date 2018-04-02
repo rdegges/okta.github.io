@@ -21,11 +21,11 @@ This tutorial shows you how to use Spring Security with OAuth and Okta to lock d
 
 This tutorial shows you how to add security to a previous tutorial I wrote, [Build a Microservices Architecture for Microbrews with Spring Boot](/blog/2017/06/15/build-microservices-architecture-spring-boot). A basic microservices architecture with Spring Boot and Spring Cloud looks like the graphic below.
 
-{% img blog/microservices-spring-oauth/spring-microservices-diagram.png alt:"Spring Boot + Cloud Microservices Architecture" width:"700" %}{: .center-image }
+<img src="/img/blog/microservices-spring-oauth/spring-microservices-diagram.png" alt="Spring Boot + Cloud Microservices Architecture" width="700" class="center-image">
 
 Once you've completed this tutorial, you'll have Spring Security locking things down, and Okta providing authorization with OAuth. Your Edge Service (a.k.a., API Gateway) will have a Feign client that passes along your access token, and Hystrix that handles graceful failover.
 
-{% img blog/microservices-spring-oauth/spring-oauth-microservices-diagram.png alt:"Spring Microservices with OAuth" width:"800" %}{: .center-image }
+<img src="/img/blog/microservices-spring-oauth/spring-oauth-microservices-diagram.png" alt="Spring Microservices with OAuth" width="800" class="center-image">
 
 To begin, you’ll need to clone the aforementioned article’s completed project.
 
@@ -372,11 +372,11 @@ cd edge-service
 
 Open your browser and navigate to `http://localhost:8081/good-beers`. You should be redirected to your Okta domain and see a login page, prompting for your credentials.
 
-{% img blog/microservices-spring-oauth/okta-login.png alt:"Okta Sign-In Form" width:"800" %}{: .center-image }
+<img src="/img/blog/microservices-spring-oauth/okta-login.png" alt="Okta Sign-In Form" width="800" class="center-image">
 
 Enter the credentials you created your account with, and you'll see a list of good beers as a result.
 
-{% img blog/microservices-spring-oauth/good-beers.png alt:"Good Beers" width:"800" %}{: .center-image }
+<img src="/img/blog/microservices-spring-oauth/good-beers.png" alt="Good Beers" width="800" class="center-image">
 
 If you try to navigate to `http://localhost:8081/home`, it won't work. This is because you need to add [Spring Cloud Security](https://cloud.spring.io/spring-cloud-security/) to `edge-service/pom.xml` to relay the access token for the Zuul proxy.
 
@@ -391,7 +391,7 @@ Without this dependency, requests to `/good-beers` will work (because Feign is c
 
 Restart your Edge Server application, navigate to `http://localhost:8081/home` and you'll see your user details on the next page.
 
-{% img blog/microservices-spring-oauth/user-details.png alt:"Okta User Details" width:"800" %}{: .center-image }
+<img src="/img/blog/microservices-spring-oauth/user-details.png" alt="Okta User Details" width="800" class="center-image">
 
 **NOTE:** I was unable to get the logout button to work due to a CSRF error. I tried adding `security.enable-csrf=false` to `application.properties` in the Edge Service app, but it didn't help. I sent an email to the Spring Security team asking if they had any advice.
 
@@ -626,7 +626,7 @@ export class BeerListComponent implements OnInit {
 
 Start the client by opening a terminal, navigating to the `client` directory, then running `npm start`. Open your browser to `http://localhost:4200`, and you should see a login form like the following.
 
-{% img blog/microservices-spring-secure/angular-login.png alt:"Angular Login" width:"800" %}{: .center-image }
+<img src="/img/blog/microservices-spring-secure/angular-login.png" alt="Angular Login" width="800" class="center-image">
 
 If you want to adjust the style of the form, so it isn't right up against the top toolbar, add the following to `styles.css`.
 
@@ -636,7 +636,7 @@ If you want to adjust the style of the form, so it isn't right up against the to
 }
 ```
 
-{% img blog/microservices-spring-secure/angular-login-top-margin.png alt:"Angular Login Styled" width:"800" %}{: .center-image }
+<img src="/img/blog/microservices-spring-secure/angular-login-top-margin.png" alt="Angular Login Styled" width="800" class="center-image">
 
 You should be able to log in, see a welcome message, as well as a logout button. However, you won't see a beer list because of the following error in your console.
 
@@ -684,7 +684,7 @@ public class EdgeServiceApplication {
 
 Restart the Edge Service application and try again. This time you should have great success!
 
-{% img blog/microservices-spring-secure/angular-welcome.png alt:"Angular Welcome" width:"800" %}{: .center-image }
+<img src="/img/blog/microservices-spring-secure/angular-welcome.png" alt="Angular Welcome" width="800" class="center-image">
 
 **NOTE:** You should change the allowed origins from `*` to your client's URLs if you're using this configuration in production.
 

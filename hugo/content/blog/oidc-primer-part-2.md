@@ -1,18 +1,11 @@
 ---
 layout: blog_post
+title: 'OIDC in Action – An OpenID Connect Primer, Part 2 of 3'
 author: dogeared
 date: 2017-07-25T00:00:00Z
+tags: [oauth, oauth2, oauth2.0, oauth 2.0, OpenID, OpenID Connect, oidc]
 redirect_from:
-- /blog/2017-08-01-oidc-primer-part-2
-tags:
-- oauth
-- oauth2
-- oauth2.0
-- oauth 2.0
-- OpenID
-- OpenID Connect
-- oidc
-title: OIDC in Action – An OpenID Connect Primer, Part 2 of 3
+  - "/blog/2017-08-01-oidc-primer-part-2"
 ---
 
 In the [first installment of this OpenID Connect (OIDC) series](https://developer.okta.com/blog/2017/07/25/oidc-primer-part-1), we looked at some OIDC basics, its history, and the various flow types, scopes, and tokens involved. In this post, we'll dive into the mechanics of OIDC and see the various flows in action.
@@ -141,6 +134,6 @@ You can easily create your own instance of the OIDC tool if you have an Okta ten
 
 You can explore the code or just click the friendly purple button to deploy your own instance.
 
-In the [final installment](https://developer.okta.com/blog/2017/08/01/oidc-primer-part-3), we dig into the various types of tokens and how to validate them.
+In the [final installment](/blog/2017/08/01/oidc-primer-part-3), we dig into the various types of tokens and how to validate them.
 
-The whole series is live now. Part 1 is [here](https://developer.okta.com/blog/2017/07/25/oidc-primer-part-1). Part 3 is [here](https://developer.okta.com/blog/2017/08/01/oidc-primer-part-3).
+The whole series is live now. Part 1 is [here](/blog/2017/07/25/oidc-primer-part-1). Part 3 is [here](/blog/2017/08/01/oidc-primer-part-3).

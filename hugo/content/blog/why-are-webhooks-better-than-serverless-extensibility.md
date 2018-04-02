@@ -1,21 +1,15 @@
 ---
 layout: blog_post
+title: 'Why Are Webhooks Better Than Serverless Extensibility?'
 author: rdegges
 date: 2017-10-11T00:00:00Z
-description: Serverless is becoming a popular pattern in the web development world--but
-  it isn't all sunshine and rainbows. There's a lot of benefits to be had by simply
-  using webhooks. In this article I'll show you why webhooks > serverless.
-tags:
-- webhooks
-- serverless
-- lambda
-- business
-- saas
-title: Why Are Webhooks Better Than Serverless Extensibility?
+description: "Serverless is becoming a popular pattern in the web development world--but it isn't all sunshine and rainbows. There's a lot of benefits to be had by simply using webhooks. In this article I'll show you why webhooks > serverless."
+tags: [webhooks, serverless, lambda, business, saas]
 tweets:
-- Serverless? Bah humbug!
-- 'Webhooks vs Serverless: A never-ending debate!'
+    - "Serverless? Bah humbug!"
+    - "Webhooks vs Serverless: A never-ending debate!"
 ---
+
 
 When you’ve built a successful software-as-a-service product, you tend to run
 into interesting technical (and business) questions. My favorite question is:
