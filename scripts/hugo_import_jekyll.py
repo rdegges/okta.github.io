@@ -26,6 +26,7 @@ JEKYLL_BLOG_FILENAME = re.compile(r'(\d+-\d+-\d+)-(.+)\..*')
 IMG_TAG = re.compile(r'{% img ([\w/\-.]+) (.*) %}(.*)')
 API_OPERATION_TAG = re.compile(r'{% api_operation (\w+) ([\w/*:.{}+$#?=]+) %}')
 API_LIFECYCLE_TAG = re.compile(r'{% api_lifecycle (\w+) %}')
+API_CORS = re.compile(r'{% api_cors %}')
 
 def main():
     parser = argparse.ArgumentParser()
@@ -59,6 +60,7 @@ def main():
                             data)
                     data = re.sub(API_OPERATION_TAG, r'{{< api_operation \1 "\2" >}}', data)
                     data = re.sub(API_LIFECYCLE_TAG, r'{{< api_lifecycle \1 >}}', data)
+                    data = re.sub(API_CORS, r'{{< api_cors >}}', data)
                     new_lines = []
                     for line in data.splitlines():
                         if line.startswith('{% img'):
