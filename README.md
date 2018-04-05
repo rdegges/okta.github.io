@@ -4,7 +4,7 @@
 
 # Okta developer site [![Build Status](https://travis-ci.org/okta/okta.github.io.svg?branch=source)](https://travis-ci.org/okta/okta.github.io)
 
-The Okta developer site ([developer.okta.com](https://developer.okta.com)) is built using [Jekyll](http://jekyllrb.com/).
+The Okta developer site ([developer.okta.com](https://developer.okta.com)) is built using [Hugo](https://gohugo.io/).
 
 See a problem or want to contribute? Read [Contributing to the site](#contributing-to-the-site) below.
 
@@ -28,5 +28,5 @@ The [wiki](https://github.com/okta/okta.github.io/wiki) will show you how to set
 
 ### Building the site locally
 - [Clone and install dependencies](https://github.com/okta/okta.github.io/wiki/Setting-Up-Your-Environment)
-- Build the site with `npm start`
-- Visit [`localhost:4000`](http://localhost:4000) in your browser
+- Build the site with `hugo server`
+- Visit [`localhost:1313`](http://localhost:1313) in your browser

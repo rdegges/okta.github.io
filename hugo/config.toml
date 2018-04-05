@@ -10,7 +10,7 @@ paginate = 10
 paginatePath = "page"
 
 [permalinks]
-  post = "/blog/:year/:month/:day/:title/"
+  blog = "/blog/:year/:month/:day/:filename/"
 
 [params]
   twitter_username = "OktaDev"
