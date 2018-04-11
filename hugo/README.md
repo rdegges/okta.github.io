@@ -39,7 +39,11 @@ hugo
 
 ## How to migrate tags:
 ```bash
-python scripts/hugo_import_jekyll.py --target=_source/_docs/api/resources --source=hugo/content/docs/api/resources
+python scripts/hugo_import_jekyll.py --target=_source/_posts --output=hugo/content/blog
+python scripts/hugo_import_jekyll.py --target=_source/_docs/api/resources --output=hugo/content/docs/api/resources
 python scripts/hugo_import_jekyll.py --target=_source/_docs/api/getting_started --output=hugo/content/docs/api/getting_started
 python scripts/hugo_import_jekyll.py --target=_source/_docs/how-to --output=hugo/content/docs/how-to
+# Usually you have alias=cp='cp -i'
+/bin/cp -rf  _source/_assets/img/* hugo/themes/okta/static/img
+/bin/cp -rf _source/_data/* hugo/data/
 ```

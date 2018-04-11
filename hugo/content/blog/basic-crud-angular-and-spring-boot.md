@@ -24,7 +24,7 @@ You will need [Java 8](http://www.oracle.com/technetwork/java/javase/downloads/j
 
 ## Build an API with Spring Boot 2.0
 
-To get started with [Spring Boot](https://projects.spring.io/spring-boot/) 2.0, you can work with its recent milestone release. Head on over to [start.spring.io](https://start.spring.io) and create a new project that uses Java, Spring Boot version 2.0.0, and options to create a simple API: JPA, H2, Rest Repositories, Lombok, and Web. In this example, I've added Actuator as well, since it's a [very cool feature](https://dzone.com/articles/spring-boot-actuator-a-complete-guide) of Spring Boot.
+To get started with [Spring Boot](https://projects.spring.io/spring-boot/) 2.0, head on over to [start.spring.io](https://start.spring.io) and create a new project that uses Java, Spring Boot version 2.0.1, and options to create a simple API: JPA, H2, Rest Repositories, Lombok, and Web. In this example, I've added Actuator as well, since it's a [very cool feature](https://dzone.com/articles/spring-boot-actuator-a-complete-guide) of Spring Boot.
 
 <img src="/img/blog/spring-boot-2-angular-5/start.spring.io.png" alt="Spring Initializr" width="800" class="center-image">
 
@@ -194,10 +194,10 @@ You can learn the basics of Angular CLI at <https://cli.angular.io>.
 
 <img src="/img/blog/spring-boot-2-angular-5/cli.angular.io.png" alt="Angular CLI Homepage" width="800" class="center-image">
 
-Install the latest version of Angular CLI, which is version 1.7.2.
+Install the latest version of Angular CLI, which is version 1.7.4.
 
 ```bash
-npm install -g @angular/cli@1.7.2
+npm install -g @angular/cli@1.7.4
 ```
 
 Create a new project in the umbrella directory you created. Again, mine is named `okta-spring-boot-2-angular-5-example`.
@@ -788,7 +788,7 @@ The Okta Angular SDK is a wrapper around [Okta Auth JS](https://github.com/okta/
 To install it, run the following command in the `client` directory:
 
 ```
-npm install --save @okta/okta-angular
+npm install @okta/okta-angular@1.0.0
 ```
 
 In `client/src/app/app.module.ts`, add a `config` variable with the settings for your OIDC app.
@@ -835,8 +835,9 @@ Create `client/src/app/shared/okta/auth.interceptor.ts` and add the following co
 
 ```typescript
 import { Injectable } from '@angular/core';
-import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/common/http';
+import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/fromPromise';
 import { OktaAuthService } from '@okta/okta-angular';
 
 @Injectable()
@@ -846,17 +847,21 @@ export class AuthInterceptor implements HttpInterceptor {
   }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    return Observable.fromPromise(this.handleAccess(request, next));
+  }
 
-    // Only add to localhost requests since Giphy's API fails when the request include a token
-    if (request.url.indexOf('localhost') > -1) {
+  private async handleAccess(request: HttpRequest<any>, next: HttpHandler): Promise<HttpEvent<any>> {
+    // Only add to known domains since we don't want to send our tokens to just anyone. 
+    // Also, Giphy's API fails when the request includes a token.
+    if (request.urlWithParams.indexOf('localhost') > -1) {
+      const accessToken = await this.oktaAuth.getAccessToken();
       request = request.clone({
         setHeaders: {
-          Authorization: `Bearer ${this.oktaAuth.getAccessToken().accessToken}`
+          Authorization: 'Bearer ' + accessToken
         }
       });
     }
-
-    return next.handle(request);
+    return next.handle(request).toPromise();
   }
 }
 ```
@@ -870,8 +875,7 @@ import { AuthInterceptor } from './shared/okta/auth.interceptor';
 @NgModule({
   ...
   providers: [CarService, GiphyService,
-    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
-  ],
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
   ...
 })
 ```
@@ -883,12 +887,12 @@ Modify `client/src/app/app.component.html` to have login and logout buttons.
 <mat-toolbar color="primary">
   <span>Welcome to {{title}}!</span>
   <span class="toolbar-spacer"></span>
-  <button mat-raised-button color="accent" *ngIf="oktaAuth.isAuthenticated()"
+  <button mat-raised-button color="accent" *ngIf="isAuthenticated"
           (click)="oktaAuth.logout()">Logout
   </button>
 </mat-toolbar>
 
-<mat-card *ngIf="!oktaAuth.isAuthenticated()">
+<mat-card *ngIf="!isAuthenticated">
   <mat-card-content>
     <button mat-raised-button color="accent"
             (click)="oktaAuth.loginRedirect()">Login
@@ -908,9 +912,10 @@ You might notice there's a span with a `toolbar-spacer` class. To make that work
 }
 ```
 
-There's also a reference to `oktaAuth` for checking authenticated status. To make this work, add it as a dependency to the constructor in `client/src/app/app.component.ts`.
+There's also a reference to `isAuthenticated` for checking authenticated status. To make this work, add it as a dependency to the constructor in `client/src/app/app.component.ts` and add an initializer method that sets the variable.
 
 ```typescript
+import { Component, OnInit } from '@angular/core';
 import { OktaAuthService } from '@okta/okta-angular';
 
 @Component({
@@ -918,10 +923,19 @@ import { OktaAuthService } from '@okta/okta-angular';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'app';
+  isAuthenticated: boolean;
 
   constructor(private oktaAuth: OktaAuthService) {
+  }
+
+  async ngOnInit() {
+    this.isAuthenticated = await this.oktaAuth.isAuthenticated();
+    // Subscribe to authentication state changes
+    this.oktaAuth.$authenticationState.subscribe(
+      (isAuthenticated: boolean)  => this.isAuthenticated = isAuthenticated
+    );
   }
 }
 ```
@@ -955,10 +969,10 @@ Move the HTML for the Login button from `app.component.html` to `client/src/app/
 ```html
 <mat-card>
   <mat-card-content>
-    <button mat-raised-button color="accent" *ngIf="!oktaAuth.isAuthenticated()"
+    <button mat-raised-button color="accent" *ngIf="!isAuthenticated"
             (click)="oktaAuth.loginRedirect()">Login
     </button>
-    <button mat-raised-button color="accent" *ngIf="oktaAuth.isAuthenticated()"
+    <button mat-raised-button color="accent" *ngIf="isAuthenticated"
             [routerLink]="['/car-list']">Car List
     </button>
   </mat-card-content>
@@ -966,13 +980,23 @@ Move the HTML for the Login button from `app.component.html` to `client/src/app/
 ```
 {% endraw %}
 
-Add `oktaAuth` as a dependency in `client/src/app/home/home.component.ts`.
+Add `oktaAuth` as a dependency in `client/src/app/home/home.component.ts` and set it up to initialize/change the `isAuthenticated` variable.
 
 ```typescript
 import { OktaAuthService } from '@okta/okta-angular';
 
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+  isAuthenticated: boolean;
+
   constructor(private oktaAuth: OktaAuthService) {
+  }
+
+  async ngOnInit() {
+    this.isAuthenticated = await this.oktaAuth.isAuthenticated();
+    // Subscribe to authentication state changes
+    this.oktaAuth.$authenticationState.subscribe(
+      (isAuthenticated: boolean)  => this.isAuthenticated = isAuthenticated
+    );
   }
 }
 ```
@@ -984,7 +1008,7 @@ Update `client/src/app/app.component.html`, so the Logout button redirects back 
 <mat-toolbar color="primary">
   <span>Welcome to {{title}}!</span>
   <span class="toolbar-spacer"></span>
-  <button mat-raised-button color="accent" *ngIf="oktaAuth.isAuthenticated()"
+  <button mat-raised-button color="accent" *ngIf="isAuthenticated"
           (click)="oktaAuth.logout()" [routerLink]="['/home']">Logout
   </button>
 </mat-toolbar>
@@ -1037,10 +1061,7 @@ You can see the full source code for the application developed in this tutorial 
 
 ## Learn More about Spring Boot and Angular
 
-This article shows you how to use Okta's Spring Boot support. If you'd like to learn more about this project, I encourage
-you to [star it on GitHub](https://github.com/okta/okta-spring-boot).
-
-It also uses Okta's Angular SDK, which is something we haven't written about on this blog before. To learn more about this project, see [https://www.npmjs.com/package/@okta/okta-angular](https://www.npmjs.com/package/@okta/okta-angular) or [check it out on GitHub](https://github.com/okta/okta-oidc-js/tree/master/packages/okta-angular).
+This article uses Okta's Angular SDK, which is something we haven't written about on this blog before. To learn more about this project, see [https://www.npmjs.com/package/@okta/okta-angular](https://www.npmjs.com/package/@okta/okta-angular) or [check it out on GitHub](https://github.com/okta/okta-oidc-js/tree/master/packages/okta-angular).
 
 I've written a number of Spring Boot and Angular tutorials in the past, and I've recently updated them for Angular 5.
 
@@ -1053,4 +1074,5 @@ If you have any questions, please don't hesitate to leave a comment below, or as
 
 **Changelog:**
 
+* Apr 9, 2018: Updated to use Okta Angular 1.0.0, Spring Boot 2.0.1, and Angular CLI 1.7.4 (with Angular 5.2.9). See the code changes in the [example app on GitHub](https://github.com/oktadeveloper/okta-spring-boot-2-angular-5-example/pull/5). Changes to this article can be viewed in [okta/okta.github.io#1938](https://github.com/okta/okta.github.io/pull/1938).
 * Mar 5, 2018: Updated to use Spring Boot 2.0 and Angular CLI 1.7.2 (with Angular 5.2.7). See the code changes in the [example app on GitHub](https://github.com/oktadeveloper/okta-spring-boot-2-angular-5-example/pull/2). Changes to this article can be viewed in [okta/okta.github.io#1806](https://github.com/okta/okta.github.io/pull/1806).
