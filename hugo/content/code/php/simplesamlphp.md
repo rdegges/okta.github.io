@@ -246,7 +246,7 @@ There are two ways to test a SAML application:
 You will use both methods to test your application. In each case, you will know if the
 test worked when you see a screen that looks like the one below:
 
-{% img example-application-authenticated-user.png alt:"Authenticated user" %}
+<img src="/img/example-application-authenticated-user.png" alt="Authenticated user">
 
 
 1.  Login from the Okta SimpleSAMLphp example application (This is

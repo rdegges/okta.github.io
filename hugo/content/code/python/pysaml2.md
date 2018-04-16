@@ -151,7 +151,7 @@ There are two ways to test a SAML application:
 You will use both methods to test your application. In each case, you will know iff the
 test worked when you see a screen that looks like the one below:
 
-{% img pysaml2-authenticated-user.png alt:"Authenticated user" %}
+<img src="/img/pysaml2-authenticated-user.png" alt="Authenticated user">
 
 
 1.  Login from the Okta {{ page.saml_library }} example application (This is
