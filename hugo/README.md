@@ -40,9 +40,11 @@ hugo
 ## How to migrate tags:
 ```bash
 python scripts/hugo_import_jekyll.py --target=_source/_posts --output=hugo/content/blog
-python scripts/hugo_import_jekyll.py --target=_source/_docs/api/resources --output=hugo/content/docs/api/resources
-python scripts/hugo_import_jekyll.py --target=_source/_docs/api/getting_started --output=hugo/content/docs/api/getting_started
-python scripts/hugo_import_jekyll.py --target=_source/_docs/how-to --output=hugo/content/docs/how-to
+for dir_name in $(ls -d1 _source/_docs/*/)
+do
+    code_path=`basename ${dir_name}`
+    python scripts/hugo_import_jekyll.py --target=_source/_docs/${code_path} --output=hugo/content/docs/${code_path}
+done
 
 for dir_name in $(ls -d1 _source/_code/*/)
 do
@@ -50,7 +52,6 @@ do
     python scripts/hugo_import_jekyll.py --target=_source/_code/${code_path} --output=hugo/content/code/${code_path}
 done
 
-python scripts/hugo_import_jekyll.py --target=_source/_code/${path} --output=hugo/content/code/${path}
 # Usually you have alias=cp='cp -i'
 /bin/cp -rf  _source/_assets/img/* hugo/themes/okta/static/img
 /bin/cp -rf  _source/_assets/js/* hugo/themes/okta/static/js
