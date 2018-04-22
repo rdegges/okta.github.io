@@ -36,12 +36,8 @@
 	background-image: image_url("icons/rounded-user--blue.png");
 }
 
-.tabber-targets %Row %Column {
-	padding-left: 80px;
-}
-
 .logo-placard {
-    background: #fff;
+    background: $white;
     display: block;
     height: 180px;
     line-height: 120px;

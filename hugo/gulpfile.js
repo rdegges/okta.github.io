@@ -27,8 +27,13 @@ gulp.task('minify-sass', function() {
         './themes/okta/static/css/font-awesome/font-awesome.scss'])
         .pipe(sass().on('error', sass.logError))
         .pipe(concat('okta.css'))
-        .pipe(cleanCSS())
         .pipe(gulp.dest('./themes/okta/static/dist/'));
+});
+
+gulp.task('copy-fonts', function() {
+    gulp.src([
+        './themes/okta/static/fonts/*'])
+        .pipe(gulp.dest('./themes/okta/static/dist/fonts/'));
 });
 
 gulp.task('animate.css', function() {
@@ -58,4 +63,4 @@ gulp.task('myOkta.js', function() {
         .pipe(gulp.dest('./themes/okta/static/js/dist'));
 });
 
-gulp.task('default', ['master.js', 'myOkta.js', 'minify-sass', 'animate.css']);
+gulp.task('default', ['master.js', 'myOkta.js', 'minify-sass', 'copy-fonts']);
