@@ -41,9 +41,8 @@
 	<link type="text/css" rel="stylesheet" href="https://developer.okta.com/sites/all/themes/developer/css/master.css" media="all" />
     <meta class="swiftype" name="title" data-type="string" content="{{ if .Page.Params.meta_title }}{{ .Page.Params.meta_title }}{{ else if .Page.Title }}{{ .Page.Title }} | {{ .Site.Title }}{{ else }}{{ .Site.Title }}{{ end }}">
 	<meta class="swiftype" name="summary" data-type="string" content="{{ if .Page.Description }}{{ trim .Page.Description "\n" | plainify | truncate 300 }}{{ else if .Page.Params.excerpt }}{{ trim .Page.Params.excerpt "\n" | plainify | truncate 300 }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-	<link type="text/css" rel="stylesheet" href="/css/animate.css"/>
-	<link type="text/css" rel="stylesheet" href="/css/dist/okta.css"/>
-	<link type="text/css" rel="stylesheet" href="/css/font-awesome/font-awesome.css"/>
+	<link type="text/css" rel="stylesheet" href="/dist/animate.css">
+	<link type="text/css" rel="stylesheet" href="/dist/okta.css">
 
     {{ if (fileExists "static/css/page.css") }}
         <img src="{{ "static/css/page.css" | absURL }}" />

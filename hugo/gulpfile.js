@@ -1,7 +1,7 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
     concat = require('gulp-concat'),
-    minify = require('gulp-minify'),
+    cleanCSS = require('gulp-clean-css');
     exec = require('gulp-exec'),
     rename = require('gulp-rename'),
     autoprefixer = require('gulp-autoprefixer'),
@@ -26,7 +26,15 @@ gulp.task('minify-sass', function() {
         './themes/okta/static/css/*.scss',
         './themes/okta/static/css/font-awesome/font-awesome.scss'])
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('./themes/okta/static/css/dist/'));
+        .pipe(concat('okta.css'))
+        .pipe(cleanCSS())
+        .pipe(gulp.dest('./themes/okta/static/dist/'));
+});
+
+gulp.task('animate.css', function() {
+    gulp.src([
+        './themes/okta/static/css/animate.css'])
+        .pipe(gulp.dest('./themes/okta/static/dist/'));
 });
 
 gulp.task('master.js', function() {
@@ -50,4 +58,4 @@ gulp.task('myOkta.js', function() {
         .pipe(gulp.dest('./themes/okta/static/js/dist'));
 });
 
-gulp.task('default', ['master.js', 'myOkta.js', 'minify-sass']);
+gulp.task('default', ['master.js', 'myOkta.js', 'minify-sass', 'animate.css']);
