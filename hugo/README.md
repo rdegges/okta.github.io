@@ -52,6 +52,7 @@ do
     python scripts/hugo_import_jekyll.py --target=_source/_code/${code_path} --output=hugo/content/code/${code_path}
 done
 
+python scripts/hugo_import_jekyll.py --target=_source/_change-log --output=hugo/content/docs/change-log
 # Usually you have alias=cp='cp -i'
 /bin/cp -rf  _source/_assets/img/* hugo/themes/okta/static/img
 /bin/cp -rf  _source/_assets/js/* hugo/themes/okta/static/js

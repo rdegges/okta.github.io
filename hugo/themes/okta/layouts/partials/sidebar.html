@@ -101,7 +101,7 @@
         {{ if in $.URL "docs/api/resources"}}
           <ul id="Sidebar_References" class="Sidebar-hide">
           {{ range $element := where .Site.RegularPages "Section" "==" "docs" }}
-            <li>
+            <li {{ if in $.URL $element.RelPermalink }}class="is-active"{{ end }}>
                 <a href="{{ .URL }}">{{ .Title }}</a>
             </li>
           {{ end }}
@@ -113,7 +113,7 @@
         {{ if in $.URL "docs/api/resources" }}
           <ul id="Sidebar_Resources" class="Sidebar-hide">
             {{ range $element := where .Site.RegularPages "Section" "==" "reference" }}
-             <li>
+             <li {{ if in $.URL $element.RelPermalink }}class="is-active"{{ end }}>
               <a href="{{ .URL }}">{{ .Title }}</a>
             </li>
             {{ end }}
@@ -123,16 +123,44 @@
       {{ range $element := where .Site.RegularPages "Section" "==" "reference" }}
         {{ if in .Site.Params.reference $element.URL }}
         {{ else }}
-          <li>
+          <li {{ if in $.URL $element.RelPermalink }}class="is-active"{{ end }}>
             <a href="{{ .URL }}">{{ .Title }}</a>
+          </li>
+        {{ end }}
+      {{ end }}
+	    <li{{ if in .URL "/change-log" }} class="is-active"{{ end }}>
+		    <a href="/docs/change-log">Change Log</a>
+            {{ if in .Title "/change-log" }}
+            <ul>
+              {{ range $element := where .Site.RegularPages "Section" "==" "reference" }}
+                {{ if in $.URL "/docs/change-log" }}
+                  {{ if in $element.Path "/index.md" }}
+                  {{ else }}
+                    <li{{ if in $.URL $element.Dir }} class="is-active"{{ end }}>
+                        <a href="{{ .URL }}">{{ .Title }}</a>
+                    </li>
+                  {{ end }}
+                {{ end }}
+              {{ end }}
+		    </ul>
+      {{ end }}
+	    </li>
+    </ul>
+
+    <h3 class="Sidebar-title">How-To</h3>
+    <ul class="Sidebar-nav">
+      {{ range $element := where (sort .Site.RegularPages "RelPermalink" "asc" ) "Section" "==" "how-to" }}
+        {{ if in .Site.Params.how_to $element.URL }}
+          <li {{ if in $.URL $element.RelPermalink }}class="is-active"{{ end }}>
+              <a href="{{ .URL }}">{{ .Title }}</a>
           </li>
         {{ end }}
       {{ end }}
     </ul>
 
     <h3 class="Sidebar-title">Standards</h3>
-    <ul class="Sidebar-nav">{{ range where .Site.RegularPages "Section" "==" "standards" }}
-        <li>
+    <ul class="Sidebar-nav">{{ range $element := where .Site.RegularPages "Section" "==" "standards" }}
+        <li {{ if in $.URL $element.RelPermalink }}class="is-active"{{ end }}>
             <a href="{{ .URL }}">{{ .Title }}</a>
         </li>{{ end }}
     </ul>

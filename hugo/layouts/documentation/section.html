@@ -30,14 +30,14 @@
 				<h2>Reference</h2>
 				<!-- START Subpages Grid -->
 				<div class="Row">
-		{{ range where .Site.RegularPages "Section" "==" "reference" }}
+				{{ range where .Site.RegularPages "Section" "==" "reference" }}
 					<div class="Column--4 Column--small-12">
 						<a href="{{ .URL }}">
 							<h3 class="h4">{{ .Title }}</h3>
 						</a>
 						<p>{{ .Params.excerpt }}</p>
 					</div>
-		{{ end }}
+				{{ end }}
 				</div>
 				<!-- END Subpages Grid -->
 
