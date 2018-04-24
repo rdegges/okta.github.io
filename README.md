@@ -28,5 +28,5 @@ The [wiki](https://github.com/okta/okta.github.io/wiki) will show you how to set
 
 ### Building the site locally
 - [Clone and install dependencies](https://github.com/okta/okta.github.io/wiki/Setting-Up-Your-Environment)
-- Build the site with `hugo server`
+- Build the site with `npm start`
 - Visit [`localhost:1313`](http://localhost:1313) in your browser
