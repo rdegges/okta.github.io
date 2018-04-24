@@ -4,6 +4,10 @@ baseURL = "https://developer.okta.com"
 languageCode = "en-us"
 title = "Okta Developer"
 theme = "okta"
+#pygmentsStyle = "manni"
+pygmentsCodeFences = true
+pygmentsUseClasses = true
+pygmentsCodefencesGuessSyntax = true
 
 disqusshortname = "oktadevblog"
 paginate = 10
