@@ -49,17 +49,9 @@
 <script src="/js/dist/master.js"></script>
 <script src="/js/dist/myOkta.js"></script>
 
-{{/*{% for script in page.scripts %}*/}}
-{{/*<script src="{{ script }}"></script>*/}}
-{{/*{% endfor %}*/}}
-
-{{/*{% for script in layout.scripts %}*/}}
-{{/*<script src="{{ script }}"></script>*/}}
-{{/*{% endfor %}*/}}
-
-{{/*{% if page.js %}*/}}
-{{/*{% js '{{page.js}}' %}*/}}
-{{/*{% endif %}*/}}
+{{ if eq .Params.layout "docs_page"  }}
+    <script src="/js/docs.js"></script>
+{{ end }}
 
 {{ if isset .Page.Params "js" }}
     <script type="text/javascript" src="/js/{{ .Params.js }}"></script>
