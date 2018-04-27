@@ -1,17 +1,16 @@
 {
   "name": "@okta/okta.github.io",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "NPM dependencies for testing and building developer.okta.com",
   "files": [
     "dist"
   ],
   "scripts": {
-    "clean": "node scripts/clean",
-    "pregenerate": "npm run clean",
-    "generate": "cross-env PID_FINDER=okta_github_io JEKYLL_ENV=production bundle exec jekyll",
+    "pregenerate": "gulp",
+    "generate": "hugo server",
     "build-prod": "npm run generate build -- --verbose",
     "postbuild-prod": "bash scripts/post-build-prod.sh",
-    "start": "npm run generate serve -- --incremental",
+    "start": "npm run generate",
     "test-only": "protractor tests/selenium/conf.js",
     "stop": "if-env CI=true && exit 0 || (pkill -f 'okta_github_io|webdriver-manager/selenium')",
     "pretest": "npm run generate serve -- --no-watch & wait-on http://localhost:4000 && webdriver-manager update --gecko false",
@@ -33,6 +32,16 @@
   "devDependencies": {
     "chalk": "^1.1.3",
     "cross-env": "^5.0.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-clean-css": "^3.9.3",
+    "gulp-concat": "^2.6.1",
+    "gulp-exec": "^2.1.3",
+    "gulp-minify": "^1.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-watch": "^4.3.11",
     "if-env": "^1.0.0",
     "jasmine-reporters": "^2.2.0",
     "jasmine-spec-reporter": "^4.1.0",
@@ -40,5 +49,6 @@
     "recursive-readdir": "^2.2.1",
     "remove": "^0.1.5",
     "wait-on": "^2.0.2"
-  }
+  },
+  "dependencies": {}
 }
